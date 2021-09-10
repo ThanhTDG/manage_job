@@ -16,7 +16,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new DK_CS_CongViec());
         }
     }
 }
