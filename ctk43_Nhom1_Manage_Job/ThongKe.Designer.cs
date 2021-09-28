@@ -32,7 +32,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -71,8 +70,15 @@ namespace ctk43_Nhom1_Manage_Job
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,17 +90,12 @@ namespace ctk43_Nhom1_Manage_Job
             // columnHeader2
             // 
             this.columnHeader2.Text = "Mức độ";
-            this.columnHeader2.Width = 79;
+            this.columnHeader2.Width = 136;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Tên công việc";
-            this.columnHeader4.Width = 102;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Thời gian còn lại ";
-            this.columnHeader5.Width = 130;
+            this.columnHeader4.Width = 137;
             // 
             // columnHeader6
             // 
@@ -115,7 +116,6 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.listView2);
             this.tabPage1.Controls.Add(this.listView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -132,9 +132,8 @@ namespace ctk43_Nhom1_Manage_Job
             this.columnHeader3,
             this.columnHeader7,
             this.columnHeader8});
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(3, 3);
+            this.listView2.Location = new System.Drawing.Point(3, 4);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(411, 332);
             this.listView2.TabIndex = 94;
@@ -161,7 +160,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader4,
-            this.columnHeader5,
             this.columnHeader6});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
@@ -174,6 +172,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.listView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -194,6 +193,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.listView3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -462,6 +462,41 @@ namespace ctk43_Nhom1_Manage_Job
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 124;
             // 
+            // listView3
+            // 
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(3, 3);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(411, 332);
+            this.listView3.TabIndex = 95;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Mức độ";
+            this.columnHeader5.Width = 79;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Tên công việc";
+            this.columnHeader9.Width = 102;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Trạng thái";
+            this.columnHeader10.Width = 130;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Chi tiết công việc";
+            this.columnHeader11.Width = 114;
+            // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,6 +524,8 @@ namespace ctk43_Nhom1_Manage_Job
             this.Text = "ThongKe";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -501,7 +538,6 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -540,5 +576,10 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }
