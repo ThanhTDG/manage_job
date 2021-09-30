@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ctk43_Nhom1_Manage_Job
 {
-    public partial class DK_CS_CongViec : Form
+    public partial class frmThemCVCT : Form
     {
-        public DK_CS_CongViec()
+        public frmThemCVCT()
         {
             InitializeComponent();
         }

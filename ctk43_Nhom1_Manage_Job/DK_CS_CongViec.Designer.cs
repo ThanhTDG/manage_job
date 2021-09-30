@@ -1,7 +1,7 @@
 ﻿
 namespace ctk43_Nhom1_Manage_Job
 {
-    partial class DK_CS_CongViec
+    partial class frmThemCVCT
     {
         /// <summary>
         /// Required designer variable.
@@ -216,7 +216,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.label1.TabIndex = 75;
             this.label1.Text = "Chủ đề";
             // 
-            // DK_CS_CongViec
+            // frmThemCVCT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,7 +239,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "DK_CS_CongViec";
+            this.Name = "frmThemCVCT";
             this.Text = "Thêm công việc";
             this.ResumeLayout(false);
             this.PerformLayout();

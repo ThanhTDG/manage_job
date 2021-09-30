@@ -1,1 +1,14 @@
 E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.pdb
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ChiTiet.resources
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ThongKe.resources
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.Cache
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csprojResolveAssemblyReference.cache
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
+E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemCVCT.resources

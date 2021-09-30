@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ctk43_Nhom1_Manage_Job
 {
-    public partial class frmDangKy : Form
+    public partial class frmThongBao : Form
     {
-        public frmDangKy()
+        public frmThongBao()
         {
             InitializeComponent();
         }

@@ -35,16 +35,21 @@ namespace ctk43_Nhom1_Manage_Job
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -64,17 +69,12 @@ namespace ctk43_Nhom1_Manage_Job
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -125,6 +125,32 @@ namespace ctk43_Nhom1_Manage_Job
             this.tabPage1.Text = "Hoàn thành";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
+            this.columnHeader4,
+            this.columnHeader6});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(411, 332);
+            this.listView1.TabIndex = 93;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listView2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(417, 338);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Chưa hoàn thành";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -155,32 +181,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.columnHeader7.Text = "Thời gian còn lại ";
             this.columnHeader7.Width = 130;
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2,
-            this.columnHeader4,
-            this.columnHeader6});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(411, 332);
-            this.listView1.TabIndex = 93;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.listView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(417, 338);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Chưa hoàn thành";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -202,9 +202,44 @@ namespace ctk43_Nhom1_Manage_Job
             this.tabPage4.Text = "Tổng cộng";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // listView3
+            // 
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(3, 3);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(411, 332);
+            this.listView3.TabIndex = 95;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Mức độ";
+            this.columnHeader5.Width = 79;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Tên công việc";
+            this.columnHeader9.Width = 102;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Trạng thái";
+            this.columnHeader10.Width = 130;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Chi tiết công việc";
+            this.columnHeader11.Width = 114;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.checkedListBox1);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
@@ -216,19 +251,21 @@ namespace ctk43_Nhom1_Manage_Job
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(3, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 208);
+            this.groupBox1.Size = new System.Drawing.Size(331, 222);
             this.groupBox1.TabIndex = 134;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thống kê";
             // 
-            // button5
+            // button4
             // 
-            this.button5.Location = new System.Drawing.Point(99, 179);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(108, 23);
-            this.button5.TabIndex = 117;
-            this.button5.Text = "Thống kê";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button4.Location = new System.Drawing.Point(112, 175);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 27);
+            this.button4.TabIndex = 146;
+            this.button4.Text = "Thống kê";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // checkedListBox1
             // 
@@ -323,7 +360,7 @@ namespace ctk43_Nhom1_Manage_Job
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(225, 383);
+            this.label11.Location = new System.Drawing.Point(216, 385);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 139;
@@ -332,7 +369,7 @@ namespace ctk43_Nhom1_Manage_Job
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(219, 354);
+            this.label12.Location = new System.Drawing.Point(216, 356);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(42, 13);
             this.label12.TabIndex = 138;
@@ -341,7 +378,7 @@ namespace ctk43_Nhom1_Manage_Job
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(219, 325);
+            this.label13.Location = new System.Drawing.Point(216, 323);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 13);
             this.label13.TabIndex = 137;
@@ -350,7 +387,7 @@ namespace ctk43_Nhom1_Manage_Job
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(216, 296);
+            this.label14.Location = new System.Drawing.Point(216, 290);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(33, 13);
             this.label14.TabIndex = 136;
@@ -359,7 +396,7 @@ namespace ctk43_Nhom1_Manage_Job
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(159, 383);
+            this.label10.Location = new System.Drawing.Point(159, 385);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(19, 13);
             this.label10.TabIndex = 135;
@@ -377,7 +414,7 @@ namespace ctk43_Nhom1_Manage_Job
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(212, 268);
+            this.label15.Location = new System.Drawing.Point(219, 268);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(27, 13);
             this.label15.TabIndex = 141;
@@ -386,7 +423,7 @@ namespace ctk43_Nhom1_Manage_Job
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(156, 354);
+            this.label7.Location = new System.Drawing.Point(156, 356);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(25, 13);
             this.label7.TabIndex = 132;
@@ -395,7 +432,7 @@ namespace ctk43_Nhom1_Manage_Job
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(156, 325);
+            this.label9.Location = new System.Drawing.Point(156, 323);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(25, 13);
             this.label9.TabIndex = 131;
@@ -404,52 +441,16 @@ namespace ctk43_Nhom1_Manage_Job
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(150, 296);
+            this.label6.Location = new System.Drawing.Point(150, 290);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 130;
             this.label6.Text = "1001";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(4, 378);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 23);
-            this.button4.TabIndex = 129;
-            this.button4.Text = "Hết hạn";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(4, 349);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 23);
-            this.button3.TabIndex = 128;
-            this.button3.Text = "Chưa hoàn thành ";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(4, 320);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 23);
-            this.button2.TabIndex = 127;
-            this.button2.Text = "Hoàn thành";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(4, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 126;
-            this.button1.Text = "Tổng cộng";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 346);
+            this.label3.Location = new System.Drawing.Point(25, 341);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 125;
@@ -457,51 +458,64 @@ namespace ctk43_Nhom1_Manage_Job
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 291);
+            this.label1.Location = new System.Drawing.Point(25, 286);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 124;
             // 
-            // listView3
+            // button6
             // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11});
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(3, 3);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(411, 332);
-            this.listView3.TabIndex = 95;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button6.Location = new System.Drawing.Point(12, 282);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(98, 27);
+            this.button6.TabIndex = 142;
+            this.button6.Text = "Tổng cộng";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // columnHeader5
+            // button1
             // 
-            this.columnHeader5.Text = "Mức độ";
-            this.columnHeader5.Width = 79;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button1.Location = new System.Drawing.Point(12, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 27);
+            this.button1.TabIndex = 143;
+            this.button1.Text = "Hoàn thành";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // columnHeader9
+            // button2
             // 
-            this.columnHeader9.Text = "Tên công việc";
-            this.columnHeader9.Width = 102;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button2.Location = new System.Drawing.Point(12, 348);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 27);
+            this.button2.TabIndex = 144;
+            this.button2.Text = "Chưa xong";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // columnHeader10
+            // button3
             // 
-            this.columnHeader10.Text = "Trạng thái";
-            this.columnHeader10.Width = 130;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Chi tiết công việc";
-            this.columnHeader11.Width = 114;
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button3.Location = new System.Drawing.Point(12, 381);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(98, 27);
+            this.button3.TabIndex = 145;
+            this.button3.Text = "Hết hạn";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 422);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label11);
@@ -514,14 +528,11 @@ namespace ctk43_Nhom1_Manage_Job
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "ThongKe";
-            this.Text = "ThongKe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Thống kê";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -550,7 +561,6 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -570,10 +580,6 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView3;
@@ -581,5 +587,10 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

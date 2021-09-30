@@ -79,6 +79,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.ctxtMenuListView.SuspendLayout();
@@ -444,11 +445,21 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // button4
+            // 
+            this.button4.Image = global::ctk43_Nhom1_Manage_Job.Properties.Resources.bell;
+            this.button4.Location = new System.Drawing.Point(966, 32);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(45, 45);
+            this.button4.TabIndex = 15;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 587);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
@@ -517,5 +528,6 @@
         private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button4;
     }
 }
