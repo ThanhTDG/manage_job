@@ -8,5 +8,6 @@ namespace ctk43_Nhom1_Manage_Job.DAO
 {
     internal class DangKiDAO
     {
+
     }
 }
