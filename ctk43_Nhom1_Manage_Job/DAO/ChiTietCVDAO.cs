@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ctk43_Nhom1_Manage_Job.DAO
 {
-    internal class DangKiDAO
+    internal class ChiTietCVDAO
     {
     }
 }

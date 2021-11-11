@@ -8,6 +8,5 @@ namespace ctk43_Nhom1_Manage_Job.BUS
 {
     internal class DangKiBUS
     {
-
     }
 }
