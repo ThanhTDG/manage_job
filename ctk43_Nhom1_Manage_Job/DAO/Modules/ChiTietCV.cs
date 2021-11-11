@@ -125,14 +125,6 @@ namespace ctk43_Nhom1_Manage_Job.DAO.Modules
 
         public ChiTietCV()
         {
-            this.iD = 0;
-            this.ten = null;
-            this.iDCongViec = 0;
-            this.trangThai = 0;
-            this.thoiGian = new DateTime();
-            this.mucDo = 0;
-            this.tienDo = 0;
-            this.iDChiTietCV = 0;
         }
 
         public ChiTietCV(int ID, int IDCongViec, string Ten, int TrangThai, DateTime ThoiGian, int MucDo, int TienDo, int IDChiTietCongViec)

@@ -18,15 +18,18 @@ namespace ctk43_Nhom1_Manage_Job.DAO.Modules
             get { return email; }
             set { email = value; }
         }
-        public string BanQuyen { get { return banQuyen; }  set{ banQuyen = value; } }
-        public string TenND { get
+        public string BanQuyen { get { return banQuyen; } set { banQuyen = value; } }
+        public string TenND
+        {
+            get
             {
                 return tenND;
             }
             set
             {
                 tenND = value;
-            } }
+            }
+        }
 
         public NguoiDung() { }
 
