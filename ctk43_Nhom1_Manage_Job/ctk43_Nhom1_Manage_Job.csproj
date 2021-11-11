@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\DangKiBUS.cs" />
     <Compile Include="ChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +61,7 @@
     <Compile Include="DangKi.Designer.cs">
       <DependentUpon>DangKi.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\DangKiDAO.cs" />
     <Compile Include="DK_CS_CongViec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,8 +161,7 @@
     <None Include="Resources\bell.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BUS\" />
-    <Folder Include="DAO\Models\" />
+    <Folder Include="DAO\Modules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
