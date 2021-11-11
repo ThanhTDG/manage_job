@@ -12,3 +12,19 @@ E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debu
 E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csprojResolveAssemblyReference.cache
 E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
 E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemCVCT.resources
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.pdb
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.AssemblyReference.cache
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.SuggestedBindingRedirects.cache
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ChiTiet.resources
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemCVCT.resources
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ThongKe.resources
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.cache
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CoreCompileInputs.cache
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb

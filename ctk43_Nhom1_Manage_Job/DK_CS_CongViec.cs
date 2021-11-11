@@ -12,6 +12,7 @@ namespace ctk43_Nhom1_Manage_Job
 {
     public partial class frmThemCVCT : Form
     {
+
         public frmThemCVCT()
         {
             InitializeComponent();
