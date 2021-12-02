@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAO.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace ctk43_Nhom1_Manage_Job
         [STAThread]
         static void Main()
         {
+            var manageJobContext= new ManageJobContext();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());

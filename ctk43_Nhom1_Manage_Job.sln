@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ctk43_Nhom1_Manage_Job", "ctk43_Nhom1_Manage_Job\ctk43_Nhom1_Manage_Job.csproj", "{BBCE15BD-205B-45C9-B0EA-73F9FF04CCBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{AB08C1B8-AC45-4784-A7C1-9399D0ADD327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{401645B4-3C08-43FA-BA5E-F2988F73970A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BBCE15BD-205B-45C9-B0EA-73F9FF04CCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBCE15BD-205B-45C9-B0EA-73F9FF04CCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBCE15BD-205B-45C9-B0EA-73F9FF04CCBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB08C1B8-AC45-4784-A7C1-9399D0ADD327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB08C1B8-AC45-4784-A7C1-9399D0ADD327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB08C1B8-AC45-4784-A7C1-9399D0ADD327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB08C1B8-AC45-4784-A7C1-9399D0ADD327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401645B4-3C08-43FA-BA5E-F2988F73970A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401645B4-3C08-43FA-BA5E-F2988F73970A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401645B4-3C08-43FA-BA5E-F2988F73970A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401645B4-3C08-43FA-BA5E-F2988F73970A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
