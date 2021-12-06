@@ -57,6 +57,11 @@
     <Compile Include="CongViecDAO.cs" />
     <Compile Include="DangKiDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="Migrations\202112061442086_CreateDB.cs" />
+    <Compile Include="Migrations\202112061442086_CreateDB.designer.cs">
+      <DependentUpon>202112061442086_CreateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ChiTietCV.cs" />
     <Compile Include="Model\ChiTietCVModel.cs" />
     <Compile Include="Model\ChuDe.cs" />
@@ -72,6 +77,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202112061442086_CreateDB.resx">
+      <DependentUpon>202112061442086_CreateDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

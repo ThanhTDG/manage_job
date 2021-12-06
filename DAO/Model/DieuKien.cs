@@ -16,10 +16,10 @@ namespace DAO.Model
         [Key,Column(Order =1)]
         public int iDCha { get; set; }
         [ForeignKey("iDCon")]
-        public ChiTietCV CVCon;
+        public virtual ChiTietCV CVCon { get; set; }
         [ForeignKey("iDCha")]
-        public ChiTietCV CVCha;
+        public virtual ChiTietCV CVCha { get; set; }
 
-        
+
     }
 }

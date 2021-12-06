@@ -39,3 +39,4 @@ F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.xml
 F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.xml
 F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.dll
 F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.xml
+F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CopyComplete
