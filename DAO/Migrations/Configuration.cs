@@ -10,6 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "DAO.Model.ManageJobContext";
         }
 
         protected override void Seed(DAO.Model.ManageJobContext context)

@@ -9,14 +9,12 @@ namespace DAO.Model
 
     public class ChiTietCVModel
     {
-
-
         public int iD { get; set; }
         public string TenCongViec { get; set; }
         public string ten { get; set; }
         public int trangThai { get; set; }
-        public DateTime ThoiGianDukien { get; set; }
-        public DateTime ThoiGianThucTe { get; set; }
+        public DateTime? ThoiGianDukien { get; set; }
+        public DateTime? ThoiGianThucTe { get; set; }
         public int mucDo { get; set; }
         public int tienDo { get; set; }
         public string TenChiTiet { get; set; }
@@ -34,7 +32,8 @@ namespace DAO.Model
             TenChiTiet = tenChiTiet;
         }
 
-
-
+        public ChiTietCVModel()
+        {
+        }
     }
 }

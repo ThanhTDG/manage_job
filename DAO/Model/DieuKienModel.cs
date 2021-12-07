@@ -17,5 +17,9 @@ namespace DAO.Model
             IDCon = iDCon;
             IDCha = iDCha;
         }
+
+        public DieuKienModel()
+        {
+        }
     }
 }

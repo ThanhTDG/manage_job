@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateDB : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -15,16 +15,14 @@
                         iDCongviec = c.Int(nullable: false),
                         ten = c.String(),
                         trangThai = c.Int(nullable: false),
-                        ThoiGianDukien = c.DateTime(nullable: false),
-                        ThoiGianThucTe = c.DateTime(nullable: false),
+                        ThoiGianDukien = c.Int(),
+                        ThoiGianThucTe = c.Int(),
                         mucDo = c.Int(nullable: false),
                         iDChiTietCV = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.iD)
-                .ForeignKey("dbo.ChiTietCVs", t => t.iDChiTietCV)
                 .ForeignKey("dbo.CongViecs", t => t.iDCongviec, cascadeDelete: true)
-                .Index(t => t.iDCongviec)
-                .Index(t => t.iDChiTietCV);
+                .Index(t => t.iDCongviec);
             
             CreateTable(
                 "dbo.CongViecs",
@@ -34,7 +32,7 @@
                         ten = c.String(),
                         thoiGianBD = c.DateTime(nullable: false),
                         thoiGianKT = c.DateTime(nullable: false),
-                        trangThai = c.String(),
+                        trangThai = c.Int(nullable: false),
                         tienDo = c.Int(nullable: false),
                         mucDo = c.Int(nullable: false),
                         IDChuDe = c.Int(nullable: false),
@@ -66,19 +64,6 @@
                 .PrimaryKey(t => t.email);
             
             CreateTable(
-                "dbo.DieuKiens",
-                c => new
-                    {
-                        iDCon = c.Int(nullable: false, identity: true),
-                        iDCha = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.iDCon, t.iDCha })
-                .ForeignKey("dbo.ChiTietCVs", t => t.iDCha, cascadeDelete: true)
-                .ForeignKey("dbo.ChiTietCVs", t => t.iDCon, cascadeDelete: true)
-                .Index(t => t.iDCon)
-                .Index(t => t.iDCha);
-            
-            CreateTable(
                 "dbo.GhiChuNhanhs",
                 c => new
                     {
@@ -93,20 +78,13 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.DieuKiens", "iDCon", "dbo.ChiTietCVs");
-            DropForeignKey("dbo.DieuKiens", "iDCha", "dbo.ChiTietCVs");
             DropForeignKey("dbo.ChiTietCVs", "iDCongviec", "dbo.CongViecs");
             DropForeignKey("dbo.CongViecs", "Email", "dbo.NguoiDungs");
             DropForeignKey("dbo.CongViecs", "IDChuDe", "dbo.ChuDes");
-            DropForeignKey("dbo.ChiTietCVs", "iDChiTietCV", "dbo.ChiTietCVs");
-            DropIndex("dbo.DieuKiens", new[] { "iDCha" });
-            DropIndex("dbo.DieuKiens", new[] { "iDCon" });
             DropIndex("dbo.CongViecs", new[] { "Email" });
             DropIndex("dbo.CongViecs", new[] { "IDChuDe" });
-            DropIndex("dbo.ChiTietCVs", new[] { "iDChiTietCV" });
             DropIndex("dbo.ChiTietCVs", new[] { "iDCongviec" });
             DropTable("dbo.GhiChuNhanhs");
-            DropTable("dbo.DieuKiens");
             DropTable("dbo.NguoiDungs");
             DropTable("dbo.ChuDes");
             DropTable("dbo.CongViecs");

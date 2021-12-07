@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace ctk43_Nhom1_Manage_Job
         public frmThemChuDe()
         {
             InitializeComponent();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            string name = txtTenChuDe.Text;
+            if(name == "")
+            {
+
+            }
+            else
+            {
+                ChuDeBUS chuDeBUS = new ChuDeBUS();
+                chuDeBUS.Insert(name);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAO.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAO.Modules
+namespace DAO.Model
 {
     public class ChiTietCV
     {
@@ -15,15 +16,14 @@ namespace DAO.Modules
         public int iDCongviec { get; set; } 
         public string ten { get; set; }
         public int trangThai { get; set; }
-        public DateTime ThoiGianDukien { get; set; }
-        public DateTime ThoiGianThucTe { get; set; }
+        public int? ThoiGianDukien { get; set; }
+        public int? ThoiGianThucTe { get; set; }
         public int mucDo { get; set; }
         public int iDChiTietCV { get; set; }
 
         [ForeignKey("iDCongviec")]
-        public CongViec congViec { get; set; }
-        [ForeignKey("iDChiTietCV")]
-        public ChiTietCV chiTietCV {  get; set; }
+        public virtual CongViec congViec { get; set; }
+        
 
 
         public ChiTietCV()
@@ -31,7 +31,7 @@ namespace DAO.Modules
 
         }
 
-        public ChiTietCV(int iD, int iDCongviec, string ten, int trangThai, DateTime thoiGianDukien, DateTime thoiGianThucTe, int mucDo, int iDChiTietCV, CongViec congViec, ChiTietCV chiTietCV)
+        public ChiTietCV(int iD, int iDCongviec, string ten, int trangThai, int thoiGianDukien, int thoiGianThucTe, int mucDo, int iDChiTietCV, CongViec congViec)
         {
             this.iD = iD;
             this.iDCongviec = iDCongviec;
@@ -42,7 +42,6 @@ namespace DAO.Modules
             this.mucDo = mucDo;
             this.iDChiTietCV = iDChiTietCV;
             this.congViec = congViec;
-            this.chiTietCV = chiTietCV;
         }
     }
 }

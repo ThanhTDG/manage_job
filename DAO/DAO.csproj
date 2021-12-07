@@ -52,36 +52,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietCVDAO.cs" />
-    <Compile Include="ChuDeDAO.cs" />
-    <Compile Include="CongViecDAO.cs" />
-    <Compile Include="DangKiDAO.cs" />
-    <Compile Include="DataProvider.cs" />
-    <Compile Include="Migrations\202112061442086_CreateDB.cs" />
-    <Compile Include="Migrations\202112061442086_CreateDB.designer.cs">
-      <DependentUpon>202112061442086_CreateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Infastructure\IRepository.cs" />
+    <Compile Include="Infastructure\RepositoryBase.cs" />
     <Compile Include="Model\ChiTietCV.cs" />
     <Compile Include="Model\ChiTietCVModel.cs" />
     <Compile Include="Model\ChuDe.cs" />
     <Compile Include="Model\CongViec.cs" />
     <Compile Include="Model\CongViecModel.cs" />
-    <Compile Include="Model\DieuKien.cs" />
     <Compile Include="Model\DieuKienModel.cs" />
     <Compile Include="Model\GhiChuNhanh.cs" />
     <Compile Include="Model\ManageJobContext.cs" />
     <Compile Include="Model\NguoiDung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ChuDeRepository.cs" />
+    <Compile Include="Repositories\ChiTietCVRepository.cs" />
+    <Compile Include="Repositories\CongViecRepository.cs" />
+    <Compile Include="Repositories\GhiChuNhanhRepository.cs" />
+    <Compile Include="Repositories\NguoiDungRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112061442086_CreateDB.resx">
-      <DependentUpon>202112061442086_CreateDB.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

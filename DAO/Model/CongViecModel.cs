@@ -21,6 +21,10 @@ namespace DAO.Model
             Email = email;
         }
 
+        public CongViecModel()
+        {
+        }
+
         public int iD { get; set; }
         public string ten { get; set; }
         public DateTime thoiGianBD { get; set; }

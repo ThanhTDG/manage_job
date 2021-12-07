@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAO.Modules
+namespace DAO.Model
 {
     public class CongViec
     {
@@ -15,7 +15,7 @@ namespace DAO.Modules
         public string ten { get; set; }
         public DateTime thoiGianBD { get; set; }
         public DateTime thoiGianKT { get; set; }
-        public string trangThai { get; set; }
+        public int trangThai { get; set; }
         public int tienDo { get; set; }
         public int mucDo { get; set; }
         public int IDChuDe { get; set; }
@@ -26,7 +26,7 @@ namespace DAO.Modules
         [ForeignKey("Email")]
         public NguoiDung nguoiDung { get; set; }
       
-        public CongViec(int iD, string ten, DateTime thoiGianBD, DateTime thoiGianKT, string trangThai, int tienDo, int mucDo, int iDChuDe, string email, ChuDe chuDe, NguoiDung nguoiDung)
+        public CongViec(int iD, string ten, DateTime thoiGianBD, DateTime thoiGianKT, int trangThai, int tienDo, int mucDo, int iDChuDe, string email, ChuDe chuDe, NguoiDung nguoiDung)
         {
             this.iD = iD;
             this.ten = ten;
@@ -41,5 +41,8 @@ namespace DAO.Modules
             this.nguoiDung = nguoiDung;
         }
 
+        public CongViec()
+        {
+        }
     }
 }
