@@ -19,14 +19,12 @@ namespace DAO.Model
         public int tienDo { get; set; }
         public int mucDo { get; set; }
         public int IDChuDe { get; set; }
-        public string Email { get; set; }
 
         [ForeignKey("IDChuDe")]
-        public ChuDe ChuDe { get; set; }
-        [ForeignKey("Email")]
-        public NguoiDung nguoiDung { get; set; }
+        public virtual ChuDe ChuDe { get; set; }
+
       
-        public CongViec(int iD, string ten, DateTime thoiGianBD, DateTime thoiGianKT, int trangThai, int tienDo, int mucDo, int iDChuDe, string email, ChuDe chuDe, NguoiDung nguoiDung)
+        public CongViec(int iD, string ten, DateTime thoiGianBD, DateTime thoiGianKT, int trangThai, int tienDo, int mucDo, int iDChuDe, string email, ChuDe chuDe)
         {
             this.iD = iD;
             this.ten = ten;
@@ -36,9 +34,7 @@ namespace DAO.Model
             this.tienDo = tienDo;
             this.mucDo = mucDo;
             IDChuDe = iDChuDe;
-            Email = email;
             ChuDe = chuDe;
-            this.nguoiDung = nguoiDung;
         }
 
         public CongViec()

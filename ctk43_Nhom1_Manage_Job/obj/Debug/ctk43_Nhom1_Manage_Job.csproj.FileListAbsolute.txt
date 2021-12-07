@@ -66,4 +66,3 @@ E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb
 F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemChuDe.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CopyComplete

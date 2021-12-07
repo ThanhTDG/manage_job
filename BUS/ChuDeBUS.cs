@@ -17,13 +17,11 @@ namespace BUS
         {
             return chuDeRepository.GetAll();
         }
-        public int Insert(string tenChuDe)
+        public int Insert(ChuDe chuDe)
         {
-            ChuDe temp = new ChuDe();
-            temp.ten = tenChuDe;
-            ChuDe _chude = chuDeRepository.Add(temp);
+            chuDe = chuDeRepository.Add(chuDe);
             chuDeRepository.Commit();
-            return _chude.iD;
+            return chuDe.iD;
         }
         public void Update(ChuDe ChuDe)
         {

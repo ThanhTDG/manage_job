@@ -35,25 +35,24 @@ namespace ctk43_Nhom1_Manage_Job
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "khoa@gmail.com", tenND = "Mine C à mà thôi" });
 
             ChuDeBUS chuDeBUS = new ChuDeBUS();
-            chuDeBUS.Insert( "Mặc định" );//1
-            chuDeBUS.Insert( "Gia đình" );//2
-            chuDeBUS.Insert( "Thể thao" );//3
-            chuDeBUS.Insert( "E sờ pọt" );//4
-            chuDeBUS.Insert( "Học tập" );//5
-            chuDeBUS.Insert( "Cho nhiều lần 1" );//6
-            chuDeBUS.Insert( "Cho nhiều lần 2" );//7
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", ten = "mặc định" });//1
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "ly@gmail.com", ten = "Thể thao" });//2
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", ten = "E sờ pọt" });//3
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", ten = "Học tập" });//4
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", ten = "Cho nhiều lần 1" });//5
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", ten = "Cho nhiều lần 2" });//6
 
             CongViecBUS congViecBUS = new CongViecBUS();
-            congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Mặc định 1", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "thanh@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Mặc định 2", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "thanh@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Cưới ai", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "ly@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Ăn cưới ", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "long@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Ăn cưới ai ", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "khoa@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Thể thao", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "long@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "làm tí mine", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "khoa@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Liên quân xíu", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "khoa@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "code đê", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "khoa@gmail.com" });
-             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Học lập trình nà", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0, Email = "long@gmail.com" });
+            congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Mặc định 1", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0  });
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Mặc định 2", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0});
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Cưới ai", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0});
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Ăn cưới ", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0});
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Ăn cưới ai ", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0});
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Thể thao", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0});
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "làm tí mine", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0});
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Liên quân xíu", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0 });
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "code đê", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0, mucDo = 0 });
+             congViecBUS.Insert( new DAO.Model.CongViec() { ten = "Học lập trình nà", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.MaxValue, trangThai = 0, tienDo = 0 });
 
             // chi tiet cong viec
             ChiTietCVBUS chiTietCVBUS = new ChiTietCVBUS();

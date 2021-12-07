@@ -28,7 +28,6 @@ namespace ctk43_Nhom1_Manage_Job
             else
             {
                 ChuDeBUS chuDeBUS = new ChuDeBUS();
-                chuDeBUS.Insert(name);
             }
         }
     }
