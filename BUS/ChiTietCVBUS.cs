@@ -33,6 +33,10 @@ namespace BUS
             ChiTietCVRepository.Delete(ChiTietCV);
             ChiTietCVRepository.Commit();
         }
-     
+
+        public IEnumerable<ChiTietCV> GetChiTietByCongViec(CongViec cv)
+        {
+            return ChiTietCVRepository.GetMulti(x => x.iDCongviec == cv.iD);
+        }
     }
 }

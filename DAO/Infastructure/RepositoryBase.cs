@@ -60,6 +60,11 @@ namespace DAO.Infastructure
             return dbSet.Find(id);
         }
 
+        public virtual T GetSingleById(string email)
+        {
+            return dbSet.Find(email);
+        }
+
         public virtual IEnumerable<T> GetMany(Expression<Func<T, bool>> where, string includes)
         {
             return dbSet.Where(where).ToList();

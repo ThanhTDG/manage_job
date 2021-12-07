@@ -1,6 +1,9 @@
 ﻿using DAO.Model;
 using DAO.Repositories;
 using System.Collections.Generic;
+using System.Windows.Forms;
+using System;
+
 
 namespace BUS
 {
@@ -33,6 +36,36 @@ namespace BUS
             congViecRepository.Delete(congViec);
             congViecRepository.Commit();
         }
-       
+
+        public void GetCongViec(ref TreeView treeView, IEnumerable<CongViec> dsCongViec)
+        {
+            ChiTietCVBUS chiTietCVBus = new ChiTietCVBUS();
+            var str = "";
+            treeView.Nodes.Clear();
+            foreach (var temp in dsCongViec)
+            {
+                str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);          
+                var node = treeView.Nodes.Add(str);
+                node.Tag = temp;
+
+                foreach (var ctcv in chiTietCVBus.GetChiTietByCongViec(temp))
+                {
+                    str = string.Format("{0}", ctcv.ten);
+                    var childNode = node.Nodes.Add(str);
+                    childNode.Tag = ctcv;
+                } 
+            }
+            treeView.ExpandAll();
+        }
+
+        public IEnumerable<CongViec> GetCongViecByChuDe(ChuDe chuDe)
+        {
+            return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD);
+        }
+
+        public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
+        {
+            return congViecRepository.GetCongViecByNguoiDung(nd.email);
+        }
     }
 }

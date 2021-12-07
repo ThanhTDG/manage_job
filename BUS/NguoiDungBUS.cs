@@ -36,6 +36,11 @@ namespace BUS
             nguoiDungRepository.Delete(nguoiDung);
             nguoiDungRepository.Commit();
         }
+
+        public NguoiDung GetNguoiDungByEmail(string email)
+        {
+            return nguoiDungRepository.GetSingleById(email);
+        }
     }
 }
 

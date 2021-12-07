@@ -2,6 +2,7 @@
 using DAO.Repositories;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace BUS
 {
@@ -34,13 +35,28 @@ namespace BUS
             chuDeRepository.Delete(ChuDe);
             chuDeRepository.Commit();
         }
-        public void GetChuDe(ref TreeView treeView)
+        public void GetChuDe(ref TreeView treeView, NguoiDung nd)
         {
-            foreach (var temp in GetAll())
+            ChuDe chuDe = new ChuDe()
             {
-                var node = treeView.Nodes.Add(temp.ten);
+                iD = 0,
+                ten = "Tất cả",
+                Email = nd.email
+            };
+
+            var node = treeView.Nodes.Add(chuDe.ten);
+            node.Tag = chuDe;
+
+            foreach (var temp in GetChuDeByNguoiDung(nd))
+            {
+                node = treeView.Nodes.Add(temp.ten);
                 node.Tag = temp;
             }
+        }
+
+        public IEnumerable<ChuDe> GetChuDeByNguoiDung(NguoiDung nd)
+        {
+            return chuDeRepository.GetMulti(x => x.Email == nd.email);
         }
     }
 }

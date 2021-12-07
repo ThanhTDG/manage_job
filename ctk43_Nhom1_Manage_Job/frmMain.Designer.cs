@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-           // base.Dispose(disposing);
+            base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Công việc hôm nay");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Công việc ngày mai");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Công việc quan trọng");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Kế hoạch");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Ghi chú");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Thiết lập");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Công việc hôm nay");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Công việc ngày mai");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Công việc quan trọng");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Kế hoạch");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Ghi chú");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Thiết lập");
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,29 +48,22 @@
             this.kíchHoạtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tvwDSCongViec = new System.Windows.Forms.TreeView();
             this.ctxtMenuListView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đánhDấuHoànThànhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.xemChiTiếtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.btnThemCongViec = new System.Windows.Forms.Button();
+            this.TreeView1 = new System.Windows.Forms.TreeView();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tvwChuDe = new System.Windows.Forms.TreeView();
             this.ctxMenuTreeView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sửaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddChuDe = new System.Windows.Forms.Button();
+            this.btnThemChuDe = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -183,7 +176,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.tvwDSCongViec);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
             this.groupBox1.Location = new System.Drawing.Point(230, 99);
@@ -193,63 +186,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách công việc";
             // 
-            // listView1
+            // tvwDSCongViec
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.listView1.ContextMenuStrip = this.ctxtMenuListView;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 21);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(778, 452);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên Công Việc";
-            this.columnHeader1.Width = 186;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Thời gian BD";
-            this.columnHeader2.Width = 101;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Thời gian KT";
-            this.columnHeader3.Width = 95;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Trạng Thái";
-            this.columnHeader4.Width = 86;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Tiến Độ (%)";
-            this.columnHeader5.Width = 88;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Mức Độ";
-            this.columnHeader6.Width = 78;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Chủ đề";
-            this.columnHeader7.Width = 143;
+            this.tvwDSCongViec.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwDSCongViec.Location = new System.Drawing.Point(7, 25);
+            this.tvwDSCongViec.Name = "tvwDSCongViec";
+            this.tvwDSCongViec.Size = new System.Drawing.Size(771, 445);
+            this.tvwDSCongViec.TabIndex = 0;
             // 
             // ctxtMenuListView
             // 
@@ -291,47 +234,48 @@
             this.xemChiTiếtToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.xemChiTiếtToolStripMenuItem.Text = "Xem chi tiết";
             // 
-            // button1
+            // btnThemCongViec
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Location = new System.Drawing.Point(12, 309);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 27);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Thêm Công Việc Mới";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThemCongViec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnThemCongViec.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemCongViec.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnThemCongViec.Location = new System.Drawing.Point(12, 309);
+            this.btnThemCongViec.Name = "btnThemCongViec";
+            this.btnThemCongViec.Size = new System.Drawing.Size(212, 27);
+            this.btnThemCongViec.TabIndex = 5;
+            this.btnThemCongViec.Text = "Thêm Công Việc Mới";
+            this.btnThemCongViec.UseVisualStyleBackColor = true;
+            this.btnThemCongViec.Click += new System.EventHandler(this.btnThemCongViec_Click);
             // 
-            // treeView1
+            // TreeView1
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TreeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.treeView1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView1.ForeColor = System.Drawing.Color.Green;
-            this.treeView1.Location = new System.Drawing.Point(12, 120);
-            this.treeView1.Name = "treeView1";
-            treeNode7.Name = "Node6";
-            treeNode7.Text = "Công việc hôm nay";
-            treeNode8.Name = "Node7";
-            treeNode8.Text = "Công việc ngày mai";
-            treeNode9.Name = "Node1";
-            treeNode9.Text = "Công việc quan trọng";
-            treeNode10.Name = "Node2";
-            treeNode10.Text = "Kế hoạch";
-            treeNode11.Name = "Node0";
-            treeNode11.Text = "Ghi chú";
-            treeNode12.Name = "Node5";
-            treeNode12.Text = "Thiết lập";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12});
-            this.treeView1.Size = new System.Drawing.Size(212, 183);
-            this.treeView1.TabIndex = 6;
+            this.TreeView1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TreeView1.ForeColor = System.Drawing.Color.Green;
+            this.TreeView1.Location = new System.Drawing.Point(12, 120);
+            this.TreeView1.Name = "TreeView1";
+            treeNode13.Name = "Node6";
+            treeNode13.Text = "Công việc hôm nay";
+            treeNode14.Name = "Node7";
+            treeNode14.Text = "Công việc ngày mai";
+            treeNode15.Name = "Node1";
+            treeNode15.Text = "Công việc quan trọng";
+            treeNode16.Name = "Node2";
+            treeNode16.Text = "Kế hoạch";
+            treeNode17.Name = "Node0";
+            treeNode17.Text = "Ghi chú";
+            treeNode18.Name = "Node5";
+            treeNode18.Text = "Thiết lập";
+            this.TreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18});
+            this.TreeView1.Size = new System.Drawing.Size(212, 183);
+            this.TreeView1.TabIndex = 6;
             // 
             // label2
             // 
@@ -365,6 +309,7 @@
             this.tvwChuDe.Name = "tvwChuDe";
             this.tvwChuDe.Size = new System.Drawing.Size(205, 173);
             this.tvwChuDe.TabIndex = 13;
+            this.tvwChuDe.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwChuDe_AfterSelect);
             // 
             // ctxMenuTreeView
             // 
@@ -386,18 +331,18 @@
             this.xóaToolStripMenuItem2.Size = new System.Drawing.Size(94, 22);
             this.xóaToolStripMenuItem2.Text = "Xóa";
             // 
-            // btnAddChuDe
+            // btnThemChuDe
             // 
-            this.btnAddChuDe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddChuDe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddChuDe.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnAddChuDe.Location = new System.Drawing.Point(12, 545);
-            this.btnAddChuDe.Name = "btnAddChuDe";
-            this.btnAddChuDe.Size = new System.Drawing.Size(212, 27);
-            this.btnAddChuDe.TabIndex = 13;
-            this.btnAddChuDe.Text = "Thêm Chủ Đề";
-            this.btnAddChuDe.UseVisualStyleBackColor = true;
-            this.btnAddChuDe.Click += new System.EventHandler(this.btnAddChuDe_Click);
+            this.btnThemChuDe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnThemChuDe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemChuDe.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnThemChuDe.Location = new System.Drawing.Point(12, 545);
+            this.btnThemChuDe.Name = "btnThemChuDe";
+            this.btnThemChuDe.Size = new System.Drawing.Size(212, 27);
+            this.btnThemChuDe.TabIndex = 13;
+            this.btnThemChuDe.Text = "Thêm Chủ Đề";
+            this.btnThemChuDe.UseVisualStyleBackColor = true;
+            this.btnThemChuDe.Click += new System.EventHandler(this.btnThemChuDe_Click);
             // 
             // textBox1
             // 
@@ -444,13 +389,13 @@
             this.ClientSize = new System.Drawing.Size(1026, 587);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnAddChuDe);
+            this.Controls.Add(this.btnThemChuDe);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.TreeView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnThemCongViec);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
@@ -476,23 +421,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Button btnThemCongViec;
+        private System.Windows.Forms.TreeView TreeView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ContextMenuStrip ctxtMenuListView;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TreeView tvwChuDe;
-        private System.Windows.Forms.Button btnAddChuDe;
+        private System.Windows.Forms.Button btnThemChuDe;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hỗTrợToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đánhDấuHoànThànhToolStripMenuItem;
@@ -513,5 +450,6 @@
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TreeView tvwDSCongViec;
     }
 }

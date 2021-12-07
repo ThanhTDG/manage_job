@@ -8,27 +8,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO.Model;
 
 namespace ctk43_Nhom1_Manage_Job
 {
     public partial class frmThemChuDe : Form
     {
+        private NguoiDung _nd;
         public frmThemChuDe()
         {
             InitializeComponent();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            string name = txtTenChuDe.Text;
-            if(name == "")
+        {            
+            if(string.IsNullOrWhiteSpace(txtTenChuDe.Text))
             {
-
+               ThongBao.CanhBao("Tên chủ đề");
             }
             else
-            {
+            {                   
                 ChuDeBUS chuDeBUS = new ChuDeBUS();
+                chuDeBUS.Insert(new ChuDe
+                {
+                    ten = txtTenChuDe.Text,                  
+                    Email = _nd.email 
+                });
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmThemChuDe_Load(object sender, EventArgs e)
+        {
+            _nd = Extension.LoadSetting(Properties.Settings.Default.email);
         }
     }
 }

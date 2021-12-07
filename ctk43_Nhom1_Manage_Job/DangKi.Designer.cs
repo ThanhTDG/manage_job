@@ -29,35 +29,15 @@ namespace ctk43_Nhom1_Manage_Job
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 22);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "User";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(151, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 26);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.Text = "NameUser";
             // 
             // textBox1
             // 
@@ -69,28 +49,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.textBox1.TabIndex = 12;
             this.textBox1.Tag = "";
             this.textBox1.Text = "example@Email.com";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.maskedTextBox1.Location = new System.Drawing.Point(151, 110);
-            this.maskedTextBox1.Mask = "xxxx-xxxx-xxxx";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(211, 29);
-            this.maskedTextBox1.TabIndex = 8;
-            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button6.Location = new System.Drawing.Point(34, 161);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(98, 27);
-            this.button6.TabIndex = 143;
-            this.button6.Text = "Tổng cộng";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -112,6 +70,48 @@ namespace ctk43_Nhom1_Manage_Job
             this.label1.Size = new System.Drawing.Size(58, 22);
             this.label1.TabIndex = 145;
             this.label1.Text = "Email";
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button6.Location = new System.Drawing.Point(34, 161);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(98, 27);
+            this.button6.TabIndex = 143;
+            this.button6.Text = "Tổng cộng";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox2.Location = new System.Drawing.Point(151, 23);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(211, 26);
+            this.textBox2.TabIndex = 13;
+            this.textBox2.Text = "NameUser";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 22);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "User";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBox1.Location = new System.Drawing.Point(151, 110);
+            this.maskedTextBox1.Mask = "xxxx-xxxx-xxxx";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(211, 29);
+            this.maskedTextBox1.TabIndex = 8;
+            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label2
             // 
@@ -145,14 +145,13 @@ namespace ctk43_Nhom1_Manage_Job
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label2;
     }
 }

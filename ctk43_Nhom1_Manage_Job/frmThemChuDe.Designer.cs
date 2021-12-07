@@ -74,6 +74,7 @@
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmThemChuDe
             // 
@@ -88,6 +89,7 @@
             this.Name = "frmThemChuDe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tùy chọn chủ đề";
+            this.Load += new System.EventHandler(this.frmThemChuDe_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

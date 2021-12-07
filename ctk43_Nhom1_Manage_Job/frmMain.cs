@@ -15,19 +15,16 @@ namespace ctk43_Nhom1_Manage_Job
 {
     public partial class frmMain : Form
     {
+        NguoiDung nd;
         public frmMain()
         {
             InitializeComponent();
-            var context = new ManageJobContext();
-            getAll(context);
-            //manageJobContext.ghiChuNhanh.OrderBy(x => x.tieuDe).ToList();
-           // manageJobContext.chuDe.OrderBy(x => x.iD).ToList();
-            //dataGridView1.DataSource = DataProvider.Instance.ExcuteQuery("select * from Food");
+            //var context = new ManageJobContext();
+            //getAll(context);
         }
-
+        #region Ham Bo Tro
         private void getAll(ManageJobContext context)
-        {
-            
+        {            
             NguoiDungBUS nguoiDungBUS = new NguoiDungBUS();
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "thanh@gmail.com", tenND = "Thanh nè" });
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "ly@gmail.com", tenND = "Lý lanh lợi" });
@@ -66,18 +63,41 @@ namespace ctk43_Nhom1_Manage_Job
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Thách đâu thoaiii", iDCongviec = 8, trangThai = 0, mucDo = 1 });
         }
 
-        
-
-        private void btnAddChuDe_Click(object sender, EventArgs e)
+        private void LoadData()
         {
-            var newDialog = new frmThemChuDe();
-            newDialog.ShowDialog();
-        }
+            nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
 
+            ChuDeBUS chuDeBUS = new ChuDeBUS();
+            chuDeBUS.GetChuDe(ref tvwChuDe, nd);
+        }
+        #endregion
+
+        #region Su Kien
         private void frmMain_Load(object sender, EventArgs e)
         {
-            ChuDeBUS chuDeBUS = new ChuDeBUS();
-            chuDeBUS.GetChuDe(ref tvwChuDe);
+            LoadData();          
+        }        
+
+        private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            CongViecBUS congViecBus = new CongViecBUS();          
+            if((e.Node.Tag as ChuDe).iD == 0)
+                congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByNguoiDung(nd));
+            else
+                congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByChuDe(e.Node.Tag as ChuDe));
         }
+
+        private void btnThemCongViec_Click(object sender, EventArgs e)
+        {
+            frmThemCVCT frm = new frmThemCVCT();
+            frm.ShowDialog();
+        }
+
+        private void btnThemChuDe_Click(object sender, EventArgs e)
+        {
+            frmThemChuDe frm = new frmThemChuDe();
+            frm.ShowDialog();
+        }
+        #endregion
     }
 }
