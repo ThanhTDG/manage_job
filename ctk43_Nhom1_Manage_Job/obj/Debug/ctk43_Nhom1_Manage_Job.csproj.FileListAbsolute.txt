@@ -1,98 +1,40 @@
-<<<<<<< HEAD
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
-=======
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.pdb
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ChiTiet.resources
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ThongKe.resources
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.Cache
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csprojResolveAssemblyReference.cache
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
-E:\CTK43_HocKy1_Nam03\Git Public\CNPM\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemCVCT.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.pdb
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.AssemblyReference.cache
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.SuggestedBindingRedirects.cache
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ChiTiet.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemCVCT.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ThongKe.resources
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.cache
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CoreCompileInputs.cache
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\BUS.dll
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.dll
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.dll
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.dll
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\BUS.pdb
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.pdb
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.dll.config
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.xml
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.xml
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.dll
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.xml
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.pdb
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\BUS.dll
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.dll
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.dll
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.dll
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\BUS.pdb
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.pdb
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.dll.config
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.xml
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.xml
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.AssemblyReference.cache
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.SuggestedBindingRedirects.cache
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ThongKe.resources
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.cache
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CoreCompileInputs.cache
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CopyComplete
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb
-F:\CSDL\QuanLy\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemChuDe.resources
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.pdb
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\BUS.dll
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.dll
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.dll
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.dll
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.dll
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\BUS.pdb
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.pdb
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.xml
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.xml
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.xml
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csprojResolveAssemblyReference.cache
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ChiTiet.resources
+E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmChiTietCV.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
-E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemCVCT.resources
+E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmCongViec.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemChuDe.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ThongKe.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.Cache
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmCongViec.resources
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemChuDe.resources
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmChiTietCV.resources
->>>>>>> ecb59dc936b03dbc2dd44b5c1f10d1ef6cd02a2d
+E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.AssemblyReference.cache
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.SuggestedBindingRedirects.cache
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmChiTietCV.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmCongViec.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemChuDe.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ThongKe.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.cache
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CoreCompileInputs.cache
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe.config
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.exe
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\ctk43_Nhom1_Manage_Job.pdb
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\BUS.dll
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.dll
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\BUS.pdb
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.pdb
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\DAO.dll.config
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.xml
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.xml
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.dll
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.dll
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.dll
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.xml
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CopyComplete
