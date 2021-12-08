@@ -71,11 +71,11 @@
     <Compile Include="DangKi.Designer.cs">
       <DependentUpon>DangKi.cs</DependentUpon>
     </Compile>
-    <Compile Include="DK_CS_CongViec.cs">
+    <Compile Include="frmCongViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DK_CS_CongViec.Designer.cs">
-      <DependentUpon>DK_CS_CongViec.cs</DependentUpon>
+    <Compile Include="frmCongViec.Designer.cs">
+      <DependentUpon>frmCongViec.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="DangKi.resx">
       <DependentUpon>DangKi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DK_CS_CongViec.resx">
-      <DependentUpon>DK_CS_CongViec.cs</DependentUpon>
+    <EmbeddedResource Include="frmCongViec.resx">
+      <DependentUpon>frmCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

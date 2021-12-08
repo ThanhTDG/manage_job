@@ -22,20 +22,7 @@ namespace DAO.Model
 
         [ForeignKey("IDChuDe")]
         public virtual ChuDe ChuDe { get; set; }
-
-      
-        public CongViec(int iD, string ten, DateTime thoiGianBD, DateTime thoiGianKT, int trangThai, int tienDo, int mucDo, int iDChuDe, string email, ChuDe chuDe)
-        {
-            this.iD = iD;
-            this.ten = ten;
-            this.thoiGianBD = thoiGianBD;
-            this.thoiGianKT = thoiGianKT;
-            this.trangThai = trangThai;
-            this.tienDo = tienDo;
-            this.mucDo = mucDo;
-            IDChuDe = iDChuDe;
-            ChuDe = chuDe;
-        }
+        public string MoTa { get; set; }
 
         public CongViec()
         {

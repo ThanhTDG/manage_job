@@ -24,24 +24,9 @@ namespace DAO.Model
         [ForeignKey("iDCongviec")]
         public virtual CongViec congViec { get; set; }
         
-
-
         public ChiTietCV()
         {
 
-        }
-
-        public ChiTietCV(int iD, int iDCongviec, string ten, int trangThai, int thoiGianDukien, int thoiGianThucTe, int mucDo, int iDChiTietCV, CongViec congViec)
-        {
-            this.iD = iD;
-            this.iDCongviec = iDCongviec;
-            this.ten = ten;
-            this.trangThai = trangThai;
-            ThoiGianDukien = thoiGianDukien;
-            ThoiGianThucTe = thoiGianThucTe;
-            this.mucDo = mucDo;
-            this.iDChiTietCV = iDChiTietCV;
-            this.congViec = congViec;
         }
     }
 }

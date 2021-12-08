@@ -55,7 +55,6 @@ E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.SuggestedBindingRedirects.cache
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ChiTiet.resources
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemCVCT.resources
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
@@ -91,3 +90,5 @@ E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Deb
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.Properties.Resources.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ThongKe.resources
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.Cache
+E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmCongViec.resources
+E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemChuDe.resources

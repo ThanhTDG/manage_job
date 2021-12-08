@@ -31,3 +31,6 @@ E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\DAO\bin\Debug\EntityFramework.
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\DAO\obj\Debug\DAO.dll
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\DAO\obj\Debug\DAO.pdb
+E:\third_Year\LapTrinhCSDL\BTN\manage_job\DAO\obj\Debug\DAO.Migrations.InitialCreate.resources
+E:\third_Year\LapTrinhCSDL\BTN\manage_job\DAO\obj\Debug\DAO.Migrations.initDB.resources
+E:\third_Year\LapTrinhCSDL\BTN\manage_job\DAO\obj\Debug\DAO.csproj.GenerateResource.cache

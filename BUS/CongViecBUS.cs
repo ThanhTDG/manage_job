@@ -3,7 +3,7 @@ using DAO.Repositories;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
-
+using System.Linq;
 
 namespace BUS
 {
@@ -25,10 +25,16 @@ namespace BUS
             congViecRepository.Commit();
             return _CongViec.iD;
         }
+
         public void Update(CongViec congViec)
         {
             congViecRepository.Update(congViec);
             congViecRepository.Commit();
+        }
+
+        public CongViec GetCongViecByID(int id)
+        {
+            return congViecRepository.GetSingleById(id);
         }
 
         public void Delete(CongViec congViec)
@@ -53,7 +59,7 @@ namespace BUS
                     str = string.Format("{0}", ctcv.ten);
                     var childNode = node.Nodes.Add(str);
                     childNode.Tag = ctcv;
-                } 
+                }
             }
             treeView.ExpandAll();
         }
