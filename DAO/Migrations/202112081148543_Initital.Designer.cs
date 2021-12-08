@@ -7,13 +7,13 @@ namespace DAO.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class Initital : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initital));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112070205486_InitialCreate"; }
+            get { return "202112081148543_Initital"; }
         }
         
         string IMigrationMetadata.Source

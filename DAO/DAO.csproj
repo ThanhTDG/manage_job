@@ -54,13 +54,13 @@
   <ItemGroup>
     <Compile Include="Infastructure\IRepository.cs" />
     <Compile Include="Infastructure\RepositoryBase.cs" />
-    <Compile Include="Migrations\202112070205486_InitialCreate.cs" />
-    <Compile Include="Migrations\202112070205486_InitialCreate.Designer.cs">
-      <DependentUpon>202112070205486_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202112070642286_InitialCreate.cs" />
+    <Compile Include="Migrations\202112070642286_InitialCreate.designer.cs">
+      <DependentUpon>202112070642286_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112071416028_initDB.cs" />
-    <Compile Include="Migrations\202112071416028_initDB.Designer.cs">
-      <DependentUpon>202112071416028_initDB.cs</DependentUpon>
+    <Compile Include="Migrations\202112081148543_Initital.cs" />
+    <Compile Include="Migrations\202112081148543_Initital.designer.cs">
+      <DependentUpon>202112081148543_Initital.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ChiTietCV.cs" />
@@ -84,11 +84,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112070205486_InitialCreate.resx">
-      <DependentUpon>202112070205486_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112070642286_InitialCreate.resx">
+      <DependentUpon>202112070642286_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112071416028_initDB.resx">
-      <DependentUpon>202112071416028_initDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112081148543_Initital.resx">
+      <DependentUpon>202112081148543_Initital.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

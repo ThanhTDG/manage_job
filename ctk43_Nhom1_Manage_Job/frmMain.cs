@@ -65,14 +65,11 @@ namespace ctk43_Nhom1_Manage_Job
         private void LoadData()
         {
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
-<<<<<<< HEAD
             LoadChuDe();          
         }
 
         private void LoadChuDe()
         {
-=======
->>>>>>> ecb59dc936b03dbc2dd44b5c1f10d1ef6cd02a2d
             ChuDeBUS chuDeBUS = new ChuDeBUS();
             chuDeBUS.GetChuDe(ref tvwChuDe, nd);
         }

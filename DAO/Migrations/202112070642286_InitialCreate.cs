@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initDB : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -19,7 +19,6 @@
                         ThoiGianThucTe = c.Int(),
                         mucDo = c.Int(nullable: false),
                         iDChiTietCV = c.Int(nullable: false),
-                        MoTa = c.String(),
                     })
                 .PrimaryKey(t => t.iD)
                 .ForeignKey("dbo.CongViecs", t => t.iDCongviec, cascadeDelete: true)
@@ -37,7 +36,6 @@
                         tienDo = c.Int(nullable: false),
                         mucDo = c.Int(nullable: false),
                         IDChuDe = c.Int(nullable: false),
-                        MoTa = c.String(),
                     })
                 .PrimaryKey(t => t.iD)
                 .ForeignKey("dbo.ChuDes", t => t.IDChuDe, cascadeDelete: true)

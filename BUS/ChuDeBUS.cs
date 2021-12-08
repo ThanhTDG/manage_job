@@ -38,10 +38,6 @@ namespace BUS
         public void GetChuDe(ref TreeView treeView, NguoiDung nd)
         {
             treeView.Nodes.Clear();
-<<<<<<< HEAD
-
-=======
->>>>>>> ecb59dc936b03dbc2dd44b5c1f10d1ef6cd02a2d
             ChuDe chuDe = new ChuDe()
             {
                 iD = 0,
@@ -67,11 +63,6 @@ namespace BUS
         public IEnumerable<ChuDe> GetChuDeByNguoiDung(NguoiDung nd)
         {
             return chuDeRepository.GetMulti(x => x.Email == nd.email);
-        }
-
-        public ChuDe GetChuDeByID(int id)
-        {
-            return chuDeRepository.GetSingleById(id);
         }
     }
 }
