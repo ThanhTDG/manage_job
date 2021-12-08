@@ -59,12 +59,5 @@ namespace DAO.Model
         }
 
         public GhiChuNhanh() { }
-        public GhiChuNhanh(int id, string tieuDe, string noiDung, DateTime thoiGianDB)
-        {
-            this.id = id;
-            this.tieuDe = tieuDe;
-            this.noiDung = noiDung;
-            this.thoiGianBD = thoiGianDB;
-        }
     }
 }

@@ -3,7 +3,7 @@ using DAO.Repositories;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
-
+using System.Linq;
 
 namespace BUS
 {
@@ -31,13 +31,18 @@ namespace BUS
             congViecRepository.Commit();
         }
 
+        public CongViec GetCongViecByID(int id)
+        {
+            return congViecRepository.GetSingleById(id);
+        }
+
         public void Delete(CongViec congViec)
         {
             congViecRepository.Delete(congViec);
             congViecRepository.Commit();
         }
 
-        public void GetCongViec(ref TreeView treeView, IEnumerable<CongViec> dsCongViec)
+        public void GetCongViec(ref TreeView treeView, List<CongViec> dsCongViec)
         {
             ChiTietCVBUS chiTietCVBus = new ChiTietCVBUS();
             var str = "";
@@ -58,9 +63,9 @@ namespace BUS
             treeView.ExpandAll();
         }
 
-        public IEnumerable<CongViec> GetCongViecByChuDe(ChuDe chuDe)
+        public List<CongViec> GetCongViecByChuDe(ChuDe chuDe)
         {
-            return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD);
+            return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD).ToList();
         }
 
         public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)

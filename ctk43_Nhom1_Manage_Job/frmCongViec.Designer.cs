@@ -1,7 +1,7 @@
 ﻿
 namespace ctk43_Nhom1_Manage_Job
 {
-    partial class frmThemCVCT
+    partial class frmCongViec
     {
         /// <summary>
         /// Required designer variable.
@@ -29,44 +29,45 @@ namespace ctk43_Nhom1_Manage_Job
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtProcess = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtRemine = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbLevel = new System.Windows.Forms.ComboBox();
+            this.cbbTopic = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richDescription = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button5
+            // btnCancel
             // 
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button5.Location = new System.Drawing.Point(269, 419);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 27);
-            this.button5.TabIndex = 101;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.Location = new System.Drawing.Point(305, 419);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 27);
+            this.btnCancel.TabIndex = 101;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // textBox6
+            // txtProcess
             // 
-            this.textBox6.Location = new System.Drawing.Point(137, 289);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(266, 20);
-            this.textBox6.TabIndex = 100;
+            this.txtProcess.Location = new System.Drawing.Point(137, 289);
+            this.txtProcess.Name = "txtProcess";
+            this.txtProcess.ReadOnly = true;
+            this.txtProcess.Size = new System.Drawing.Size(266, 20);
+            this.txtProcess.TabIndex = 100;
             // 
             // label11
             // 
@@ -78,23 +79,25 @@ namespace ctk43_Nhom1_Manage_Job
             this.label11.TabIndex = 99;
             this.label11.Text = "Tiến độ";
             // 
-            // button6
+            // btnSave
             // 
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button6.Location = new System.Drawing.Point(165, 419);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(98, 27);
-            this.button6.TabIndex = 102;
-            this.button6.Text = "Save";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnSave.Location = new System.Drawing.Point(201, 419);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(98, 27);
+            this.btnSave.TabIndex = 102;
+            this.btnSave.Text = "save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // textBox1
+            // txtRemine
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 207);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 20);
-            this.textBox1.TabIndex = 91;
+            this.txtRemine.Location = new System.Drawing.Point(137, 207);
+            this.txtRemine.Name = "txtRemine";
+            this.txtRemine.ReadOnly = true;
+            this.txtRemine.Size = new System.Drawing.Size(266, 20);
+            this.txtRemine.TabIndex = 91;
             // 
             // label7
             // 
@@ -106,22 +109,28 @@ namespace ctk43_Nhom1_Manage_Job
             this.label7.TabIndex = 90;
             this.label7.Text = "Thời gian";
             // 
-            // comboBox2
+            // cbbLevel
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(137, 247);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(266, 21);
-            this.comboBox2.TabIndex = 87;
+            this.cbbLevel.FormattingEnabled = true;
+            this.cbbLevel.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cbbLevel.Location = new System.Drawing.Point(137, 247);
+            this.cbbLevel.Name = "cbbLevel";
+            this.cbbLevel.Size = new System.Drawing.Size(266, 21);
+            this.cbbLevel.TabIndex = 87;
             // 
-            // comboBox1
+            // cbbTopic
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(266, 21);
-            this.comboBox1.TabIndex = 86;
+            this.cbbTopic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTopic.FormattingEnabled = true;
+            this.cbbTopic.Location = new System.Drawing.Point(137, 42);
+            this.cbbTopic.Name = "cbbTopic";
+            this.cbbTopic.Size = new System.Drawing.Size(266, 21);
+            this.cbbTopic.TabIndex = 86;
             // 
             // label6
             // 
@@ -133,13 +142,13 @@ namespace ctk43_Nhom1_Manage_Job
             this.label6.TabIndex = 84;
             this.label6.Text = "Mô tả";
             // 
-            // richTextBox1
+            // richDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(137, 332);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(265, 79);
-            this.richTextBox1.TabIndex = 83;
-            this.richTextBox1.Text = "";
+            this.richDescription.Location = new System.Drawing.Point(137, 332);
+            this.richDescription.Name = "richDescription";
+            this.richDescription.Size = new System.Drawing.Size(265, 79);
+            this.richDescription.TabIndex = 83;
+            this.richDescription.Text = "";
             // 
             // label5
             // 
@@ -151,23 +160,23 @@ namespace ctk43_Nhom1_Manage_Job
             this.label5.TabIndex = 82;
             this.label5.Text = "Mức độ";
             // 
-            // dateTimePicker2
+            // dtpEnd
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(137, 165);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(266, 20);
-            this.dateTimePicker2.TabIndex = 81;
+            this.dtpEnd.CustomFormat = "dd/MM/yyyy  H:mm:ss";
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEnd.Location = new System.Drawing.Point(137, 165);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(266, 20);
+            this.dtpEnd.TabIndex = 81;
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 124);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(266, 20);
-            this.dateTimePicker1.TabIndex = 80;
+            this.dtpStart.CustomFormat = "dd/MM/yyyy  H:mm:ss";
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStart.Location = new System.Drawing.Point(137, 124);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(266, 20);
+            this.dtpStart.TabIndex = 80;
             // 
             // label4
             // 
@@ -179,12 +188,12 @@ namespace ctk43_Nhom1_Manage_Job
             this.label4.TabIndex = 79;
             this.label4.Text = "Ngày bắt đầu";
             // 
-            // textBox3
+            // txtTitle
             // 
-            this.textBox3.Location = new System.Drawing.Point(137, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(266, 20);
-            this.textBox3.TabIndex = 78;
+            this.txtTitle.Location = new System.Drawing.Point(137, 84);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(266, 20);
+            this.txtTitle.TabIndex = 78;
             // 
             // label3
             // 
@@ -216,31 +225,32 @@ namespace ctk43_Nhom1_Manage_Job
             this.label1.TabIndex = 75;
             this.label1.Text = "Chủ đề";
             // 
-            // frmThemCVCT
+            // frmCongViec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 458);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.txtProcess);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtRemine);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbLevel);
+            this.Controls.Add(this.cbbTopic);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richDescription);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpEnd);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmThemCVCT";
-            this.Text = "Thêm công việc";
+            this.Name = "frmCongViec";
+            this.Text = " Công việc";
+            this.Load += new System.EventHandler(this.frmCongViec_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,21 +258,21 @@ namespace ctk43_Nhom1_Manage_Job
 
         #endregion
 
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtProcess;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtRemine;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbLevel;
+        private System.Windows.Forms.ComboBox cbbTopic;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richDescription;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

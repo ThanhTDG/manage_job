@@ -37,7 +37,6 @@ namespace DAO.Repositories
                         on s.IDChuDe equals r.iD
                         where r.Email == email
                         select s;
-
             return query;
         }
     }
