@@ -20,6 +20,7 @@ namespace DAO.Model
         public int? ThoiGianThucTe { get; set; }
         public int mucDo { get; set; }
         public int iDChiTietCV { get; set; }
+        public string moTa { get; set; }
 
         [ForeignKey("iDCongviec")]
         public virtual CongViec congViec { get; set; }

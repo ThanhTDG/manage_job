@@ -95,6 +95,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.txtRemine.Location = new System.Drawing.Point(137, 207);
             this.txtRemine.Name = "txtRemine";
+            this.txtRemine.ReadOnly = true;
             this.txtRemine.Size = new System.Drawing.Size(266, 20);
             this.txtRemine.TabIndex = 91;
             // 

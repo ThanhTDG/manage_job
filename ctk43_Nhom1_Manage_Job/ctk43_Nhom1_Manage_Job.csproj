@@ -59,11 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTiet.cs">
+    <Compile Include="frmChiTietCV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChiTiet.Designer.cs">
-      <DependentUpon>ChiTiet.cs</DependentUpon>
+    <Compile Include="frmChiTietCV.Designer.cs">
+      <DependentUpon>frmChiTietCV.cs</DependentUpon>
     </Compile>
     <Compile Include="DangKi.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
     <Compile Include="ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChiTiet.resx">
-      <DependentUpon>ChiTiet.cs</DependentUpon>
+    <EmbeddedResource Include="frmChiTietCV.resx">
+      <DependentUpon>frmChiTietCV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangKi.resx">
       <DependentUpon>DangKi.cs</DependentUpon>

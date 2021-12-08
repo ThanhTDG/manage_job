@@ -16,16 +16,10 @@ namespace ctk43_Nhom1_Manage_Job
     public partial class frmMain : Form
     {
         NguoiDung nd;
-        CongViecBUS congViecBus;
-        ChuDeBUS chuDeBUS;
 
         public frmMain()
         {
             InitializeComponent();
-            //var context = new ManageJobContext();
-            //getAll(context);
-            congViecBus = new CongViecBUS();
-            chuDeBUS = new ChuDeBUS();
         }
         #region Ham Bo Tro
         private void getAll(ManageJobContext context)
@@ -84,15 +78,20 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            CongViecBUS congViecBus = new CongViecBUS();
             if ((e.Node.Tag as ChuDe).iD == 0)
-                congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByNguoiDung(nd));
+                congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByNguoiDung(nd).ToList());
             else
+            {
                 congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByChuDe(e.Node.Tag as ChuDe));
+            }
         }
 
         private void btnThemCongViec_Click(object sender, EventArgs e)
         {
             frmCongViec frm = new frmCongViec();
+            CongViecBUS congViecBus = new CongViecBUS();
+            ChuDeBUS chuDeBUS = new ChuDeBUS();
             frm.LoadChuDe(nd);
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -108,6 +107,8 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CongViecBUS congViecBus = new CongViecBUS();
+            ChuDeBUS chuDeBUS = new ChuDeBUS();
             if (tvwDSCongViec.SelectedNode.Level == 0)
             {
                 var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
@@ -115,21 +116,30 @@ namespace ctk43_Nhom1_Manage_Job
                 frm.LoadChuDe(nd);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByChuDe(chuDeBUS.GetChuDeByID(cv.IDChuDe)));
+                    congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByChuDe(chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe)));
                 }
             }
             else if (tvwDSCongViec.SelectedNode.Level == 1)
             {
-
+                var chiTietCV = tvwDSCongViec.SelectedNode.Tag as ChiTietCV;
+                //MessageBox.Show(chiTietCV.ten);
+                //frmCongViec frm = new frmCongViec(cv);
+                //frm.LoadChuDe(nd);
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
+                //    congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByChuDe(chuDeBUS.GetChuDeByID(cv.IDChuDe)));
+                //}
             }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CongViecBUS congViecBus = new CongViecBUS();
+            ChuDeBUS chuDeBUS = new ChuDeBUS();
             if (tvwDSCongViec.SelectedNode.Level == 0)
             {
                 var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
-                if(MessageBox.Show($"Bạn có chắc xóa {cv.ten} chưa","Cảnh cáo",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show($"Bạn có chắc xóa {cv.ten} chưa", "Cảnh cáo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     congViecBus.Delete(cv);
                     congViecBus.GetCongViec(ref tvwDSCongViec, congViecBus.GetCongViecByChuDe(chuDeBUS.GetChuDeByID(cv.IDChuDe)));

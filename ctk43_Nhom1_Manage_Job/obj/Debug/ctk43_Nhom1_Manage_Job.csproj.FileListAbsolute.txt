@@ -53,7 +53,6 @@ E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\Entit
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.xml
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.AssemblyReference.cache
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.SuggestedBindingRedirects.cache
-E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.ChiTiet.resources
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmDangKy.resources
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmMain.resources
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.GiChu.resources
@@ -92,3 +91,4 @@ E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Deb
 E:\CTK43_HocKy1_Nam03\C#\QLNV Official\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.GenerateResource.Cache
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmCongViec.resources
 E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThemChuDe.resources
+E:\third_Year\LapTrinhCSDL\BTN\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmChiTietCV.resources

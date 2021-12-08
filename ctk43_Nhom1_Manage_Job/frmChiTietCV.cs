@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ctk43_Nhom1_Manage_Job
 {
-    public partial class ChiTiet : Form
+    public partial class frmChiTietCV : Form
     {
-        public ChiTiet()
+        public frmChiTietCV()
         {
             InitializeComponent();
+        }
+  
+        private void frmChiTietCV_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpStart_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

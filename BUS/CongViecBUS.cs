@@ -25,7 +25,6 @@ namespace BUS
             congViecRepository.Commit();
             return _CongViec.iD;
         }
-
         public void Update(CongViec congViec)
         {
             congViecRepository.Update(congViec);
@@ -43,7 +42,7 @@ namespace BUS
             congViecRepository.Commit();
         }
 
-        public void GetCongViec(ref TreeView treeView, IEnumerable<CongViec> dsCongViec)
+        public void GetCongViec(ref TreeView treeView, List<CongViec> dsCongViec)
         {
             ChiTietCVBUS chiTietCVBus = new ChiTietCVBUS();
             var str = "";
@@ -59,14 +58,14 @@ namespace BUS
                     str = string.Format("{0}", ctcv.ten);
                     var childNode = node.Nodes.Add(str);
                     childNode.Tag = ctcv;
-                }
+                } 
             }
             treeView.ExpandAll();
         }
 
-        public IEnumerable<CongViec> GetCongViecByChuDe(ChuDe chuDe)
+        public List<CongViec> GetCongViecByChuDe(ChuDe chuDe)
         {
-            return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD);
+            return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD).ToList();
         }
 
         public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
