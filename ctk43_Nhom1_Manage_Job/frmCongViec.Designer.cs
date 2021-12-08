@@ -63,10 +63,11 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtProcess
             // 
+            this.txtProcess.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProcess.Location = new System.Drawing.Point(137, 289);
             this.txtProcess.Name = "txtProcess";
             this.txtProcess.ReadOnly = true;
-            this.txtProcess.Size = new System.Drawing.Size(266, 20);
+            this.txtProcess.Size = new System.Drawing.Size(266, 25);
             this.txtProcess.TabIndex = 100;
             // 
             // label11
@@ -93,10 +94,11 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtRemine
             // 
+            this.txtRemine.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRemine.Location = new System.Drawing.Point(137, 207);
             this.txtRemine.Name = "txtRemine";
             this.txtRemine.ReadOnly = true;
-            this.txtRemine.Size = new System.Drawing.Size(266, 20);
+            this.txtRemine.Size = new System.Drawing.Size(266, 25);
             this.txtRemine.TabIndex = 91;
             // 
             // label7
@@ -111,6 +113,8 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // cbbLevel
             // 
+            this.cbbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLevel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLevel.FormattingEnabled = true;
             this.cbbLevel.Items.AddRange(new object[] {
             "1",
@@ -120,16 +124,17 @@ namespace ctk43_Nhom1_Manage_Job
             "5"});
             this.cbbLevel.Location = new System.Drawing.Point(137, 247);
             this.cbbLevel.Name = "cbbLevel";
-            this.cbbLevel.Size = new System.Drawing.Size(266, 21);
+            this.cbbLevel.Size = new System.Drawing.Size(266, 25);
             this.cbbLevel.TabIndex = 87;
             // 
             // cbbTopic
             // 
             this.cbbTopic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTopic.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTopic.FormattingEnabled = true;
             this.cbbTopic.Location = new System.Drawing.Point(137, 42);
             this.cbbTopic.Name = "cbbTopic";
-            this.cbbTopic.Size = new System.Drawing.Size(266, 21);
+            this.cbbTopic.Size = new System.Drawing.Size(266, 25);
             this.cbbTopic.TabIndex = 86;
             // 
             // label6
@@ -144,6 +149,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // richDescription
             // 
+            this.richDescription.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richDescription.Location = new System.Drawing.Point(137, 332);
             this.richDescription.Name = "richDescription";
             this.richDescription.Size = new System.Drawing.Size(265, 79);
@@ -163,19 +169,21 @@ namespace ctk43_Nhom1_Manage_Job
             // dtpEnd
             // 
             this.dtpEnd.CustomFormat = "dd/MM/yyyy  H:mm:ss";
+            this.dtpEnd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEnd.Location = new System.Drawing.Point(137, 165);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(266, 20);
+            this.dtpEnd.Size = new System.Drawing.Size(266, 25);
             this.dtpEnd.TabIndex = 81;
             // 
             // dtpStart
             // 
             this.dtpStart.CustomFormat = "dd/MM/yyyy  H:mm:ss";
+            this.dtpStart.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStart.Location = new System.Drawing.Point(137, 124);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(266, 20);
+            this.dtpStart.Size = new System.Drawing.Size(266, 25);
             this.dtpStart.TabIndex = 80;
             // 
             // label4
@@ -190,9 +198,10 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtTitle
             // 
+            this.txtTitle.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitle.Location = new System.Drawing.Point(137, 84);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(266, 20);
+            this.txtTitle.Size = new System.Drawing.Size(266, 25);
             this.txtTitle.TabIndex = 78;
             // 
             // label3
