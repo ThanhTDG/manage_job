@@ -66,7 +66,11 @@ namespace ctk43_Nhom1_Manage_Job
         private void LoadData()
         {
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
+            LoadChuDe();          
+        }
 
+        private void LoadChuDe()
+        {
             ChuDeBUS chuDeBUS = new ChuDeBUS();
             chuDeBUS.GetChuDe(ref tvwChuDe, nd);
         }
@@ -96,7 +100,38 @@ namespace ctk43_Nhom1_Manage_Job
         private void btnThemChuDe_Click(object sender, EventArgs e)
         {
             frmThemChuDe frm = new frmThemChuDe();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadChuDe();
+            }
+        }
+
+        private void SuaChuDeToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var chuDe = tvwChuDe.SelectedNode.Tag as ChuDe;
+            if (chuDe.iD == 0)
+                return;
+            frmThemChuDe frm = new frmThemChuDe(chuDe);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadChuDe();
+            }
+        }
+
+        private void XoaChuDeToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ChuDeBUS chuDeBus = new ChuDeBUS();
+            var node = tvwChuDe.SelectedNode.Tag as ChuDe;
+
+            if (node.iD == 0)
+                return;
+
+            ChuDe chuDeDelete = chuDeBus.GetChuDeByID(node.iD);                           
+            if (ThongBao.CauHoi("xóa chủ đề") == DialogResult.Yes)
+            {
+                chuDeBus.Delete(chuDeDelete);
+                LoadChuDe();
+            }
         }
         #endregion
     }

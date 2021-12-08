@@ -15,25 +15,47 @@ namespace ctk43_Nhom1_Manage_Job
     public partial class frmThemChuDe : Form
     {
         private NguoiDung _nd;
-        public frmThemChuDe()
+        private ChuDe _chuDe;
+        public frmThemChuDe(ChuDe chuDe = null)
         {
             InitializeComponent();
+            _chuDe = chuDe;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {            
             if(string.IsNullOrWhiteSpace(txtTenChuDe.Text))
             {
-               ThongBao.CanhBao("Tên chủ đề");
+                ThongBao.CanhBao("Tên chủ đề");
+                          
             }
             else
-            {                   
+            {
                 ChuDeBUS chuDeBUS = new ChuDeBUS();
-                chuDeBUS.Insert(new ChuDe
+                int kq;
+                if (_chuDe == null)
                 {
-                    ten = txtTenChuDe.Text,                  
-                    Email = _nd.email 
-                });
+                    kq = chuDeBUS.Insert(new ChuDe
+                    {
+                        ten = txtTenChuDe.Text,
+                        Email = _nd.email
+                    });
+                    if (kq > 0)
+                    {
+                        ThongBao.ThanhCong("Thêm chủ đề");
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                        ThongBao.ThatBai("Thêm chủ đề");
+                }     
+                else
+                {
+                    ChuDe chuDeUpdate = chuDeBUS.GetChuDeByID(_chuDe.iD);
+                    chuDeUpdate.ten = txtTenChuDe.Text;
+                    chuDeBUS.Update(chuDeUpdate);
+                    ThongBao.ThanhCong("Cập nhật chủ đề");
+                    this.DialogResult = DialogResult.OK;
+                }           
             }
         }
 
@@ -45,6 +67,13 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmThemChuDe_Load(object sender, EventArgs e)
         {
             _nd = Extension.LoadSetting(Properties.Settings.Default.email);
+            if (_chuDe != null)
+            {
+                txtTenChuDe.Text = _chuDe.ten;
+                this.Text = "Cập nhật chủ đề";
+            }
+            else
+                this.Text = "Thêm chủ đề";
         }
     }
 }

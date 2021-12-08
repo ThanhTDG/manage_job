@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Công việc hôm nay");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Công việc ngày mai");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Công việc quan trọng");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Kế hoạch");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Ghi chú");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Thiết lập");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Công việc hôm nay");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Công việc ngày mai");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Công việc quan trọng");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Kế hoạch");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Ghi chú");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Thiết lập");
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +49,7 @@
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tvwDSCongViec = new System.Windows.Forms.TreeView();
-            this.ctxtMenuListView = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ctxtMenuDSCongViec = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đánhDấuHoànThànhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,8 +61,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tvwChuDe = new System.Windows.Forms.TreeView();
             this.ctxMenuTreeView = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.sửaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SuaChuDeToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.XoaChuDeToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThemChuDe = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -70,7 +70,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.ctxtMenuListView.SuspendLayout();
+            this.ctxtMenuDSCongViec.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.ctxMenuTreeView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -188,22 +188,23 @@
             // 
             // tvwDSCongViec
             // 
+            this.tvwDSCongViec.ContextMenuStrip = this.ctxtMenuDSCongViec;
             this.tvwDSCongViec.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvwDSCongViec.Location = new System.Drawing.Point(7, 25);
             this.tvwDSCongViec.Name = "tvwDSCongViec";
             this.tvwDSCongViec.Size = new System.Drawing.Size(771, 445);
             this.tvwDSCongViec.TabIndex = 0;
             // 
-            // ctxtMenuListView
+            // ctxtMenuDSCongViec
             // 
-            this.ctxtMenuListView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctxtMenuDSCongViec.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đánhDấuHoànThànhToolStripMenuItem,
             this.sửaToolStripMenuItem,
             this.xóaToolStripMenuItem,
             this.toolStripSeparator1,
             this.xemChiTiếtToolStripMenuItem});
-            this.ctxtMenuListView.Name = "ctxtMenuListView";
-            this.ctxtMenuListView.Size = new System.Drawing.Size(190, 98);
+            this.ctxtMenuDSCongViec.Name = "ctxtMenuListView";
+            this.ctxtMenuDSCongViec.Size = new System.Drawing.Size(190, 120);
             // 
             // đánhDấuHoànThànhToolStripMenuItem
             // 
@@ -255,25 +256,25 @@
             this.TreeView1.ForeColor = System.Drawing.Color.Green;
             this.TreeView1.Location = new System.Drawing.Point(12, 120);
             this.TreeView1.Name = "TreeView1";
-            treeNode13.Name = "Node6";
-            treeNode13.Text = "Công việc hôm nay";
-            treeNode14.Name = "Node7";
-            treeNode14.Text = "Công việc ngày mai";
-            treeNode15.Name = "Node1";
-            treeNode15.Text = "Công việc quan trọng";
-            treeNode16.Name = "Node2";
-            treeNode16.Text = "Kế hoạch";
-            treeNode17.Name = "Node0";
-            treeNode17.Text = "Ghi chú";
-            treeNode18.Name = "Node5";
-            treeNode18.Text = "Thiết lập";
+            treeNode7.Name = "Node6";
+            treeNode7.Text = "Công việc hôm nay";
+            treeNode8.Name = "Node7";
+            treeNode8.Text = "Công việc ngày mai";
+            treeNode9.Name = "Node1";
+            treeNode9.Text = "Công việc quan trọng";
+            treeNode10.Name = "Node2";
+            treeNode10.Text = "Kế hoạch";
+            treeNode11.Name = "Node0";
+            treeNode11.Text = "Ghi chú";
+            treeNode12.Name = "Node5";
+            treeNode12.Text = "Thiết lập";
             this.TreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18});
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12});
             this.TreeView1.Size = new System.Drawing.Size(212, 183);
             this.TreeView1.TabIndex = 6;
             // 
@@ -305,6 +306,7 @@
             this.tvwChuDe.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tvwChuDe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvwChuDe.ForeColor = System.Drawing.Color.Green;
+            this.tvwChuDe.FullRowSelect = true;
             this.tvwChuDe.Location = new System.Drawing.Point(3, 21);
             this.tvwChuDe.Name = "tvwChuDe";
             this.tvwChuDe.Size = new System.Drawing.Size(205, 173);
@@ -314,22 +316,24 @@
             // ctxMenuTreeView
             // 
             this.ctxMenuTreeView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sửaToolStripMenuItem2,
-            this.xóaToolStripMenuItem2});
+            this.SuaChuDeToolStripMenuItem2,
+            this.XoaChuDeToolStripMenuItem2});
             this.ctxMenuTreeView.Name = "ctxMenuTreeView";
             this.ctxMenuTreeView.Size = new System.Drawing.Size(95, 48);
             // 
-            // sửaToolStripMenuItem2
+            // SuaChuDeToolStripMenuItem2
             // 
-            this.sửaToolStripMenuItem2.Name = "sửaToolStripMenuItem2";
-            this.sửaToolStripMenuItem2.Size = new System.Drawing.Size(94, 22);
-            this.sửaToolStripMenuItem2.Text = "Sửa";
+            this.SuaChuDeToolStripMenuItem2.Name = "SuaChuDeToolStripMenuItem2";
+            this.SuaChuDeToolStripMenuItem2.Size = new System.Drawing.Size(94, 22);
+            this.SuaChuDeToolStripMenuItem2.Text = "Sửa";
+            this.SuaChuDeToolStripMenuItem2.Click += new System.EventHandler(this.SuaChuDeToolStripMenuItem2_Click);
             // 
-            // xóaToolStripMenuItem2
+            // XoaChuDeToolStripMenuItem2
             // 
-            this.xóaToolStripMenuItem2.Name = "xóaToolStripMenuItem2";
-            this.xóaToolStripMenuItem2.Size = new System.Drawing.Size(94, 22);
-            this.xóaToolStripMenuItem2.Text = "Xóa";
+            this.XoaChuDeToolStripMenuItem2.Name = "XoaChuDeToolStripMenuItem2";
+            this.XoaChuDeToolStripMenuItem2.Size = new System.Drawing.Size(94, 22);
+            this.XoaChuDeToolStripMenuItem2.Text = "Xóa";
+            this.XoaChuDeToolStripMenuItem2.Click += new System.EventHandler(this.XoaChuDeToolStripMenuItem2_Click);
             // 
             // btnThemChuDe
             // 
@@ -407,7 +411,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.ctxtMenuListView.ResumeLayout(false);
+            this.ctxtMenuDSCongViec.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ctxMenuTreeView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -426,7 +430,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ContextMenuStrip ctxtMenuListView;
+        private System.Windows.Forms.ContextMenuStrip ctxtMenuDSCongViec;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TreeView tvwChuDe;
         private System.Windows.Forms.Button btnThemChuDe;
@@ -446,8 +450,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem xemChiTiếtToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip ctxMenuTreeView;
-        private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem SuaChuDeToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem XoaChuDeToolStripMenuItem2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TreeView tvwDSCongViec;

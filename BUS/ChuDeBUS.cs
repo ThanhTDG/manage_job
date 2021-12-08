@@ -26,7 +26,7 @@ namespace BUS
         }
         public void Update(ChuDe ChuDe)
         {
-           chuDeRepository.Update(ChuDe);
+            chuDeRepository.Update(ChuDe);
             chuDeRepository.Commit();
         }
 
@@ -37,6 +37,8 @@ namespace BUS
         }
         public void GetChuDe(ref TreeView treeView, NguoiDung nd)
         {
+            treeView.Nodes.Clear();
+
             ChuDe chuDe = new ChuDe()
             {
                 iD = 0,
@@ -52,6 +54,11 @@ namespace BUS
                 node = treeView.Nodes.Add(temp.ten);
                 node.Tag = temp;
             }
+        }
+
+        public ChuDe GetChuDeByID(int id)
+        {
+            return chuDeRepository.GetSingleById(id);
         }
 
         public IEnumerable<ChuDe> GetChuDeByNguoiDung(NguoiDung nd)
