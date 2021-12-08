@@ -2,3 +2,7 @@
 using System;
 using System.Reflection;
 //[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETFramework,Version=v4.6", FrameworkDisplayName = ".NET Framework 4.6")]
+<<<<<<< HEAD
+=======
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETFramework,Version=v4.8", FrameworkDisplayName = ".NET Framework 4.8")]
+>>>>>>> bad6142a668dd454e38e06269a232649e299e793
