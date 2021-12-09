@@ -1,4 +1,4 @@
-﻿using DAO.Model;
+﻿     using DAO.Model;
 using DAO.Repositories;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -26,7 +26,7 @@ namespace BUS
         }
         public void Update(ChuDe ChuDe)
         {
-           chuDeRepository.Update(ChuDe);
+            chuDeRepository.Update(ChuDe);
             chuDeRepository.Commit();
         }
 
@@ -55,14 +55,14 @@ namespace BUS
             }
         }
 
-        public IEnumerable<ChuDe> GetChuDeByNguoiDung(NguoiDung nd)
-        {
-            return chuDeRepository.GetMulti(x => x.Email == nd.email);
-        }
-
         public ChuDe GetChuDeByID(int id)
         {
             return chuDeRepository.GetSingleById(id);
+        }
+
+        public IEnumerable<ChuDe> GetChuDeByNguoiDung(NguoiDung nd)
+        {
+            return chuDeRepository.GetMulti(x => x.Email == nd.email);
         }
     }
 }

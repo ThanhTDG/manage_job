@@ -46,10 +46,10 @@
             // 
             // txtTenChuDe
             // 
-            this.txtTenChuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenChuDe.Location = new System.Drawing.Point(143, 24);
+            this.txtTenChuDe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenChuDe.Location = new System.Drawing.Point(143, 25);
             this.txtTenChuDe.Name = "txtTenChuDe";
-            this.txtTenChuDe.Size = new System.Drawing.Size(241, 20);
+            this.txtTenChuDe.Size = new System.Drawing.Size(241, 25);
             this.txtTenChuDe.TabIndex = 1;
             // 
             // btnConfirm
@@ -78,6 +78,7 @@
             // 
             // frmThemChuDe
             // 
+            this.AcceptButton = this.btnConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 110);

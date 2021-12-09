@@ -25,6 +25,7 @@ namespace ctk43_Nhom1_Manage_Job
             congViecBUS = new CongViecBUS();
             chiTietCVBUS = new ChiTietCVBUS();
             _congviec = cv;
+            cbbLevel.Items.AddRange(ThongBao.strs);
         }
 
         public void LoadChuDe(NguoiDung nd)
@@ -39,19 +40,33 @@ namespace ctk43_Nhom1_Manage_Job
             cbbTopic.SelectedValue = _congviec.IDChuDe;
             txtTitle.Text = _congviec.ten;
             TimeSpan time = _congviec.thoiGianKT - DateTime.Now;
-            txtRemine.Text = time.Days.ToString() + " ngày " + time.Hours.ToString() + " giờ " + time.Minutes.ToString() + " phút.";
+            string s = "";
+            if (time.Minutes < 0) s = "Đã quá hạng ";
+            txtRemine.Text = s + Math.Abs(time.Days).ToString() + " ngày " + Math.Abs(time.Hours).ToString() + " giờ " + Math.Abs(time.Minutes).ToString() + " phút.";
             dtpStart.Value = _congviec.thoiGianBD;
             dtpEnd.Value = _congviec.thoiGianKT;
-            cbbLevel.Text = _congviec.mucDo.ToString();
+            cbbLevel.SelectedIndex = _congviec.mucDo;
             txtProcess.Text = chiTietCVBUS.Process(_congviec).ToString();
             richDescription.Text = _congviec.MoTa;
         }
 
+        public bool CheckValid()
+        {
+            bool kq = true;
+            if (string.IsNullOrWhiteSpace(cbbTopic.Text))
+                kq = false;               
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
+                kq = false;
+            if (dtpStart.Value > dtpEnd.Value)
+                kq = false;            
+            return kq;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTitle.Text))
+            if (!CheckValid())
             {
-                MessageBox.Show("Vui long nhap tieu de");
+                ThongBao.CanhBao("Các nội dung");
                 return;
             }
             if (_congviec == null)
@@ -64,7 +79,7 @@ namespace ctk43_Nhom1_Manage_Job
                     thoiGianBD = dtpStart.Value,
                     thoiGianKT = dtpEnd.Value,
                     tienDo = 0,
-                    mucDo = Convert.ToInt32(cbbTopic.SelectedValue),
+                    mucDo = Convert.ToInt32(cbbLevel.SelectedIndex),
                     trangThai = 0,
                 };
                 congViecBUS.Insert(_congviec);
@@ -77,7 +92,7 @@ namespace ctk43_Nhom1_Manage_Job
                 _congviec.thoiGianBD = dtpStart.Value;
                 _congviec.thoiGianKT = dtpEnd.Value;
                 _congviec.tienDo = chiTietCVBUS.Process(_congviec);
-                _congviec.mucDo = Convert.ToInt32(cbbTopic.SelectedValue);
+                _congviec.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
                 _congviec.trangThai = 0;
                 congViecBUS.Update(_congviec);
             }

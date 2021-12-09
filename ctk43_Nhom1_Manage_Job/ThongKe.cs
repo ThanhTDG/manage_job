@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace ctk43_Nhom1_Manage_Job
 {
     public partial class ThongKe : Form
     {
+        
         public ThongKe()
         {
             InitializeComponent();
