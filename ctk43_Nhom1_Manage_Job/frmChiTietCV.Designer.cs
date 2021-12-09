@@ -30,21 +30,20 @@ namespace ctk43_Nhom1_Manage_Job
         private void InitializeComponent()
         {
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtProcess = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.cbbLevel = new System.Windows.Forms.ComboBox();
-            this.cbbTopic = new System.Windows.Forms.ComboBox();
+            this.cbbJob = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.richDescription = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtJobDetail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtIntentDay = new System.Windows.Forms.TextBox();
+            this.txtIntentHour = new System.Windows.Forms.TextBox();
+            this.txtIntentMinute = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,29 +51,22 @@ namespace ctk43_Nhom1_Manage_Job
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtRealMinute = new System.Windows.Forms.TextBox();
+            this.txtRealHour = new System.Windows.Forms.TextBox();
+            this.txtRealDay = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.Location = new System.Drawing.Point(302, 379);
+            this.btnCancel.Location = new System.Drawing.Point(302, 336);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 27);
             this.btnCancel.TabIndex = 119;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // txtProcess
-            // 
-            this.txtProcess.Location = new System.Drawing.Point(134, 221);
-            this.txtProcess.Name = "txtProcess";
-            this.txtProcess.ReadOnly = true;
-            this.txtProcess.Size = new System.Drawing.Size(266, 20);
-            this.txtProcess.TabIndex = 118;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label11
             // 
@@ -89,41 +81,37 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnSave.Location = new System.Drawing.Point(198, 379);
+            this.btnSave.Location = new System.Drawing.Point(198, 336);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 27);
             this.btnSave.TabIndex = 120;
-            this.btnSave.Text = "save";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbbLevel
             // 
+            this.cbbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLevel.FormattingEnabled = true;
-            this.cbbLevel.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.cbbLevel.Location = new System.Drawing.Point(134, 179);
             this.cbbLevel.Name = "cbbLevel";
             this.cbbLevel.Size = new System.Drawing.Size(266, 21);
             this.cbbLevel.TabIndex = 114;
             // 
-            // cbbTopic
+            // cbbJob
             // 
-            this.cbbTopic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTopic.FormattingEnabled = true;
-            this.cbbTopic.Location = new System.Drawing.Point(134, 30);
-            this.cbbTopic.Name = "cbbTopic";
-            this.cbbTopic.Size = new System.Drawing.Size(266, 21);
-            this.cbbTopic.TabIndex = 113;
+            this.cbbJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbJob.FormattingEnabled = true;
+            this.cbbJob.Location = new System.Drawing.Point(134, 30);
+            this.cbbJob.Name = "cbbJob";
+            this.cbbJob.Size = new System.Drawing.Size(266, 21);
+            this.cbbJob.TabIndex = 113;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 262);
+            this.label6.Location = new System.Drawing.Point(10, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 17);
             this.label6.TabIndex = 112;
@@ -131,7 +119,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // richDescription
             // 
-            this.richDescription.Location = new System.Drawing.Point(134, 264);
+            this.richDescription.Location = new System.Drawing.Point(132, 221);
             this.richDescription.Name = "richDescription";
             this.richDescription.Size = new System.Drawing.Size(265, 79);
             this.richDescription.TabIndex = 111;
@@ -157,12 +145,12 @@ namespace ctk43_Nhom1_Manage_Job
             this.label4.TabIndex = 107;
             this.label4.Text = "Thời gian dự kiến";
             // 
-            // txtTitle
+            // txtJobDetail
             // 
-            this.txtTitle.Location = new System.Drawing.Point(134, 72);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(266, 20);
-            this.txtTitle.TabIndex = 106;
+            this.txtJobDetail.Location = new System.Drawing.Point(134, 72);
+            this.txtJobDetail.Name = "txtJobDetail";
+            this.txtJobDetail.Size = new System.Drawing.Size(266, 20);
+            this.txtJobDetail.TabIndex = 106;
             // 
             // label3
             // 
@@ -184,26 +172,26 @@ namespace ctk43_Nhom1_Manage_Job
             this.label1.TabIndex = 103;
             this.label1.Text = "Công việc";
             // 
-            // textBox1
+            // txtIntentDay
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(57, 20);
-            this.textBox1.TabIndex = 121;
+            this.txtIntentDay.Location = new System.Drawing.Point(134, 110);
+            this.txtIntentDay.Name = "txtIntentDay";
+            this.txtIntentDay.Size = new System.Drawing.Size(57, 20);
+            this.txtIntentDay.TabIndex = 121;
             // 
-            // textBox2
+            // txtIntentHour
             // 
-            this.textBox2.Location = new System.Drawing.Point(243, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(32, 20);
-            this.textBox2.TabIndex = 122;
+            this.txtIntentHour.Location = new System.Drawing.Point(243, 111);
+            this.txtIntentHour.Name = "txtIntentHour";
+            this.txtIntentHour.Size = new System.Drawing.Size(32, 20);
+            this.txtIntentHour.TabIndex = 122;
             // 
-            // textBox3
+            // txtIntentMinute
             // 
-            this.textBox3.Location = new System.Drawing.Point(320, 111);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(34, 20);
-            this.textBox3.TabIndex = 123;
+            this.txtIntentMinute.Location = new System.Drawing.Point(320, 111);
+            this.txtIntentMinute.Name = "txtIntentMinute";
+            this.txtIntentMinute.Size = new System.Drawing.Size(34, 20);
+            this.txtIntentMinute.TabIndex = 123;
             // 
             // label2
             // 
@@ -275,56 +263,55 @@ namespace ctk43_Nhom1_Manage_Job
             this.label13.TabIndex = 131;
             this.label13.Text = "Ngày";
             // 
-            // textBox4
+            // txtRealMinute
             // 
-            this.textBox4.Location = new System.Drawing.Point(320, 143);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(34, 20);
-            this.textBox4.TabIndex = 130;
+            this.txtRealMinute.Location = new System.Drawing.Point(320, 143);
+            this.txtRealMinute.Name = "txtRealMinute";
+            this.txtRealMinute.Size = new System.Drawing.Size(34, 20);
+            this.txtRealMinute.TabIndex = 130;
             // 
-            // textBox5
+            // txtRealHour
             // 
-            this.textBox5.Location = new System.Drawing.Point(243, 143);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(32, 20);
-            this.textBox5.TabIndex = 129;
+            this.txtRealHour.Location = new System.Drawing.Point(243, 143);
+            this.txtRealHour.Name = "txtRealHour";
+            this.txtRealHour.Size = new System.Drawing.Size(32, 20);
+            this.txtRealHour.TabIndex = 129;
             // 
-            // textBox6
+            // txtRealDay
             // 
-            this.textBox6.Location = new System.Drawing.Point(134, 142);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(57, 20);
-            this.textBox6.TabIndex = 128;
+            this.txtRealDay.Location = new System.Drawing.Point(134, 142);
+            this.txtRealDay.Name = "txtRealDay";
+            this.txtRealDay.Size = new System.Drawing.Size(57, 20);
+            this.txtRealDay.TabIndex = 128;
             // 
             // frmChiTietCV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 430);
+            this.ClientSize = new System.Drawing.Size(423, 385);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtRealMinute);
+            this.Controls.Add(this.txtRealHour);
+            this.Controls.Add(this.txtRealDay);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtIntentMinute);
+            this.Controls.Add(this.txtIntentHour);
+            this.Controls.Add(this.txtIntentDay);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.txtProcess);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cbbLevel);
-            this.Controls.Add(this.cbbTopic);
+            this.Controls.Add(this.cbbJob);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.richDescription);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.txtJobDetail);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "frmChiTietCV";
@@ -338,21 +325,20 @@ namespace ctk43_Nhom1_Manage_Job
         #endregion
 
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtProcess;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox cbbLevel;
-        private System.Windows.Forms.ComboBox cbbTopic;
+        private System.Windows.Forms.ComboBox cbbJob;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richDescription;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtJobDetail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtIntentDay;
+        private System.Windows.Forms.TextBox txtIntentHour;
+        private System.Windows.Forms.TextBox txtIntentMinute;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -360,8 +346,8 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtRealMinute;
+        private System.Windows.Forms.TextBox txtRealHour;
+        private System.Windows.Forms.TextBox txtRealDay;
     }
 }

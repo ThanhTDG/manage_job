@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CountUp.Designer.cs">
+      <DependentUpon>CountUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietCV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,9 +137,6 @@
     <Compile Include="GiChu.Designer.cs">
       <DependentUpon>GiChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="obj\Release\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +146,9 @@
     <Compile Include="ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CountUp.resx">
+      <DependentUpon>CountUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietCV.resx">
       <DependentUpon>frmChiTietCV.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

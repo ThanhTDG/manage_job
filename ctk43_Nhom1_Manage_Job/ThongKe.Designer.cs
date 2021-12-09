@@ -276,7 +276,7 @@ namespace ctk43_Nhom1_Manage_Job
             "Quan trọng",
             "Khẩn cấp",
             "Cực kì khẩn cấp"});
-            this.checkedListBox1.Location = new System.Drawing.Point(160, 71);
+            this.checkedListBox1.Location = new System.Drawing.Point(159, 75);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox1.TabIndex = 113;
