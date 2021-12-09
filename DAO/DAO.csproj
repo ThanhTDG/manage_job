@@ -54,18 +54,6 @@
   <ItemGroup>
     <Compile Include="Infastructure\IRepository.cs" />
     <Compile Include="Infastructure\RepositoryBase.cs" />
-<<<<<<< HEAD
-=======
-    <Compile Include="Migrations\202112070642286_InitialCreate.cs" />
-    <Compile Include="Migrations\202112070642286_InitialCreate.designer.cs">
-      <DependentUpon>202112070642286_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112081148543_Initital.cs" />
-    <Compile Include="Migrations\202112081148543_Initital.designer.cs">
-      <DependentUpon>202112081148543_Initital.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
->>>>>>> bad6142a668dd454e38e06269a232649e299e793
     <Compile Include="Model\ChiTietCV.cs" />
     <Compile Include="Model\ChiTietCVModel.cs" />
     <Compile Include="Model\ChuDe.cs" />
@@ -86,17 +74,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-<<<<<<< HEAD
-=======
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112070642286_InitialCreate.resx">
-      <DependentUpon>202112070642286_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112081148543_Initital.resx">
-      <DependentUpon>202112081148543_Initital.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
->>>>>>> bad6142a668dd454e38e06269a232649e299e793
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

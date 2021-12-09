@@ -7,6 +7,5 @@ F:\CSDL\QuanLy\manage_jobkhoane\manage_job\DAO\bin\Debug\EntityFramework.xml
 F:\CSDL\QuanLy\manage_jobkhoane\manage_job\DAO\bin\Debug\EntityFramework.SqlServer.xml
 F:\CSDL\QuanLy\manage_jobkhoane\manage_job\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
 F:\CSDL\QuanLy\manage_jobkhoane\manage_job\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
-F:\CSDL\QuanLy\manage_jobkhoane\manage_job\DAO\obj\Debug\DAO.csproj.CopyComplete
 F:\CSDL\QuanLy\manage_jobkhoane\manage_job\DAO\obj\Debug\DAO.dll
 F:\CSDL\QuanLy\manage_jobkhoane\manage_job\DAO\obj\Debug\DAO.pdb

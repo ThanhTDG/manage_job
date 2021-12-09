@@ -18,7 +18,7 @@ namespace ctk43_Nhom1_Manage_Job
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+          //  base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code

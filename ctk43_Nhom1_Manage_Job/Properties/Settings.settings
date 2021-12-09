@@ -3,13 +3,52 @@
   <Profiles />
   <Settings>
     <Setting Name="email" Type="System.String" Scope="User">
-      <Value Profile="(Default)">default@gmail.com</Value>
+      <Value Profile="(Default)">thanh@gmail.com</Value>
     </Setting>
     <Setting Name="name" Type="System.String" Scope="User">
       <Value Profile="(Default)">default</Value>
     </Setting>
     <Setting Name="emailDefault" Type="System.String" Scope="User">
       <Value Profile="(Default)">default@gmail.com</Value>
+    </Setting>
+    <Setting Name="namePoject" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ứng dụng quản lý nhắc việc</Value>
+    </Setting>
+    <Setting Name="startUp" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="contact" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1911205@dlu.edu.vn - Nguyễn Hữu Đức Thanh
+1911166@dlu.edu.vn - Võ Công Lý
+1911164@dlu.edu.vn - Võ Đình Hoàng Long
+1911158@dlu.edu.vn - Nguyễn Hoàng Đăng Khoa</Value>
+    </Setting>
+    <Setting Name="Sound" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Resources\musicDefault.mp3</Value>
+    </Setting>
+    <Setting Name="VolumeUp" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Volume" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="RunWithWin" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="runHide" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="timeStart" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">180</Value>
+    </Setting>
+    <Setting Name="timeEnd" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">180</Value>
+    </Setting>
+    <Setting Name="doByTeam" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CTK43-Nhóm 1</Value>
+    </Setting>
+    <Setting Name="version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Beta-1.0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

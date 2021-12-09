@@ -33,8 +33,6 @@ F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\Enti
 F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.xml
 F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.exe
 F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.pdb
-F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.dll
-F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\EntityFramework.SqlServer.dll
-F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.dll
-F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\bin\Debug\System.xml
-F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.CopyComplete
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.frmThietLap.resources
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\Interop.WMPLib.dll
+F:\CSDL\QuanLy\manage_jobkhoane\manage_job\ctk43_Nhom1_Manage_Job\obj\Debug\ctk43_Nhom1_Manage_Job.csproj.ResolveComReference.cache

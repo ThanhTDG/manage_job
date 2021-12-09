@@ -16,15 +16,15 @@ namespace ctk43_Nhom1_Manage_Job
     public partial class frmMain : Form
     {
         NguoiDung nd;
-        CongViecBUS congViecBUS;
-        ChuDeBUS chuDeBUS;
+        CongViecBUS congViecBUS = new CongViecBUS();
+        ChuDeBUS chuDeBUS = new ChuDeBUS();
 
         public frmMain()
         {
             InitializeComponent();
         }
         #region Ham Bo Tro
-        private void getAll(ManageJobContext context)
+        private void getAll()
         {
             NguoiDungBUS nguoiDungBUS = new NguoiDungBUS();
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "thanh@gmail.com", tenND = "Thanh nè" });
@@ -66,21 +66,16 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void LoadData()
         {
+          //  getAll();
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
-<<<<<<< HEAD
-=======
             congViecBUS = new CongViecBUS();
             chuDeBUS = new ChuDeBUS();
->>>>>>> bad6142a668dd454e38e06269a232649e299e793
+
             LoadChuDe();          
         }
 
         private void LoadChuDe()
         {
-<<<<<<< HEAD
-            ChuDeBUS chuDeBUS = new ChuDeBUS();
-=======
->>>>>>> bad6142a668dd454e38e06269a232649e299e793
             chuDeBUS.GetChuDe(ref tvwChuDe, nd);
         }
         #endregion
@@ -93,7 +88,6 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            congViecBUS = new CongViecBUS();
             if ((e.Node.Tag as ChuDe).iD == 0)
                 congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByNguoiDung(nd).ToList());
             else
@@ -105,8 +99,6 @@ namespace ctk43_Nhom1_Manage_Job
         private void btnThemCongViec_Click(object sender, EventArgs e)
         {
             frmCongViec frm = new frmCongViec();
-            congViecBUS = new CongViecBUS();
-            chuDeBUS = new ChuDeBUS();
             frm.LoadChuDe(nd);
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -137,7 +129,6 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void XoaChuDeToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            chuDeBUS = new ChuDeBUS();
             var node = tvwChuDe.SelectedNode.Tag as ChuDe;
 
             if (node.iD == 0)
@@ -153,8 +144,6 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            congViecBUS = new CongViecBUS();
-            chuDeBUS = new ChuDeBUS();
             if (tvwDSCongViec.SelectedNode.Level == 0)
             {
                 var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
@@ -200,5 +189,11 @@ namespace ctk43_Nhom1_Manage_Job
 
         }
         #endregion
+
+        private void ctmSetting_Click(object sender, EventArgs e)
+        {
+            frmThietLap frmThietLap= new frmThietLap();
+            frmThietLap.ShowDialog();
+        }
     }
 }
