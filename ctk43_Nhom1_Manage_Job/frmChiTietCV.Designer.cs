@@ -265,6 +265,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtRealMinute
             // 
+            this.txtRealMinute.Enabled = false;
             this.txtRealMinute.Location = new System.Drawing.Point(320, 143);
             this.txtRealMinute.Name = "txtRealMinute";
             this.txtRealMinute.Size = new System.Drawing.Size(34, 20);
@@ -272,6 +273,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtRealHour
             // 
+            this.txtRealHour.Enabled = false;
             this.txtRealHour.Location = new System.Drawing.Point(243, 143);
             this.txtRealHour.Name = "txtRealHour";
             this.txtRealHour.Size = new System.Drawing.Size(32, 20);
@@ -279,6 +281,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtRealDay
             // 
+            this.txtRealDay.Enabled = false;
             this.txtRealDay.Location = new System.Drawing.Point(134, 142);
             this.txtRealDay.Name = "txtRealDay";
             this.txtRealDay.Size = new System.Drawing.Size(57, 20);

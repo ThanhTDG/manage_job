@@ -14,7 +14,7 @@ namespace ctk43_Nhom1_Manage_Job
 {
     public partial class frmChiTietCV : Form
     {
-        ChiTietCV _chiTietCV;
+        public ChiTietCV _chiTietCV;
         ChiTietCVBUS chiTietCVBUS;
 
         public frmChiTietCV(ChiTietCV chiTietCV = null)
@@ -23,11 +23,6 @@ namespace ctk43_Nhom1_Manage_Job
             chiTietCVBUS = new ChiTietCVBUS();
             _chiTietCV = chiTietCV;
             cbbLevel.Items.AddRange(ThongBao.strs);
-        }
-
-        private void LoadDSCongViec()
-        {
-
         }
 
         private void frmChiTietCV_Load(object sender, EventArgs e)
@@ -51,7 +46,7 @@ namespace ctk43_Nhom1_Manage_Job
             cbbJob.SelectedValue = _chiTietCV.iD;
             txtJobDetail.Text = _chiTietCV.ten;
             int[] dhm;
-            if (_chiTietCV.ThoiGianThucTe != null)
+            if (_chiTietCV.ThoiGianDukien != null)
             {
                 dhm = dayHourMinute(_chiTietCV.ThoiGianDukien.Value);
                 txtIntentDay.Text = dhm[0].ToString();
@@ -83,6 +78,19 @@ namespace ctk43_Nhom1_Manage_Job
             return minute;
         }
 
+        private void SaveJobDetail(ref ChiTietCV _chiTietCV)
+        {
+            int? intentMinute = MinuteConvert(txtIntentDay.Text, txtIntentHour.Text, txtIntentMinute.Text);
+            int? realMinute = MinuteConvert(txtRealDay.Text, txtRealHour.Text, txtRealMinute.Text);
+            _chiTietCV.iDCongviec = Convert.ToInt32(cbbJob.SelectedValue);
+            _chiTietCV.ten = txtJobDetail.Text;
+            _chiTietCV.moTa = richDescription.Text;
+            _chiTietCV.ThoiGianDukien = intentMinute;
+            _chiTietCV.ThoiGianThucTe = realMinute;
+            _chiTietCV.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
+            _chiTietCV.trangThai = 0;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtJobDetail.Text))
@@ -90,33 +98,15 @@ namespace ctk43_Nhom1_Manage_Job
                 MessageBox.Show("Vui long nhap tieu de");
                 return;
             }
-
-            int? intentMinute = MinuteConvert(txtIntentDay.Text, txtIntentHour.Text, txtIntentMinute.Text);
-            int? realMinute = MinuteConvert(txtRealDay.Text, txtRealHour.Text, txtRealMinute.Text);
-
             if (_chiTietCV == null)
             {
-                _chiTietCV = new ChiTietCV
-                {
-                    iDCongviec = Convert.ToInt32(cbbJob.SelectedValue),
-                    ten = txtJobDetail.Text,
-                    moTa = richDescription.Text,
-                    ThoiGianDukien = intentMinute,
-                    ThoiGianThucTe = realMinute,
-                    mucDo = cbbLevel.SelectedIndex,
-                    trangThai = 0,
-                };
+                _chiTietCV = new ChiTietCV();
+                SaveJobDetail(ref _chiTietCV);
                 chiTietCVBUS.Insert(_chiTietCV);
             }
             else
             {
-                _chiTietCV.iDCongviec = Convert.ToInt32(cbbJob.SelectedValue);
-                _chiTietCV.ten = txtJobDetail.Text;
-                _chiTietCV.moTa = richDescription.Text;
-                _chiTietCV.ThoiGianDukien = intentMinute;
-                _chiTietCV.ThoiGianThucTe = realMinute;
-                _chiTietCV.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
-                _chiTietCV.trangThai = 0;
+                SaveJobDetail(ref _chiTietCV);
                 chiTietCVBUS.Update(_chiTietCV);
             }
             DialogResult = DialogResult.OK;
@@ -131,7 +121,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             cbbJob.DataSource = cvs;
             cbbJob.DisplayMember = "ten";
-            cbbJob.ValueMember = "ID";
+            cbbJob.ValueMember = "íD";
         }
     }
 }

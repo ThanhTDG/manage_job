@@ -66,7 +66,11 @@ namespace ctk43_Nhom1_Manage_Job
         {
             if (!CheckValid())
             {
+<<<<<<< HEAD
                 ThongBao.CanhBao("Các nội dung");
+=======
+                MessageBox.Show("Vui long nhap tieu de");
+>>>>>>> 1fb9e440669791b5c9df12dbe0d2fed1a202a4f2
                 return;
             }
             if (_congviec == null)
@@ -86,14 +90,15 @@ namespace ctk43_Nhom1_Manage_Job
             }
             else
             {
+                int tiendo = chiTietCVBUS.Process(_congviec);
                 _congviec.IDChuDe = Convert.ToInt32(cbbTopic.SelectedValue);
                 _congviec.ten = txtTitle.Text;
                 _congviec.MoTa = richDescription.Text;
                 _congviec.thoiGianBD = dtpStart.Value;
                 _congviec.thoiGianKT = dtpEnd.Value;
-                _congviec.tienDo = chiTietCVBUS.Process(_congviec);
+                _congviec.tienDo = tiendo;
                 _congviec.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
-                _congviec.trangThai = 0;
+                _congviec.trangThai = tiendo==100?1:0;
                 congViecBUS.Update(_congviec);
             }
             DialogResult = DialogResult.OK;
