@@ -472,10 +472,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TreeView tvwDSCongViec;
         private System.Windows.Forms.ToolStripMenuItem markToolStripMenuItem;
-<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem ctmSetting;
-=======
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
->>>>>>> 092b1316c6cf6429227eb70f53a362eaf0745510
     }
 }

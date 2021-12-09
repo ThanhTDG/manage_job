@@ -16,16 +16,12 @@ namespace ctk43_Nhom1_Manage_Job
     public partial class frmMain : Form
     {
         NguoiDung nd;
-<<<<<<< HEAD
-        CongViecBUS congViecBUS = new CongViecBUS();
-        ChuDeBUS chuDeBUS = new ChuDeBUS();
-=======
-        CongViecBUS congViecBUS;
+
         //ChiTietCVBUS /*chiTietCVBUS*/;
         ChuDeBUS chuDeBUS;
+        CongViecBUS congViecBUS;
         List<CongViec> cvs;
         ChuDe chuDeHienTai = null;
->>>>>>> 092b1316c6cf6429227eb70f53a362eaf0745510
 
         public frmMain()
         {
@@ -74,17 +70,12 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void LoadData()
         {
-          //  getAll();
+        //    getAll();
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
             congViecBUS = new CongViecBUS();
             chuDeBUS = new ChuDeBUS();
-<<<<<<< HEAD
-
-            LoadChuDe();          
-=======
             cvs = new List<CongViec>();
             LoadChuDe();
->>>>>>> 092b1316c6cf6429227eb70f53a362eaf0745510
         }
 
         private void LoadChuDe()
@@ -101,15 +92,10 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
         {
-<<<<<<< HEAD
-            if ((e.Node.Tag as ChuDe).iD == 0)
-                congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByNguoiDung(nd).ToList());
-=======
             congViecBUS = new CongViecBUS();
             chuDeHienTai = e.Node.Tag as ChuDe;
             if (chuDeHienTai.iD == 0)
                 cvs = congViecBUS.GetCongViecByNguoiDung(nd).ToList();
->>>>>>> 092b1316c6cf6429227eb70f53a362eaf0745510
             else
             {
                 cvs = congViecBUS.GetCongViecByChuDe(chuDeHienTai);
@@ -231,7 +217,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void ctmSetting_Click(object sender, EventArgs e)
         {
-            frmThietLap frmThietLap= new frmThietLap();
+            frmThietLap frmThietLap = new frmThietLap();
             frmThietLap.ShowDialog();
         }
     }
