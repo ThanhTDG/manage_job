@@ -36,6 +36,12 @@ namespace BUS
             ChiTietCVRepository.Commit();
         }
 
+        public void Delete(int iD)
+        {
+            ChiTietCVRepository.Delete(iD);
+            ChiTietCVRepository.Commit();
+        }
+
         public ChiTietCV GetChiTietCongViecByID(int iD)
         {
             return ChiTietCVRepository.GetSingleById(iD);
@@ -48,9 +54,9 @@ namespace BUS
 
         public int Process(CongViec cv)
         {
-            int total = GetChiTietByCongViec(cv).ToList().Count;
-            int complete = GetChiTietByCongViec(cv).Where(x => x.trangThai == 1).Count();
-            return total == 0 ? 0 : (complete / total) * 100;
+            double total = GetChiTietByCongViec(cv).ToList().Count;
+            double complete = GetChiTietByCongViec(cv).Where(x => x.trangThai == 1).Count();
+            return total == 0 ? 0 : Convert.ToInt32(complete * 100 / total);
         }
     }
 }

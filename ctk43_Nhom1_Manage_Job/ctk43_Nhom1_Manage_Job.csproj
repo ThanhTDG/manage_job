@@ -174,9 +174,6 @@
     <EmbeddedResource Include="frmGhiChu.resx">
       <DependentUpon>frmGhiChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongBao.resx">
-      <DependentUpon>frmThongBao.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
