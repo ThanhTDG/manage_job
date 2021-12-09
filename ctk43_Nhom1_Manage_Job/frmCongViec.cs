@@ -50,23 +50,11 @@ namespace ctk43_Nhom1_Manage_Job
             richDescription.Text = _congviec.MoTa;
         }
 
-        public bool CheckValid()
-        {
-            bool kq = true;
-            if (string.IsNullOrWhiteSpace(cbbTopic.Text))
-                kq = false;               
-            if (string.IsNullOrWhiteSpace(txtTitle.Text))
-                kq = false;
-            if (dtpStart.Value > dtpEnd.Value)
-                kq = false;            
-            return kq;
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!CheckValid())
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
-                ThongBao.CanhBao("Các nội dung");
+                MessageBox.Show("Vui long nhap tieu de");
                 return;
             }
             if (_congviec == null)
@@ -86,14 +74,15 @@ namespace ctk43_Nhom1_Manage_Job
             }
             else
             {
+                int tiendo = chiTietCVBUS.Process(_congviec);
                 _congviec.IDChuDe = Convert.ToInt32(cbbTopic.SelectedValue);
                 _congviec.ten = txtTitle.Text;
                 _congviec.MoTa = richDescription.Text;
                 _congviec.thoiGianBD = dtpStart.Value;
                 _congviec.thoiGianKT = dtpEnd.Value;
-                _congviec.tienDo = chiTietCVBUS.Process(_congviec);
+                _congviec.tienDo = tiendo;
                 _congviec.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
-                _congviec.trangThai = 0;
+                _congviec.trangThai = tiendo==100?1:0;
                 congViecBUS.Update(_congviec);
             }
             DialogResult = DialogResult.OK;

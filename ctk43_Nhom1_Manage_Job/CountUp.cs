@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ctk43_Nhom1_Manage_Job
 {
-    public partial class frmGhiChu : Form
+    public partial class CountUp : Form
     {
-        public frmGhiChu()
+        public CountUp()
         {
             InitializeComponent();
+        }
+
+        private void CountUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
