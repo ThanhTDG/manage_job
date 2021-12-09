@@ -50,11 +50,23 @@ namespace ctk43_Nhom1_Manage_Job
             richDescription.Text = _congviec.MoTa;
         }
 
+        public bool CheckValid()
+        {
+            bool kq = true;
+            if (string.IsNullOrWhiteSpace(cbbTopic.Text))
+                kq = false;               
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
+                kq = false;
+            if (dtpStart.Value > dtpEnd.Value)
+                kq = false;            
+            return kq;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTitle.Text))
+            if (!CheckValid())
             {
-                MessageBox.Show("Vui long nhap tieu de");
+                ThongBao.CanhBao("Các nội dung");
                 return;
             }
             if (_congviec == null)

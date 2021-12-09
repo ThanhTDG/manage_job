@@ -133,7 +133,7 @@ namespace ctk43_Nhom1_Manage_Job
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // helpToolStripMenuItem
@@ -197,9 +197,6 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 107);
@@ -210,8 +207,6 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 48);
@@ -222,21 +217,24 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtTitle
             // 
-            this.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTitle.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitle.Location = new System.Drawing.Point(12, 72);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(386, 24);
-            this.txtTitle.TabIndex = 7;
+            this.txtTitle.Size = new System.Drawing.Size(386, 25);
+            this.txtTitle.TabIndex = 0;
             // 
             // rtxtContent
             // 
-            this.rtxtContent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rtxtContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtContent.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtContent.Location = new System.Drawing.Point(12, 134);
             this.rtxtContent.Name = "rtxtContent";
             this.rtxtContent.Size = new System.Drawing.Size(386, 181);
-            this.rtxtContent.TabIndex = 6;
+            this.rtxtContent.TabIndex = 1;
             this.rtxtContent.Text = "";
             // 
             // menuStrip1
@@ -342,7 +340,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnSave.Location = new System.Drawing.Point(12, 334);
@@ -351,10 +349,11 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnSave.TabIndex = 103;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCanel
             // 
-            this.btnCanel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnCanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCanel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCanel.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnCanel.Location = new System.Drawing.Point(300, 334);
@@ -363,6 +362,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnCanel.TabIndex = 104;
             this.btnCanel.Text = "Cancel";
             this.btnCanel.UseVisualStyleBackColor = true;
+            this.btnCanel.Click += new System.EventHandler(this.btnCanel_Click);
             // 
             // frmGhiChu
             // 
@@ -381,6 +381,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.Name = "frmGhiChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ghi Chú Nhanh";
+            this.Load += new System.EventHandler(this.frmGhiChu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -31,10 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.GhiChutoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kíchHoạtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctmSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.grbDSCongViec = new System.Windows.Forms.GroupBox();
             this.tvwDSCongViec = new System.Windows.Forms.TreeView();
             this.ctxMenuDSCongViec = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -56,21 +58,26 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbChucNang = new System.Windows.Forms.ListBox();
-            this.GhiChutoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rtxtNoiDungGhiChu = new System.Windows.Forms.RichTextBox();
             this.lvDSGhiChu = new System.Windows.Forms.ListView();
-            this.ctmSetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctxMenuDSGhiChu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.XoaGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ReloadDSGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grbDSCongViec.SuspendLayout();
             this.ctxMenuDSCongViec.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.ctxMenuTreeView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.ctxMenuDSGhiChu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -99,6 +106,13 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // GhiChutoolStripMenuItem
+            // 
+            this.GhiChutoolStripMenuItem.Name = "GhiChutoolStripMenuItem";
+            this.GhiChutoolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.GhiChutoolStripMenuItem.Text = "Thêm ghi chú";
+            this.GhiChutoolStripMenuItem.Click += new System.EventHandler(this.GhiChutoolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -118,14 +132,21 @@
             // kíchHoạtToolStripMenuItem
             // 
             this.kíchHoạtToolStripMenuItem.Name = "kíchHoạtToolStripMenuItem";
-            this.kíchHoạtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kíchHoạtToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.kíchHoạtToolStripMenuItem.Text = "Kích hoạt";
             // 
             // thôngTinToolStripMenuItem
             // 
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.thôngTinToolStripMenuItem.Text = "Thông tin";
+            // 
+            // ctmSetting
+            // 
+            this.ctmSetting.Name = "ctmSetting";
+            this.ctmSetting.Size = new System.Drawing.Size(64, 20);
+            this.ctmSetting.Text = "Thiết lập";
+            this.ctmSetting.Click += new System.EventHandler(this.ctmSetting_Click);
             // 
             // grbDSCongViec
             // 
@@ -152,6 +173,7 @@
             this.tvwDSCongViec.Name = "tvwDSCongViec";
             this.tvwDSCongViec.Size = new System.Drawing.Size(761, 401);
             this.tvwDSCongViec.TabIndex = 0;
+            this.tvwDSCongViec.DoubleClick += new System.EventHandler(this.tvwDSCongViec_DoubleClick);
             // 
             // ctxMenuDSCongViec
             // 
@@ -337,26 +359,20 @@
             this.lbChucNang.TabIndex = 16;
             this.lbChucNang.SelectedIndexChanged += new System.EventHandler(this.lbChucNang_SelectedIndexChanged);
             // 
-            // GhiChutoolStripMenuItem
+            // tabControl
             // 
-            this.GhiChutoolStripMenuItem.Name = "GhiChutoolStripMenuItem";
-            this.GhiChutoolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.GhiChutoolStripMenuItem.Text = "Thêm ghi chú";
-            this.GhiChutoolStripMenuItem.Click += new System.EventHandler(this.GhiChutoolStripMenuItem_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(233, 114);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(781, 461);
-            this.tabControl1.TabIndex = 17;
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Location = new System.Drawing.Point(233, 114);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(781, 461);
+            this.tabControl.TabIndex = 17;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -371,6 +387,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.rtxtNoiDungGhiChu);
             this.tabPage2.Controls.Add(this.lvDSGhiChu);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
@@ -380,28 +398,80 @@
             this.tabPage2.Text = "Ghi chú";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(6, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(169, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Danh sách ghi chú nhanh";
+            // 
+            // rtxtNoiDungGhiChu
+            // 
+            this.rtxtNoiDungGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtxtNoiDungGhiChu.Location = new System.Drawing.Point(323, 32);
+            this.rtxtNoiDungGhiChu.Name = "rtxtNoiDungGhiChu";
+            this.rtxtNoiDungGhiChu.ReadOnly = true;
+            this.rtxtNoiDungGhiChu.Size = new System.Drawing.Size(443, 396);
+            this.rtxtNoiDungGhiChu.TabIndex = 1;
+            this.rtxtNoiDungGhiChu.Text = "";
+            // 
             // lvDSGhiChu
             // 
-            this.lvDSGhiChu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDSGhiChu.Location = new System.Drawing.Point(3, 3);
+            this.lvDSGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lvDSGhiChu.ContextMenuStrip = this.ctxMenuDSGhiChu;
+            this.lvDSGhiChu.FullRowSelect = true;
+            this.lvDSGhiChu.GridLines = true;
+            this.lvDSGhiChu.Location = new System.Drawing.Point(3, 32);
             this.lvDSGhiChu.Name = "lvDSGhiChu";
-            this.lvDSGhiChu.Size = new System.Drawing.Size(767, 425);
+            this.lvDSGhiChu.Size = new System.Drawing.Size(314, 396);
             this.lvDSGhiChu.TabIndex = 0;
             this.lvDSGhiChu.UseCompatibleStateImageBehavior = false;
-
-            // ctmSetting
+            this.lvDSGhiChu.View = System.Windows.Forms.View.List;
+            this.lvDSGhiChu.SelectedIndexChanged += new System.EventHandler(this.lvDSGhiChu_SelectedIndexChanged);
+            this.lvDSGhiChu.DoubleClick += new System.EventHandler(this.lvDSGhiChu_DoubleClick);
             // 
-            this.ctmSetting.Name = "ctmSetting";
-            this.ctmSetting.Size = new System.Drawing.Size(64, 20);
-            this.ctmSetting.Text = "Thiết lập";
-            this.ctmSetting.Click += new System.EventHandler(this.ctmSetting_Click);
+            // ctxMenuDSGhiChu
+            // 
+            this.ctxMenuDSGhiChu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxMenuDSGhiChu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.XoaGhiChuToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.ReloadDSGhiChuToolStripMenuItem});
+            this.ctxMenuDSGhiChu.Name = "ctxMenuDSGhiChu";
+            this.ctxMenuDSGhiChu.Size = new System.Drawing.Size(153, 76);
+            // 
+            // XoaGhiChuToolStripMenuItem
+            // 
+            this.XoaGhiChuToolStripMenuItem.Name = "XoaGhiChuToolStripMenuItem";
+            this.XoaGhiChuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.XoaGhiChuToolStripMenuItem.Text = "Xóa";
+            this.XoaGhiChuToolStripMenuItem.Click += new System.EventHandler(this.XoaGhiChuToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // ReloadDSGhiChuToolStripMenuItem
+            // 
+            this.ReloadDSGhiChuToolStripMenuItem.Name = "ReloadDSGhiChuToolStripMenuItem";
+            this.ReloadDSGhiChuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ReloadDSGhiChuToolStripMenuItem.Text = "Tải lại";
+            this.ReloadDSGhiChuToolStripMenuItem.Click += new System.EventHandler(this.ReloadDSGhiChuToolStripMenuItem_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 587);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.lbChucNang);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.txtTimKiemTenCV);
@@ -425,9 +495,11 @@
             this.groupBox2.ResumeLayout(false);
             this.ctxMenuTreeView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.ctxMenuDSGhiChu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,11 +534,17 @@
         private System.Windows.Forms.ToolStripMenuItem markToolStripMenuItem;
         private System.Windows.Forms.ListBox lbChucNang;
         private System.Windows.Forms.ToolStripMenuItem GhiChutoolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListView lvDSGhiChu;
         private System.Windows.Forms.ToolStripMenuItem ctmSetting;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox rtxtNoiDungGhiChu;
+        private System.Windows.Forms.ContextMenuStrip ctxMenuDSGhiChu;
+        private System.Windows.Forms.ToolStripMenuItem XoaGhiChuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem ReloadDSGhiChuToolStripMenuItem;
     }
 }
