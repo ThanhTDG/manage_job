@@ -1,0 +1,12 @@
+F:\CSDL\QuanLy\Long\manage_job\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+F:\CSDL\QuanLy\Long\manage_job\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+F:\CSDL\QuanLy\Long\manage_job\BUS\bin\Debug\BUS.dll
+F:\CSDL\QuanLy\Long\manage_job\BUS\bin\Debug\BUS.pdb
+F:\CSDL\QuanLy\Long\manage_job\BUS\bin\Debug\DAO.dll
+F:\CSDL\QuanLy\Long\manage_job\BUS\bin\Debug\EntityFramework.dll
+F:\CSDL\QuanLy\Long\manage_job\BUS\bin\Debug\DAO.pdb
+F:\CSDL\QuanLy\Long\manage_job\BUS\bin\Debug\DAO.dll.config
+F:\CSDL\QuanLy\Long\manage_job\BUS\bin\Debug\EntityFramework.xml
+F:\CSDL\QuanLy\Long\manage_job\BUS\obj\Debug\BUS.csproj.CopyComplete
+F:\CSDL\QuanLy\Long\manage_job\BUS\obj\Debug\BUS.dll
+F:\CSDL\QuanLy\Long\manage_job\BUS\obj\Debug\BUS.pdb

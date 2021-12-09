@@ -1,5 +1,4 @@
 ﻿using BUS;
-using DAO;
 using DAO.Model;
 using System;
 using System.Collections.Generic;
@@ -22,6 +21,7 @@ namespace ctk43_Nhom1_Manage_Job
         List<CongViec> cvs;
         ChuDe chuDeHienTai = null;
         int TabHienTai = 0;
+
 
         public frmMain()
         {
@@ -116,6 +116,7 @@ namespace ctk43_Nhom1_Manage_Job
             SetUPSearchInputText();
             lbChucNang.LostFocus += XoaChonChucNang;
             LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
+
         }
 
         private void XoaChonChucNang(object sender, EventArgs e)
@@ -139,6 +140,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             if (string.IsNullOrWhiteSpace(txtTimKiemTenCV.Text))
                 txtTimKiemTenCV.Text = ThongBao.PlaceHolderText;            
+
         }
 
         private void RemovePlaceHolder(object sender, EventArgs e)
@@ -163,6 +165,8 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadData();
+            frmThongBao frm = new frmThongBao();
+            frm.ShowDialog();
         }
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
@@ -170,6 +174,7 @@ namespace ctk43_Nhom1_Manage_Job
             congViecBUS = new CongViecBUS();
             chuDeHienTai = e.Node.Tag as ChuDe;
             grbDSCongViec.Text = "Danh sách công việc theo " + chuDeHienTai.ten;
+
             if (chuDeHienTai.iD == 0)
                 cvs = congViecBUS.GetCongViecByNguoiDung(nd).ToList();
             else
@@ -303,6 +308,7 @@ namespace ctk43_Nhom1_Manage_Job
                 IEnumerable<GhiChuNhanh> kq = ghiChuNhanhBUS.GetGhiChuNhanhByTen(txtTimKiemTenCV.Text, nd);
                 LoadGhiChuNhanh(kq.ToList());
             }
+
         }
 
         private void lbChucNang_SelectedIndexChanged(object sender, EventArgs e)
@@ -330,6 +336,7 @@ namespace ctk43_Nhom1_Manage_Job
                 LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
                 rtxtNoiDungGhiChu.Text = "";
             }
+
         }
 
         private void ctmSetting_Click(object sender, EventArgs e)
@@ -337,7 +344,15 @@ namespace ctk43_Nhom1_Manage_Job
             frmThietLap frmThietLap = new frmThietLap();
             frmThietLap.ShowDialog();
         }
-
+        private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
+        {
+            if (tvwDSCongViec.SelectedNode.Level == 0)
+            {
+                var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
+                frmDSChiTiet frm = new frmDSChiTiet(cv);
+                frm.ShowDialog();
+            }
+        }
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
@@ -393,15 +408,7 @@ namespace ctk43_Nhom1_Manage_Job
             }
         }
 
-        private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
-        {
-            if (tvwDSCongViec.SelectedNode.Level == 0)
-            {
-                var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
-                frmDSChiTiet frm = new frmDSChiTiet(cv);
-                frm.ShowDialog();
-            }
-        }
+  
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -412,5 +419,19 @@ namespace ctk43_Nhom1_Manage_Job
         {
             LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
         }
+        private void tsmiThongKe_Click(object sender, EventArgs e)
+        {
+            frmThongKe frm = new frmThongKe();
+            frm.ShowDialog();
+        }
+
+        private void btnThongBao_Click(object sender, EventArgs e)
+        {
+            frmThongBao frm = new frmThongBao();
+            frm.Show();
+        }
     }
 }
+		
+
+

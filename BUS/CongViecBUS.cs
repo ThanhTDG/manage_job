@@ -7,6 +7,7 @@ using System.Linq;
 using System.Drawing;
 using System.Data.SqlClient;
 
+
 namespace BUS
 {
     public class CongViecBUS
@@ -59,8 +60,8 @@ namespace BUS
                 str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
 
                 var node = treeView.Nodes.Add(str);
-                node.ForeColor = Color.FromArgb(255 - temp.mucDo * 51, 50, 0 + temp.mucDo * 51);
-
+                node.ForeColor = Color.FromArgb(255 - temp.mucDo * 51, 50, 0 + temp.mucDo*51);
+                node.NodeFont = new Font("Times New Roman", 13, FontStyle.Regular); 
                 node.Tag = temp;
 
                 foreach (var ctcv in chiTietCVBus.GetChiTietByCongViec(temp).OrderBy(x => x.mucDo))
@@ -139,6 +140,7 @@ namespace BUS
       */
             return congViecRepository.GetCongViecByLoc(nd, TinhTrang.Instance._trangthai, TinhTrang.Instance._mucdo, TinhTrang.Instance._time);
     }
+
         public IEnumerable<CongViec> GetCongViecByTenCV(string keyword, ChuDe chuDe, NguoiDung nd)
         {
             IEnumerable<CongViec> query;
@@ -174,6 +176,7 @@ namespace BUS
             else
                 cv = GetCongViecByChuDe(chuDe);
             return cv.Where(x => (x.mucDo <= 2 && x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT.Date));
+
         }
     }
 }

@@ -30,11 +30,13 @@ namespace ctk43_Nhom1_Manage_Job
             Properties.Settings.Default.timeEnd = Properties.DefaulSetting.Default.timeEnd;
             Properties.Settings.Default.runHide = Properties.DefaulSetting.Default.runHide;
             Properties.Settings.Default.RunWithWin = Properties.Settings.Default.RunWithWin;
-            nudVolume.Value = Properties.Settings.Default.Volume;
+            Properties.Settings.Default.Volume = Properties.Settings.Default.Volume;
         }
         public void LoadInfor()
         {
+            Binding bindings = new Binding("Value", nudVolume, "Value",true,DataSourceUpdateMode.Never);
             nudVolume.Value = Properties.Settings.Default.Volume;
+            prbVolum.DataBindings.Add(bindings);
             txtByTeam.Text = Properties.Settings.Default.doByTeam;
             txtSound.Text = Properties.Settings.Default.Sound;
             txtContact.Text = Properties.Settings.Default.contact;
@@ -70,6 +72,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             bindings = new Binding("Value", nudVolume, "Value", false, DataSourceUpdateMode.OnValidation);
             prbVolum.DataBindings.Add(bindings);
+            defaltInfor();
             LoadInfor();
         }
 
@@ -88,7 +91,7 @@ namespace ctk43_Nhom1_Manage_Job
             controlToProfile();
             Properties.Settings.Default.Save();
             ThongBao.ThanhCong("lưu thiêt lập thành công");
-         
+
             this.Close();
         }
 
@@ -119,5 +122,6 @@ namespace ctk43_Nhom1_Manage_Job
             if (choofdlog.ShowDialog() == DialogResult.OK)
                 txtSound.Text = choofdlog.FileName;
         }
+
     }
 }

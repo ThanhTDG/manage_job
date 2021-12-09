@@ -15,7 +15,7 @@ namespace ctk43_Nhom1_Manage_Job
     public partial class frmGhiChu : Form
     {
         NguoiDung _nd = Extension.LoadSetting(Properties.Settings.Default.email);
-        private int _ghiChuId;        
+        private int _ghiChuId;
 
         public frmGhiChu(int ghiChuid = 0)
         {
@@ -38,7 +38,7 @@ namespace ctk43_Nhom1_Manage_Job
 
             GhiChuNhanhBUS ghiChuNhanhBUS = new GhiChuNhanhBUS();
             if (_ghiChuId == 0)
-            {                
+            {
                 GhiChuNhanh ghiChu = new GhiChuNhanh()
                 {
                     Email = _nd.email,
@@ -49,8 +49,8 @@ namespace ctk43_Nhom1_Manage_Job
 
                 int kq = ghiChuNhanhBUS.Insert(ghiChu);
                 if (kq > 0)
-                    ThongBao.ThanhCong("Thêm ghi chú nhanh");                
-            }        
+                    ThongBao.ThanhCong("Thêm ghi chú nhanh");
+            }
             else
             {
                 GhiChuNhanh gc = ghiChuNhanhBUS.GetGhiChuByID(_ghiChuId);
@@ -64,7 +64,7 @@ namespace ctk43_Nhom1_Manage_Job
         }
 
         private void frmGhiChu_Load(object sender, EventArgs e)
-        {            
+        {
             if (_ghiChuId != 0)
             {
                 GhiChuNhanhBUS ghiChuNhanhBUS = new GhiChuNhanhBUS();
