@@ -39,5 +39,15 @@ namespace DAO.Repositories
                         select s;
             return query;
         }
+
+        public IEnumerable<CongViec> GetCongViecByDayRound(DateTime BatDau, DateTime KetThuc, string email)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                        on s.IDChuDe equals r.iD
+                        where r.Email == email && BatDau < s.thoiGianBD && s.thoiGianKT < KetThuc 
+                        select s;
+            return query;
+        }
     }
 }

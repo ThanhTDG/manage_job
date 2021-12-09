@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ctk43_Nhom1_Manage_Job
 {
-    public partial class GiChu : Form
+    public partial class frmGhiChu : Form
     {
-        public GiChu()
+        public frmGhiChu()
         {
             InitializeComponent();
         }

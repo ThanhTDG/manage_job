@@ -9,6 +9,8 @@ namespace BUS
 {
     public static class ThongBao
     {
+        public static string PlaceHolderText = "Nhập tên công việc muốn tìm!";       
+
         public static void CanhBao(string message)
         {
             MessageBox.Show(message + " không được để trống!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -28,6 +30,5 @@ namespace BUS
         {
             return MessageBox.Show("Bạn có chắc chắn muốn " + message, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
-
     }
 }

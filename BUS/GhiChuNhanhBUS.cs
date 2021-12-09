@@ -32,6 +32,6 @@ namespace BUS
         {
             ghiChuNhanhRepository.Delete(ghiChuNhanh);
             ghiChuNhanhRepository.Commit();
-        }
+        }      
     }
 }

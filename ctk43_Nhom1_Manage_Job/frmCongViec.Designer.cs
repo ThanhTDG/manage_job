@@ -88,7 +88,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 27);
             this.btnSave.TabIndex = 102;
-            this.btnSave.Text = "save";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -236,6 +236,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // frmCongViec
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 458);

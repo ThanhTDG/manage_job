@@ -25,7 +25,7 @@ namespace ctk43_Nhom1_Manage_Job.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("default@gmail.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("long@gmail.com")]
         public string email {
             get {
                 return ((string)(this["email"]));
