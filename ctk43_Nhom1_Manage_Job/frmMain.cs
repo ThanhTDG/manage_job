@@ -16,14 +16,9 @@ namespace ctk43_Nhom1_Manage_Job
     public partial class frmMain : Form
     {
         NguoiDung nd;
-
-        //ChiTietCVBUS /*chiTietCVBUS*/;
         ChuDeBUS chuDeBUS;
-<<<<<<< HEAD
-=======
         CongViecBUS congViecBUS;
         List<CongViec> cvs;
->>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
         ChuDe chuDeHienTai = null;
 
         public frmMain()
@@ -77,7 +72,7 @@ namespace ctk43_Nhom1_Manage_Job
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
             congViecBUS = new CongViecBUS();
             chuDeBUS = new ChuDeBUS();
-<<<<<<< HEAD
+            cvs = new List<CongViec>();
             LoadChuDe();
             SetUPSearchInputText();
             lbChucNang.LostFocus += XoaChonChucNang;
@@ -86,10 +81,6 @@ namespace ctk43_Nhom1_Manage_Job
         private void XoaChonChucNang(object sender, EventArgs e)
         {
             lbChucNang.SelectedIndex = -1;
-=======
-            cvs = new List<CongViec>();
-            LoadChuDe();
->>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
         }
 
         private void LoadChuDe()
@@ -127,14 +118,6 @@ namespace ctk43_Nhom1_Manage_Job
         {
             congViecBUS = new CongViecBUS();
             chuDeHienTai = e.Node.Tag as ChuDe;
-<<<<<<< HEAD
-            grbDSCongViec.Text = "Danh sách công việc theo " + chuDeHienTai.ten;
-
-            if (chuDeHienTai.iD == 0)              
-                congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByNguoiDung(nd).ToList());               
-            else
-                congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
-=======
             if (chuDeHienTai.iD == 0)
                 cvs = congViecBUS.GetCongViecByNguoiDung(nd).ToList();
             else
@@ -142,7 +125,6 @@ namespace ctk43_Nhom1_Manage_Job
                 cvs = congViecBUS.GetCongViecByChuDe(chuDeHienTai);
             }
             congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
->>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
         }
 
         private void btnThemCongViec_Click(object sender, EventArgs e)
@@ -184,13 +166,8 @@ namespace ctk43_Nhom1_Manage_Job
             if (node.iD == 0)
                 return;
 
-<<<<<<< HEAD
             ChuDe chuDeDelete = chuDeBUS.GetChuDeByID(node.iD);                           
             if (ThongBao.CauHoi("xóa, mọi công việc liên quan đến chủ đề đều bị xóa!") == DialogResult.Yes)
-=======
-            ChuDe chuDeDelete = chuDeBUS.GetChuDeByID(node.iD);
-            if (ThongBao.CauHoi("xóa chủ đề") == DialogResult.Yes)
->>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
             {
                 chuDeBUS.Delete(chuDeDelete);
                 LoadChuDe();
@@ -262,7 +239,6 @@ namespace ctk43_Nhom1_Manage_Job
         }
         #endregion
 
-<<<<<<< HEAD
         private void txtTimKiemTenCV_TextChanged(object sender, EventArgs e)
         {            
             IEnumerable<CongViec> kq = congViecBUS.GetCongViecByTenCV(txtTimKiemTenCV.Text, chuDeHienTai, nd);
@@ -290,12 +266,12 @@ namespace ctk43_Nhom1_Manage_Job
         {
             frmGhiChu frm = new frmGhiChu();
             frm.Show();
-=======
+        }
+
         private void ctmSetting_Click(object sender, EventArgs e)
         {
             frmThietLap frmThietLap = new frmThietLap();
             frmThietLap.ShowDialog();
->>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
         }
     }
 }

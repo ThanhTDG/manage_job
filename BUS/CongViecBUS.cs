@@ -41,11 +41,7 @@ namespace BUS
 
         public void Delete(CongViec congViec)
         {
-<<<<<<< HEAD
-            congViecRepository = new CongViecRepository();
-=======
             CongViecRepository congViecRepository = new CongViecRepository();
->>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
             congViec = congViecRepository.GetSingleById(congViec.iD);
             congViecRepository.Delete(congViec);
             congViecRepository.Commit();

@@ -141,14 +141,11 @@
     <Compile Include="obj\Release\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Properties\DefaulSetting.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DefaulSetting.settings</DependentUpon>
     </Compile>
->>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
     <Compile Include="Settings.cs" />
     <Compile Include="ThongKe.cs">
       <SubType>Form</SubType>
@@ -174,16 +171,8 @@
     <EmbeddedResource Include="frmThemChuDe.resx">
       <DependentUpon>frmThemChuDe.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="frmGhiChu.resx">
       <DependentUpon>frmGhiChu.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="frmThietLap.resx">
-      <DependentUpon>frmThietLap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GiChu.resx">
-      <DependentUpon>GiChu.cs</DependentUpon>
->>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -249,16 +238,6 @@
     <Content Include="Resources\musicDefault.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BUS\BUS.csproj">
-      <Project>{401645b4-3c08-43fa-ba5e-f2988f73970a}</Project>
-      <Name>BUS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{ab08c1b8-ac45-4784-a7c1-9399d0add327}</Project>
-      <Name>DAO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\" />
   </ItemGroup>
@@ -287,6 +266,16 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{401645b4-3c08-43fa-ba5e-f2988f73970a}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{ab08c1b8-ac45-4784-a7c1-9399d0add327}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
