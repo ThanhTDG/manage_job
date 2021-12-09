@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Công việc hôm nay");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Công việc ngày mai");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Công việc quan trọng");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Kế hoạch");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Ghi chú");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Thiết lập");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Công việc hôm nay");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Công việc ngày mai");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Công việc quan trọng");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Kế hoạch");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Ghi chú");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Thiết lập");
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +50,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tvwDSCongViec = new System.Windows.Forms.TreeView();
             this.ctxMenuDSCongViec = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -189,9 +190,12 @@
             // 
             // tvwDSCongViec
             // 
+            this.tvwDSCongViec.CheckBoxes = true;
             this.tvwDSCongViec.ContextMenuStrip = this.ctxMenuDSCongViec;
             this.tvwDSCongViec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvwDSCongViec.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwDSCongViec.Indent = 19;
+            this.tvwDSCongViec.ItemHeight = 30;
             this.tvwDSCongViec.Location = new System.Drawing.Point(3, 21);
             this.tvwDSCongViec.Name = "tvwDSCongViec";
             this.tvwDSCongViec.Size = new System.Drawing.Size(778, 444);
@@ -200,12 +204,20 @@
             // ctxMenuDSCongViec
             // 
             this.ctxMenuDSCongViec.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
             this.modifyToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.toolStripSeparator1,
             this.markToolStripMenuItem});
             this.ctxMenuDSCongViec.Name = "ctxtMenuListView";
-            this.ctxMenuDSCongViec.Size = new System.Drawing.Size(190, 76);
+            this.ctxMenuDSCongViec.Size = new System.Drawing.Size(190, 98);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.addToolStripMenuItem.Text = "Tạo";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // modifyToolStripMenuItem
             // 
@@ -254,25 +266,25 @@
             this.TreeView1.ForeColor = System.Drawing.Color.Green;
             this.TreeView1.Location = new System.Drawing.Point(12, 120);
             this.TreeView1.Name = "TreeView1";
-            treeNode1.Name = "Node6";
-            treeNode1.Text = "Công việc hôm nay";
-            treeNode2.Name = "Node7";
-            treeNode2.Text = "Công việc ngày mai";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Công việc quan trọng";
-            treeNode4.Name = "Node2";
-            treeNode4.Text = "Kế hoạch";
-            treeNode5.Name = "Node0";
-            treeNode5.Text = "Ghi chú";
-            treeNode6.Name = "Node5";
-            treeNode6.Text = "Thiết lập";
+            treeNode19.Name = "Node6";
+            treeNode19.Text = "Công việc hôm nay";
+            treeNode20.Name = "Node7";
+            treeNode20.Text = "Công việc ngày mai";
+            treeNode21.Name = "Node1";
+            treeNode21.Text = "Công việc quan trọng";
+            treeNode22.Name = "Node2";
+            treeNode22.Text = "Kế hoạch";
+            treeNode23.Name = "Node0";
+            treeNode23.Text = "Ghi chú";
+            treeNode24.Name = "Node5";
+            treeNode24.Text = "Thiết lập";
             this.TreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6});
+            treeNode19,
+            treeNode20,
+            treeNode21,
+            treeNode22,
+            treeNode23,
+            treeNode24});
             this.TreeView1.Size = new System.Drawing.Size(212, 183);
             this.TreeView1.TabIndex = 6;
             // 
@@ -460,6 +472,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TreeView tvwDSCongViec;
         private System.Windows.Forms.ToolStripMenuItem markToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem ctmSetting;
+=======
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+>>>>>>> 092b1316c6cf6429227eb70f53a362eaf0745510
     }
 }
