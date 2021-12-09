@@ -116,12 +116,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.cbbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLevel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLevel.FormattingEnabled = true;
-            this.cbbLevel.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.cbbLevel.Location = new System.Drawing.Point(137, 247);
             this.cbbLevel.Name = "cbbLevel";
             this.cbbLevel.Size = new System.Drawing.Size(266, 25);

@@ -61,8 +61,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll</HintPath>
+      <HintPath>bin\Debug\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -77,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CountUp.Designer.cs">
+      <DependentUpon>CountUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietCV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,12 +138,17 @@
     <Compile Include="frmGhiChu.Designer.cs">
       <DependentUpon>frmGhiChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="obj\Release\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Properties\DefaulSetting.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>DefaulSetting.settings</DependentUpon>
+    </Compile>
+>>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
     <Compile Include="Settings.cs" />
     <Compile Include="ThongKe.cs">
       <SubType>Form</SubType>
@@ -144,6 +156,9 @@
     <Compile Include="ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CountUp.resx">
+      <DependentUpon>CountUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietCV.resx">
       <DependentUpon>frmChiTietCV.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,8 +174,16 @@
     <EmbeddedResource Include="frmThemChuDe.resx">
       <DependentUpon>frmThemChuDe.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmGhiChu.resx">
       <DependentUpon>frmGhiChu.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="frmThietLap.resx">
+      <DependentUpon>frmThietLap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiChu.resx">
+      <DependentUpon>GiChu.cs</DependentUpon>
+>>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,6 +207,10 @@
     <None Include="bin\Debug\ctk43_Nhom1_Manage_Job.vshost.exe.config" />
     <None Include="bin\Debug\ctk43_Nhom1_Manage_Job.vshost.exe.manifest" />
     <None Include="packages.config" />
+    <None Include="Properties\DefaulSetting.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>DefaulSetting.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -216,8 +243,10 @@
     <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
     <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
     <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\musicDefault.wav" />
     <Content Include="bin\Debug\System.dll" />
     <Content Include="bin\Debug\System.xml" />
+    <Content Include="Resources\musicDefault.mp3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">
@@ -231,6 +260,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -243,6 +273,20 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

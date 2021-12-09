@@ -9,7 +9,11 @@ namespace BUS
 {
     public static class ThongBao
     {
+<<<<<<< HEAD
         public static string PlaceHolderText = "Nhập tên công việc muốn tìm!";       
+=======
+        public static string[] strs = { "rất khẩn cấp", "khẩn cấp", "quan trọng", "hơi quan trọng", "Không quan trong" };
+>>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
 
         public static void CanhBao(string message)
         {

@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
 using System.Linq;
+using System.Drawing;
 
 namespace BUS
 {
     public class CongViecBUS
     {
         CongViecRepository congViecRepository;
+        public ChiTietCVBUS chiTietCVBus;
+
         public CongViecBUS()
         {
             congViecRepository = new CongViecRepository();
@@ -38,7 +41,11 @@ namespace BUS
 
         public void Delete(CongViec congViec)
         {
+<<<<<<< HEAD
             congViecRepository = new CongViecRepository();
+=======
+            CongViecRepository congViecRepository = new CongViecRepository();
+>>>>>>> 2577b88e552965a018ed6e759fb3904f3a18fd24
             congViec = congViecRepository.GetSingleById(congViec.iD);
             congViecRepository.Delete(congViec);
             congViecRepository.Commit();
@@ -46,16 +53,19 @@ namespace BUS
 
         public void GetCongViec(ref TreeView treeView, List<CongViec> dsCongViec)
         {
-            ChiTietCVBUS chiTietCVBus = new ChiTietCVBUS();
+            chiTietCVBus = new ChiTietCVBUS();
             var str = "";
             treeView.Nodes.Clear();
-            foreach (var temp in dsCongViec)
+            foreach (var temp in dsCongViec.OrderBy(x=>x.mucDo))
             {
-                str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);          
+                str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
+
                 var node = treeView.Nodes.Add(str);
+                node.ForeColor = Color.FromArgb(255 - temp.mucDo * 51, 50, 0 + temp.mucDo*51);
+                node.NodeFont = new Font("Times New Roman", 13, FontStyle.Regular); 
                 node.Tag = temp;
 
-                foreach (var ctcv in chiTietCVBus.GetChiTietByCongViec(temp))
+                foreach (var ctcv in chiTietCVBus.GetChiTietByCongViec(temp).OrderBy(x => x.mucDo))
                 {
                     str = string.Format("{0}", ctcv.ten);
                     var childNode = node.Nodes.Add(str);

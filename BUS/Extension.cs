@@ -29,5 +29,25 @@ namespace BUS
             }
             return _nd;
         }
+        public static int TimeToMinute(int day,int hour,int minute)
+        {
+            return (((day * 24) + hour) * 60) + minute;
+        }
+        /// <summary>
+        /// [0] day
+        /// [1] hour
+        /// [2] minute
+        /// </summary>
+        /// <param name="minute"></param>
+        /// <returns></returns>
+        public static int[] MinuteToTime(int minute)
+        {
+            int[] time = new int[3];
+            time[0] = minute / 60 / 24;
+            time[1] = minute / 60 % 24 ;
+            time[2] = minute %60 % 24;
+            return time;
+
+        }
     }
 }
