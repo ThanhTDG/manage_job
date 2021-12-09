@@ -66,11 +66,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             if (!CheckValid())
             {
-<<<<<<< HEAD
                 ThongBao.CanhBao("Các nội dung");
-=======
-                MessageBox.Show("Vui long nhap tieu de");
->>>>>>> 1fb9e440669791b5c9df12dbe0d2fed1a202a4f2
                 return;
             }
             if (_congviec == null)

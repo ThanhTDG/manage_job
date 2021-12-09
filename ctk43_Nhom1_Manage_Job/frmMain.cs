@@ -17,11 +17,8 @@ namespace ctk43_Nhom1_Manage_Job
         NguoiDung nd;
         ChuDeBUS chuDeBUS;
         CongViecBUS congViecBUS;
-<<<<<<< HEAD
         GhiChuNhanhBUS ghiChuNhanhBUS;
-=======
         ChiTietCVBUS chiTietCVBUS;
->>>>>>> 1fb9e440669791b5c9df12dbe0d2fed1a202a4f2
         List<CongViec> cvs;
         ChuDe chuDeHienTai = null;
         int TabHienTai = 0;
@@ -127,12 +124,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void LoadData()
         {
-<<<<<<< HEAD
 
-            //getAll();
-=======
-            //    getAll();
->>>>>>> 1fb9e440669791b5c9df12dbe0d2fed1a202a4f2
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
             congViecBUS = new CongViecBUS();
             chuDeBUS = new ChuDeBUS();
@@ -336,7 +328,6 @@ namespace ctk43_Nhom1_Manage_Job
         }
 
         private void txtTimKiemTenCV_TextChanged(object sender, EventArgs e)
-<<<<<<< HEAD
         {            
             if (TabHienTai == 0)
             {
@@ -349,11 +340,6 @@ namespace ctk43_Nhom1_Manage_Job
                 LoadGhiChuNhanh(kq.ToList());
             }
 
-=======
-        {
-            IEnumerable<CongViec> kq = congViecBUS.GetCongViecByTenCV(txtTimKiemTenCV.Text, chuDeHienTai, nd);
-            congViecBUS.GetCongViec(ref tvwDSCongViec, kq.ToList());
->>>>>>> 1fb9e440669791b5c9df12dbe0d2fed1a202a4f2
         }
 
         private void lbChucNang_SelectedIndexChanged(object sender, EventArgs e)
@@ -399,7 +385,6 @@ namespace ctk43_Nhom1_Manage_Job
             }
         }
 
-<<<<<<< HEAD
         private void btnLoc_Click(object sender, EventArgs e)
         {
             frmLoc frmLoc = new frmLoc();
@@ -476,7 +461,6 @@ namespace ctk43_Nhom1_Manage_Job
             frmThongBao frm = new frmThongBao();
             frm.Show();
         }
-=======
         private void UpdateStateJob(CongViec x, int s)
         {
             x.trangThai = s;
@@ -541,7 +525,6 @@ namespace ctk43_Nhom1_Manage_Job
             CheckCTCV(e.Node);
         }
         #endregion
->>>>>>> 1fb9e440669791b5c9df12dbe0d2fed1a202a4f2
     }
 }
 		

@@ -67,15 +67,12 @@ namespace BUS
                 {
                     str = string.Format("{0}", ctcv.ten);
                     var childNode = node.Nodes.Add(str);
-<<<<<<< HEAD
-=======
                     childNode.Checked = false;
                     if (ctcv.trangThai == 1)
                     {
                         childNode.Checked = true;
                         childNode.ForeColor = Color.Green;
                     }
->>>>>>> 1fb9e440669791b5c9df12dbe0d2fed1a202a4f2
                     childNode.NodeFont = new Font("Times New Roman", 10, FontStyle.Regular);
                     childNode.Tag = ctcv;
                 }

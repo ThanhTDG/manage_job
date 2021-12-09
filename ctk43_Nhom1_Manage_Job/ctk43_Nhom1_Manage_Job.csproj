@@ -146,11 +146,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DefaulSetting.settings</DependentUpon>
     </Compile>
-    <Compile Include="ThongKe.cs">
+    <Compile Include="frmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongKe.Designer.cs">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <Compile Include="frmThongKe.Designer.cs">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmDSChiTiet.resx">
       <DependentUpon>frmDSChiTiet.cs</DependentUpon>
@@ -170,12 +170,9 @@
     <EmbeddedResource Include="frmThemChuDe.resx">
       <DependentUpon>frmThemChuDe.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="frmGhiChu.resx">
       <DependentUpon>frmGhiChu.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 1fb9e440669791b5c9df12dbe0d2fed1a202a4f2
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -186,8 +183,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ThongKe.resx">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\ctk43_Nhom1_Manage_Job\project-colors.json" />
     <None Include=".vs\ctk43_Nhom1_Manage_Job\v17\.suo" />
