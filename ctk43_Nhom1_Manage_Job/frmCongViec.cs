@@ -41,7 +41,7 @@ namespace ctk43_Nhom1_Manage_Job
             txtTitle.Text = _congviec.ten;
             TimeSpan time = _congviec.thoiGianKT - DateTime.Now;
             string s = "";
-            if (time.Minutes < 0) s = "Đã quá hạng ";
+            if (time.Minutes < 0) s = "Đã quá hạn ";
             txtRemine.Text = s + Math.Abs(time.Days).ToString() + " ngày " + Math.Abs(time.Hours).ToString() + " giờ " + Math.Abs(time.Minutes).ToString() + " phút.";
             dtpStart.Value = _congviec.thoiGianBD;
             dtpEnd.Value = _congviec.thoiGianKT;
@@ -54,7 +54,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
-                MessageBox.Show("Vui long nhap tieu de");
+                MessageBox.Show("Vui lòng nhập tiêu đề");
                 return;
             }
             if (_congviec == null)
@@ -74,15 +74,14 @@ namespace ctk43_Nhom1_Manage_Job
             }
             else
             {
-                int tiendo = chiTietCVBUS.Process(_congviec);
                 _congviec.IDChuDe = Convert.ToInt32(cbbTopic.SelectedValue);
                 _congviec.ten = txtTitle.Text;
                 _congviec.MoTa = richDescription.Text;
                 _congviec.thoiGianBD = dtpStart.Value;
                 _congviec.thoiGianKT = dtpEnd.Value;
-                _congviec.tienDo = tiendo;
+                _congviec.tienDo = chiTietCVBUS.Process(_congviec);
                 _congviec.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
-                _congviec.trangThai = tiendo==100?1:0;
+                _congviec.trangThai = 0;
                 congViecBUS.Update(_congviec);
             }
             DialogResult = DialogResult.OK;
