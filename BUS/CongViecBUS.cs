@@ -52,21 +52,28 @@ namespace BUS
             chiTietCVBus = new ChiTietCVBUS();
             var str = "";
             treeView.Nodes.Clear();
-            foreach (var temp in dsCongViec.OrderBy(x=>x.mucDo))
+            treeView.Font = new Font("Times New Roman", 13, FontStyle.Regular);
+            foreach (var temp in dsCongViec.OrderBy(x => x.mucDo))
             {
                 str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
-
                 var node = treeView.Nodes.Add(str);
-                node.ForeColor = Color.FromArgb(255 - temp.mucDo * 51, 50, 0 + temp.mucDo*51);
-                node.NodeFont = new Font("Times New Roman", 13, FontStyle.Regular); 
+                node.ForeColor = Color.FromArgb(255 - temp.mucDo * 51, 50, 0 + temp.mucDo * 51);
                 node.Tag = temp;
-
+                node.Checked = false;
+                if (temp.trangThai == 1) { node.Checked = true;}
                 foreach (var ctcv in chiTietCVBus.GetChiTietByCongViec(temp).OrderBy(x => x.mucDo))
                 {
                     str = string.Format("{0}", ctcv.ten);
                     var childNode = node.Nodes.Add(str);
+                    childNode.Checked = false;
+                    if (ctcv.trangThai == 1)
+                    {
+                        childNode.Checked = true;
+                        childNode.ForeColor = Color.Green;
+                    }
+                    childNode.NodeFont = new Font("Times New Roman", 10, FontStyle.Regular);
                     childNode.Tag = ctcv;
-                } 
+                }
             }
             treeView.ExpandAll();
         }
@@ -95,7 +102,7 @@ namespace BUS
                 query = GetCongViecByChuDe(chuDe);
             }
 
-            return query.Where(f => f.ten.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);          
+            return query.Where(f => f.ten.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
         }
 
         public IEnumerable<CongViec> GetCongViecByDay(DateTime date, ChuDe chuDe, NguoiDung nd)
