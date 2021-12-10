@@ -68,7 +68,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void LoadData()
         {
-        //    getAll();
+            //getAll();
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
             congViecBUS = new CongViecBUS();
             chuDeBUS = new ChuDeBUS();
@@ -112,6 +112,8 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadData();
+            frmThongBao frm = new frmThongBao();
+            frm.ShowDialog();
         }
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
@@ -273,5 +275,17 @@ namespace ctk43_Nhom1_Manage_Job
             frmThietLap frmThietLap = new frmThietLap();
             frmThietLap.ShowDialog();
         }
-    }
+
+		  private void tsmiThongKe_Click(object sender, EventArgs e)
+		  {
+            frmThongKe frm = new frmThongKe();
+            frm.ShowDialog();
+		  }
+
+		  private void btnThongBao_Click(object sender, EventArgs e)
+		  {
+            frmThongBao frm = new frmThongBao();
+            frm.Show();
+        }
+	 }
 }

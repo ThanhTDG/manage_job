@@ -54,6 +54,11 @@
   <ItemGroup>
     <Compile Include="Infastructure\IRepository.cs" />
     <Compile Include="Infastructure\RepositoryBase.cs" />
+    <Compile Include="Migrations\202112090925506_initDB.cs" />
+    <Compile Include="Migrations\202112090925506_initDB.designer.cs">
+      <DependentUpon>202112090925506_initDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ChiTietCV.cs" />
     <Compile Include="Model\ChiTietCVModel.cs" />
     <Compile Include="Model\ChuDe.cs" />
@@ -73,6 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202112090925506_initDB.resx">
+      <DependentUpon>202112090925506_initDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
