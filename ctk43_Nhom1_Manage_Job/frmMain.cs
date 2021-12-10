@@ -26,12 +26,13 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-            //getAll();
+            getAll();
         }
         #region Ham Bo Tro
         private void getAll()
         {
             NguoiDungBUS nguoiDungBUS = new NguoiDungBUS();
+            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "default@gmail.com", tenND = "default" });
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "thanh@gmail.com", tenND = "Thanh" });
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "ly@gmail.com", tenND = "Lý" });
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "long@gmail.com", tenND = "Long" });
