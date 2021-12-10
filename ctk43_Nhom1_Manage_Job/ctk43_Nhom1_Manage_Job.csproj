@@ -63,7 +63,7 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System">
-      <HintPath>bin\Debug\System.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -78,11 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CountUp.cs">
+    <Compile Include="frmDSChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CountUp.Designer.cs">
-      <DependentUpon>CountUp.cs</DependentUpon>
+    <Compile Include="frmDSChiTiet.Designer.cs">
+      <DependentUpon>frmDSChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietCV.cs">
       <SubType>Form</SubType>
@@ -126,11 +126,11 @@
     <Compile Include="frmThongBao.Designer.cs">
       <DependentUpon>frmThongBao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTimKiem.cs">
+    <Compile Include="frmLoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTimKiem.Designer.cs">
-      <DependentUpon>frmTimKiem.cs</DependentUpon>
+    <Compile Include="frmLoc.Designer.cs">
+      <DependentUpon>frmLoc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGhiChu.cs">
       <SubType>Form</SubType>
@@ -146,15 +146,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DefaulSetting.settings</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
-    <Compile Include="ThongKe.cs">
+    <Compile Include="frmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongKe.Designer.cs">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <Compile Include="frmThongKe.Designer.cs">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CountUp.resx">
-      <DependentUpon>CountUp.cs</DependentUpon>
+    <EmbeddedResource Include="frmDSChiTiet.resx">
+      <DependentUpon>frmDSChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietCV.resx">
       <DependentUpon>frmChiTietCV.cs</DependentUpon>
@@ -167,6 +166,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemChuDe.resx">
       <DependentUpon>frmThemChuDe.cs</DependentUpon>
@@ -187,17 +187,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ThongKe.resx">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\ctk43_Nhom1_Manage_Job\project-colors.json" />
     <None Include=".vs\ctk43_Nhom1_Manage_Job\v17\.suo" />
     <None Include=".vs\ProjectSettings.json" />
     <None Include=".vs\slnx.sqlite" />
     <None Include=".vs\VSWorkspaceState.json" />
-    <None Include="bin\Debug\ctk43_Nhom1_Manage_Job.exe.config" />
-    <None Include="bin\Debug\ctk43_Nhom1_Manage_Job.vshost.exe.config" />
-    <None Include="bin\Debug\ctk43_Nhom1_Manage_Job.vshost.exe.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\DefaulSetting.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -224,23 +221,10 @@
     <None Include="Resources\bell.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\BUS.dll" />
-    <Content Include="bin\Debug\BUS.pdb" />
-    <Content Include="bin\Debug\ctk43_Nhom1_Manage_Job.exe" />
-    <Content Include="bin\Debug\ctk43_Nhom1_Manage_Job.pdb" />
-    <Content Include="bin\Debug\ctk43_Nhom1_Manage_Job.vshost.exe" />
-    <Content Include="bin\Debug\DAO.dll" />
-    <Content Include="bin\Debug\DAO.pdb" />
-    <Content Include="bin\Debug\EntityFramework.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\Debug\EntityFramework.xml" />
-    <Content Include="bin\Debug\musicDefault.wav" />
-    <Content Include="bin\Debug\System.dll" />
-    <Content Include="bin\Debug\System.xml" />
     <Content Include="Resources\musicDefault.mp3" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\" />
   </ItemGroup>
