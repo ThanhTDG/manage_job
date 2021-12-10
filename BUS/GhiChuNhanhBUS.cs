@@ -58,6 +58,5 @@ namespace BUS
             IEnumerable<GhiChuNhanh> query = GetGhiChuByNguoiDung(nd);
             return query.Where(f => f.TieuDe.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
         }  
-
     }
 }

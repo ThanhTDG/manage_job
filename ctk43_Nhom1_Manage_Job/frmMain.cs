@@ -18,21 +18,20 @@ namespace ctk43_Nhom1_Manage_Job
         ChuDeBUS chuDeBUS;
         CongViecBUS congViecBUS;
         GhiChuNhanhBUS ghiChuNhanhBUS;
-        ChiTietCVBUS chiTietCVBUS;
         List<CongViec> cvs;
         ChuDe chuDeHienTai = null;
         int TabHienTai = 0;
-
+        ChiTietCVBUS chiTietCVBUS;
 
         public frmMain()
         {
             InitializeComponent();
+            //getAll();
         }
         #region Ham Bo Tro
         private void getAll()
         {
             NguoiDungBUS nguoiDungBUS = new NguoiDungBUS();
-
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "thanh@gmail.com", tenND = "Thanh" });
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "ly@gmail.com", tenND = "Lý" });
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "long@gmail.com", tenND = "Long" });
@@ -90,7 +89,6 @@ namespace ctk43_Nhom1_Manage_Job
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "100 kim cương ", iDCongviec = 7, trangThai = 0, mucDo = 1 });
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "1000 sắt ", iDCongviec = 7, trangThai = 0, mucDo = 2, iDChiTietCV = 6 });
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Thách đâu thoaiii", iDCongviec = 8, trangThai = 0, mucDo = 1 });
-
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Bơm bóng", iDCongviec = 10, trangThai = 0, mucDo = 2 });
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua bóng cũ ", iDCongviec = 10, trangThai = 0, mucDo = 1, iDChiTietCV = 9 });
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ đá bóng ", iDCongviec = 10, trangThai = 0, mucDo = 3, iDChiTietCV = 9 });
@@ -122,38 +120,31 @@ namespace ctk43_Nhom1_Manage_Job
             congViecBUS.Update(cv);
         }
 
-        private void CapNhatTienDo(TreeNode treeNode)
-        {
-            var cv = treeNode.Parent.Tag as CongViec;
-            cv = congViecBUS.GetCongViecByID(cv.iD);
-            cv.tienDo = chiTietCVBUS.Process(cv);
-            cv.trangThai = cv.tienDo == 100 ? 1 : 0;
-            congViecBUS.Update(cv);
-        }
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Bơm bóng", iDCongviec = 10, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua bóng cũ ", iDCongviec = 10, trangThai = 0, mucDo = 1, iDChiTietCV = 9 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ đá bóng ", iDCongviec = 10, trangThai = 0, mucDo = 3, iDChiTietCV = 9 });
 
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang đầu", iDCongviec = 21, trangThai = 0, mucDo = 1 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang giữa", iDCongviec = 21, trangThai = 0, mucDo = 0, iDChiTietCV = 12 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang cuối", iDCongviec = 21, trangThai = 0, mucDo = 0, iDChiTietCV = 12 });
 
-        private void CapNhatTienDo(int iD)
-        {
-            var cv = congViecBUS.GetCongViecByID(iD);
-            cv.tienDo = chiTietCVBUS.Process(cv);
-            cv.trangThai = cv.tienDo == 100 ? 1 : 0;
-            congViecBUS.Update(cv);
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ dùng cá nhân", iDCongviec = 17, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Chuẩn bị quần áo", iDCongviec = 17, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Xếp đồ vào vali", iDCongviec = 17, trangThai = 0, mucDo = 2});
         }
 
         private void LoadData()
         {
-            //    getAll();
+        //    getAll();
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
             congViecBUS = new CongViecBUS();
             chuDeBUS = new ChuDeBUS();
             ghiChuNhanhBUS = new GhiChuNhanhBUS();
             cvs = new List<CongViec>();
-            chiTietCVBUS = new ChiTietCVBUS();
             LoadChuDe();
             SetUPSearchInputText();
             lbChucNang.LostFocus += XoaChonChucNang;
             LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
-
         }
 
         private void XoaChonChucNang(object sender, EventArgs e)
@@ -176,8 +167,8 @@ namespace ctk43_Nhom1_Manage_Job
         private void ShowPlaceHolder(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtTimKiemTenCV.Text))
-                txtTimKiemTenCV.Text = ThongBao.PlaceHolderText;            
-
+                txtTimKiemTenCV.Text = ThongBao.PlaceHolderText;
+            LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());           
         }
 
         private void RemovePlaceHolder(object sender, EventArgs e)
@@ -209,7 +200,6 @@ namespace ctk43_Nhom1_Manage_Job
             congViecBUS = new CongViecBUS();
             chuDeHienTai = e.Node.Tag as ChuDe;
             grbDSCongViec.Text = "Danh sách công việc theo " + chuDeHienTai.ten;
-
             if (chuDeHienTai.iD == 0)
                 cvs = congViecBUS.GetCongViecByNguoiDung(nd).ToList();
             else
@@ -255,10 +245,11 @@ namespace ctk43_Nhom1_Manage_Job
         private void XoaChuDeToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             var node = tvwChuDe.SelectedNode.Tag as ChuDe;
+
             if (node.iD == 0)
                 return;
 
-            ChuDe chuDeDelete = chuDeBUS.GetChuDeByID(node.iD);
+            ChuDe chuDeDelete = chuDeBUS.GetChuDeByID(node.iD);                           
             if (ThongBao.CauHoi("xóa, mọi công việc liên quan đến chủ đề đều bị xóa!") == DialogResult.Yes)
             {
                 chuDeBUS.Delete(chuDeDelete);
@@ -268,15 +259,9 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            congViecBUS = new CongViecBUS();
-            chuDeBUS = new ChuDeBUS();
-
-            TreeNode treeNode = tvwDSCongViec.SelectedNode;
-
-            if (treeNode == null) return;
-            if (treeNode.Level == 0)
+            if (tvwDSCongViec.SelectedNode.Level == 0)
             {
-                var cv = treeNode.Tag as CongViec;
+                var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
                 frmCongViec frm = new frmCongViec(cv);
                 frm.LoadChuDe(nd);
                 if (frm.ShowDialog() == DialogResult.OK)
@@ -285,14 +270,13 @@ namespace ctk43_Nhom1_Manage_Job
                     congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                 }
             }
-            else if (treeNode.Level == 1)
+            else if (tvwDSCongViec.SelectedNode.Level == 1)
             {
                 var chiTietCV = tvwDSCongViec.SelectedNode.Tag as ChiTietCV;
                 frmChiTietCV frm = new frmChiTietCV(chiTietCV);
                 frm.LoadCV(cvs);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    CapNhatTienDo(treeNode);
                     congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                 }
             }
@@ -300,8 +284,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TreeNode treeNode = tvwDSCongViec.SelectedNode;
-            if (treeNode.Level == 0)
+            if (tvwDSCongViec.SelectedNode.Level == 0)
             {
                 var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
                 if (ThongBao.CauHoi($"xóa {cv.ten} chưa?") == DialogResult.Yes)
@@ -310,13 +293,12 @@ namespace ctk43_Nhom1_Manage_Job
                     congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                 }
             }
-            else if (treeNode.Level == 1)
+            else if (tvwDSCongViec.SelectedNode.Level == 1)
             {
                 var cv = tvwDSCongViec.SelectedNode.Tag as ChiTietCV;
                 if (ThongBao.CauHoi($"xoá {cv.ten} chưa?") == DialogResult.Yes)
                 {
-                    chiTietCVBUS.Delete(cv.iD);
-                    CapNhatTienDo(treeNode);
+                    congViecBUS.chiTietCVBus.Delete(cv);
                     congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                 }
             }
@@ -324,13 +306,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void markToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tvwDSCongViec.SelectedNode.Checked == true)
-                tvwDSCongViec.SelectedNode.Checked = false;
-            else
-                tvwDSCongViec.SelectedNode.Checked = true;
-            var select = tvwDSCongViec.SelectedNode;
-            if (select == null) return;
-            CheckCTCV(tvwDSCongViec.SelectedNode);
+
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
@@ -341,13 +317,12 @@ namespace ctk43_Nhom1_Manage_Job
             frm.LoadCV(cvs);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                CapNhatTienDo(frm._chiTietCV.iDCongviec);
                 congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
             }
         }
+        #endregion
 
         private void txtTimKiemTenCV_TextChanged(object sender, EventArgs e)
-
         {            
             if (TabHienTai == 0)
             {
@@ -359,7 +334,6 @@ namespace ctk43_Nhom1_Manage_Job
                 IEnumerable<GhiChuNhanh> kq = ghiChuNhanhBUS.GetGhiChuNhanhByTen(txtTimKiemTenCV.Text, nd);
                 LoadGhiChuNhanh(kq.ToList());
             }
-
         }
 
         private void lbChucNang_SelectedIndexChanged(object sender, EventArgs e)
@@ -387,7 +361,6 @@ namespace ctk43_Nhom1_Manage_Job
                 LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
                 rtxtNoiDungGhiChu.Text = "";
             }
-
         }
 
         private void ctmSetting_Click(object sender, EventArgs e)
@@ -396,6 +369,17 @@ namespace ctk43_Nhom1_Manage_Job
             frmThietLap.ShowDialog();
         }
 
+        private void lvDSGhiChu_SelectedIndexChanged(object sender, EventArgs e){
+             int count = lvDSGhiChu.SelectedItems.Count;
+
+            if (count == 1)
+            {
+                var gc = lvDSGhiChu.SelectedItems[0].Tag as GhiChuNhanh;
+                rtxtNoiDungGhiChu.Text = gc.NoiDung;
+            }
+            else
+                rtxtNoiDungGhiChu.Text = "";
+                }
         private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
         {
             if (tvwDSCongViec.SelectedNode.Level == 0)
@@ -483,18 +467,13 @@ namespace ctk43_Nhom1_Manage_Job
             frm.Show();
         }
         private void UpdateStateJob(CongViec x, int s)
-        {
-            x.trangThai = s;
-            foreach (var ctcv in chiTietCVBUS.GetChiTietByCongViec(x).ToList())
-            {
-                ctcv.trangThai = s;
-                chiTietCVBUS.Update(ctcv);
-            }
-            CapNhatTienDo(x.iD);
+            // cập nhật lại
         }
 
-        private void CheckCTCV(TreeNode treeNode)
+        private void lvDSGhiChu_DoubleClick(object sender, EventArgs e)
         {
+            int count = lvDSGhiChu.SelectedItems.Count;
+            if (count > 0)
             bool check = false;
             if (treeNode.Level == 0)
             {
@@ -519,35 +498,56 @@ namespace ctk43_Nhom1_Manage_Job
 
             if (treeNode.Level == 1)
             {
-                var x = treeNode.Tag as ChiTietCV;
-                if (x == null) return;
-                x = chiTietCVBUS.GetChiTietCongViecByID(x.iD);
-                if (treeNode.Checked)
+                var gc = lvDSGhiChu.SelectedItems[0].Tag as GhiChuNhanh;
+                frmGhiChu frm = new frmGhiChu(gc.id);
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    x.trangThai = 1;
-                    chiTietCVBUS.Update(x);
-                    check = true;
-                }
-                else
-                {
-                    x.trangThai = 0;
-                    chiTietCVBUS.Update(x);
-                    check = true;
-                }
-                if (check == true)
-                {
-                    CapNhatTienDo(treeNode);
-                    congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
+                    ghiChuNhanhBUS = new GhiChuNhanhBUS();
+                    LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
+                    rtxtNoiDungGhiChu.Text = "";
                 }
             }
         }
 
-        private void tvwDSCongViec_AfterCheck(object sender, TreeViewEventArgs e)
+        private void XoaGhiChuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //CheckCTCV(e.Node);
+            int count = lvDSGhiChu.SelectedItems.Count;
+
+            if (count > 0)
+            {
+                if (ThongBao.CauHoi("Xóa ghi chú nhanh không?") == DialogResult.Yes)
+                {
+                    foreach (ListViewItem item in lvDSGhiChu.SelectedItems)
+                    {
+                        ghiChuNhanhBUS.DeleteByID((item.Tag as GhiChuNhanh).id);
+                    }
+                    LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
+                    rtxtNoiDungGhiChu.Text = "";
+                }                
+            }
+        }
+
+        private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
+        {
+            if (tvwDSCongViec.SelectedNode.Level == 0)
+            {
+                var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
+                frmDSChiTiet frm = new frmDSChiTiet(cv);
+                frm.ShowDialog();
+            }
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TabHienTai = tabControl.SelectedIndex;
+        }
+
+        private void ReloadDSGhiChuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
+            //CheckCTCV(e.Node); su kien ?
 
         }
-        #endregion
     }
 }
 		

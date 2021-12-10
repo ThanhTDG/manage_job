@@ -36,12 +36,6 @@ namespace BUS
             ChiTietCVRepository.Commit();
         }
 
-        public void Delete(int iD)
-        {
-            ChiTietCVRepository.Delete(iD);
-            ChiTietCVRepository.Commit();
-        }
-
         public ChiTietCV GetChiTietCongViecByID(int iD)
         {
             return ChiTietCVRepository.GetSingleById(iD);

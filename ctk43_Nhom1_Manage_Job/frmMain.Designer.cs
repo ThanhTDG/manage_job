@@ -79,7 +79,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.ctxMenuDSGhiChu.SuspendLayout();
-
             this.SuspendLayout();
             // 
             // label1
@@ -184,7 +183,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.ctxMenuDSCongViec.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tvwDSCongViec.Size = new System.Drawing.Size(761, 401);
             this.tvwDSCongViec.TabIndex = 0;
-            this.tvwDSCongViec.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwDSCongViec_AfterCheck);
+            this.tvwDSCongViec.DoubleClick += new System.EventHandler(this.tvwDSCongViec_DoubleClick);
             // 
             // ctxMenuDSCongViec
             // 
@@ -364,6 +363,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.lbChucNang.TabIndex = 16;
             this.lbChucNang.SelectedIndexChanged += new System.EventHandler(this.lbChucNang_SelectedIndexChanged);
             // 
+            // tabControl
             // 
             this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -371,11 +371,10 @@ namespace ctk43_Nhom1_Manage_Job
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(229, 130);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl.Location = new System.Drawing.Point(233, 114);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(782, 446);
+            this.tabControl.Size = new System.Drawing.Size(781, 461);
             this.tabControl.TabIndex = 17;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -408,8 +407,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(5, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(6, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 17);
             this.label3.TabIndex = 2;
@@ -420,11 +418,11 @@ namespace ctk43_Nhom1_Manage_Job
             this.rtxtNoiDungGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtNoiDungGhiChu.Location = new System.Drawing.Point(243, 27);
-            this.rtxtNoiDungGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+             this.rtxtNoiDungGhiChu.Location = new System.Drawing.Point(323, 32);
             this.rtxtNoiDungGhiChu.Name = "rtxtNoiDungGhiChu";
             this.rtxtNoiDungGhiChu.ReadOnly = true;
-            this.rtxtNoiDungGhiChu.Size = new System.Drawing.Size(527, 404);
+            this.rtxtNoiDungGhiChu.Size = new System.Drawing.Size(443, 396);
             this.rtxtNoiDungGhiChu.TabIndex = 1;
             this.rtxtNoiDungGhiChu.Text = "";
             // 
@@ -493,13 +491,48 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
             // lvDSGhiChu
             // 
-            this.lvDSGhiChu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDSGhiChu.HideSelection = false;
-            this.lvDSGhiChu.Location = new System.Drawing.Point(3, 3);
+            this.lvDSGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lvDSGhiChu.ContextMenuStrip = this.ctxMenuDSGhiChu;
+            this.lvDSGhiChu.FullRowSelect = true;
+            this.lvDSGhiChu.GridLines = true;
+            this.lvDSGhiChu.Location = new System.Drawing.Point(3, 32);
             this.lvDSGhiChu.Name = "lvDSGhiChu";
-            this.lvDSGhiChu.Size = new System.Drawing.Size(767, 425);
+            this.lvDSGhiChu.Size = new System.Drawing.Size(314, 396);
             this.lvDSGhiChu.TabIndex = 0;
             this.lvDSGhiChu.UseCompatibleStateImageBehavior = false;
+            this.lvDSGhiChu.View = System.Windows.Forms.View.List;
+            this.lvDSGhiChu.SelectedIndexChanged += new System.EventHandler(this.lvDSGhiChu_SelectedIndexChanged);
+            this.lvDSGhiChu.DoubleClick += new System.EventHandler(this.lvDSGhiChu_DoubleClick);
+            // 
+            // ctxMenuDSGhiChu
+            // 
+            this.ctxMenuDSGhiChu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxMenuDSGhiChu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.XoaGhiChuToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.ReloadDSGhiChuToolStripMenuItem});
+            this.ctxMenuDSGhiChu.Name = "ctxMenuDSGhiChu";
+            this.ctxMenuDSGhiChu.Size = new System.Drawing.Size(153, 76);
+            // 
+            // XoaGhiChuToolStripMenuItem
+            // 
+            this.XoaGhiChuToolStripMenuItem.Name = "XoaGhiChuToolStripMenuItem";
+            this.XoaGhiChuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.XoaGhiChuToolStripMenuItem.Text = "Xóa";
+            this.XoaGhiChuToolStripMenuItem.Click += new System.EventHandler(this.XoaGhiChuToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // ReloadDSGhiChuToolStripMenuItem
+            // 
+            this.ReloadDSGhiChuToolStripMenuItem.Name = "ReloadDSGhiChuToolStripMenuItem";
+            this.ReloadDSGhiChuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ReloadDSGhiChuToolStripMenuItem.Text = "Tải lại";
+            this.ReloadDSGhiChuToolStripMenuItem.Click += new System.EventHandler(this.ReloadDSGhiChuToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -575,7 +608,6 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ListView lvDSGhiChu;
         private System.Windows.Forms.ToolStripMenuItem ctmSetting;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.Label lblemail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox rtxtNoiDungGhiChu;
         private System.Windows.Forms.ContextMenuStrip ctxMenuDSGhiChu;
@@ -583,6 +615,5 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem ReloadDSGhiChuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiThongKe;
-
     }
 }

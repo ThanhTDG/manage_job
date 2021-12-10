@@ -15,8 +15,7 @@ namespace ctk43_Nhom1_Manage_Job
     public partial class frmGhiChu : Form
     {
         NguoiDung _nd = Extension.LoadSetting(Properties.Settings.Default.email);
-        private int _ghiChuId;
-
+        private int _ghiChuId;        
         public frmGhiChu(int ghiChuid = 0)
         {
             InitializeComponent();
