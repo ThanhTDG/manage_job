@@ -26,6 +26,7 @@ namespace ctk43_Nhom1_Manage_Job
             chiTietCVBUS = new ChiTietCVBUS();
             _congviec = cv;
             cbbLevel.Items.AddRange(ThongBao.strs);
+            cbbLevel.SelectedIndex = 0;
         }
 
         public void LoadChuDe(NguoiDung nd)

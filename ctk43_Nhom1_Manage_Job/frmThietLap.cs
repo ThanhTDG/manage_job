@@ -35,6 +35,7 @@ namespace ctk43_Nhom1_Manage_Job
         public void LoadInfor()
         {
             nudVolume.Value = Properties.Settings.Default.Volume;
+            prbVolum.DataBindings.Add(bindings);
             txtByTeam.Text = Properties.Settings.Default.doByTeam;
             txtSound.Text = Properties.Settings.Default.Sound;
             txtContact.Text = Properties.Settings.Default.contact;
