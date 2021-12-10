@@ -1,4 +1,4 @@
-﻿namespace ctk43_Nhom1_Manage_Job
+namespace ctk43_Nhom1_Manage_Job
 {
     partial class frmMain
     {
@@ -364,7 +364,6 @@
             this.lbChucNang.TabIndex = 16;
             this.lbChucNang.SelectedIndexChanged += new System.EventHandler(this.lbChucNang_SelectedIndexChanged);
             // 
-            // tabControl
             // 
             this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -433,6 +432,7 @@
             // 
             this.lvDSGhiChu.ContextMenuStrip = this.ctxMenuDSGhiChu;
             this.lvDSGhiChu.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.lvDSGhiChu.FullRowSelect = true;
             this.lvDSGhiChu.GridLines = true;
             this.lvDSGhiChu.HideSelection = false;
