@@ -50,7 +50,7 @@ namespace BUS
             trangthai.Add(0, "Sắp diễn ra");
             trangthai.Add(1, "Đang thực hiện");
             trangthai.Add(2, "Đã hoàn thành");
-            trangthai.Add(1, "Đã quá hạn");
+            trangthai.Add(3, "Đã quá hạn");
         }
     }
     public static class Extension

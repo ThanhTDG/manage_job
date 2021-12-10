@@ -36,7 +36,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             Binding bindings = new Binding("Value", nudVolume, "Value",true,DataSourceUpdateMode.Never);
             nudVolume.Value = Properties.Settings.Default.Volume;
-            prbVolum.DataBindings.Add(bindings);
+            //prbVolum.DataBindings.Add(bindings);
             txtByTeam.Text = Properties.Settings.Default.doByTeam;
             txtSound.Text = Properties.Settings.Default.Sound;
             txtContact.Text = Properties.Settings.Default.contact;
