@@ -48,9 +48,9 @@ namespace BUS
 
         public int Process(CongViec cv)
         {
-            double total = GetChiTietByCongViec(cv).ToList().Count;
-            double complete = GetChiTietByCongViec(cv).Where(x => x.trangThai == 1).Count();
-            return total == 0 ? 0 : Convert.ToInt32(Convert.ToDouble(complete * 100 / total));
+            int total = GetChiTietByCongViec(cv).ToList().Count;
+            int complete = GetChiTietByCongViec(cv).Where(x => x.trangThai == 1).Count();
+            return total == 0 ? 0 : (complete / total) * 100;
         }
     }
 }

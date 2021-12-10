@@ -78,11 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmDSChiTiet.cs">
+    <Compile Include="CountUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDSChiTiet.Designer.cs">
-      <DependentUpon>frmDSChiTiet.cs</DependentUpon>
+    <Compile Include="CountUp.Designer.cs">
+      <DependentUpon>CountUp.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietCV.cs">
       <SubType>Form</SubType>
@@ -153,8 +153,8 @@
     <Compile Include="ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmDSChiTiet.resx">
-      <DependentUpon>frmDSChiTiet.cs</DependentUpon>
+    <EmbeddedResource Include="CountUp.resx">
+      <DependentUpon>CountUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietCV.resx">
       <DependentUpon>frmChiTietCV.cs</DependentUpon>
@@ -173,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGhiChu.resx">
       <DependentUpon>frmGhiChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongBao.resx">
+      <DependentUpon>frmThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

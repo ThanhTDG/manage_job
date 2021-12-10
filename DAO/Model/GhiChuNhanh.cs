@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +8,55 @@ namespace DAO.Model
 {
     public class GhiChuNhanh
     {
-        public int id { get; set; }
-        public string TieuDe { get; set; }
-        public string NoiDung { get; set; }
-        public DateTime ThoiGianBD { get; set; }
+        public int id;
+        public string tieuDe;
+        public string noiDung;
+        public DateTime thoiGianBD;
 
-        public string Email { get; set; }
-
-        [ForeignKey("Email")]
-        public virtual NguoiDung nguoiDung { get; set; }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+        public string TieuDe
+        {
+            get
+            {
+                return tieuDe;
+            }
+            set
+            {
+                tieuDe = value;
+            }
+        }
+        public string NoiDung
+        {
+            get
+            {
+                return noiDung;
+            }
+            set
+            {
+                noiDung = value;
+            }
+        }
+        public DateTime ThoiGianBD
+        {
+            get
+            {
+                return thoiGianBD;
+            }
+            set
+            {
+                thoiGianBD = value;
+            }
+        }
 
         public GhiChuNhanh() { }
     }

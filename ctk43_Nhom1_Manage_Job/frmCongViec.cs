@@ -41,7 +41,7 @@ namespace ctk43_Nhom1_Manage_Job
             txtTitle.Text = _congviec.ten;
             TimeSpan time = _congviec.thoiGianKT - DateTime.Now;
             string s = "";
-            if (time.Minutes < 0) s = "Đã quá hạng ";
+            if (time.Minutes < 0) s = "Đã quá hạn ";
             txtRemine.Text = s + Math.Abs(time.Days).ToString() + " ngày " + Math.Abs(time.Hours).ToString() + " giờ " + Math.Abs(time.Minutes).ToString() + " phút.";
             dtpStart.Value = _congviec.thoiGianBD;
             dtpEnd.Value = _congviec.thoiGianKT;
@@ -50,23 +50,11 @@ namespace ctk43_Nhom1_Manage_Job
             richDescription.Text = _congviec.MoTa;
         }
 
-        public bool CheckValid()
-        {
-            bool kq = true;
-            if (string.IsNullOrWhiteSpace(cbbTopic.Text))
-                kq = false;               
-            if (string.IsNullOrWhiteSpace(txtTitle.Text))
-                kq = false;
-            if (dtpStart.Value > dtpEnd.Value)
-                kq = false;            
-            return kq;
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!CheckValid())
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
-                ThongBao.CanhBao("Các nội dung");
+                MessageBox.Show("Vui lòng nhập tiêu đề");
                 return;
             }
             if (_congviec == null)

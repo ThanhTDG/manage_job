@@ -253,7 +253,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmCongViec";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Công việc";
             this.Load += new System.EventHandler(this.frmCongViec_Load);
             this.ResumeLayout(false);
