@@ -32,7 +32,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.GhiChutoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kíchHoạtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,46 +84,40 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label1.Location = new System.Drawing.Point(333, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(402, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ứng Dụng Quản Lý Nhắc Việc";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+				this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+				this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+				this.label1.Location = new System.Drawing.Point(444, 30);
+				this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+				this.label1.Name = "label1";
+				this.label1.Size = new System.Drawing.Size(536, 38);
+				this.label1.TabIndex = 0;
+				this.label1.Text = "Ứng Dụng Quản Lý Nhắc Việc";
+				this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+				// 
+				// menuStrip1
+				// 
+				this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+				this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GhiChutoolStripMenuItem,
-            this.toolStripMenuItem1,
+            this.tsmiThongKe,
             this.hỗTrợToolStripMenuItem,
             this.ctmSetting});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1026, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // GhiChutoolStripMenuItem
-            // 
-            this.GhiChutoolStripMenuItem.Name = "GhiChutoolStripMenuItem";
-            this.GhiChutoolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.GhiChutoolStripMenuItem.Text = "Thêm ghi chú";
-            this.GhiChutoolStripMenuItem.Click += new System.EventHandler(this.GhiChutoolStripMenuItem_Click);
-            // 
-
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(68, 20);
-            this.toolStripMenuItem1.Text = "Thống kê";
-            // 
-            // hỗTrợToolStripMenuItem
-            // 
-            this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+				this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+				this.menuStrip1.Name = "menuStrip1";
+				this.menuStrip1.Size = new System.Drawing.Size(1368, 30);
+				this.menuStrip1.TabIndex = 1;
+				this.menuStrip1.Text = "menuStrip1";
+				// 
+				// GhiChutoolStripMenuItem
+				// 
+				this.GhiChutoolStripMenuItem.Name = "GhiChutoolStripMenuItem";
+				this.GhiChutoolStripMenuItem.Size = new System.Drawing.Size(112, 26);
+				this.GhiChutoolStripMenuItem.Text = "Thêm ghi chú";
+				this.GhiChutoolStripMenuItem.Click += new System.EventHandler(this.GhiChutoolStripMenuItem_Click);
+				// 
+				// hỗTrợToolStripMenuItem
+				// 
+				this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kíchHoạtToolStripMenuItem,
             this.thôngTinToolStripMenuItem});
             this.hỗTrợToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,11 +342,11 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.lbChucNang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbChucNang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChucNang.ForeColor = System.Drawing.Color.Green;
-            this.lbChucNang.FormattingEnabled = true;
-            this.lbChucNang.ItemHeight = 17;
-            this.lbChucNang.Items.AddRange(new object[] {
+				this.lbChucNang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+				this.lbChucNang.ForeColor = System.Drawing.Color.Green;
+				this.lbChucNang.FormattingEnabled = true;
+				this.lbChucNang.ItemHeight = 21;
+				this.lbChucNang.Items.AddRange(new object[] {
             "Công việc hôm nay",
             "Công việc ngày mai",
             "Công việc quan trọng"});
@@ -589,7 +582,7 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ToolStripMenuItem hỗTrợToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiThongKe;
         private System.Windows.Forms.ToolStripMenuItem kíchHoạtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -614,6 +607,5 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ToolStripMenuItem XoaGhiChuToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem ReloadDSGhiChuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThongKe;
     }
 }

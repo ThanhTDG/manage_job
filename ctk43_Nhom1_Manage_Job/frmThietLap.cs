@@ -30,13 +30,11 @@ namespace ctk43_Nhom1_Manage_Job
             Properties.Settings.Default.timeEnd = Properties.DefaulSetting.Default.timeEnd;
             Properties.Settings.Default.runHide = Properties.DefaulSetting.Default.runHide;
             Properties.Settings.Default.RunWithWin = Properties.Settings.Default.RunWithWin;
-            Properties.Settings.Default.Volume = Properties.Settings.Default.Volume;
+            nudVolume.Value = Properties.Settings.Default.Volume;
         }
         public void LoadInfor()
         {
-            Binding bindings = new Binding("Value", nudVolume, "Value",true,DataSourceUpdateMode.Never);
             nudVolume.Value = Properties.Settings.Default.Volume;
-            prbVolum.DataBindings.Add(bindings);
             txtByTeam.Text = Properties.Settings.Default.doByTeam;
             txtSound.Text = Properties.Settings.Default.Sound;
             txtContact.Text = Properties.Settings.Default.contact;
@@ -55,7 +53,7 @@ namespace ctk43_Nhom1_Manage_Job
         }
         private void controlToProfile()
         {
-            if(chkRunWithWindown.Checked == true)
+            if (chkRunWithWindown.Checked == true)
             {
                 RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Micorsoft\\Windowns\\CurrentVersion\\Run", true);
                 reg.SetValue(Properties.Settings.Default.namePoject, Application.ExecutablePath.ToString());
@@ -72,7 +70,6 @@ namespace ctk43_Nhom1_Manage_Job
         {
             bindings = new Binding("Value", nudVolume, "Value", false, DataSourceUpdateMode.OnValidation);
             prbVolum.DataBindings.Add(bindings);
-            defaltInfor();
             LoadInfor();
         }
 
@@ -80,7 +77,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             defaltInfor();
             LoadInfor();
-         }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (btnTestSound.Text == "")
@@ -99,7 +96,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
 
             mediaPlayer.URL = txtSound.Text;
-          
+
             if (btnTestSound.Text == "")
             {
                 mediaPlayer.controls.stop();
@@ -110,8 +107,8 @@ namespace ctk43_Nhom1_Manage_Job
                 mediaPlayer.controls.play();
                 btnTestSound.Text = "";
             }
-        
-         }
+
+        }
 
         private void btnChoiceSound_Click(object sender, EventArgs e)
         {
@@ -122,6 +119,5 @@ namespace ctk43_Nhom1_Manage_Job
             if (choofdlog.ShowDialog() == DialogResult.OK)
                 txtSound.Text = choofdlog.FileName;
         }
-
     }
 }

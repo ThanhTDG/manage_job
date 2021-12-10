@@ -3,7 +3,11 @@
   <Profiles />
   <Settings>
     <Setting Name="email" Type="System.String" Scope="User">
+<<<<<<< HEAD
+      <Value Profile="(Default)">thanh@gmail.com</Value>
+=======
       <Value Profile="(Default)">khoa@gmail.com</Value>
+>>>>>>> 51587290e88dd1186b51ae689a82623cc00469d7
     </Setting>
     <Setting Name="name" Type="System.String" Scope="User">
       <Value Profile="(Default)">default</Value>
