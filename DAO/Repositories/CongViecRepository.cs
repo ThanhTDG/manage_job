@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Data.SqlClient;
 
 namespace DAO.Repositories
 {
@@ -39,6 +40,63 @@ namespace DAO.Repositories
                         select s;
             return query;
         }
+        public IEnumerable<CongViec> GetCongViecByLoc(NguoiDung nd, List<int> _trangthai, List<int> _mucdo, List<DateTime> _time)
+        {
+            int i = 0, j = 0;
+            List<SqlParameter> sqlParameters = new List<SqlParameter>();
+            string Squery = ("Select C.id ,C.ten ,C.thoiGianBD, C.thoiGianKT, C.trangThai, C.tienDo, C.mucDo, C.IDChuDe, C.MoTa from  NguoiDungs A , ChuDes B, CongViecs C  where B.Email = @Email AND A.email = B.Email AND B.iD = C.IDChuDe ");
+            SqlParameter sqlParameter = new SqlParameter("@Email", nd.email);
+            sqlParameters.Add(sqlParameter);
+            if(_trangthai ==null || _mucdo == null)
+
+
+            if (_time.Count != 0 && _time!=null)
+            {
+                Squery = Squery + " AND c.ThoigianBD > @StartDay AND C.thoiGianKT < @EndDay ";
+                sqlParameter = new SqlParameter("@StartDay", _time[0]);
+                sqlParameters.Add(sqlParameter);
+                sqlParameter = new SqlParameter("@EndDay", _time[1]);
+                sqlParameters.Add(sqlParameter);
+            }
+            if (_mucdo.Count != 0 && _mucdo !=null)
+            {
+                foreach (var mucdo in _mucdo)
+                {
+                    if (j == 0)
+                    {
+
+                        Squery = Squery + " AND C.tienDo = @tienDo" + j;
+                    }
+                    else
+                    {
+                        Squery = Squery + " OR C.tienDo = @tienDo" + j;
+                    }
+                    sqlParameter = new SqlParameter("@tienDo" + j, mucdo);
+                    sqlParameters.Add(sqlParameter);
+                    j++;
+                }
+            }
+            if (_trangthai.Count != 0 && _trangthai !=null)
+            {
+                foreach (var trangthai in _trangthai)
+                {
+                    if (i == 0)
+                    {
+
+                        Squery = Squery + " AND C.trangThai =" + i;
+                    }
+                    else
+                    {
+                        Squery = Squery + " OR C.trangThai =" + i;
+
+                    }
+                    sqlParameter = new SqlParameter("@trangthai" + i, trangthai);
+                    sqlParameters.Add(sqlParameter);
+                    i++;
+                }
+            }
+            return dataContext.congViec.SqlQuery(Squery, sqlParameters.ToArray());
+        }
 
         public IEnumerable<CongViec> GetCongViecByDayRound(DateTime BatDau, DateTime KetThuc, string email)
         {
@@ -46,6 +104,26 @@ namespace DAO.Repositories
                         join r in DbContext.chuDe
                         on s.IDChuDe equals r.iD
                         where r.Email == email && BatDau < s.thoiGianBD && s.thoiGianKT < KetThuc 
+                        select s;
+            return query;
+        }
+
+        public IEnumerable<CongViec> GetCongViecByDayRound(DateTime date, string email, int chuDeID)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                        on s.IDChuDe equals r.iD
+                        where r.Email == email && s.thoiGianBD <= date && date <= s.thoiGianKT && s.IDChuDe == chuDeID
+                        select s;
+            return query;
+        }
+
+        public IEnumerable<CongViec> GetCongViecByDayRound(DateTime date, string email)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                        on s.IDChuDe equals r.iD
+                        where r.Email == email && s.thoiGianBD <= date && date <= s.thoiGianKT
                         select s;
             return query;
         }

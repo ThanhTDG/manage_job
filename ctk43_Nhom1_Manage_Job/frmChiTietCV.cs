@@ -121,7 +121,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             cbbJob.DataSource = cvs;
             cbbJob.DisplayMember = "ten";
-            cbbJob.ValueMember = "ID";
+            cbbJob.ValueMember = "íD";
         }
     }
 }

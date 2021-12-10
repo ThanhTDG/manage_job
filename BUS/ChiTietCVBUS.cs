@@ -57,6 +57,7 @@ namespace BUS
             double total = GetChiTietByCongViec(cv).ToList().Count;
             double complete = GetChiTietByCongViec(cv).Where(x => x.trangThai == 1).Count();
             return total == 0 ? 100 : Convert.ToInt32(complete * 100 / total);
+
         }
     }
 }
