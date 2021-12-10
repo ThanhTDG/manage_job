@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+          base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -32,6 +32,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.nudVolume = new System.Windows.Forms.NumericUpDown();
             this.txtSound = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.prbVolum = new System.Windows.Forms.ProgressBar();
@@ -40,6 +41,12 @@
             this.btnChoiceSound = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.nudMinuteEnd = new System.Windows.Forms.NumericUpDown();
+            this.nudMinuteStart = new System.Windows.Forms.NumericUpDown();
+            this.nudHourEnd = new System.Windows.Forms.NumericUpDown();
+            this.nudHourStart = new System.Windows.Forms.NumericUpDown();
+            this.nudDayEnd = new System.Windows.Forms.NumericUpDown();
+            this.nudDayStart = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,6 +69,9 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVolume)).BeginInit();
             this.nudDayStart = new System.Windows.Forms.NumericUpDown();
             this.nudDayEnd = new System.Windows.Forms.NumericUpDown();
             this.nudHourStart = new System.Windows.Forms.NumericUpDown();
@@ -72,6 +82,12 @@
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinuteEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinuteStart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHourEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHourStart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDayEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDayStart)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDayStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDayEnd)).BeginInit();
@@ -134,6 +150,20 @@
             this.tabPage2.Text = "Âm thanh";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // nudVolume
+            // 
+            this.nudVolume.Location = new System.Drawing.Point(306, 58);
+            this.nudVolume.Name = "nudVolume";
+            this.nudVolume.Size = new System.Drawing.Size(42, 26);
+            this.nudVolume.TabIndex = 9;
+            // 
+            // txtSound
+            // 
+            this.txtSound.Location = new System.Drawing.Point(139, 17);
+            this.txtSound.Name = "txtSound";
+            this.txtSound.Size = new System.Drawing.Size(161, 26);
+            this.txtSound.TabIndex = 8;
+            // 
             // txtSound
             // 
             this.txtSound.Location = new System.Drawing.Point(139, 17);
@@ -180,6 +210,38 @@
             // 
             // btnChoiceSound
             // 
+            // 
+            // prbVolum
+            // 
+            this.prbVolum.Location = new System.Drawing.Point(139, 60);
+            this.prbVolum.Name = "prbVolum";
+            this.prbVolum.Size = new System.Drawing.Size(161, 23);
+            this.prbVolum.Step = 100;
+            this.prbVolum.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 19);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Âm lượng";
+            // 
+            // btnTestSound
+            // 
+            this.btnTestSound.AutoSize = true;
+            this.btnTestSound.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestSound.Location = new System.Drawing.Point(154, 92);
+            this.btnTestSound.Name = "btnTestSound";
+            this.btnTestSound.Size = new System.Drawing.Size(128, 30);
+            this.btnTestSound.TabIndex = 2;
+            this.btnTestSound.Text = "Nghe thử";
+            this.btnTestSound.UseVisualStyleBackColor = true;
+            this.btnTestSound.Click += new System.EventHandler(this.btnTestSound_Click);
+            // 
+            // btnChoiceSound
+            // 
             this.btnChoiceSound.AutoSize = true;
             this.btnChoiceSound.Location = new System.Drawing.Point(306, 17);
             this.btnChoiceSound.Name = "btnChoiceSound";
@@ -187,6 +249,7 @@
             this.btnChoiceSound.TabIndex = 2;
             this.btnChoiceSound.Text = "Chọn âm thanh";
             this.btnChoiceSound.UseVisualStyleBackColor = true;
+            this.btnChoiceSound.Click += new System.EventHandler(this.btnChoiceSound_Click);
             // 
             // label5
             // 
@@ -222,6 +285,78 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cấu hình hệ thống";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // nudMinuteEnd
+            // 
+            this.nudMinuteEnd.Location = new System.Drawing.Point(233, 97);
+            this.nudMinuteEnd.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.nudMinuteEnd.Name = "nudMinuteEnd";
+            this.nudMinuteEnd.Size = new System.Drawing.Size(56, 26);
+            this.nudMinuteEnd.TabIndex = 135;
+            // 
+            // nudMinuteStart
+            // 
+            this.nudMinuteStart.Location = new System.Drawing.Point(233, 36);
+            this.nudMinuteStart.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.nudMinuteStart.Name = "nudMinuteStart";
+            this.nudMinuteStart.Size = new System.Drawing.Size(56, 26);
+            this.nudMinuteStart.TabIndex = 135;
+            // 
+            // nudHourEnd
+            // 
+            this.nudHourEnd.Location = new System.Drawing.Point(132, 97);
+            this.nudHourEnd.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.nudHourEnd.Name = "nudHourEnd";
+            this.nudHourEnd.Size = new System.Drawing.Size(56, 26);
+            this.nudHourEnd.TabIndex = 135;
+            // 
+            // nudHourStart
+            // 
+            this.nudHourStart.Location = new System.Drawing.Point(132, 36);
+            this.nudHourStart.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.nudHourStart.Name = "nudHourStart";
+            this.nudHourStart.Size = new System.Drawing.Size(56, 26);
+            this.nudHourStart.TabIndex = 135;
+            // 
+            // nudDayEnd
+            // 
+            this.nudDayEnd.Location = new System.Drawing.Point(24, 97);
+            this.nudDayEnd.Maximum = new decimal(new int[] {
+            365,
+            0,
+            0,
+            0});
+            this.nudDayEnd.Name = "nudDayEnd";
+            this.nudDayEnd.Size = new System.Drawing.Size(56, 26);
+            this.nudDayEnd.TabIndex = 135;
+            // 
+            // nudDayStart
+            // 
+            this.nudDayStart.Location = new System.Drawing.Point(24, 36);
+            this.nudDayStart.Maximum = new decimal(new int[] {
+            365,
+            0,
+            0,
+            0});
+            this.nudDayStart.Name = "nudDayStart";
+            this.nudDayStart.Size = new System.Drawing.Size(56, 26);
+            this.nudDayStart.TabIndex = 135;
             // 
             // label15
             // 
@@ -322,7 +457,6 @@
             this.chkRunWithWindown.TabIndex = 2;
             this.chkRunWithWindown.Text = "Khởi động cùng hệ thống";
             this.chkRunWithWindown.UseVisualStyleBackColor = true;
-            this.chkRunWithWindown.CheckedChanged += new System.EventHandler(this.chkRunWithWindown_CheckedChanged);
             // 
             // tabPage4
             // 
@@ -540,8 +674,15 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVolume)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinuteEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinuteStart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHourEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHourStart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDayEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDayStart)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDayStart)).EndInit();

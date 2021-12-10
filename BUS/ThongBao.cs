@@ -12,6 +12,7 @@ namespace BUS
         public static string PlaceHolderText = "Nhập tên công việc hoặc ghi chú muốn tìm!";       
         public static string[] strs = { "rất khẩn cấp", "khẩn cấp", "quan trọng", "hơi quan trọng", "Không quan trọng" };
 
+
         public static void CanhBao(string message)
         {
             MessageBox.Show(message + " không được để trống!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

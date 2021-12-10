@@ -17,6 +17,7 @@ namespace ctk43_Nhom1_Manage_Job
 {
     public partial class frmThietLap : Form
     {
+        Binding bindings;
         WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
         public frmThietLap()
         {
@@ -52,33 +53,46 @@ namespace ctk43_Nhom1_Manage_Job
             chkRunHide.Checked = Properties.Settings.Default.runHide;
             chkRunWithWindown.Checked = Properties.Settings.Default.RunWithWin;
         }
-
-        private void chkRunWithWindown_CheckedChanged(object sender, EventArgs e)
+        private void controlToProfile()
         {
-           
-
+            if(chkRunWithWindown.Checked == true)
+            {
+                RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Micorsoft\\Windowns\\CurrentVersion\\Run", true);
+                reg.SetValue(Properties.Settings.Default.namePoject, Application.ExecutablePath.ToString());
+            }
+            Properties.Settings.Default.Sound = txtSound.Text;
+            Properties.Settings.Default.timeStart = Extension.TimeToMinute((int)nudDayStart.Value, (int)nudHourStart.Value, (int)nudMinuteStart.Value);
+            Properties.Settings.Default.timeEnd = Extension.TimeToMinute((int)nudDayEnd.Value, (int)nudHourEnd.Value, (int)nudMinuteEnd.Value);
+            Properties.Settings.Default.runHide = chkRunHide.Checked;
+            Properties.Settings.Default.RunWithWin = chkRunWithWindown.Checked;
+            Properties.Settings.Default.Volume = (int)nudVolume.Value;
         }
 
         private void frmThietLap_Load(object sender, EventArgs e)
         {
+            bindings = new Binding("Value", nudVolume, "Value", false, DataSourceUpdateMode.OnValidation);
+            prbVolum.DataBindings.Add(bindings);
             defaltInfor();
             LoadInfor();
         }
 
         private void btnMacDinh_Click(object sender, EventArgs e)
         {
-            
+            defaltInfor();
             LoadInfor();
          }
         private void btnSave_Click(object sender, EventArgs e)
         {
-           /* if (chkRunHide.Checked == true)
+            if (btnTestSound.Text == "")
             {
-                RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Micorsoft\\Windowns\\CurrentVersion\\Run", true);
-                reg.SetValue(Properties.Settings.Default.namePoject, Application.ExecutablePath.ToString());
-            }*/
+                mediaPlayer.controls.stop();
+                btnTestSound.Text = "Nghe thử";
+            }
+            controlToProfile();
+            Properties.Settings.Default.Save();
+            ThongBao.ThanhCong("lưu thiêt lập thành công");
 
-
+            this.Close();
         }
 
         private void btnTestSound_Click(object sender, EventArgs e)
@@ -98,5 +112,16 @@ namespace ctk43_Nhom1_Manage_Job
             }
         
          }
+
+        private void btnChoiceSound_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog choofdlog = new OpenFileDialog();
+            choofdlog.Filter = "All Files (*.wav)|*.wav";
+            choofdlog.FilterIndex = 1;
+            choofdlog.Multiselect = false;
+            if (choofdlog.ShowDialog() == DialogResult.OK)
+                txtSound.Text = choofdlog.FileName;
+        }
+
     }
 }

@@ -49,7 +49,7 @@ namespace ctk43_Nhom1_Manage_Job.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("default@gmail.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("default_gmail.com")]
         public string emailDefault {
             get {
                 return ((string)(this["emailDefault"]));
