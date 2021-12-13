@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BUS;
 using Microsoft.Win32;
-using System.Windows.Media;
-using System.Windows;
-using System.Media;
-using BUS;
+using System;
+using System.Windows.Forms;
 
 namespace ctk43_Nhom1_Manage_Job
 {
     public partial class frmThietLap : Form
     {
-        Binding bindings;
-        WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
+        private Binding bindings;
+        private WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
         public frmThietLap()
         {
             InitializeComponent();
@@ -35,7 +25,6 @@ namespace ctk43_Nhom1_Manage_Job
         public void LoadInfor()
         {
             nudVolume.Value = Properties.Settings.Default.Volume;
-            prbVolum.DataBindings.Add(bindings);
             txtByTeam.Text = Properties.Settings.Default.doByTeam;
             txtSound.Text = Properties.Settings.Default.Sound;
             txtContact.Text = Properties.Settings.Default.contact;
@@ -69,7 +58,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void frmThietLap_Load(object sender, EventArgs e)
         {
-            bindings = new Binding("Value", nudVolume, "Value", false, DataSourceUpdateMode.OnValidation);
+            bindings = new Binding("Value", nudVolume, "Value", false, DataSourceUpdateMode.Never);
             prbVolum.DataBindings.Add(bindings);
             LoadInfor();
         }
@@ -81,15 +70,10 @@ namespace ctk43_Nhom1_Manage_Job
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (btnTestSound.Text == "")
-            {
-                mediaPlayer.controls.stop();
-                btnTestSound.Text = "Nghe thử";
-            }
+   
             controlToProfile();
             Properties.Settings.Default.Save();
             ThongBao.ThanhCong("lưu thiêt lập thành công");
-
             this.Close();
         }
 
@@ -97,7 +81,6 @@ namespace ctk43_Nhom1_Manage_Job
         {
 
             mediaPlayer.URL = txtSound.Text;
-
             if (btnTestSound.Text == "")
             {
                 mediaPlayer.controls.stop();
@@ -119,6 +102,15 @@ namespace ctk43_Nhom1_Manage_Job
             choofdlog.Multiselect = false;
             if (choofdlog.ShowDialog() == DialogResult.OK)
                 txtSound.Text = choofdlog.FileName;
+        }
+
+        private void frmThietLap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (btnTestSound.Text == "")
+            {
+                mediaPlayer.controls.stop();
+                btnTestSound.Text = "Nghe thử";
+            }
         }
     }
 }

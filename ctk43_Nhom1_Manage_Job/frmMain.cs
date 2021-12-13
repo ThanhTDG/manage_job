@@ -26,7 +26,7 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-            getAll();
+           // getAll();
         }
         #region Ham Bo Tro
         private void getAll()
