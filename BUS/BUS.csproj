@@ -47,6 +47,7 @@
     <Compile Include="ChiTietCVBUS.cs" />
     <Compile Include="ChuDeBUS.cs" />
     <Compile Include="CongViecBUS.cs" />
+    <Compile Include="DataLocal.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="GhiChuNhanhBUS.cs" />
     <Compile Include="ThongBao.cs" />

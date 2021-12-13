@@ -1,0 +1,12 @@
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\bin\Debug\BUS.dll
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\bin\Debug\BUS.pdb
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\bin\Debug\DAO.dll
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\bin\Debug\EntityFramework.dll
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\bin\Debug\DAO.pdb
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\bin\Debug\DAO.dll.config
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\bin\Debug\EntityFramework.xml
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\obj\Debug\BUS.csproj.CopyComplete
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\obj\Debug\BUS.dll
+E:\third_Year\LapTrinhCSDL\BTN\BanDayDu\manage_job\BUS\obj\Debug\BUS.pdb

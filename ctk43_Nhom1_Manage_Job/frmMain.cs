@@ -26,7 +26,7 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-           // getAll();
+            //getAll();
         }
         #region Ham Bo Tro
         private void getAll()
@@ -103,26 +103,38 @@ namespace ctk43_Nhom1_Manage_Job
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Xếp đồ vào vali", iDCongviec = 17, trangThai = 0, mucDo = 2 });
         }
 
+        private void CapNhatHoanThanhOrNot(ref CongViec cv)
+        {
+            cv.tienDo = chiTietCVBUS.Process(cv);
+            if (cv.tienDo == 100)
+            {
+                cv.ngayHoanThanh = DateTime.Now;
+                cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD, cv.thoiGianKT, 2);
+            }
+            else
+            {
+                cv.ngayHoanThanh = null;
+                cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD, cv.thoiGianKT);
+            }
+        }
+
         private void CapNhatTienDo(TreeNode treeNode)
         {
             var cv = treeNode.Parent.Tag as CongViec;
             cv = congViecBUS.GetCongViecByID(cv.iD);
-            cv.tienDo = chiTietCVBUS.Process(cv);
-            cv.trangThai = cv.tienDo == 100 ? 1 : 0;
+            CapNhatHoanThanhOrNot(ref cv);
             congViecBUS.Update(cv);
         }
-
 
         private void CapNhatTienDo(int iD)
         {
             var cv = congViecBUS.GetCongViecByID(iD);
-            cv.tienDo = chiTietCVBUS.Process(cv);
-            cv.trangThai = cv.tienDo == 100 ? 1 : 0;
+            CapNhatHoanThanhOrNot(ref cv);
             congViecBUS.Update(cv);
         }
+
         private void UpdateStateJob(CongViec x, int s)
         {
-            x.trangThai = s;
             foreach (var ctcv in chiTietCVBUS.GetChiTietByCongViec(x).ToList())
             {
                 ctcv.trangThai = s;
@@ -136,20 +148,27 @@ namespace ctk43_Nhom1_Manage_Job
             if (treeNode.Level == 0)
             {
                 var cv = treeNode.Tag as CongViec;
+                cv = congViecBUS.GetCongViecByID(cv.iD);
                 if (cv == null) return;
                 if (treeNode.Checked)
                 {
+                    cv.ngayHoanThanh = DateTime.Now;
+                    cv.tienDo = 100;
+                    cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD,cv.thoiGianKT,2);
                     UpdateStateJob(cv, 1);
                     check = true;
                 }
                 else
                 {
+                    cv.ngayHoanThanh = null;
+                    cv.tienDo = 0;
+                    cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD, cv.thoiGianKT);
                     UpdateStateJob(cv, 0);
                     check = true;
                 }
                 if (check)
                 {
-                    CapNhatTienDo(cv.iD);
+                    congViecBUS.Update(cv);
                     congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                 }
             }

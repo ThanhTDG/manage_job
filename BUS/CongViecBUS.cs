@@ -24,12 +24,14 @@ namespace BUS
         {
             return congViecRepository.GetAll();
         }
+
         public int Insert(CongViec _CongViec)
         {
             _CongViec = congViecRepository.Add(_CongViec);
             congViecRepository.Commit();
             return _CongViec.iD;
         }
+
         public void Update(CongViec congViec)
         {
             congViecRepository.Update(congViec);
@@ -59,10 +61,10 @@ namespace BUS
             {
                 str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
                 var node = treeView.Nodes.Add(str);
-                node.ForeColor = Color.FromArgb(255 - temp.mucDo * 51, 50, 0 + temp.mucDo * 51);
+                node.ForeColor = ColorMN.ColorLevel(temp.mucDo);
                 node.Tag = temp;
                 node.Checked = false;
-                if (temp.trangThai == 1) { node.Checked = true; }
+                if (temp.tienDo == 100) { node.Checked = true; }
                 foreach (var ctcv in chiTietCVBus.GetChiTietByCongViec(temp).OrderBy(x => x.mucDo))
                 {
                     str = string.Format("{0}", ctcv.ten);
@@ -71,7 +73,7 @@ namespace BUS
                     if (ctcv.trangThai == 1)
                     {
                         childNode.Checked = true;
-                        childNode.ForeColor = Color.Green;
+                        childNode.ForeColor = ColorMN.GREEN;
                     }
                     childNode.NodeFont = new Font("Times New Roman", 10, FontStyle.Regular);
                     childNode.Tag = ctcv;
