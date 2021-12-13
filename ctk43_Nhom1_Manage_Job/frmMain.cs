@@ -252,6 +252,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void markToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (tvwDSCongViec.SelectedNode == null) return;
             if (tvwDSCongViec.SelectedNode.Checked == true)
                 tvwDSCongViec.SelectedNode.Checked = false;
             else
@@ -328,17 +329,19 @@ namespace ctk43_Nhom1_Manage_Job
                 if (cv == null) return;
                 if (treeNode.Checked)
                 {
+                    cv.tienDo = 100;
                     UpdateStateJob(cv, 1);
                     check = true;
                 }
                 else
                 {
+                    cv.tienDo = 0;
                     UpdateStateJob(cv, 0);
                     check = true;
                 }
                 if (check)
                 {
-                    CapNhatTienDo(cv.iD);
+                    congViecBUS.Update(cv);
                     congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                 }
             }
