@@ -49,6 +49,7 @@
     <Compile Include="CongViecBUS.cs" />
     <Compile Include="Define\DataCheck.cs" />
     <Compile Include="Define\DataLocal.cs" />
+    <Compile Include="Define\DefineLoaiChuDe.cs" />
     <Compile Include="Define\DefineMucDo.cs" />
     <Compile Include="Define\DefineTrangThai.cs" />
     <Compile Include="Define\Extension.cs" />

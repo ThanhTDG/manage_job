@@ -1,4 +1,5 @@
 ﻿using BUS;
+using BUS.Define;
 using DAO.Model;
 using System;
 using System.Collections.Generic;
@@ -468,7 +469,6 @@ namespace ctk43_Nhom1_Manage_Job
             }
         }
 
-
         private void txtTimKiemTenCV_TextChanged(object sender, EventArgs e)
         {
             if (TabHienTai == 0)
@@ -500,16 +500,16 @@ namespace ctk43_Nhom1_Manage_Job
                     cvs = congViecBUS.GetCongViecByImportant(DateTime.Now, chuDeHienTai, nd).ToList();
                     break;
                 case 3:
-                    cvs = congViecBUS.GetCongViecByLoaiChuDe(TinhTrang.Instance.GetIntLoaiChuDe("Hàng ngày"), nd).ToList();
+                    cvs = congViecBUS.GetCongViecByLoaiChuDe(DefineLoaiChuDe.getInt("Hàng ngày"), nd).ToList();
                     break;
                 case 4:
-                    cvs = congViecBUS.GetCongViecByLoaiChuDe(TinhTrang.Instance.GetIntLoaiChuDe("Hàng tuần"), nd).ToList();
+                    cvs = congViecBUS.GetCongViecByLoaiChuDe(DefineLoaiChuDe.getInt("Hàng tuần"), nd).ToList();
                     break;
                 case 5:
-                    cvs = congViecBUS.GetCongViecByLoaiChuDe(TinhTrang.Instance.GetIntLoaiChuDe("Hàng tháng"), nd).ToList();
+                    cvs = congViecBUS.GetCongViecByLoaiChuDe(DefineLoaiChuDe.getInt("Hàng tháng"), nd).ToList();
                     break;
                 case 6:
-                    cvs = congViecBUS.GetCongViecByLoaiChuDe(TinhTrang.Instance.GetIntLoaiChuDe("Hàng năm"), nd).ToList();
+                    cvs = congViecBUS.GetCongViecByLoaiChuDe(DefineLoaiChuDe.getInt("Hàng năm"), nd).ToList();
                     break;
             }
             cvs = congViecBUS.SortCongViec(cvs, SortCV);
