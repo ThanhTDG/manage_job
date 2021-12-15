@@ -1,4 +1,5 @@
-﻿using DAO.Model;
+﻿using ctk43_Nhom1_Manage_Job.myUserControl;
+using DAO.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,25 +21,38 @@ namespace ctk43_Nhom1_Manage_Job
             InitializeComponent();
         }
         #region Hàm bổ trợ 
-   /*     void GetListCV()
+        void GetListCV()
         {
             int countCV = congViecs.Count;
             if (countCV == 0)
                 this.Close();
             UscThongBao[] thongbaos = new UscThongBao[countCV];
-            for(int i = 0;i< countCV; i++)
+            for (int i = 0; i < countCV; i++)
             {
-                thongbaos[i].lb
+                thongbaos[i] = new UscThongBao();
+                thongbaos[i]._CongViec = congViecs[i];
+                thongbaos[i].setdata();
+                int height = thongbaos[i].Size.Height;
+                if (flowLayoutPanel1 != null)
+                {
+                    flowLayoutPanel1.Controls.Add(thongbaos[i]);
+                    this.Size = new Size((thongbaos[i].Size.Width)+20, height + this.Size.Height);
+                }
             }
-        }*/
+        }
 
         #endregion
 
         #region event
         private void frmThongBaoCV_Load(object sender, EventArgs e)
         {
-
+            GetListCV();
         }
         #endregion
+
+        private void frmThongBaoCV_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using DAO.Model;
+﻿using BUS;
+using BUS.Define;
+using DAO.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +15,8 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
 {
     public partial class UscThongBao : UserControl
     {
-        Binding binding;
         public UscThongBao()
         {
-            binding = new Binding("txt", lbTienDo, "Value", false, DataSourceUpdateMode.Never);
             InitializeComponent();
         }
         #region Properties
@@ -31,7 +31,7 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
         public CongViec _CongViec
         {
             get {  return congViec; }
-            set { congViec = value;
+            set { congViec =value;
                 
             }
         }
@@ -43,17 +43,18 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
             txtName.Text = congViec.ten;
             switch (congViec.trangThai)
             {
-                case 0:
-                    txtName.Text = congViec.thoiGianBD.ToLongTimeString();
-                    title = "Sắp bắt đầu";
+                case 1:
+                    lbTime.Text = congViec.thoiGianBD.ToString();
+                    label1.Text = "Đã bắt đầu";
                     break;
-            //    case 1:
-
-                        
+                case 3:
+                    txtTime.Text = congViec.thoiGianBD.ToString();
+                    label1.Text = "Đã hết hạn";
+                    break;
             }
-            lbpercent.Text = congViec.ten;
+            title = DefineTrangThai.GetString(congViec.trangThai);
             txtMota.Text = congViec.MoTa;
-            lbTienDo.DataBindings.Add(binding);
+            lbpercent.Text = congViec.tienDo.ToString() + "%";
         }
         #endregion
     }

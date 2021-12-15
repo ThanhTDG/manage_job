@@ -117,15 +117,16 @@ namespace BUS
         }
         public static CongViec UpdateComing(CongViec congViec, CongViecBUS congViecBUS)
         {
-            congViec.mucDo = 2;
+            congViec.trangThai = 1;
             congViecBUS.Update(congViec);
             return congViec;
         }
         public static CongViec UpdateOver(CongViec congViec, CongViecBUS congViecBUS)
         {
-            congViec.mucDo = 3;
+            congViec.trangThai = 3;
             congViecBUS.Update(congViec);
             return congViec;
         }
+
     }
 }

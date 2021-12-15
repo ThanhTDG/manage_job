@@ -1,0 +1,12 @@
+F:\CSDL\QuanLy\final v1\manage_job\DAO\bin\Debug\DAO.dll.config
+F:\CSDL\QuanLy\final v1\manage_job\DAO\bin\Debug\DAO.dll
+F:\CSDL\QuanLy\final v1\manage_job\DAO\bin\Debug\DAO.pdb
+F:\CSDL\QuanLy\final v1\manage_job\DAO\bin\Debug\EntityFramework.dll
+F:\CSDL\QuanLy\final v1\manage_job\DAO\bin\Debug\EntityFramework.SqlServer.dll
+F:\CSDL\QuanLy\final v1\manage_job\DAO\bin\Debug\EntityFramework.xml
+F:\CSDL\QuanLy\final v1\manage_job\DAO\bin\Debug\EntityFramework.SqlServer.xml
+F:\CSDL\QuanLy\final v1\manage_job\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+F:\CSDL\QuanLy\final v1\manage_job\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+F:\CSDL\QuanLy\final v1\manage_job\DAO\obj\Debug\DAO.csproj.CopyComplete
+F:\CSDL\QuanLy\final v1\manage_job\DAO\obj\Debug\DAO.dll
+F:\CSDL\QuanLy\final v1\manage_job\DAO\obj\Debug\DAO.pdb

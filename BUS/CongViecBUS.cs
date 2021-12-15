@@ -139,7 +139,7 @@ namespace BUS
         }
         public List<CongViec> GetCongViecsCommingSoon(string email)
         {
-            return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderBy(x => x.thoiGianBD).ToList();
+            return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderByDescending(x => x.thoiGianBD).ToList();
         }
 
 

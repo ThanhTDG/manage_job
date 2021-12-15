@@ -32,6 +32,15 @@ namespace ctk43_Nhom1_Manage_Job
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.GhiChutoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThongKe = new System.Windows.Forms.ToolStripMenuItem();
+            this.SapXeptoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CVMenuParentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortByDateCVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortByMucDoCVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GCMenuParentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortByTenGCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortByDateGCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripCbbCheDoSapXep = new System.Windows.Forms.ToolStripComboBox();
             this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kíchHoạtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,21 +76,10 @@ namespace ctk43_Nhom1_Manage_Job
             this.ctxMenuDSGhiChu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.XoaGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-
-            this.lbtext = new System.Windows.Forms.Label();
             this.OpenGhiChuDSGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongBao = new System.Windows.Forms.Button();
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.ckbTimNgayGhiChu = new System.Windows.Forms.CheckBox();
-            this.SapXeptoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CVMenuParentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GCMenuParentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripCbbCheDoSapXep = new System.Windows.Forms.ToolStripComboBox();
-            this.SortByDateCVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SortByMucDoCVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SortByTenGCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SortByDateGCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grbDSCongViec.SuspendLayout();
             this.ctxMenuDSCongViec.SuspendLayout();
@@ -137,6 +135,84 @@ namespace ctk43_Nhom1_Manage_Job
             this.tsmiThongKe.Text = "Thống kê";
             this.tsmiThongKe.Click += new System.EventHandler(this.tsmiThongKe_Click);
             // 
+            // SapXeptoolStripMenuItem
+            // 
+            this.SapXeptoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CVMenuParentToolStripMenuItem,
+            this.GCMenuParentToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.toolStripCbbCheDoSapXep});
+            this.SapXeptoolStripMenuItem.Name = "SapXeptoolStripMenuItem";
+            this.SapXeptoolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.SapXeptoolStripMenuItem.Text = "Sắp xếp";
+            this.SapXeptoolStripMenuItem.Click += new System.EventHandler(this.SapXeptoolStripMenuItem_Click);
+            // 
+            // CVMenuParentToolStripMenuItem
+            // 
+            this.CVMenuParentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SortByDateCVToolStripMenuItem,
+            this.SortByMucDoCVToolStripMenuItem});
+            this.CVMenuParentToolStripMenuItem.Name = "CVMenuParentToolStripMenuItem";
+            this.CVMenuParentToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.CVMenuParentToolStripMenuItem.Text = "Công việc";
+            // 
+            // SortByDateCVToolStripMenuItem
+            // 
+            this.SortByDateCVToolStripMenuItem.Name = "SortByDateCVToolStripMenuItem";
+            this.SortByDateCVToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.SortByDateCVToolStripMenuItem.Text = "Theo ngày";
+            this.SortByDateCVToolStripMenuItem.Click += new System.EventHandler(this.SortByDateCVToolStripMenuItem_Click);
+            // 
+            // SortByMucDoCVToolStripMenuItem
+            // 
+            this.SortByMucDoCVToolStripMenuItem.Checked = true;
+            this.SortByMucDoCVToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.SortByMucDoCVToolStripMenuItem.Name = "SortByMucDoCVToolStripMenuItem";
+            this.SortByMucDoCVToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.SortByMucDoCVToolStripMenuItem.Text = "Theo mức độ";
+            this.SortByMucDoCVToolStripMenuItem.Click += new System.EventHandler(this.SortByMucDoCVToolStripMenuItem_Click);
+            // 
+            // GCMenuParentToolStripMenuItem
+            // 
+            this.GCMenuParentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SortByTenGCToolStripMenuItem,
+            this.SortByDateGCToolStripMenuItem});
+            this.GCMenuParentToolStripMenuItem.Enabled = false;
+            this.GCMenuParentToolStripMenuItem.Name = "GCMenuParentToolStripMenuItem";
+            this.GCMenuParentToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.GCMenuParentToolStripMenuItem.Text = "Ghi chú";
+            // 
+            // SortByTenGCToolStripMenuItem
+            // 
+            this.SortByTenGCToolStripMenuItem.Name = "SortByTenGCToolStripMenuItem";
+            this.SortByTenGCToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.SortByTenGCToolStripMenuItem.Text = "Theo tên";
+            this.SortByTenGCToolStripMenuItem.Click += new System.EventHandler(this.SortByTenGCToolStripMenuItem_Click);
+            // 
+            // SortByDateGCToolStripMenuItem
+            // 
+            this.SortByDateGCToolStripMenuItem.Checked = true;
+            this.SortByDateGCToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.SortByDateGCToolStripMenuItem.Name = "SortByDateGCToolStripMenuItem";
+            this.SortByDateGCToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.SortByDateGCToolStripMenuItem.Text = "Theo ngày";
+            this.SortByDateGCToolStripMenuItem.Click += new System.EventHandler(this.SortByDateGCToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(178, 6);
+            // 
+            // toolStripCbbCheDoSapXep
+            // 
+            this.toolStripCbbCheDoSapXep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripCbbCheDoSapXep.Items.AddRange(new object[] {
+            "Tăng dần",
+            "Giảm dần"});
+            this.toolStripCbbCheDoSapXep.Name = "toolStripCbbCheDoSapXep";
+            this.toolStripCbbCheDoSapXep.Size = new System.Drawing.Size(121, 23);
+            this.toolStripCbbCheDoSapXep.SelectedIndexChanged += new System.EventHandler(this.toolStripCbbCheDoSapXep_SelectedIndexChanged);
+            // 
             // hỗTrợToolStripMenuItem
             // 
             this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -150,13 +226,13 @@ namespace ctk43_Nhom1_Manage_Job
             // kíchHoạtToolStripMenuItem
             // 
             this.kíchHoạtToolStripMenuItem.Name = "kíchHoạtToolStripMenuItem";
-            this.kíchHoạtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kíchHoạtToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.kíchHoạtToolStripMenuItem.Text = "Kích hoạt";
             // 
             // thôngTinToolStripMenuItem
             // 
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.thôngTinToolStripMenuItem.Text = "Thông tin";
             // 
             // ctmSetting
@@ -490,7 +566,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(182, 6);
-            //
+            // 
             // OpenGhiChuDSGhiChuToolStripMenuItem
             // 
             this.OpenGhiChuDSGhiChuToolStripMenuItem.Name = "OpenGhiChuDSGhiChuToolStripMenuItem";
@@ -509,14 +585,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnThongBao.UseVisualStyleBackColor = true;
             this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
-            // lbtext
-            // 
-            this.lbtext.AutoSize = true;
-            this.lbtext.Location = new System.Drawing.Point(500, 100);
-            this.lbtext.Name = "lbtext";
-            this.lbtext.Size = new System.Drawing.Size(35, 13);
-            this.lbtext.TabIndex = 18;
-            this.lbtext.Text = "label4";
             // OpenFileDialog
             // 
             this.OpenFileDialog.DefaultExt = "txt";
@@ -533,90 +601,11 @@ namespace ctk43_Nhom1_Manage_Job
             this.ckbTimNgayGhiChu.UseVisualStyleBackColor = true;
             this.ckbTimNgayGhiChu.Visible = false;
             // 
-            // SapXeptoolStripMenuItem
-            // 
-            this.SapXeptoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CVMenuParentToolStripMenuItem,
-            this.GCMenuParentToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.toolStripCbbCheDoSapXep});
-            this.SapXeptoolStripMenuItem.Name = "SapXeptoolStripMenuItem";
-            this.SapXeptoolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.SapXeptoolStripMenuItem.Text = "Sắp xếp";
-            this.SapXeptoolStripMenuItem.Click += new System.EventHandler(this.SapXeptoolStripMenuItem_Click);
-            // 
-            // CVMenuParentToolStripMenuItem
-            // 
-            this.CVMenuParentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SortByDateCVToolStripMenuItem,
-            this.SortByMucDoCVToolStripMenuItem});
-            this.CVMenuParentToolStripMenuItem.Name = "CVMenuParentToolStripMenuItem";
-            this.CVMenuParentToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.CVMenuParentToolStripMenuItem.Text = "Công việc";
-            // 
-            // GCMenuParentToolStripMenuItem
-            // 
-            this.GCMenuParentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SortByTenGCToolStripMenuItem,
-            this.SortByDateGCToolStripMenuItem});
-            this.GCMenuParentToolStripMenuItem.Enabled = false;
-            this.GCMenuParentToolStripMenuItem.Name = "GCMenuParentToolStripMenuItem";
-            this.GCMenuParentToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.GCMenuParentToolStripMenuItem.Text = "Ghi chú";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(178, 6);
-            // 
-            // toolStripCbbCheDoSapXep
-            // 
-            this.toolStripCbbCheDoSapXep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripCbbCheDoSapXep.Items.AddRange(new object[] {
-            "Tăng dần",
-            "Giảm dần"});
-            this.toolStripCbbCheDoSapXep.Name = "toolStripCbbCheDoSapXep";
-            this.toolStripCbbCheDoSapXep.Size = new System.Drawing.Size(121, 23);
-            this.toolStripCbbCheDoSapXep.SelectedIndexChanged += new System.EventHandler(this.toolStripCbbCheDoSapXep_SelectedIndexChanged);
-            // 
-            // SortByDateCVToolStripMenuItem
-            // 
-            this.SortByDateCVToolStripMenuItem.Name = "SortByDateCVToolStripMenuItem";
-            this.SortByDateCVToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SortByDateCVToolStripMenuItem.Text = "Theo ngày";
-            this.SortByDateCVToolStripMenuItem.Click += new System.EventHandler(this.SortByDateCVToolStripMenuItem_Click);
-            // 
-            // SortByMucDoCVToolStripMenuItem
-            // 
-            this.SortByMucDoCVToolStripMenuItem.Checked = true;
-            this.SortByMucDoCVToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SortByMucDoCVToolStripMenuItem.Name = "SortByMucDoCVToolStripMenuItem";
-            this.SortByMucDoCVToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SortByMucDoCVToolStripMenuItem.Text = "Theo mức độ";
-            this.SortByMucDoCVToolStripMenuItem.Click += new System.EventHandler(this.SortByMucDoCVToolStripMenuItem_Click);
-            // 
-            // SortByTenGCToolStripMenuItem
-            // 
-            this.SortByTenGCToolStripMenuItem.Name = "SortByTenGCToolStripMenuItem";
-            this.SortByTenGCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SortByTenGCToolStripMenuItem.Text = "Theo tên";
-            this.SortByTenGCToolStripMenuItem.Click += new System.EventHandler(this.SortByTenGCToolStripMenuItem_Click);
-            // 
-            // SortByDateGCToolStripMenuItem
-            // 
-            this.SortByDateGCToolStripMenuItem.Checked = true;
-            this.SortByDateGCToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SortByDateGCToolStripMenuItem.Name = "SortByDateGCToolStripMenuItem";
-            this.SortByDateGCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SortByDateGCToolStripMenuItem.Text = "Theo ngày";
-            this.SortByDateGCToolStripMenuItem.Click += new System.EventHandler(this.SortByDateGCToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 587);
-            this.Controls.Add(this.lbtext);
             this.Controls.Add(this.ckbTimNgayGhiChu);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btnLoc);
@@ -693,7 +682,6 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ToolStripMenuItem XoaGhiChuToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem ReloadDSGhiChuToolStripMenuItem;
-        private System.Windows.Forms.Label lbtext;
         private System.Windows.Forms.ToolStripMenuItem OpenGhiChuDSGhiChuToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
