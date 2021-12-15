@@ -13,7 +13,6 @@ namespace DAO.Model
         public string TieuDe { get; set; }
         public string NoiDung { get; set; }
         public DateTime ThoiGianBD { get; set; }
-
         public string Email { get; set; }
 
         [ForeignKey("Email")]

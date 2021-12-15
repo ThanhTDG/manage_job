@@ -47,13 +47,15 @@ namespace ctk43_Nhom1_Manage_Job
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbbTypeOfTopic = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.Location = new System.Drawing.Point(305, 419);
+            this.btnCancel.Location = new System.Drawing.Point(315, 451);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 27);
             this.btnCancel.TabIndex = 101;
@@ -64,7 +66,7 @@ namespace ctk43_Nhom1_Manage_Job
             // txtProcess
             // 
             this.txtProcess.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProcess.Location = new System.Drawing.Point(137, 289);
+            this.txtProcess.Location = new System.Drawing.Point(147, 321);
             this.txtProcess.Name = "txtProcess";
             this.txtProcess.ReadOnly = true;
             this.txtProcess.Size = new System.Drawing.Size(266, 25);
@@ -74,7 +76,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(27, 292);
+            this.label11.Location = new System.Drawing.Point(27, 326);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 17);
             this.label11.TabIndex = 99;
@@ -84,7 +86,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnSave.Location = new System.Drawing.Point(201, 419);
+            this.btnSave.Location = new System.Drawing.Point(211, 451);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 27);
             this.btnSave.TabIndex = 102;
@@ -95,7 +97,7 @@ namespace ctk43_Nhom1_Manage_Job
             // txtRemine
             // 
             this.txtRemine.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemine.Location = new System.Drawing.Point(137, 207);
+            this.txtRemine.Location = new System.Drawing.Point(147, 239);
             this.txtRemine.Name = "txtRemine";
             this.txtRemine.ReadOnly = true;
             this.txtRemine.Size = new System.Drawing.Size(266, 25);
@@ -105,7 +107,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 210);
+            this.label7.Location = new System.Drawing.Point(27, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 17);
             this.label7.TabIndex = 90;
@@ -116,7 +118,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.cbbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLevel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLevel.FormattingEnabled = true;
-            this.cbbLevel.Location = new System.Drawing.Point(137, 247);
+            this.cbbLevel.Location = new System.Drawing.Point(147, 279);
             this.cbbLevel.Name = "cbbLevel";
             this.cbbLevel.Size = new System.Drawing.Size(266, 25);
             this.cbbLevel.TabIndex = 87;
@@ -126,7 +128,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.cbbTopic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTopic.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTopic.FormattingEnabled = true;
-            this.cbbTopic.Location = new System.Drawing.Point(137, 42);
+            this.cbbTopic.Location = new System.Drawing.Point(148, 70);
             this.cbbTopic.Name = "cbbTopic";
             this.cbbTopic.Size = new System.Drawing.Size(266, 25);
             this.cbbTopic.TabIndex = 86;
@@ -135,7 +137,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 333);
+            this.label6.Location = new System.Drawing.Point(26, 367);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 17);
             this.label6.TabIndex = 84;
@@ -144,7 +146,7 @@ namespace ctk43_Nhom1_Manage_Job
             // richDescription
             // 
             this.richDescription.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richDescription.Location = new System.Drawing.Point(137, 332);
+            this.richDescription.Location = new System.Drawing.Point(147, 364);
             this.richDescription.Name = "richDescription";
             this.richDescription.Size = new System.Drawing.Size(265, 79);
             this.richDescription.TabIndex = 83;
@@ -154,7 +156,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 251);
+            this.label5.Location = new System.Drawing.Point(27, 285);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 17);
             this.label5.TabIndex = 82;
@@ -165,7 +167,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.dtpEnd.CustomFormat = "dd/MM/yyyy  H:mm:ss";
             this.dtpEnd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(137, 165);
+            this.dtpEnd.Location = new System.Drawing.Point(147, 197);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(266, 25);
             this.dtpEnd.TabIndex = 81;
@@ -175,7 +177,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.dtpStart.CustomFormat = "dd/MM/yyyy  H:mm:ss";
             this.dtpStart.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(137, 124);
+            this.dtpStart.Location = new System.Drawing.Point(147, 156);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(266, 25);
             this.dtpStart.TabIndex = 80;
@@ -184,16 +186,16 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 128);
+            this.label4.Location = new System.Drawing.Point(26, 162);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 17);
+            this.label4.Size = new System.Drawing.Size(111, 17);
             this.label4.TabIndex = 79;
-            this.label4.Text = "Ngày bắt đầu";
+            this.label4.Text = "Thời gian bắt đầu";
             // 
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(137, 84);
+            this.txtTitle.Location = new System.Drawing.Point(148, 119);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(266, 25);
             this.txtTitle.TabIndex = 78;
@@ -202,7 +204,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 87);
+            this.label3.Location = new System.Drawing.Point(27, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 76;
@@ -212,28 +214,51 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 169);
+            this.label2.Location = new System.Drawing.Point(27, 203);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
+            this.label2.Size = new System.Drawing.Size(114, 17);
             this.label2.TabIndex = 77;
-            this.label2.Text = "Ngày kết thúc";
+            this.label2.Text = "Thời gian kết thúc";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 46);
+            this.label1.Location = new System.Drawing.Point(26, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 75;
             this.label1.Text = "Chủ đề";
+            // 
+            // cbbTypeOfTopic
+            // 
+            this.cbbTypeOfTopic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTypeOfTopic.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTypeOfTopic.FormattingEnabled = true;
+            this.cbbTypeOfTopic.Location = new System.Drawing.Point(147, 27);
+            this.cbbTypeOfTopic.Name = "cbbTypeOfTopic";
+            this.cbbTypeOfTopic.Size = new System.Drawing.Size(266, 25);
+            this.cbbTypeOfTopic.TabIndex = 104;
+            this.cbbTypeOfTopic.SelectedIndexChanged += new System.EventHandler(this.cbbTypeOfTopic_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(25, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 17);
+            this.label8.TabIndex = 103;
+            this.label8.Text = "Loại chủ đề";
             // 
             // frmCongViec
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 458);
+            this.ClientSize = new System.Drawing.Size(432, 512);
+            this.Controls.Add(this.cbbTypeOfTopic);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtProcess);
             this.Controls.Add(this.label11);
@@ -281,6 +306,8 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbbTypeOfTopic;
+        private System.Windows.Forms.Label label8;
     }
 }
 

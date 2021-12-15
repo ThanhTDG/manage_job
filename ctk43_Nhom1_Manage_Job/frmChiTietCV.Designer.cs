@@ -41,7 +41,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.txtJobDetail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIntentDay = new System.Windows.Forms.TextBox();
             this.txtIntentHour = new System.Windows.Forms.TextBox();
             this.txtIntentMinute = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.txtRealMinute = new System.Windows.Forms.TextBox();
             this.txtRealHour = new System.Windows.Forms.TextBox();
             this.txtRealDay = new System.Windows.Forms.TextBox();
+            this.txtIntentDay = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -172,13 +172,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.label1.TabIndex = 103;
             this.label1.Text = "Công việc";
             // 
-            // txtIntentDay
-            // 
-            this.txtIntentDay.Location = new System.Drawing.Point(134, 110);
-            this.txtIntentDay.Name = "txtIntentDay";
-            this.txtIntentDay.Size = new System.Drawing.Size(57, 20);
-            this.txtIntentDay.TabIndex = 121;
-            // 
             // txtIntentHour
             // 
             this.txtIntentHour.Location = new System.Drawing.Point(243, 111);
@@ -284,6 +277,13 @@ namespace ctk43_Nhom1_Manage_Job
             this.txtRealDay.Size = new System.Drawing.Size(57, 20);
             this.txtRealDay.TabIndex = 128;
             // 
+            // txtIntentDay
+            // 
+            this.txtIntentDay.Location = new System.Drawing.Point(134, 110);
+            this.txtIntentDay.Name = "txtIntentDay";
+            this.txtIntentDay.Size = new System.Drawing.Size(57, 20);
+            this.txtIntentDay.TabIndex = 121;
+            // 
             // frmChiTietCV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,7 +336,6 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.TextBox txtJobDetail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIntentDay;
         private System.Windows.Forms.TextBox txtIntentHour;
         private System.Windows.Forms.TextBox txtIntentMinute;
         private System.Windows.Forms.Label label2;
@@ -349,5 +348,6 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.TextBox txtRealMinute;
         private System.Windows.Forms.TextBox txtRealHour;
         private System.Windows.Forms.TextBox txtRealDay;
+        private System.Windows.Forms.TextBox txtIntentDay;
     }
 }

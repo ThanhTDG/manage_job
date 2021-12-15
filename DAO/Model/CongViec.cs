@@ -15,6 +15,7 @@ namespace DAO.Model
         public string ten { get; set; }
         public DateTime thoiGianBD { get; set; }
         public DateTime thoiGianKT { get; set; }
+        public DateTime? ngayHoanThanh { get; set; }
         public int trangThai { get; set; }
         public int tienDo { get; set; }
         public int mucDo { get; set; }

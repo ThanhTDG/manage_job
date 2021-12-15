@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Data.SqlClient;
-
+using BUS.Define;
 
 namespace BUS
 {
@@ -24,12 +24,14 @@ namespace BUS
         {
             return congViecRepository.GetAll();
         }
+
         public int Insert(CongViec _CongViec)
         {
             _CongViec = congViecRepository.Add(_CongViec);
             congViecRepository.Commit();
             return _CongViec.iD;
         }
+
         public void Update(CongViec congViec)
         {
             congViecRepository.Update(congViec);
@@ -55,14 +57,14 @@ namespace BUS
             var str = "";
             treeView.Nodes.Clear();
             treeView.Font = new Font("Times New Roman", 13, FontStyle.Regular);
-            foreach (var temp in dsCongViec.OrderBy(x => x.mucDo))
+            foreach (var temp in dsCongViec)
             {
                 str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
                 var node = treeView.Nodes.Add(str);
-                node.ForeColor = Color.FromArgb(255 - temp.mucDo * 51, 50, 0 + temp.mucDo * 51);
+                node.ForeColor = ColorMN.ColorLevel(temp.mucDo);
                 node.Tag = temp;
                 node.Checked = false;
-                if (temp.trangThai == 1) { node.Checked = true; }
+                if (temp.tienDo == 100) { node.Checked = true; }
                 foreach (var ctcv in chiTietCVBus.GetChiTietByCongViec(temp).OrderBy(x => x.mucDo))
                 {
                     str = string.Format("{0}", ctcv.ten);
@@ -71,7 +73,7 @@ namespace BUS
                     if (ctcv.trangThai == 1)
                     {
                         childNode.Checked = true;
-                        childNode.ForeColor = Color.Green;
+                        childNode.ForeColor = ColorMN.ColorLevel(5);
                     }
                     childNode.NodeFont = new Font("Times New Roman", 10, FontStyle.Regular);
                     childNode.Tag = ctcv;
@@ -90,61 +92,10 @@ namespace BUS
             return congViecRepository.GetCongViecByNguoiDung(nd.email);
         }
 
-        public IEnumerable<CongViec> GetByLoc(NguoiDung nd )
+        public IEnumerable<CongViec> GetByLoc(NguoiDung nd)
         {
-          /*  int i = 0, j = 0;
-            List<SqlParameter> sqlParameters = new List<SqlParameter>();
-            string Squery = ("Select * from  NguoiDungs A , ChuDes B, CongViecs C  where B.Email = @Email AND A.email = B.Email AND B.iD = C.IDChuDe ");
-            SqlParameter sqlParameter = new SqlParameter("@Email", nd.email);
-            sqlParameters.Add(sqlParameter);
-            if (TinhTrang.Instance._time.Count != 0)
-            {
-                Squery = Squery + " AND C.thoiGianDB >= @StartDay AND C.thoiGianKT <= @EndDay ";
-                sqlParameter = new SqlParameter("@StartDay", TinhTrang.Instance._time[0].ToString("yyyy-MM-dd"));
-                sqlParameters.Add(sqlParameter);
-                sqlParameter = new SqlParameter("@EndDay", TinhTrang.Instance._time[1].ToString("yyyy-MM-dd"));
-                sqlParameters.Add(sqlParameter);
-            }
-            if (TinhTrang.Instance._mucdo.Count != 0)
-            {
-                foreach (var mucdo in TinhTrang.Instance._mucdo)
-                {
-                    if (j == 0)
-                    {
-
-                        Squery = Squery + " AND C.tienDo = @tienDo" + j;
-                    }
-                    else
-                    {
-                        Squery = Squery + " OR C.tienDo = @tienDo" + j;
-                    }
-                    sqlParameter = new SqlParameter("@tienDo" + j, mucdo);
-                    sqlParameters.Add(sqlParameter);
-                    j++;
-                }
-            }
-            if (TinhTrang.Instance._trangthai.Count != 0)
-            {
-                foreach (var trangthai in TinhTrang.Instance._trangthai)
-                {
-                    if (i == 0)
-                    {
-                        
-                        Squery = Squery + " AND C.trangThai ="+i;
-                    }
-                    else
-                    {
-                        Squery = Squery + " OR C.trangThai ="+i;
-                      
-                    }
-                    sqlParameter = new SqlParameter("@trangthai" +i, trangthai);
-                    sqlParameters.Add(sqlParameter);
-                    i++;
-                }
-            }
-      */
-            return congViecRepository.GetCongViecByLoc(nd, TinhTrang.Instance._trangthai, TinhTrang.Instance._mucdo, TinhTrang.Instance._time);
-    }
+            return congViecRepository.GetCongViecByLoc(nd, DataCheck.Instance.trangthai, DataCheck.Instance.mucdo, DataCheck.Instance.time);
+        }
 
         public IEnumerable<CongViec> GetCongViecByTenCV(string keyword, ChuDe chuDe, NguoiDung nd)
         {
@@ -160,14 +111,14 @@ namespace BUS
                 query = GetCongViecByChuDe(chuDe);
             }
 
-            return query.Where(f => f.ten.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);          
+            return query.Where(f => f.ten.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
         }
 
         public IEnumerable<CongViec> GetCongViecByDay(DateTime date, ChuDe chuDe, NguoiDung nd)
         {
             IEnumerable<CongViec> cv;
             if (chuDe == null || chuDe.iD == 0)
-                cv = GetCongViecByNguoiDung(nd);                
+                cv = GetCongViecByNguoiDung(nd);
             else
                 cv = GetCongViecByChuDe(chuDe);
             return cv.Where(x => x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT);
@@ -181,6 +132,50 @@ namespace BUS
             else
                 cv = GetCongViecByChuDe(chuDe);
             return cv.Where(x => (x.mucDo <= 2 && x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT.Date));
+        }
+        public List<CongViec> GetCongViecsAlmostOver(string email)
+        {
+            return (congViecRepository.GetCongViecsAlmostOver(DateTime.Now, email)).OrderBy(x => x.thoiGianKT).ToList();
+        }
+        public List<CongViec> GetCongViecsCommingSoon(string email)
+        {
+            return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderBy(x => x.thoiGianBD).ToList();
+        }
+
+
+
+        public IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, NguoiDung nd)
+        {
+            return congViecRepository.GetCongViecByLoaiChuDe(loaiChuDe, nd.email);
+        }
+
+        public List<CongViec> SortCongViec(List<CongViec> cvs, sort sortCongViec)
+        {
+            switch (sortCongViec)
+            {
+                case sort.TangTheoTG:
+                    cvs = cvs.OrderBy(x => x.thoiGianBD).ToList();
+                    break;
+                case sort.GiamTheoTG:
+                    cvs = cvs.OrderByDescending(x => x.thoiGianBD).ToList();
+                    break;
+                case sort.TangTheoMucDo:
+                    cvs = cvs.OrderByDescending(x => x.mucDo).ToList();
+                    break;
+                case sort.GiamTheoMucDo:
+                    cvs = cvs.OrderBy(x => x.mucDo).ToList();
+                    break;
+            }
+            return cvs;
+        }
+
+        public IEnumerable<CongViec> SortCongViecByMucDo(ChuDe chuDe, NguoiDung nd, bool cheDo)
+        {
+            IEnumerable<CongViec> cv = (chuDe.iD == 0) ? GetCongViecByNguoiDung(nd) : GetCongViecByChuDe(chuDe);
+            if (cheDo)
+                return cv.OrderByDescending(x => x.mucDo);
+            else
+                return cv.OrderBy(x => x.mucDo);
         }
     }
 }

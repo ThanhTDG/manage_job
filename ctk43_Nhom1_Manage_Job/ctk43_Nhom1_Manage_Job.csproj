@@ -138,6 +138,12 @@
     <Compile Include="frmGhiChu.Designer.cs">
       <DependentUpon>frmGhiChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongBaoCV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongBaoCV.Designer.cs">
+      <DependentUpon>frmThongBaoCV.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Release\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +158,12 @@
     <Compile Include="frmThongKe.Designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="myUserControl\uscThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControl\uscThongBao.Designer.cs">
+      <DependentUpon>uscThongBao.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDSChiTiet.resx">
       <DependentUpon>frmDSChiTiet.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,14 +176,27 @@
     <EmbeddedResource Include="frmCongViec.resx">
       <DependentUpon>frmCongViec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLoc.resx">
+      <DependentUpon>frmLoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemChuDe.resx">
       <DependentUpon>frmThemChuDe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGhiChu.resx">
       <DependentUpon>frmGhiChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThietLap.resx">
+      <DependentUpon>frmThietLap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongBao.resx">
+      <DependentUpon>frmThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongBaoCV.resx">
+      <DependentUpon>frmThongBaoCV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -185,6 +210,9 @@
     </Compile>
     <EmbeddedResource Include="frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUserControl\uscThongBao.resx">
+      <DependentUpon>uscThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\ctk43_Nhom1_Manage_Job\project-colors.json" />
     <None Include=".vs\ctk43_Nhom1_Manage_Job\v17\.suo" />
@@ -220,9 +248,7 @@
     <Content Include="Resources\musicDefault.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
-    <Folder Include="obj\Debug\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
