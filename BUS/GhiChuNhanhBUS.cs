@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
 using System;
+using BUS.Define;
 
 namespace BUS
 {
@@ -61,6 +62,7 @@ namespace BUS
             else
                 return query.Where(f => f.TieuDe.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
         }  
+
 
         public List<GhiChuNhanh> SortGhiChu(List<GhiChuNhanh> gcs, sort sortGC)
         {

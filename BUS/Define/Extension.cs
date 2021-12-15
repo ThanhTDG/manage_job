@@ -7,24 +7,6 @@ using System.Threading.Tasks;
 
 namespace BUS
 {
-    public enum find
-    {
-        thoigian,
-        mucdo,
-        trangthai
-    }
-
-    public enum sort
-    {
-        TangTheoTG,
-        GiamTheoTG,
-        TangTheoMucDo,
-        GiamTheoMucDo,
-        TangTheoTen,
-        GiamTheoTen
-    }
-
-
     public static class Extension
     {
         public static NguoiDung LoadSetting(string email, string emailDefault = null)
@@ -47,14 +29,16 @@ namespace BUS
             }
             return _nd;
         }
+
         public static int TimeToMinute(int day, int hour, int minute)
         {
             return (((day * 24) + hour) * 60) + minute;
         }
-        public static int TimeToSecond(int day, int hour, int minute, int second)
+        public static int TimeToSecond(int day, int hour, int minute,int second)
         {
-            return ((((day * 24) + hour) * 60) + minute) * 60 + second;
+            return ((((day * 24) + hour) * 60) + minute)*60 + second;
         }
+
         /// <summary>
         /// [0] day
         /// [1] hour
@@ -70,6 +54,55 @@ namespace BUS
             time[2] = minute % 60 % 24;
             return time;
         }
+
+        /// <summary>
+        /// 0: chua bat dau
+        ///1: Dang dien ra
+        ///2: Hoan thanh
+        ///3: Qua han
+        ///4: Hoan thanh tre
+        /// </summary>
+        /// <param name="typeStatus"></param>
+        /// <returns></returns>
+        public static int typeStatusOfTheJob(DateTime start, DateTime end, int status = -1)
+        {
+            if (status == 2 && DateTime.Now <= end)
+                return 2;
+            else if (status == 2 && DateTime.Now > end)
+                return 4;
+            else if (DateTime.Now < start)
+                return 0;
+            else if (DateTime.Now < end)
+                return 1;
+            return 3;
+        }
+
+        public static int DayWeekMonthYear(int type)
+        {
+            const int times = 10;
+            int x = 0;
+            switch (type)
+            {
+                case 1:
+                    //ngay
+                    x = times * 365;
+                    break;
+                case 2:
+                    //tuan 
+                    x = times * 4 * 12;
+                    break;
+                case 3:
+                    //thang
+                    x = times * 12;
+                    break;
+                case 4:
+                    //nam
+                    x = times;
+                    break;
+            }
+            return x;
+        }
+
         public static CongViec GetcongViec(CongViec cv)
         {
             CongViec congViec = new CongViec();

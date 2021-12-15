@@ -31,7 +31,7 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-            //  getAll();
+             getAll();
         }
         #region Ham Bo Tro
         private void getAll()
@@ -115,7 +115,7 @@ namespace ctk43_Nhom1_Manage_Job
             ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 4", NoiDung = "Đây là nội dung của ghi chú nhanh 4", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
         }
 
-<<<<<<< HEAD
+
         private void LoadSYCN()
         {
             while (true)
@@ -177,7 +177,6 @@ namespace ctk43_Nhom1_Manage_Job
 
         
 
-=======
         private void CapNhatHoanThanhOrNot(ref CongViec cv)
         {
             cv.tienDo = chiTietCVBUS.Process(cv);
@@ -193,7 +192,6 @@ namespace ctk43_Nhom1_Manage_Job
             }
         }
 
->>>>>>> af08dbf0ef3ac2e8da4651e065f908914cc8669a
         private void CapNhatTienDo(TreeNode treeNode)
         {
             var cv = treeNode.Parent.Tag as CongViec;

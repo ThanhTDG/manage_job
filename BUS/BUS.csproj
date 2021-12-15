@@ -47,17 +47,13 @@
     <Compile Include="ChiTietCVBUS.cs" />
     <Compile Include="ChuDeBUS.cs" />
     <Compile Include="CongViecBUS.cs" />
-<<<<<<< HEAD
     <Compile Include="Define\DataCheck.cs" />
     <Compile Include="Define\DataLocal.cs" />
     <Compile Include="Define\DefineLoaiChuDe.cs" />
     <Compile Include="Define\DefineMucDo.cs" />
     <Compile Include="Define\DefineTrangThai.cs" />
     <Compile Include="Define\Extension.cs" />
-=======
-    <Compile Include="DataLocal.cs" />
-    <Compile Include="Extension.cs" />
->>>>>>> af08dbf0ef3ac2e8da4651e065f908914cc8669a
+    <Compile Include="Define\MyColor.cs" />
     <Compile Include="GhiChuNhanhBUS.cs" />
     <Compile Include="ThongBao.cs" />
     <Compile Include="NguoiDungBUS.cs" />
