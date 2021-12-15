@@ -38,7 +38,8 @@ namespace ctk43_Nhom1_Manage_Job
                     kq = chuDeBUS.Insert(new ChuDe
                     {
                         ten = txtTenChuDe.Text,
-                        Email = _nd.email
+                        Email = _nd.email,
+                        loaiChuDe = 0
                     });
                     if (kq > 0)
                     {

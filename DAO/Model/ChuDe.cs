@@ -31,7 +31,11 @@ namespace DAO.Model
         /// 4 everyyear
         /// </param>
         /// <param name="ten"></param>
+<<<<<<< HEAD
         public ChuDe(int iD,int loaiChude, string ten)
+=======
+        public ChuDe(int iD, int loaiChude, string ten)
+>>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc
         {
             this.loaiChuDe = loaiChude;
             this.iD = iD;

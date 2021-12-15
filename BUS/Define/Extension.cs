@@ -13,7 +13,79 @@ namespace BUS
         mucdo,
         trangthai
     }
+<<<<<<< HEAD:BUS/Define/Extension.cs
 
+=======
+
+    public enum sort
+    {
+        TangTheoTG,
+        GiamTheoTG,
+        TangTheoMucDo,
+        GiamTheoMucDo,
+        TangTheoTen,
+        GiamTheoTen
+    }
+
+    public class TinhTrang{
+        private static TinhTrang instance;
+        private Dictionary<int, string> mucdo;
+        private Dictionary<int, string> trangthai;
+        private Dictionary<int, string> loaiChuDe;
+        public  List<int> _mucdo;
+        public List<int> _trangthai;
+        public List<DateTime> _time;
+        public static TinhTrang Instance
+        {
+            get { if (instance == null) return instance = new TinhTrang(); return instance; }
+            private set { instance = value; }
+        }
+        private TinhTrang() {
+
+            mucdo = new Dictionary<int, string>();
+            trangthai = new Dictionary<int, string>();
+            loaiChuDe = new Dictionary<int, string>();
+            getData();
+        }
+        public Dictionary<int, string> Mucdo()
+        {
+            return mucdo;
+        }
+        public Dictionary<int, string> TrangThai()
+        {
+            return trangthai;
+        }
+
+        public Dictionary<int, string> LoaiChuDe()
+        {
+            return loaiChuDe;
+        }
+
+        private void getData()
+        {
+            mucdo.Add(4, "Không quan trọng");
+            mucdo.Add(3, "hơi quan trọng");
+            mucdo.Add(2, "Quan trọng");
+            mucdo.Add(1, "Rất quan trọng");
+            mucdo.Add(0, "Cực kỳ quan trọng");
+
+            trangthai.Add(0, "Sắp diễn ra");
+            trangthai.Add(1, "Đang thực hiện");
+            trangthai.Add(2, "Đã hoàn thành");
+            trangthai.Add(3, "Đã quá hạn");
+
+            loaiChuDe.Add(1, "Hàng ngày");
+            loaiChuDe.Add(2, "Hàng tuần");
+            loaiChuDe.Add(3, "Hàng tháng");
+            loaiChuDe.Add(4, "Hàng năm");
+        }
+
+        public int GetIntLoaiChuDe(string value)
+        {
+            return loaiChuDe.FirstOrDefault(x => x.Value == value).Key;
+        }
+    }
+>>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc:BUS/Extension.cs
     public static class Extension
     {
         public static NguoiDung LoadSetting(string email, string emailDefault = null)
@@ -57,8 +129,7 @@ namespace BUS
             time[0] = minute / 60 / 24;
             time[1] = minute / 60 % 24 ;
             time[2] = minute %60 % 24;
-            return time;
-
+            return time;       
         }
         public static CongViec GetcongViec(CongViec cv)
         {

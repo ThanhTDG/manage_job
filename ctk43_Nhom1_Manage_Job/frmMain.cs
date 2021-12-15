@@ -24,10 +24,17 @@ namespace ctk43_Nhom1_Manage_Job
         int TabHienTai = 0;
         ChiTietCVBUS chiTietCVBUS;
 
+        sort SortCV = sort.GiamTheoMucDo;
+        sort SortGC = sort.GiamTheoTG;
+
         public frmMain()
         {
             InitializeComponent();
+<<<<<<< HEAD
             //  getAll();
+=======
+            //getAll();
+>>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc
         }
         #region Ham Bo Tro
         private void getAll()
@@ -102,6 +109,13 @@ namespace ctk43_Nhom1_Manage_Job
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ dùng cá nhân", iDCongviec = 17, trangThai = 0, mucDo = 2 });
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Chuẩn bị quần áo", iDCongviec = 17, trangThai = 0, mucDo = 2 });
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Xếp đồ vào vali", iDCongviec = 17, trangThai = 0, mucDo = 2 });
+
+            //Ghi chu nhanh
+            GhiChuNhanhBUS ghiChuNhanhBUS = new GhiChuNhanhBUS();
+            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 1", NoiDung = "Đây là nội dung của ghi chú nhanh 1", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
+            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 2", NoiDung = "Đây là nội dung của ghi chú nhanh 2", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
+            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 3", NoiDung = "Đây là nội dung của ghi chú nhanh 3", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
+            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 4", NoiDung = "Đây là nội dung của ghi chú nhanh 4", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
         }
 
         private void LoadSYCN()
@@ -241,17 +255,18 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void LoadData()
         {
-            //    getAll();
             nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
             congViecBUS = new CongViecBUS();
             chuDeBUS = new ChuDeBUS();
             ghiChuNhanhBUS = new GhiChuNhanhBUS();
             chiTietCVBUS = new ChiTietCVBUS();
             cvs = new List<CongViec>();
-            LoadChuDe();
+            LoadChuDe();           
             SetUPSearchInputText();
             lbChucNang.LostFocus += XoaChonChucNang;
             LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
+            tvwChuDe.SelectedNode = tvwChuDe.Nodes[0];
+            toolStripCbbCheDoSapXep.SelectedIndex = 0;           
         }
 
         private void XoaChonChucNang(object sender, EventArgs e)
@@ -285,14 +300,29 @@ namespace ctk43_Nhom1_Manage_Job
         }
 
         private void LoadGhiChuNhanh(List<GhiChuNhanh> dsGhiChu)
-        {
+        {            
             lvDSGhiChu.Items.Clear();
             foreach (var gc in dsGhiChu)
             {
                 ListViewItem item = new ListViewItem(gc.TieuDe);
+                item.SubItems.Add(gc.ThoiGianBD.ToShortDateString());
                 item.Tag = gc;
                 lvDSGhiChu.Items.Add(item);
             }
+        }
+
+        private void SortGhiChuNhanh()
+        {
+            List<GhiChuNhanh> gcs = ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList();
+            gcs = ghiChuNhanhBUS.SortGhiChu(gcs, SortGC);
+            LoadGhiChuNhanh(gcs);
+        }
+
+        private void LoadListCVHienTai()
+        {
+            cvs = (chuDeHienTai.iD == 0) ? congViecBUS.GetCongViecByNguoiDung(nd).ToList() : congViecBUS.GetCongViecByChuDe(chuDeHienTai).ToList();
+            cvs = congViecBUS.SortCongViec(cvs, SortCV);
+            congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
         }
         #endregion
 
@@ -314,13 +344,7 @@ namespace ctk43_Nhom1_Manage_Job
             congViecBUS = new CongViecBUS();
             chuDeHienTai = e.Node.Tag as ChuDe;
             grbDSCongViec.Text = "Danh sách công việc theo " + chuDeHienTai.ten;
-            if (chuDeHienTai.iD == 0)
-                cvs = congViecBUS.GetCongViecByNguoiDung(nd).ToList();
-            else
-            {
-                cvs = congViecBUS.GetCongViecByChuDe(chuDeHienTai);
-            }
-            congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
+            LoadListCVHienTai();            
         }
 
         private void btnThemCongViec_Click(object sender, EventArgs e)
@@ -460,7 +484,7 @@ namespace ctk43_Nhom1_Manage_Job
             }
             else
             {
-                IEnumerable<GhiChuNhanh> kq = ghiChuNhanhBUS.GetGhiChuNhanhByTen(txtTimKiemTenCV.Text, nd);
+                IEnumerable<GhiChuNhanh> kq = ghiChuNhanhBUS.GetGhiChuNhanhByTen(txtTimKiemTenCV.Text, nd, ckbTimNgayGhiChu.Checked);                
                 LoadGhiChuNhanh(kq.ToList());
             }
         }
@@ -471,15 +495,29 @@ namespace ctk43_Nhom1_Manage_Job
             switch (chucNang)
             {
                 case 0:
-                    congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByDay(DateTime.Now, chuDeHienTai, nd).ToList());
+                    cvs = congViecBUS.GetCongViecByDay(DateTime.Now, chuDeHienTai, nd).ToList();
                     break;
                 case 1:
-                    congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByDay(DateTime.Now.AddDays(1), chuDeHienTai, nd).ToList());
+                    cvs = congViecBUS.GetCongViecByDay(DateTime.Now.AddDays(1), chuDeHienTai, nd).ToList();
                     break;
                 case 2:
-                    congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByImportant(DateTime.Now, chuDeHienTai, nd).ToList());
+                    cvs = congViecBUS.GetCongViecByImportant(DateTime.Now, chuDeHienTai, nd).ToList();
+                    break;
+                case 3:
+                    cvs = congViecBUS.GetCongViecByLoaiChuDe(TinhTrang.Instance.GetIntLoaiChuDe("Hàng ngày"), nd).ToList();
+                    break;
+                case 4:
+                    cvs = congViecBUS.GetCongViecByLoaiChuDe(TinhTrang.Instance.GetIntLoaiChuDe("Hàng tuần"), nd).ToList();
+                    break;
+                case 5:
+                    cvs = congViecBUS.GetCongViecByLoaiChuDe(TinhTrang.Instance.GetIntLoaiChuDe("Hàng tháng"), nd).ToList();
+                    break;
+                case 6:
+                    cvs = congViecBUS.GetCongViecByLoaiChuDe(TinhTrang.Instance.GetIntLoaiChuDe("Hàng năm"), nd).ToList();
                     break;
             }
+            cvs = congViecBUS.SortCongViec(cvs, SortCV);
+            congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
         }
 
         private void GhiChutoolStripMenuItem_Click(object sender, EventArgs e)
@@ -566,13 +604,26 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tabControl.SelectedIndex == 0)
+            {
+                ckbTimNgayGhiChu.Visible = false;
+                GCMenuParentToolStripMenuItem.Enabled = false;
+                CVMenuParentToolStripMenuItem.Enabled = true;
+                lbChucNang.Enabled = true;
+                tvwChuDe.Enabled = true;
+            }                
+            else
+            {
+                ckbTimNgayGhiChu.Visible = true;
+                CVMenuParentToolStripMenuItem.Enabled = false;
+                GCMenuParentToolStripMenuItem.Enabled = true;
+                lbChucNang.Enabled = false;
+                tvwChuDe.Enabled = false;
+            }                
+
             TabHienTai = tabControl.SelectedIndex;
         }
 
-        private void ReloadDSGhiChuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
-        }
         private void tsmiThongKe_Click(object sender, EventArgs e)
         {
             frmThongKe frm = new frmThongKe();
@@ -585,7 +636,141 @@ namespace ctk43_Nhom1_Manage_Job
             frm.Show();
         }
 
-        #endregion
+        private void OpenGhiChuDSGhiChuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
+            dlg.RestoreDirectory = true;
+            dlg.Title = "Chọn ghi chú có sẵn";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                frmGhiChu frm = new frmGhiChu();
+                frm.MoGhiChuCoSan(dlg.FileName);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
+                    rtxtNoiDungGhiChu.Text = "";
+                }; 
+            }
+        }
 
+        private void SortByDateCVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SortByMucDoCVToolStripMenuItem.Checked)
+                SortByMucDoCVToolStripMenuItem.Checked = false;
+
+            if (toolStripCbbCheDoSapXep.SelectedIndex == 0)
+                SortCV = sort.TangTheoTG;
+            else
+                SortCV = sort.GiamTheoTG;
+
+            SortByDateCVToolStripMenuItem.Checked = true;
+
+            LoadListCVHienTai();
+        }
+
+        private void SortByMucDoCVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SortByDateCVToolStripMenuItem.Checked)
+                SortByDateCVToolStripMenuItem.Checked = false;
+
+            if (toolStripCbbCheDoSapXep.SelectedIndex == 0)
+                SortCV = sort.TangTheoMucDo;
+            else
+                SortCV = sort.GiamTheoMucDo;
+
+            SortByMucDoCVToolStripMenuItem.Checked = true;
+
+            LoadListCVHienTai();
+        }
+
+        private void SapXeptoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (TabHienTai == 0)
+            {
+                if (SortCV == sort.TangTheoMucDo || SortCV == sort.TangTheoTG)
+                    toolStripCbbCheDoSapXep.SelectedIndex = 0;
+                else
+                    toolStripCbbCheDoSapXep.SelectedIndex = 1;
+            }
+            else
+            {
+                if (SortGC == sort.TangTheoTen || SortGC == sort.TangTheoTG)
+                    toolStripCbbCheDoSapXep.SelectedIndex = 0;
+                else
+                    toolStripCbbCheDoSapXep.SelectedIndex = 1;
+            }            
+        }
+
+        private void SortByTenGCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SortByDateGCToolStripMenuItem.Checked)
+                SortByDateGCToolStripMenuItem.Checked = false;
+
+            if (toolStripCbbCheDoSapXep.SelectedIndex == 0)
+                SortGC = sort.TangTheoTen;
+            else
+                SortGC = sort.GiamTheoTen;
+
+            SortByTenGCToolStripMenuItem.Checked = true;
+
+            SortGhiChuNhanh();
+        }
+
+        private void SortByDateGCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SortByTenGCToolStripMenuItem.Checked)
+                SortByTenGCToolStripMenuItem.Checked = false;
+
+            if (toolStripCbbCheDoSapXep.SelectedIndex == 0)
+                SortGC = sort.TangTheoTG;
+            else
+                SortGC = sort.GiamTheoTG;
+
+            SortByDateGCToolStripMenuItem.Checked = true;
+
+            SortGhiChuNhanh();
+        }
+
+        private void toolStripCbbCheDoSapXep_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TabHienTai == 0)
+            {               
+                if (SortByDateCVToolStripMenuItem.Checked)
+                {
+                    if (toolStripCbbCheDoSapXep.SelectedIndex == 0)
+                        SortCV = sort.TangTheoTG;
+                    else
+                        SortCV = sort.GiamTheoTG;
+                }
+                if (SortByMucDoCVToolStripMenuItem.Checked)
+                {
+                    if (toolStripCbbCheDoSapXep.SelectedIndex == 0)
+                        SortCV = sort.TangTheoMucDo;
+                    else
+                        SortCV = sort.GiamTheoMucDo;
+                }
+                LoadListCVHienTai();
+            }
+            else
+            {
+                if (SortByDateGCToolStripMenuItem.Checked)
+                {
+                    if (toolStripCbbCheDoSapXep.SelectedIndex == 0)
+                        SortGC = sort.TangTheoTG;
+                    else
+                        SortGC = sort.GiamTheoTG;
+                }
+                if (SortByTenGCToolStripMenuItem.Checked)
+                {
+                    if (toolStripCbbCheDoSapXep.SelectedIndex == 0)
+                        SortGC = sort.TangTheoTen;
+                    else
+                        SortGC = sort.GiamTheoTen;
+                }
+                SortGhiChuNhanh();
+            }
+        }
+        #endregion
     }
 }
