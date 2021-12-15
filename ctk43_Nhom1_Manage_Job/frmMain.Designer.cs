@@ -31,6 +31,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.GhiChutoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kíchHoạtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.XoaGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ReloadDSGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongBao = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.grbDSCongViec.SuspendLayout();
@@ -81,7 +81,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkCyan;
@@ -113,6 +113,14 @@ namespace ctk43_Nhom1_Manage_Job
             this.GhiChutoolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.GhiChutoolStripMenuItem.Text = "Thêm ghi chú";
             this.GhiChutoolStripMenuItem.Click += new System.EventHandler(this.GhiChutoolStripMenuItem_Click);
+            // 
+            // tsmiThongKe
+            // 
+            this.tsmiThongKe.Name = "tsmiThongKe";
+            this.tsmiThongKe.Size = new System.Drawing.Size(68, 20);
+            this.tsmiThongKe.Text = "Thống kê";
+            this.tsmiThongKe.Click += new System.EventHandler(this.tsmiThongKe_Click);
+            // 
             // hỗTrợToolStripMenuItem
             // 
             this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -167,6 +175,8 @@ namespace ctk43_Nhom1_Manage_Job
             this.tvwDSCongViec.Name = "tvwDSCongViec";
             this.tvwDSCongViec.Size = new System.Drawing.Size(761, 385);
             this.tvwDSCongViec.TabIndex = 0;
+            this.tvwDSCongViec.BeforeCheck += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvwDSCongViec_BeforeCheck);
+            this.tvwDSCongViec.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwDSCongViec_AfterCheck);
             this.tvwDSCongViec.DoubleClick += new System.EventHandler(this.tvwDSCongViec_DoubleClick);
             // 
             // ctxMenuDSCongViec
@@ -331,12 +341,12 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // lbChucNang
             // 
-            this.lbChucNang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.lbChucNang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbChucNang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChucNang.ForeColor = System.Drawing.Color.Green;
             this.lbChucNang.FormattingEnabled = true;
-            this.lbChucNang.ItemHeight = 21;
+            this.lbChucNang.ItemHeight = 17;
             this.lbChucNang.Items.AddRange(new object[] {
             "Công việc hôm nay",
             "Công việc ngày mai",
@@ -349,8 +359,8 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // tabControl
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
@@ -399,8 +409,8 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // rtxtNoiDungGhiChu
             // 
-            this.rtxtNoiDungGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.rtxtNoiDungGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtNoiDungGhiChu.Location = new System.Drawing.Point(323, 32);
             this.rtxtNoiDungGhiChu.Name = "rtxtNoiDungGhiChu";
@@ -411,7 +421,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // lvDSGhiChu
             // 
-            this.lvDSGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.lvDSGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lvDSGhiChu.ContextMenuStrip = this.ctxMenuDSGhiChu;
             this.lvDSGhiChu.FullRowSelect = true;
@@ -454,13 +464,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.ReloadDSGhiChuToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.ReloadDSGhiChuToolStripMenuItem.Text = "Tải lại";
             this.ReloadDSGhiChuToolStripMenuItem.Click += new System.EventHandler(this.ReloadDSGhiChuToolStripMenuItem_Click);
-            // 
-            // tsmiThongKe
-            // 
-            this.tsmiThongKe.Name = "tsmiThongKe";
-            this.tsmiThongKe.Size = new System.Drawing.Size(84, 26);
-            this.tsmiThongKe.Text = "Thống kê";
-            this.tsmiThongKe.Click += new System.EventHandler(this.tsmiThongKe_Click);
             // 
             // btnThongBao
             // 

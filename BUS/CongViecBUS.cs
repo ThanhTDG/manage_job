@@ -73,7 +73,7 @@ namespace BUS
                     if (ctcv.trangThai == 1)
                     {
                         childNode.Checked = true;
-                        childNode.ForeColor = ColorMN.GREEN;
+                        childNode.ForeColor = ColorMN.ColorLevel(5);
                     }
                     childNode.NodeFont = new Font("Times New Roman", 10, FontStyle.Regular);
                     childNode.Tag = ctcv;

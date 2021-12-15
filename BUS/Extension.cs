@@ -29,10 +29,12 @@ namespace BUS
             }
             return _nd;
         }
+
         public static int TimeToMinute(int day,int hour,int minute)
         {
             return (((day * 24) + hour) * 60) + minute;
         }
+
         /// <summary>
         /// [0] day
         /// [1] hour
@@ -69,6 +71,45 @@ namespace BUS
             else if (DateTime.Now < end)
                 return 1;   
             return 3;
+        }
+
+        public static int DayWeekMonthYear(int type)
+        {
+            const int times = 10;
+            int x = 0;
+            switch (type)
+            {
+                case 1:
+                    //ngay
+                    x = times * 365;
+                    break;
+                case 2:
+                    //tuan 
+                    x = times * 4 * 12;
+                    break;
+                case 3:
+                    //thang
+                    x = times * 12;
+                    break;
+                case 4:
+                    //nam
+                    x = times;
+                    break;
+            }
+            return x;
+        }
+
+        public static CongViec GetcongViec(CongViec cv)
+        {
+            CongViec congViec = new CongViec();
+            congViec.iD = cv.iD;
+            congViec.ten = cv.ten;
+            congViec.IDChuDe = cv.IDChuDe;
+            congViec.thoiGianBD = cv.thoiGianBD;
+            congViec.thoiGianKT = cv.thoiGianKT;
+            congViec.tienDo = cv.tienDo;
+            congViec.trangThai = cv.trangThai;
+            return congViec;
         }
     }
 }

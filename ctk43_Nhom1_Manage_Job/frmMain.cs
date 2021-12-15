@@ -283,7 +283,7 @@ namespace ctk43_Nhom1_Manage_Job
             frm.LoadChuDe(nd);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
+                //chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
                 congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
             }
         }
@@ -453,6 +453,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
         {
+            if (tvwDSCongViec.SelectedNode == null) return;
             if (tvwDSCongViec.SelectedNode.Level == 0)
             {
                 var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
@@ -537,7 +538,38 @@ namespace ctk43_Nhom1_Manage_Job
             frm.Show();
         }
 
+        private void tvwDSCongViec_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //if (tvwDSCongViec.SelectedNode == null) return;
+            //if (tvwDSCongViec.SelectedNode.Checked == true)
+            //    tvwDSCongViec.SelectedNode.Checked = false;
+            //else
+            //    tvwDSCongViec.SelectedNode.Checked = true;
+            //var select = tvwDSCongViec.SelectedNode;
+            //if (select == null) return;
+            //CheckCTCV(tvwDSCongViec.SelectedNode);
+        }
+
         #endregion
 
+        private void tvwDSCongViec_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (Control.MouseButtons == MouseButtons.Left)
+            {
+                //CheckCTCV(e.Node);
+                var x = e.Node.Tag as CongViec;
+                MessageBox.Show(x.ten);
+            }
+        }
+
+        private void tvwDSCongViec_BeforeCheck(object sender, TreeViewCancelEventArgs e)
+        {
+            if (Control.MouseButtons == MouseButtons.Left)
+            {
+                //CheckCTCV(e.Node);
+                var x = e.Node.Tag as CongViec;
+                MessageBox.Show(x.ten);
+            }
+        }
     }
 }
