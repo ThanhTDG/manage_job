@@ -47,7 +47,11 @@
     <Compile Include="ChiTietCVBUS.cs" />
     <Compile Include="ChuDeBUS.cs" />
     <Compile Include="CongViecBUS.cs" />
-    <Compile Include="Extension.cs" />
+    <Compile Include="Define\DataCheck.cs" />
+    <Compile Include="Define\DataLocal.cs" />
+    <Compile Include="Define\DefineMucDo.cs" />
+    <Compile Include="Define\DefineTrangThai.cs" />
+    <Compile Include="Define\Extension.cs" />
     <Compile Include="GhiChuNhanhBUS.cs" />
     <Compile Include="ThongBao.cs" />
     <Compile Include="NguoiDungBUS.cs" />

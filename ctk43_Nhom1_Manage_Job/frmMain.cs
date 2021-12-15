@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,7 +27,7 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-           // getAll();
+            //  getAll();
         }
         #region Ham Bo Tro
         private void getAll()
@@ -39,18 +40,18 @@ namespace ctk43_Nhom1_Manage_Job
             nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "khoa@gmail.com", tenND = "Khoa" });
 
             ChuDeBUS chuDeBUS = new ChuDeBUS();
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", ten = "Mặc định 1" });//1
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "ly@gmail.com", ten = "Thể thao" });//2
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", ten = "Học tập" });//3
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", ten = "Esport" });//4
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", ten = "Nấu ăn" });//5
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", ten = "Du lịch" });//6
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", loaiChuDe = 0, ten = "Mặc định 1" });//1
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "ly@gmail.com", loaiChuDe = 0, ten = "Thể thao" });//2
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Học tập" });//3
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", loaiChuDe = 0, ten = "Esport" });//4
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", loaiChuDe = 0, ten = "Nấu ăn" });//5
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", loaiChuDe = 0, ten = "Du lịch" });//6
 
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", ten = "Thể thao" });//7
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", ten = "Du lịch" });//8
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", ten = "Săn bắt" });//9
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", ten = "Hóng chuyện" });//10
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", ten = "Giải trí" });//11
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Thể thao" });//7
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Du lịch" });//8
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Săn bắt" });//9
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Hóng chuyện" });//10
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Giải trí" });//11
 
             CongViecBUS congViecBUS = new CongViecBUS();
             congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Mặc định 1", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
@@ -103,6 +104,67 @@ namespace ctk43_Nhom1_Manage_Job
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Xếp đồ vào vali", iDCongviec = 17, trangThai = 0, mucDo = 2 });
         }
 
+        private void LoadSYCN()
+        {
+            while (true)
+            {
+                CongViecBUS congViecBUS = new CongViecBUS();
+                List<CongViec> congViecAlmostOver;
+                List<CongViec> congViecComingSoon;
+                congViecComingSoon = congViecBUS.GetCongViecsCommingSoon(nd.email);
+                congViecAlmostOver = congViecBUS.GetCongViecsAlmostOver(nd.email);
+                if (congViecAlmostOver.Count() == 0 || congViecComingSoon.Count() == 0)
+                {
+                    break;
+                }
+                CongViec CVCommingsoon = Extension.GetcongViec(congViecComingSoon[0]);
+                CongViec CVAlmostOver = Extension.GetcongViec(congViecAlmostOver[0]);
+                if (DateTime.Now > CVAlmostOver.thoiGianKT || DateTime.Now < CVCommingsoon.thoiGianBD)
+                {
+                    if (DateTime.Now > CVAlmostOver.thoiGianKT)
+                    {
+                        CVAlmostOver.trangThai = 3;
+                        congViecBUS.Update(CVAlmostOver);
+                        continue;
+                    }
+                    CVCommingsoon.trangThai = 1;
+                    congViecBUS.Update(CVCommingsoon);
+                    continue;
+                }
+                TimeSpan Time_Comming = DateTime.Now - CVCommingsoon.thoiGianBD;
+                TimeSpan Time_Over = CVAlmostOver.thoiGianKT - DateTime.Now;
+                int commingSecond = Extension.TimeToSecond(Time_Comming.Days, Time_Comming.Hours, Time_Comming.Minutes, Time_Comming.Seconds);
+                int overSecond = Extension.TimeToSecond(Time_Over.Days, Time_Over.Hours, Time_Over.Minutes, Time_Over.Seconds);
+                List<CongViec> congViecsUpdate = new List<CongViec>();
+                if (commingSecond == overSecond)
+                {
+                    if(commingSecond < 0)
+                    {
+                        continue;
+                    }
+                    CVAlmostOver = Extension.UpdateOver(CVAlmostOver, congViecBUS);
+                    congViecsUpdate.Add(CVAlmostOver);
+                    CVCommingsoon = Extension.UpdateComing(CVCommingsoon, congViecBUS);
+                    congViecsUpdate.Add(CVCommingsoon);
+                }
+               if(commingSecond < overSecond)
+                {
+                    Extension.UpdateOver(CVAlmostOver, congViecBUS);
+                    congViecsUpdate.Add(CVAlmostOver);
+                }
+                else
+                {
+                    Extension.UpdateComing(CVCommingsoon, congViecBUS);
+                    congViecsUpdate.Add(CVCommingsoon);
+                }
+                if (congViecsUpdate.Count == 0)
+                    continue;
+
+            }
+        }
+
+        
+
         private void CapNhatTienDo(TreeNode treeNode)
         {
             var cv = treeNode.Parent.Tag as CongViec;
@@ -111,7 +173,6 @@ namespace ctk43_Nhom1_Manage_Job
             cv.trangThai = cv.tienDo == 100 ? 1 : 0;
             congViecBUS.Update(cv);
         }
-
 
         private void CapNhatTienDo(int iD)
         {
@@ -178,7 +239,6 @@ namespace ctk43_Nhom1_Manage_Job
             }
         }
 
-
         private void LoadData()
         {
             //    getAll();
@@ -240,8 +300,13 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadData();
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddMinutes(1), trangThai = 1, tienDo = 0, mucDo = 1 });//10
+            Thread th = new Thread(new ThreadStart(LoadSYCN));
+            th.IsBackground = true;
+            th.Start();
             frmThongBao frm = new frmThongBao();
             frm.ShowDialog();
+
         }
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
@@ -389,6 +454,8 @@ namespace ctk43_Nhom1_Manage_Job
             if (TabHienTai == 0)
             {
                 IEnumerable<CongViec> kq = congViecBUS.GetCongViecByTenCV(txtTimKiemTenCV.Text, chuDeHienTai, nd);
+                if (kq.Count() == 0)
+                    return;
                 congViecBUS.GetCongViec(ref tvwDSCongViec, kq.ToList());
             }
             else

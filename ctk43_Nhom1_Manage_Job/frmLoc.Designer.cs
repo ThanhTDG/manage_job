@@ -35,20 +35,21 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rdAllMucDo = new System.Windows.Forms.RadioButton();
-            this.rdAllTrangThai = new System.Windows.Forms.RadioButton();
-            this.rdTrangThaiChitiet = new System.Windows.Forms.RadioButton();
-            this.rdMucDo = new System.Windows.Forms.RadioButton();
-            this.mucdo0 = new System.Windows.Forms.CheckBox();
-            this.mucdo1 = new System.Windows.Forms.CheckBox();
-            this.mucdo2 = new System.Windows.Forms.CheckBox();
-            this.mucdo3 = new System.Windows.Forms.CheckBox();
             this.mucdo4 = new System.Windows.Forms.CheckBox();
+            this.mucdo3 = new System.Windows.Forms.CheckBox();
+            this.mucdo2 = new System.Windows.Forms.CheckBox();
+            this.mucdo1 = new System.Windows.Forms.CheckBox();
+            this.mucdo0 = new System.Windows.Forms.CheckBox();
+            this.rdMucDo = new System.Windows.Forms.RadioButton();
+            this.rdAllMucDo = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.trangthai3 = new System.Windows.Forms.CheckBox();
             this.trangthai2 = new System.Windows.Forms.CheckBox();
             this.trangthai1 = new System.Windows.Forms.CheckBox();
             this.trangthai0 = new System.Windows.Forms.CheckBox();
+            this.rdTrangThaiChitiet = new System.Windows.Forms.RadioButton();
+            this.rdAllTrangThai = new System.Windows.Forms.RadioButton();
+            this.trangthai4 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +96,7 @@
             // 
             this.btnFind.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnFind.Location = new System.Drawing.Point(484, 183);
+            this.btnFind.Location = new System.Drawing.Point(484, 219);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(82, 33);
             this.btnFind.TabIndex = 15;
@@ -107,7 +108,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button2.Location = new System.Drawing.Point(588, 183);
+            this.button2.Location = new System.Drawing.Point(588, 219);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 33);
             this.button2.TabIndex = 16;
@@ -125,61 +126,60 @@
             this.groupBox1.Controls.Add(this.rdAllMucDo);
             this.groupBox1.Location = new System.Drawing.Point(14, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(656, 57);
+            this.groupBox1.Size = new System.Drawing.Size(656, 77);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mức độ";
             // 
-            // groupBox2
+            // mucdo4
             // 
-            this.groupBox2.Controls.Add(this.trangthai3);
-            this.groupBox2.Controls.Add(this.trangthai2);
-            this.groupBox2.Controls.Add(this.trangthai1);
-            this.groupBox2.Controls.Add(this.trangthai0);
-            this.groupBox2.Controls.Add(this.rdTrangThaiChitiet);
-            this.groupBox2.Controls.Add(this.rdAllTrangThai);
-            this.groupBox2.Location = new System.Drawing.Point(14, 120);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(656, 57);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "trạng thái";
+            this.mucdo4.AutoSize = true;
+            this.mucdo4.Location = new System.Drawing.Point(558, 48);
+            this.mucdo4.Name = "mucdo4";
+            this.mucdo4.Size = new System.Drawing.Size(80, 17);
+            this.mucdo4.TabIndex = 1;
+            this.mucdo4.Text = "checkBox1";
+            this.mucdo4.UseVisualStyleBackColor = true;
             // 
-            // rdAllMucDo
+            // mucdo3
             // 
-            this.rdAllMucDo.AutoSize = true;
-            this.rdAllMucDo.Location = new System.Drawing.Point(7, 22);
-            this.rdAllMucDo.Name = "rdAllMucDo";
-            this.rdAllMucDo.Size = new System.Drawing.Size(56, 17);
-            this.rdAllMucDo.TabIndex = 0;
-            this.rdAllMucDo.TabStop = true;
-            this.rdAllMucDo.Text = "Tất cả";
-            this.rdAllMucDo.UseVisualStyleBackColor = true;
-            this.rdAllMucDo.CheckedChanged += new System.EventHandler(this.rdAllMucDo_CheckedChanged);
+            this.mucdo3.AutoSize = true;
+            this.mucdo3.Location = new System.Drawing.Point(426, 47);
+            this.mucdo3.Name = "mucdo3";
+            this.mucdo3.Size = new System.Drawing.Size(80, 17);
+            this.mucdo3.TabIndex = 1;
+            this.mucdo3.Text = "checkBox1";
+            this.mucdo3.UseVisualStyleBackColor = true;
             // 
-            // rdAllTrangThai
+            // mucdo2
             // 
-            this.rdAllTrangThai.AutoSize = true;
-            this.rdAllTrangThai.Location = new System.Drawing.Point(7, 19);
-            this.rdAllTrangThai.Name = "rdAllTrangThai";
-            this.rdAllTrangThai.Size = new System.Drawing.Size(56, 17);
-            this.rdAllTrangThai.TabIndex = 0;
-            this.rdAllTrangThai.TabStop = true;
-            this.rdAllTrangThai.Text = "Tất cả";
-            this.rdAllTrangThai.UseVisualStyleBackColor = true;
-            this.rdAllTrangThai.CheckedChanged += new System.EventHandler(this.rdAllTrangThai_CheckedChanged);
+            this.mucdo2.AutoSize = true;
+            this.mucdo2.Location = new System.Drawing.Point(294, 47);
+            this.mucdo2.Name = "mucdo2";
+            this.mucdo2.Size = new System.Drawing.Size(80, 17);
+            this.mucdo2.TabIndex = 1;
+            this.mucdo2.Text = "checkBox1";
+            this.mucdo2.UseVisualStyleBackColor = true;
             // 
-            // rdTrangThaiChitiet
+            // mucdo1
             // 
-            this.rdTrangThaiChitiet.AutoSize = true;
-            this.rdTrangThaiChitiet.Location = new System.Drawing.Point(69, 19);
-            this.rdTrangThaiChitiet.Name = "rdTrangThaiChitiet";
-            this.rdTrangThaiChitiet.Size = new System.Drawing.Size(57, 17);
-            this.rdTrangThaiChitiet.TabIndex = 0;
-            this.rdTrangThaiChitiet.TabStop = true;
-            this.rdTrangThaiChitiet.Text = "Chi tiết";
-            this.rdTrangThaiChitiet.UseVisualStyleBackColor = true;
-            this.rdTrangThaiChitiet.CheckedChanged += new System.EventHandler(this.rdTrangThaiChitiet_CheckedChanged);
+            this.mucdo1.AutoSize = true;
+            this.mucdo1.Location = new System.Drawing.Point(162, 48);
+            this.mucdo1.Name = "mucdo1";
+            this.mucdo1.Size = new System.Drawing.Size(80, 17);
+            this.mucdo1.TabIndex = 1;
+            this.mucdo1.Text = "checkBox1";
+            this.mucdo1.UseVisualStyleBackColor = true;
+            // 
+            // mucdo0
+            // 
+            this.mucdo0.AutoSize = true;
+            this.mucdo0.Location = new System.Drawing.Point(30, 48);
+            this.mucdo0.Name = "mucdo0";
+            this.mucdo0.Size = new System.Drawing.Size(80, 17);
+            this.mucdo0.TabIndex = 1;
+            this.mucdo0.Text = "checkBox1";
+            this.mucdo0.UseVisualStyleBackColor = true;
             // 
             // rdMucDo
             // 
@@ -193,60 +193,38 @@
             this.rdMucDo.UseVisualStyleBackColor = true;
             this.rdMucDo.CheckedChanged += new System.EventHandler(this.rdMucDo_CheckedChanged);
             // 
-            // mucdo0
+            // rdAllMucDo
             // 
-            this.mucdo0.AutoSize = true;
-            this.mucdo0.Location = new System.Drawing.Point(132, 23);
-            this.mucdo0.Name = "mucdo0";
-            this.mucdo0.Size = new System.Drawing.Size(80, 17);
-            this.mucdo0.TabIndex = 1;
-            this.mucdo0.Text = "checkBox1";
-            this.mucdo0.UseVisualStyleBackColor = true;
+            this.rdAllMucDo.AutoSize = true;
+            this.rdAllMucDo.Location = new System.Drawing.Point(7, 22);
+            this.rdAllMucDo.Name = "rdAllMucDo";
+            this.rdAllMucDo.Size = new System.Drawing.Size(56, 17);
+            this.rdAllMucDo.TabIndex = 0;
+            this.rdAllMucDo.TabStop = true;
+            this.rdAllMucDo.Text = "Tất cả";
+            this.rdAllMucDo.UseVisualStyleBackColor = true;
+            this.rdAllMucDo.CheckedChanged += new System.EventHandler(this.rdAllMucDo_CheckedChanged);
             // 
-            // mucdo1
+            // groupBox2
             // 
-            this.mucdo1.AutoSize = true;
-            this.mucdo1.Location = new System.Drawing.Point(239, 23);
-            this.mucdo1.Name = "mucdo1";
-            this.mucdo1.Size = new System.Drawing.Size(80, 17);
-            this.mucdo1.TabIndex = 1;
-            this.mucdo1.Text = "checkBox1";
-            this.mucdo1.UseVisualStyleBackColor = true;
-            // 
-            // mucdo2
-            // 
-            this.mucdo2.AutoSize = true;
-            this.mucdo2.Location = new System.Drawing.Point(329, 22);
-            this.mucdo2.Name = "mucdo2";
-            this.mucdo2.Size = new System.Drawing.Size(80, 17);
-            this.mucdo2.TabIndex = 1;
-            this.mucdo2.Text = "checkBox1";
-            this.mucdo2.UseVisualStyleBackColor = true;
-            // 
-            // mucdo3
-            // 
-            this.mucdo3.AutoSize = true;
-            this.mucdo3.Location = new System.Drawing.Point(428, 22);
-            this.mucdo3.Name = "mucdo3";
-            this.mucdo3.Size = new System.Drawing.Size(80, 17);
-            this.mucdo3.TabIndex = 1;
-            this.mucdo3.Text = "checkBox1";
-            this.mucdo3.UseVisualStyleBackColor = true;
-            // 
-            // mucdo4
-            // 
-            this.mucdo4.AutoSize = true;
-            this.mucdo4.Location = new System.Drawing.Point(531, 20);
-            this.mucdo4.Name = "mucdo4";
-            this.mucdo4.Size = new System.Drawing.Size(80, 17);
-            this.mucdo4.TabIndex = 1;
-            this.mucdo4.Text = "checkBox1";
-            this.mucdo4.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.trangthai4);
+            this.groupBox2.Controls.Add(this.trangthai3);
+            this.groupBox2.Controls.Add(this.trangthai2);
+            this.groupBox2.Controls.Add(this.trangthai1);
+            this.groupBox2.Controls.Add(this.trangthai0);
+            this.groupBox2.Controls.Add(this.rdTrangThaiChitiet);
+            this.groupBox2.Controls.Add(this.rdAllTrangThai);
+            this.groupBox2.Location = new System.Drawing.Point(14, 136);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(656, 77);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "trạng thái";
             // 
             // trangthai3
             // 
             this.trangthai3.AutoSize = true;
-            this.trangthai3.Location = new System.Drawing.Point(493, 18);
+            this.trangthai3.Location = new System.Drawing.Point(429, 44);
             this.trangthai3.Name = "trangthai3";
             this.trangthai3.Size = new System.Drawing.Size(80, 17);
             this.trangthai3.TabIndex = 3;
@@ -256,7 +234,7 @@
             // trangthai2
             // 
             this.trangthai2.AutoSize = true;
-            this.trangthai2.Location = new System.Drawing.Point(376, 18);
+            this.trangthai2.Location = new System.Drawing.Point(298, 44);
             this.trangthai2.Name = "trangthai2";
             this.trangthai2.Size = new System.Drawing.Size(80, 17);
             this.trangthai2.TabIndex = 4;
@@ -266,7 +244,7 @@
             // trangthai1
             // 
             this.trangthai1.AutoSize = true;
-            this.trangthai1.Location = new System.Drawing.Point(259, 19);
+            this.trangthai1.Location = new System.Drawing.Point(167, 45);
             this.trangthai1.Name = "trangthai1";
             this.trangthai1.Size = new System.Drawing.Size(80, 17);
             this.trangthai1.TabIndex = 5;
@@ -276,18 +254,52 @@
             // trangthai0
             // 
             this.trangthai0.AutoSize = true;
-            this.trangthai0.Location = new System.Drawing.Point(142, 19);
+            this.trangthai0.Location = new System.Drawing.Point(36, 45);
             this.trangthai0.Name = "trangthai0";
             this.trangthai0.Size = new System.Drawing.Size(80, 17);
             this.trangthai0.TabIndex = 6;
             this.trangthai0.Text = "checkBox1";
             this.trangthai0.UseVisualStyleBackColor = true;
             // 
+            // rdTrangThaiChitiet
+            // 
+            this.rdTrangThaiChitiet.AutoSize = true;
+            this.rdTrangThaiChitiet.Location = new System.Drawing.Point(69, 19);
+            this.rdTrangThaiChitiet.Name = "rdTrangThaiChitiet";
+            this.rdTrangThaiChitiet.Size = new System.Drawing.Size(57, 17);
+            this.rdTrangThaiChitiet.TabIndex = 0;
+            this.rdTrangThaiChitiet.TabStop = true;
+            this.rdTrangThaiChitiet.Text = "Chi tiết";
+            this.rdTrangThaiChitiet.UseVisualStyleBackColor = true;
+            this.rdTrangThaiChitiet.CheckedChanged += new System.EventHandler(this.rdTrangThaiChitiet_CheckedChanged);
+            // 
+            // rdAllTrangThai
+            // 
+            this.rdAllTrangThai.AutoSize = true;
+            this.rdAllTrangThai.Location = new System.Drawing.Point(7, 19);
+            this.rdAllTrangThai.Name = "rdAllTrangThai";
+            this.rdAllTrangThai.Size = new System.Drawing.Size(56, 17);
+            this.rdAllTrangThai.TabIndex = 0;
+            this.rdAllTrangThai.TabStop = true;
+            this.rdAllTrangThai.Text = "Tất cả";
+            this.rdAllTrangThai.UseVisualStyleBackColor = true;
+            this.rdAllTrangThai.CheckedChanged += new System.EventHandler(this.rdAllTrangThai_CheckedChanged);
+            // 
+            // trangthai4
+            // 
+            this.trangthai4.AutoSize = true;
+            this.trangthai4.Location = new System.Drawing.Point(560, 44);
+            this.trangthai4.Name = "trangthai4";
+            this.trangthai4.Size = new System.Drawing.Size(80, 17);
+            this.trangthai4.TabIndex = 3;
+            this.trangthai4.Text = "checkBox1";
+            this.trangthai4.UseVisualStyleBackColor = true;
+            // 
             // frmLoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 228);
+            this.ClientSize = new System.Drawing.Size(689, 268);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
@@ -331,5 +343,6 @@
         private System.Windows.Forms.CheckBox trangthai2;
         private System.Windows.Forms.CheckBox trangthai1;
         private System.Windows.Forms.CheckBox trangthai0;
+        private System.Windows.Forms.CheckBox trangthai4;
     }
 }

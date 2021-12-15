@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Data.SqlClient;
-
+using BUS.Define;
 
 namespace BUS
 {
@@ -90,61 +90,10 @@ namespace BUS
             return congViecRepository.GetCongViecByNguoiDung(nd.email);
         }
 
-        public IEnumerable<CongViec> GetByLoc(NguoiDung nd )
+        public IEnumerable<CongViec> GetByLoc(NguoiDung nd)
         {
-          /*  int i = 0, j = 0;
-            List<SqlParameter> sqlParameters = new List<SqlParameter>();
-            string Squery = ("Select * from  NguoiDungs A , ChuDes B, CongViecs C  where B.Email = @Email AND A.email = B.Email AND B.iD = C.IDChuDe ");
-            SqlParameter sqlParameter = new SqlParameter("@Email", nd.email);
-            sqlParameters.Add(sqlParameter);
-            if (TinhTrang.Instance._time.Count != 0)
-            {
-                Squery = Squery + " AND C.thoiGianDB >= @StartDay AND C.thoiGianKT <= @EndDay ";
-                sqlParameter = new SqlParameter("@StartDay", TinhTrang.Instance._time[0].ToString("yyyy-MM-dd"));
-                sqlParameters.Add(sqlParameter);
-                sqlParameter = new SqlParameter("@EndDay", TinhTrang.Instance._time[1].ToString("yyyy-MM-dd"));
-                sqlParameters.Add(sqlParameter);
-            }
-            if (TinhTrang.Instance._mucdo.Count != 0)
-            {
-                foreach (var mucdo in TinhTrang.Instance._mucdo)
-                {
-                    if (j == 0)
-                    {
-
-                        Squery = Squery + " AND C.tienDo = @tienDo" + j;
-                    }
-                    else
-                    {
-                        Squery = Squery + " OR C.tienDo = @tienDo" + j;
-                    }
-                    sqlParameter = new SqlParameter("@tienDo" + j, mucdo);
-                    sqlParameters.Add(sqlParameter);
-                    j++;
-                }
-            }
-            if (TinhTrang.Instance._trangthai.Count != 0)
-            {
-                foreach (var trangthai in TinhTrang.Instance._trangthai)
-                {
-                    if (i == 0)
-                    {
-                        
-                        Squery = Squery + " AND C.trangThai ="+i;
-                    }
-                    else
-                    {
-                        Squery = Squery + " OR C.trangThai ="+i;
-                      
-                    }
-                    sqlParameter = new SqlParameter("@trangthai" +i, trangthai);
-                    sqlParameters.Add(sqlParameter);
-                    i++;
-                }
-            }
-      */
-            return congViecRepository.GetCongViecByLoc(nd, TinhTrang.Instance._trangthai, TinhTrang.Instance._mucdo, TinhTrang.Instance._time);
-    }
+            return congViecRepository.GetCongViecByLoc(nd, DataCheck.Instance.trangthai, DataCheck.Instance.mucdo, DataCheck.Instance.time);
+        }
 
         public IEnumerable<CongViec> GetCongViecByTenCV(string keyword, ChuDe chuDe, NguoiDung nd)
         {
@@ -160,14 +109,14 @@ namespace BUS
                 query = GetCongViecByChuDe(chuDe);
             }
 
-            return query.Where(f => f.ten.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);          
+            return query.Where(f => f.ten.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
         }
 
         public IEnumerable<CongViec> GetCongViecByDay(DateTime date, ChuDe chuDe, NguoiDung nd)
         {
             IEnumerable<CongViec> cv;
             if (chuDe == null || chuDe.iD == 0)
-                cv = GetCongViecByNguoiDung(nd);                
+                cv = GetCongViecByNguoiDung(nd);
             else
                 cv = GetCongViecByChuDe(chuDe);
             return cv.Where(x => x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT);
@@ -182,5 +131,14 @@ namespace BUS
                 cv = GetCongViecByChuDe(chuDe);
             return cv.Where(x => (x.mucDo <= 2 && x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT.Date));
         }
+        public List<CongViec> GetCongViecsAlmostOver(string email)
+        {
+            return (congViecRepository.GetCongViecsAlmostOver(DateTime.Now, email)).OrderBy(x => x.thoiGianKT).ToList();
+        }
+        public List<CongViec> GetCongViecsCommingSoon(string email)
+        {
+            return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderBy(x => x.thoiGianBD).ToList();
+        }
+
     }
 }
