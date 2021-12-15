@@ -115,6 +115,7 @@ namespace ctk43_Nhom1_Manage_Job
             ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 4", NoiDung = "Đây là nội dung của ghi chú nhanh 4", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
         }
 
+<<<<<<< HEAD
         private void LoadSYCN()
         {
             while (true)
@@ -176,25 +177,40 @@ namespace ctk43_Nhom1_Manage_Job
 
         
 
+=======
+        private void CapNhatHoanThanhOrNot(ref CongViec cv)
+        {
+            cv.tienDo = chiTietCVBUS.Process(cv);
+            if (cv.tienDo == 100)
+            {
+                cv.ngayHoanThanh = DateTime.Now;
+                cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD, cv.thoiGianKT, 2);
+            }
+            else
+            {
+                cv.ngayHoanThanh = null;
+                cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD, cv.thoiGianKT);
+            }
+        }
+
+>>>>>>> af08dbf0ef3ac2e8da4651e065f908914cc8669a
         private void CapNhatTienDo(TreeNode treeNode)
         {
             var cv = treeNode.Parent.Tag as CongViec;
             cv = congViecBUS.GetCongViecByID(cv.iD);
-            cv.tienDo = chiTietCVBUS.Process(cv);
-            cv.trangThai = cv.tienDo == 100 ? 1 : 0;
+            CapNhatHoanThanhOrNot(ref cv);
             congViecBUS.Update(cv);
         }
 
         private void CapNhatTienDo(int iD)
         {
             var cv = congViecBUS.GetCongViecByID(iD);
-            cv.tienDo = chiTietCVBUS.Process(cv);
-            cv.trangThai = cv.tienDo == 100 ? 1 : 0;
+            CapNhatHoanThanhOrNot(ref cv);
             congViecBUS.Update(cv);
         }
+
         private void UpdateStateJob(CongViec x, int s)
         {
-            x.trangThai = s;
             foreach (var ctcv in chiTietCVBUS.GetChiTietByCongViec(x).ToList())
             {
                 ctcv.trangThai = s;
@@ -208,20 +224,27 @@ namespace ctk43_Nhom1_Manage_Job
             if (treeNode.Level == 0)
             {
                 var cv = treeNode.Tag as CongViec;
+                cv = congViecBUS.GetCongViecByID(cv.iD);
                 if (cv == null) return;
                 if (treeNode.Checked)
                 {
+                    cv.ngayHoanThanh = DateTime.Now;
+                    cv.tienDo = 100;
+                    cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD,cv.thoiGianKT,2);
                     UpdateStateJob(cv, 1);
                     check = true;
                 }
                 else
                 {
+                    cv.ngayHoanThanh = null;
+                    cv.tienDo = 0;
+                    cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD, cv.thoiGianKT);
                     UpdateStateJob(cv, 0);
                     check = true;
                 }
                 if (check)
                 {
-                    CapNhatTienDo(cv.iD);
+                    congViecBUS.Update(cv);
                     congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                 }
             }
@@ -350,7 +373,7 @@ namespace ctk43_Nhom1_Manage_Job
             frm.LoadChuDe(nd);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
+                //chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
                 congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
             }
         }
@@ -535,6 +558,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
         {
+            if (tvwDSCongViec.SelectedNode == null) return;
             if (tvwDSCongViec.SelectedNode.Level == 0)
             {
                 var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
@@ -630,6 +654,40 @@ namespace ctk43_Nhom1_Manage_Job
         {
             frmThongBao frm = new frmThongBao();
             frm.Show();
+        }
+
+        private void tvwDSCongViec_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //if (tvwDSCongViec.SelectedNode == null) return;
+            //if (tvwDSCongViec.SelectedNode.Checked == true)
+            //    tvwDSCongViec.SelectedNode.Checked = false;
+            //else
+            //    tvwDSCongViec.SelectedNode.Checked = true;
+            //var select = tvwDSCongViec.SelectedNode;
+            //if (select == null) return;
+            //CheckCTCV(tvwDSCongViec.SelectedNode);
+        }
+
+        #endregion
+
+        private void tvwDSCongViec_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (Control.MouseButtons == MouseButtons.Left)
+            {
+                //CheckCTCV(e.Node);
+                var x = e.Node.Tag as CongViec;
+                MessageBox.Show(x.ten);
+            }
+        }
+
+        private void tvwDSCongViec_BeforeCheck(object sender, TreeViewCancelEventArgs e)
+        {
+            if (Control.MouseButtons == MouseButtons.Left)
+            {
+                //CheckCTCV(e.Node);
+                var x = e.Node.Tag as CongViec;
+                MessageBox.Show(x.ten);
+            }
         }
 
         private void OpenGhiChuDSGhiChuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -767,6 +825,5 @@ namespace ctk43_Nhom1_Manage_Job
                 SortGhiChuNhanh();
             }
         }
-        #endregion
     }
 }

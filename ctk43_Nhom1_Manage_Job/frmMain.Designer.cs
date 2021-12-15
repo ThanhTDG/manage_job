@@ -191,6 +191,8 @@ namespace ctk43_Nhom1_Manage_Job
             this.tvwDSCongViec.Name = "tvwDSCongViec";
             this.tvwDSCongViec.Size = new System.Drawing.Size(761, 385);
             this.tvwDSCongViec.TabIndex = 0;
+            this.tvwDSCongViec.BeforeCheck += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvwDSCongViec_BeforeCheck);
+            this.tvwDSCongViec.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwDSCongViec_AfterCheck);
             this.tvwDSCongViec.DoubleClick += new System.EventHandler(this.tvwDSCongViec_DoubleClick);
             // 
             // ctxMenuDSCongViec
