@@ -45,14 +45,14 @@ namespace BUS
                 Email = nd.email
             };
 
-            var node = treeView.Nodes.Add(chuDe.ten);
+            var node = treeView.Nodes.Add(chuDe.ten);            
             node.Tag = chuDe;
 
             foreach (var temp in GetChuDeByNguoiDung(nd))
             {
                 node = treeView.Nodes.Add(temp.ten);
                 node.Tag = temp;
-            }
+            }           
         }
 
         public ChuDe GetChuDeByID(int id)
@@ -63,6 +63,11 @@ namespace BUS
         public IEnumerable<ChuDe> GetChuDeByNguoiDung(NguoiDung nd)
         {
             return chuDeRepository.GetMulti(x => x.Email == nd.email);
+        }
+
+        public IEnumerable<ChuDe> GetChuDeByCommon(NguoiDung nd)
+        {
+            return chuDeRepository.GetMulti(x => x.Email == nd.email && x.loaiChuDe == 0);
         }
     }
 }

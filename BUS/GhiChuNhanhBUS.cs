@@ -53,10 +53,34 @@ namespace BUS
             return ghiChuNhanhRepository.GetSingleById(id);
         }       
         
-        public IEnumerable<GhiChuNhanh> GetGhiChuNhanhByTen(string keyword, NguoiDung nd)
+        public IEnumerable<GhiChuNhanh> GetGhiChuNhanhByTen(string keyword, NguoiDung nd, bool searhDate)
         {
             IEnumerable<GhiChuNhanh> query = GetGhiChuByNguoiDung(nd);
-            return query.Where(f => f.TieuDe.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
+            if (searhDate)
+                return query.Where(f => f.TieuDe.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0 || f.ThoiGianBD.ToShortDateString().IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
+            else
+                return query.Where(f => f.TieuDe.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
         }  
+
+        public List<GhiChuNhanh> SortGhiChu(List<GhiChuNhanh> gcs, sort sortGC)
+        {
+            switch (sortGC)
+            {
+                case sort.TangTheoTen:
+                    gcs = gcs.OrderBy(x => x.TieuDe).ToList();
+                    break;
+                case sort.GiamTheoTen:
+                    gcs = gcs.OrderByDescending(x => x.TieuDe).ToList();
+                    break;
+                case sort.TangTheoTG:
+                    gcs = gcs.OrderBy(x => x.ThoiGianBD).ToList();
+                    break;
+                case sort.GiamTheoTG:
+                    gcs = gcs.OrderByDescending(x => x.ThoiGianBD).ToList();
+                    break;
+            }
+
+            return gcs;
+        }
     }
 }
