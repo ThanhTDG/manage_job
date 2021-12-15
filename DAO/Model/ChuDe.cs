@@ -19,16 +19,6 @@ namespace DAO.Model
         [ForeignKey("Email")]
         public virtual NguoiDung nguoiDung { get; set; }
 
-        public ChuDe(int iD, string ten)
-        {
-            this.iD = iD;
-            this.ten = ten;
-        }
-
-        public ChuDe()
-        {
-        }
-
         /// <summary>
         /// 
         /// </summary>
@@ -46,6 +36,11 @@ namespace DAO.Model
             this.loaiChuDe = loaiChude;
             this.iD = iD;
             this.ten = ten;
+        }
+
+        public ChuDe()
+        {
+
         }
     }
 }

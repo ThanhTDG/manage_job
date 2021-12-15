@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +71,59 @@ namespace ctk43_Nhom1_Manage_Job
                 GhiChuNhanh gc = ghiChuNhanhBUS.GetGhiChuByID(_ghiChuId);
                 txtTitle.Text = gc.TieuDe;
                 rtxtContent.Text = gc.NoiDung;
+            }
+        }
+
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTitle.Text) || string.IsNullOrWhiteSpace(rtxtContent.Text))
+            {
+                ThongBao.CanhBao("Tiêu đề và nội dung");
+                return;
+            }
+
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.RestoreDirectory = true;
+            dlg.FileName = txtTitle.Text;
+            dlg.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                LuuFileText(dlg.FileName);
+                ThongBao.ThanhCong("Lưu tập tin");
+            }
+        }
+
+        private void LuuFileText(string FileName)
+        {
+            using (var stream = new FileStream(FileName, FileMode.Create, FileAccess.Write))
+            {
+                using (var writer = new StreamWriter(stream))
+                {
+                    writer.WriteLine(rtxtContent.Text);
+                }
+            }
+        }
+
+        public void MoGhiChuCoSan(string FileName)
+        {
+            int index = FileName.LastIndexOf('\\');
+            txtTitle.Text = FileName.Substring(index + 1, FileName.Length - index - 1).Trim();
+            try
+            {
+                using (var stream = new FileStream(FileName, FileMode.Open, FileAccess.Read))
+                {
+                    using (var reader = new StreamReader(stream))
+                    {
+                        while (!reader.EndOfStream)
+                        {
+                            rtxtContent.Text = reader.ReadToEnd();
+                        }
+                    }
+                }                
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

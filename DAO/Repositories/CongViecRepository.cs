@@ -12,6 +12,7 @@ namespace DAO.Repositories
     public interface ICongViecRepository : IRepository<CongViec>
     {
         IEnumerable<CongViec> GetCongViecByNguoiDung(string email);
+        IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, string email);
     }
     public class CongViecRepository : RepositoryBase<CongViec>, ICongViecRepository
     {
@@ -124,6 +125,16 @@ namespace DAO.Repositories
                         join r in DbContext.chuDe
                         on s.IDChuDe equals r.iD
                         where r.Email == email && s.thoiGianBD <= date && date <= s.thoiGianKT
+                        select s;
+            return query;
+        }
+
+        public IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, string email)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                        on s.IDChuDe equals r.iD
+                        where r.Email == email && r.loaiChuDe == loaiChuDe
                         select s;
             return query;
         }
