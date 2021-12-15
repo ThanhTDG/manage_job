@@ -131,7 +131,6 @@ namespace BUS
                 cv = GetCongViecByChuDe(chuDe);
             return cv.Where(x => (x.mucDo <= 2 && x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT.Date));
         }
-<<<<<<< HEAD
         public List<CongViec> GetCongViecsAlmostOver(string email)
         {
             return (congViecRepository.GetCongViecsAlmostOver(DateTime.Now, email)).OrderBy(x => x.thoiGianKT).ToList();
@@ -141,7 +140,7 @@ namespace BUS
             return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderBy(x => x.thoiGianBD).ToList();
         }
 
-=======
+
 
         public IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, NguoiDung nd)
         {
@@ -176,6 +175,5 @@ namespace BUS
             else
                 return cv.OrderBy(x => x.mucDo);
         }
->>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc
     }
 }

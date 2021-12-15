@@ -67,11 +67,8 @@ namespace ctk43_Nhom1_Manage_Job
             this.ctxMenuDSGhiChu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.XoaGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-<<<<<<< HEAD
-            this.ReloadDSGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnThongBao = new System.Windows.Forms.Button();
+
             this.lbtext = new System.Windows.Forms.Label();
-=======
             this.OpenGhiChuDSGhiChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongBao = new System.Windows.Forms.Button();
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -85,7 +82,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.SortByMucDoCVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SortByTenGCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SortByDateGCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc
             this.menuStrip1.SuspendLayout();
             this.grbDSCongViec.SuspendLayout();
             this.ctxMenuDSCongViec.SuspendLayout();
@@ -492,20 +488,13 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(182, 6);
-            // 
-<<<<<<< HEAD
-            this.ReloadDSGhiChuToolStripMenuItem.Name = "ReloadDSGhiChuToolStripMenuItem";
-            this.ReloadDSGhiChuToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.ReloadDSGhiChuToolStripMenuItem.Text = "Tải lại";
-            this.ReloadDSGhiChuToolStripMenuItem.Click += new System.EventHandler(this.ReloadDSGhiChuToolStripMenuItem_Click);
-=======
+            //
             // OpenGhiChuDSGhiChuToolStripMenuItem
             // 
             this.OpenGhiChuDSGhiChuToolStripMenuItem.Name = "OpenGhiChuDSGhiChuToolStripMenuItem";
             this.OpenGhiChuDSGhiChuToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.OpenGhiChuDSGhiChuToolStripMenuItem.Text = "Mở ghi chú có sẵn";
             this.OpenGhiChuDSGhiChuToolStripMenuItem.Click += new System.EventHandler(this.OpenGhiChuDSGhiChuToolStripMenuItem_Click);
->>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc
             // 
             // btnThongBao
             // 
@@ -518,7 +507,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnThongBao.UseVisualStyleBackColor = true;
             this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
-<<<<<<< HEAD
             // lbtext
             // 
             this.lbtext.AutoSize = true;
@@ -527,7 +515,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.lbtext.Size = new System.Drawing.Size(35, 13);
             this.lbtext.TabIndex = 18;
             this.lbtext.Text = "label4";
-=======
             // OpenFileDialog
             // 
             this.OpenFileDialog.DefaultExt = "txt";
@@ -621,18 +608,14 @@ namespace ctk43_Nhom1_Manage_Job
             this.SortByDateGCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.SortByDateGCToolStripMenuItem.Text = "Theo ngày";
             this.SortByDateGCToolStripMenuItem.Click += new System.EventHandler(this.SortByDateGCToolStripMenuItem_Click);
->>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 587);
-<<<<<<< HEAD
             this.Controls.Add(this.lbtext);
-=======
             this.Controls.Add(this.ckbTimNgayGhiChu);
->>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.lbChucNang);
@@ -707,10 +690,8 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ContextMenuStrip ctxMenuDSGhiChu;
         private System.Windows.Forms.ToolStripMenuItem XoaGhiChuToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem ReloadDSGhiChuToolStripMenuItem;
         private System.Windows.Forms.Label lbtext;
-=======
         private System.Windows.Forms.ToolStripMenuItem OpenGhiChuDSGhiChuToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -725,6 +706,5 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ToolStripMenuItem SortByDateGCToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripComboBox toolStripCbbCheDoSapXep;
->>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc
     }
 }

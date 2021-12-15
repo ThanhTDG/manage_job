@@ -13,9 +13,6 @@ namespace BUS
         mucdo,
         trangthai
     }
-<<<<<<< HEAD:BUS/Define/Extension.cs
-
-=======
 
     public enum sort
     {
@@ -85,7 +82,6 @@ namespace BUS
             return loaiChuDe.FirstOrDefault(x => x.Value == value).Key;
         }
     }
->>>>>>> 3360a246b194cdde6465cd0faa917776bb5f8ecc:BUS/Extension.cs
     public static class Extension
     {
         public static NguoiDung LoadSetting(string email, string emailDefault = null)
