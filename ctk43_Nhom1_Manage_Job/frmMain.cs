@@ -35,88 +35,13 @@ namespace ctk43_Nhom1_Manage_Job
             InitializeComponent();
             //getAll();
         }
-        #region Ham Bo Tro
-        private void getAll()
-        {
-            NguoiDungBUS nguoiDungBUS = new NguoiDungBUS();
-            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "default@gmail.com", tenND = "default" });
-            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "thanh@gmail.com", tenND = "Thanh" });
-            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "ly@gmail.com", tenND = "Lý" });
-            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "long@gmail.com", tenND = "Long" });
-            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "khoa@gmail.com", tenND = "Khoa" });
-
-            ChuDeBUS chuDeBUS = new ChuDeBUS();
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", loaiChuDe = 0, ten = "Mặc định 1" });//1
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "ly@gmail.com", loaiChuDe = 0, ten = "Thể thao" });//2
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Học tập" });//3
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", loaiChuDe = 0, ten = "Esport" });//4
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", loaiChuDe = 0, ten = "Nấu ăn" });//5
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", loaiChuDe = 0, ten = "Du lịch" });//6
-
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Thể thao" });//7
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Du lịch" });//8
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Săn bắt" });//9
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Hóng chuyện" });//10
-            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Giải trí" });//11
-
-            CongViecBUS congViecBUS = new CongViecBUS();
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Mặc định 1", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Mặc định 2", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Cưới ai", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Ăn cưới ", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Ăn cưới ai ", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Thể thao", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "làm tí mine", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Liên quân xíu", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "code đê", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Học lập trình nà", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0 });
-
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-2), thoiGianKT = DateTime.Now.AddDays(3), trangThai = 0, tienDo = 0, mucDo = 2 });//10
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bóng rổ", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddDays(5), trangThai = 0, tienDo = 0, mucDo = 1 });//11
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Cầu lông", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = DateTime.Now.AddDays(3), trangThai = 0, tienDo = 0, mucDo = 3 });//12
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bóng chuyển", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = DateTime.Now.AddDays(2), trangThai = 0, tienDo = 0, mucDo = 0 });//13
-
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-40), thoiGianKT = DateTime.Now.AddDays(-20), trangThai = 0, tienDo = 0, mucDo = 2 });//14
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Alaska", IDChuDe = 8, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0, mucDo = 0 });//15
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Vũng Tàu", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(50), thoiGianKT = DateTime.Now.AddDays(60), trangThai = 0, tienDo = 0, mucDo = 1 });//16
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Vịnh Hạ Long", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(30), thoiGianKT = DateTime.Now.AddDays(50), trangThai = 0, tienDo = 0, mucDo = 4 });//17
-
-
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Chơi game", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-25), thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });//18
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Xem tivi", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-30), thoiGianKT = DateTime.Now.AddDays(-5), trangThai = 0, tienDo = 0, mucDo = 0 });//19
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đọc truyện", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-20), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0, mucDo = 0 });//20
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đọc truyện tập 2", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-10), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0 });//21
-
-            // chi tiet cong viec
-            ChiTietCVBUS chiTietCVBUS = new ChiTietCVBUS();
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Học ", iDCongviec = 1, trangThai = 0, mucDo = 0 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Chơi ", iDCongviec = 1, trangThai = 0, mucDo = 4, iDChiTietCV = 1 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "chuẩn bị", iDCongviec = 2, trangThai = 0, mucDo = 1 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Tiền", iDCongviec = 3, trangThai = 0, mucDo = 4 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Cưới", iDCongviec = 3, trangThai = 0, mucDo = 3 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "100 kim cương ", iDCongviec = 7, trangThai = 0, mucDo = 1 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "1000 sắt ", iDCongviec = 7, trangThai = 0, mucDo = 2, iDChiTietCV = 6 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Thách đâu thoaiii", iDCongviec = 8, trangThai = 0, mucDo = 1 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Bơm bóng", iDCongviec = 10, trangThai = 0, mucDo = 2 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua bóng cũ ", iDCongviec = 10, trangThai = 0, mucDo = 1, iDChiTietCV = 9 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ đá bóng ", iDCongviec = 10, trangThai = 0, mucDo = 3, iDChiTietCV = 9 });
-
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang đầu", iDCongviec = 21, trangThai = 0, mucDo = 1 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang giữa", iDCongviec = 21, trangThai = 0, mucDo = 0, iDChiTietCV = 12 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang cuối", iDCongviec = 21, trangThai = 0, mucDo = 0, iDChiTietCV = 12 });
-
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ dùng cá nhân", iDCongviec = 17, trangThai = 0, mucDo = 2 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Chuẩn bị quần áo", iDCongviec = 17, trangThai = 0, mucDo = 2 });
-            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Xếp đồ vào vali", iDCongviec = 17, trangThai = 0, mucDo = 2 });
-
-            //Ghi chu nhanh
-            GhiChuNhanhBUS ghiChuNhanhBUS = new GhiChuNhanhBUS();
-            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 1", NoiDung = "Đây là nội dung của ghi chú nhanh 1", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
-            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 2", NoiDung = "Đây là nội dung của ghi chú nhanh 2", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
-            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 3", NoiDung = "Đây là nội dung của ghi chú nhanh 3", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
-            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 4", NoiDung = "Đây là nội dung của ghi chú nhanh 4", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
-        }
-
+      
+        #region 1911205 - Nguyễn hữu Đức Thanh
+        /// <summary>
+        /// frmLoc
+        /// frmThiepLap
+        /// frmThongBaoCV
+        /// </summary>
         public void nofiction()
         {
             while (true)
@@ -203,7 +128,7 @@ namespace ctk43_Nhom1_Manage_Job
                 }
                 if (Second < 0)
                     continue;
-                Thread.Sleep(Second * 1000 +1000);
+                Thread.Sleep(Second * 1000 + 1000);
                 for (i = 0; i < temp.Count; i++)
                     temp[i] = Extension.Update(temp[i], CongViecBUS);
                 this.Invoke(new Action(() =>
@@ -213,6 +138,7 @@ namespace ctk43_Nhom1_Manage_Job
                 }));
             }
         }
+
         private List<CongViec> getListOver(List<CongViec> congViecAlmostOver)
         {
             List<CongViec> temp = new List<CongViec>();
@@ -228,6 +154,7 @@ namespace ctk43_Nhom1_Manage_Job
             }
             return temp;
         }
+
         private List<CongViec> getListComming(List<CongViec> congViecComingSoon)
         {
             List<CongViec> temp = new List<CongViec>();
@@ -244,6 +171,45 @@ namespace ctk43_Nhom1_Manage_Job
             return temp;
         }
 
+        private void ctmSetting_Click(object sender, EventArgs e)
+        {
+            frmThietLap frmThietLap = new frmThietLap();
+            frmThietLap.ShowDialog();
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            frmLoc frmLoc = new frmLoc();
+            if (frmLoc.ShowDialog() == DialogResult.OK)
+            {
+                cvs = congViecBUS.GetByLoc(nd).ToList();
+                congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
+            }
+
+        }
+        #endregion
+
+        #region 1911164 Võ Đình Hoàng Long
+        /// <summary>
+        /// frmCongViec
+        /// FrmChiTiet
+        /// FrmDSChitiet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnThemCongViec_Click(object sender, EventArgs e)
+        {
+
+            frmCongViec frm = new frmCongViec();
+            frm.LoadChuDe(nd);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
+                congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
+                listenNotification();
+            }
+        }
 
         private void listenNotification()
         {
@@ -263,21 +229,6 @@ namespace ctk43_Nhom1_Manage_Job
             }
            
         }
-/*        public static void DataTest(DateTime dateTime, DateTime end)
-        {
-            CongViecBUS viecBUS = new CongViecBUS();
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
-
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
-            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
-        }*/
 
         private void CapNhatHoanThanhOrNot(ref CongViec cv)
         {
@@ -379,22 +330,132 @@ namespace ctk43_Nhom1_Manage_Job
             }
         }
 
-        private void LoadData()
+        private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
             congViecBUS = new CongViecBUS();
             chuDeBUS = new ChuDeBUS();
-            ghiChuNhanhBUS = new GhiChuNhanhBUS();
-            chiTietCVBUS = new ChiTietCVBUS();
-            cvs = new List<CongViec>();
-            LoadChuDe();
-            SetUPSearchInputText();
-            LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
-            tvwChuDe.SelectedNode = tvwChuDe.Nodes[0];
-            SetUpCbbTrangThaiCV();
-            this.KeyPreview = true;       
+            TreeNode treeNode = tvwDSCongViec.SelectedNode;
+            if (treeNode == null) return;
+            if (treeNode.Level == 0)
+            {
+                var cv = treeNode.Tag as CongViec;
+                frmCongViec frm = new frmCongViec(cv);
+                frm.LoadChuDe(nd);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    listenNotification();
+                    chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
+                    LoadListCVHienTai();
+                }
+            }
+            else if (treeNode.Level == 1)
+            {
+                var chiTietCV = tvwDSCongViec.SelectedNode.Tag as ChiTietCV;
+                frmChiTietCV frm = new frmChiTietCV(chiTietCV);
+                frm.LoadCV(treeNode.Parent.Tag as CongViec);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    listenNotification();
+                    CapNhatTienDo(treeNode);
+                    LoadListCVHienTai();
+                }
+            }
         }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            chuDeBUS = new ChuDeBUS();
+            if (tvwDSCongViec.SelectedNode.Level == 0)
+            {
+                var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
+                if (ThongBao.CauHoi($"xóa {cv.ten} chưa?") == DialogResult.Yes)
+                {
+                    int id = chuDeBUS.GetIDByNameChuDe(cv.ten);
+                    if (id != -1)
+                    {
+                        chuDeBUS.Delete(id);
+                        listenNotification();
+                        LoadListCVHienTai();
+                    }
+                    else
+                    {
+                        congViecBUS.Delete(cv);
+                        listenNotification();
+                        LoadListCVHienTai();
+                    }
+                }
+            }
+            else if (tvwDSCongViec.SelectedNode.Level == 1)
+            {
+                var cv = tvwDSCongViec.SelectedNode.Tag as ChiTietCV;
+                if (ThongBao.CauHoi($"xoá {cv.ten} chưa?") == DialogResult.Yes)
+                {
+                    congViecBUS.chiTietCVBus.Delete(cv);
+                    LoadListCVHienTai();
+                }
+            }
+        }
+
+        private void markToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tvwDSCongViec.SelectedNode == null) return;
+            if (tvwDSCongViec.SelectedNode.Checked == true)
+                tvwDSCongViec.SelectedNode.Checked = false;
+            else
+                tvwDSCongViec.SelectedNode.Checked = true;
+            var select = tvwDSCongViec.SelectedNode;
+            if (select == null) return;
+            CheckCTCV(tvwDSCongViec.SelectedNode);
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CongViec cv = new CongViec();
+            if (tvwDSCongViec.SelectedNode.Level == 0)
+            {
+                cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
+            }
+            else
+            {
+                cv = tvwDSCongViec.SelectedNode.Parent.Tag as CongViec;
+            }
+            frmChiTietCV frm = new frmChiTietCV();
+            congViecBUS = new CongViecBUS();
+            chuDeBUS = new ChuDeBUS();
+            frm.LoadCV(cv);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                CapNhatTienDo(frm._chiTietCV.iDCongviec);
+                LoadListCVHienTai();
+            }
+        }
+
+        private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
+        {
+            chiTietCVBUS = new ChiTietCVBUS();
+            congViecBUS = new CongViecBUS();
+            if (tvwDSCongViec.SelectedNode == null) return;
+            if (tvwDSCongViec.SelectedNode.Level == 0)
+            {
+                var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
+                frmDSChiTiet frm = new frmDSChiTiet(cv);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    CapNhatTienDo(cv.iD);
+                    listenNotification();
+                    LoadListCVHienTai();
+                }
+            }
+        }
+
+        #endregion
+
+        #region 1911158- Nguyễn Hoàng Đăng Khoa
+        /// <summary>
+        /// frmGhiChu
+        /// frmMain(Gần hết) 
+        /// frmChuDe
+        /// </summary>
         private void LoadChuDe()
         {
             chuDeBUS.GetChuDe(ref tvwChuDe, nd);
@@ -501,16 +562,6 @@ namespace ctk43_Nhom1_Manage_Job
             btnThemCongViec.Enabled = status;
             cbbTrangThaiCV.Enabled = status;
         }
-        #endregion
-
-        #region Su Kien
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            LoadData();
-            frmThongBao frm = new frmThongBao();
-            frm.ShowDialog();
-            listenNotification();
-        }
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -518,20 +569,7 @@ namespace ctk43_Nhom1_Manage_Job
             congViecBUS = new CongViecBUS();
             chuDeHienTai = e.Node.Tag as ChuDe;
             grbDSCongViec.Text = ThongBao.SetGroupBoxName(chuDeHienTai.ten);
-            LoadListCVHienTai();            
-        }
-
-        private void btnThemCongViec_Click(object sender, EventArgs e)
-        {
-
-            frmCongViec frm = new frmCongViec();
-            frm.LoadChuDe(nd);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                //chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
-                congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
-                listenNotification();
-            }
+            LoadListCVHienTai();
         }
 
         private void btnThemChuDe_Click(object sender, EventArgs e)
@@ -574,106 +612,6 @@ namespace ctk43_Nhom1_Manage_Job
             }
         }
 
-        private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            congViecBUS = new CongViecBUS();
-            chuDeBUS = new ChuDeBUS();
-            TreeNode treeNode = tvwDSCongViec.SelectedNode;
-            if (treeNode == null) return;
-            if (treeNode.Level == 0)
-            {
-                var cv = treeNode.Tag as CongViec;
-                frmCongViec frm = new frmCongViec(cv);
-                frm.LoadChuDe(nd);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    listenNotification();
-                    chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
-                    LoadListCVHienTai();
-                }
-            }
-            else if (treeNode.Level == 1)
-            {
-                var chiTietCV = tvwDSCongViec.SelectedNode.Tag as ChiTietCV;
-                frmChiTietCV frm = new frmChiTietCV(chiTietCV);
-                frm.LoadCV(treeNode.Parent.Tag as CongViec);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    listenNotification();
-                    CapNhatTienDo(treeNode);
-                    LoadListCVHienTai();
-                }
-            }
-        }
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            chuDeBUS = new ChuDeBUS();
-            if (tvwDSCongViec.SelectedNode.Level == 0)
-            {
-                var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
-                if (ThongBao.CauHoi($"xóa {cv.ten} chưa?") == DialogResult.Yes)
-                {
-                    int id = chuDeBUS.GetIDByNameChuDe(cv.ten);
-                    if (id != -1)
-                    {
-                        chuDeBUS.Delete(id);
-                        listenNotification();
-                        LoadListCVHienTai();
-                    }
-                    else
-                    {
-                        congViecBUS.Delete(cv);
-                        listenNotification();
-                        LoadListCVHienTai();
-                    }
-                }
-            }
-            else if (tvwDSCongViec.SelectedNode.Level == 1)
-            {
-                var cv = tvwDSCongViec.SelectedNode.Tag as ChiTietCV;
-                if (ThongBao.CauHoi($"xoá {cv.ten} chưa?") == DialogResult.Yes)
-                {
-                    congViecBUS.chiTietCVBus.Delete(cv);
-                    LoadListCVHienTai();
-                }
-            }
-        }
-
-        private void markToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tvwDSCongViec.SelectedNode == null) return;
-            if (tvwDSCongViec.SelectedNode.Checked == true)
-                tvwDSCongViec.SelectedNode.Checked = false;
-            else
-                tvwDSCongViec.SelectedNode.Checked = true;
-            var select = tvwDSCongViec.SelectedNode;
-            if (select == null) return;
-            CheckCTCV(tvwDSCongViec.SelectedNode);
-        }
-
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CongViec cv = new CongViec();
-            if (tvwDSCongViec.SelectedNode.Level == 0)
-            {
-                cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
-            }
-            else
-            {
-                cv = tvwDSCongViec.SelectedNode.Parent.Tag as CongViec;
-            }
-            frmChiTietCV frm = new frmChiTietCV();
-            congViecBUS = new CongViecBUS();
-            chuDeBUS = new ChuDeBUS();
-            frm.LoadCV(cv);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                CapNhatTienDo(frm._chiTietCV.iDCongviec);
-                LoadListCVHienTai();
-            }
-        }
-
         private void txtTimKiemTenCV_TextChanged(object sender, EventArgs e)
         {
             if (TabHienTai == 0)
@@ -691,7 +629,7 @@ namespace ctk43_Nhom1_Manage_Job
         }
 
         private void lbChucNang_SelectedIndexChanged(object sender, EventArgs e)
-        {            
+        {
             SetChucNang(lbChucNang.SelectedIndex);
             if (lbChucNang.SelectedIndex != -1)
                 grbDSCongViec.Text = ThongBao.SetGroupBoxName("Tất cả", lbChucNang.SelectedItem.ToString());
@@ -705,37 +643,6 @@ namespace ctk43_Nhom1_Manage_Job
                 LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
                 rtxtNoiDungGhiChu.Text = "";
             }
-        }
-
-        private void ctmSetting_Click(object sender, EventArgs e)
-        {
-            frmThietLap frmThietLap = new frmThietLap();
-            frmThietLap.ShowDialog();
-        }
-
-
-        private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
-        {
-            chiTietCVBUS = new ChiTietCVBUS();
-            congViecBUS = new CongViecBUS();
-            if (tvwDSCongViec.SelectedNode == null) return;
-            if (tvwDSCongViec.SelectedNode.Level == 0)
-            {
-                var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
-                frmDSChiTiet frm = new frmDSChiTiet(cv);
-                if(frm.ShowDialog() == DialogResult.OK)
-                {
-                    CapNhatTienDo(cv.iD);
-                    LoadListCVHienTai();
-                }
-            }
-        }
-
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-            frmLoc frmLoc = new frmLoc();
-            if (frmLoc.ShowDialog() == DialogResult.OK)            
-                congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetByLoc(nd).ToList());
         }
 
         private void lvDSGhiChu_SelectedIndexChanged(object sender, EventArgs e)
@@ -794,60 +701,16 @@ namespace ctk43_Nhom1_Manage_Job
                 GCMenuParentToolStripMenuItem.Enabled = false;
                 CVMenuParentToolStripMenuItem.Enabled = true;
                 SetControlEnDis(true);
-            }                
+            }
             else
             {
                 ckbTimNgayGhiChu.Visible = true;
                 CVMenuParentToolStripMenuItem.Enabled = false;
                 GCMenuParentToolStripMenuItem.Enabled = true;
                 SetControlEnDis(false);
-            }                
+            }
 
             TabHienTai = tabControl.SelectedIndex;
-        }
-
-        private void tsmiThongKe_Click(object sender, EventArgs e)
-        {
-            frmThongKe frm = new frmThongKe();
-            frm.ShowDialog();
-        }
-
-        private void btnThongBao_Click(object sender, EventArgs e)
-        {
-            frmThongBao frm = new frmThongBao();
-            frm.ShowDialog();
-        }
-
-        private void tvwDSCongViec_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            //if (tvwDSCongViec.SelectedNode == null) return;
-            //if (tvwDSCongViec.SelectedNode.Checked == true)
-            //    tvwDSCongViec.SelectedNode.Checked = false;
-            //else
-            //    tvwDSCongViec.SelectedNode.Checked = true;
-            //var select = tvwDSCongViec.SelectedNode;
-            //if (select == null) return;
-            //CheckCTCV(tvwDSCongViec.SelectedNode);
-        }
-        
-        private void tvwDSCongViec_AfterCheck(object sender, TreeViewEventArgs e)
-        {
-            if (Control.MouseButtons == MouseButtons.Left)
-            {
-                //CheckCTCV(e.Node);
-                var x = e.Node.Tag as CongViec;
-                //MessageBox.Show(x.ten);
-            }
-        }
-
-        private void tvwDSCongViec_BeforeCheck(object sender, TreeViewCancelEventArgs e)
-        {
-            if (Control.MouseButtons == MouseButtons.Left)
-            {
-                //CheckCTCV(e.Node);
-                var x = e.Node.Tag as CongViec;
-                //MessageBox.Show(x.ten);
-            }
         }
 
         private void OpenGhiChuDSGhiChuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -996,7 +859,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             if (e.Control == true && e.Alt == true && e.KeyCode == Keys.K)
             {
-                btnThemCongViec.PerformClick();                
+                btnThemCongViec.PerformClick();
             }
 
             if (e.Control == true && e.Alt == true && e.KeyCode == Keys.N)
@@ -1008,6 +871,135 @@ namespace ctk43_Nhom1_Manage_Job
             {
                 btnThemChuDe.PerformClick();
             }
+        }
+
+        #endregion
+
+        #region 1911166 - Võ Công Lý
+        /// <summary>
+        /// frmThongKe
+        /// frmThongBao
+        /// frmDangKy
+        /// </summary>
+
+        private void tsmiThongKe_Click(object sender, EventArgs e)
+        {
+            frmThongKe frm = new frmThongKe();
+            frm.ShowDialog();
+        }
+
+        private void btnThongBao_Click(object sender, EventArgs e)
+        {
+            frmThongBao frm = new frmThongBao();
+            frm.ShowDialog();
+        }
+
+        #endregion
+
+        #region Chung
+        private void LoadData()
+        {
+            nd = Extension.LoadSetting(Properties.Settings.Default.email, Properties.Settings.Default.emailDefault);
+            congViecBUS = new CongViecBUS();
+            chuDeBUS = new ChuDeBUS();
+            ghiChuNhanhBUS = new GhiChuNhanhBUS();
+            chiTietCVBUS = new ChiTietCVBUS();
+            cvs = new List<CongViec>();
+            LoadChuDe();
+            SetUPSearchInputText();
+            LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
+            tvwChuDe.SelectedNode = tvwChuDe.Nodes[0];
+            SetUpCbbTrangThaiCV();
+            this.KeyPreview = true;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            frmThongBao frm = new frmThongBao();
+            frm.ShowDialog();
+            listenNotification();
+        }
+
+        private void getAll()
+        {
+            NguoiDungBUS nguoiDungBUS = new NguoiDungBUS();
+            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "default@gmail.com", tenND = "default" });
+            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "thanh@gmail.com", tenND = "Thanh" });
+            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "ly@gmail.com", tenND = "Lý" });
+            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "long@gmail.com", tenND = "Long" });
+            nguoiDungBUS.Insert(new DAO.Model.NguoiDung() { email = "khoa@gmail.com", tenND = "Khoa" });
+
+            ChuDeBUS chuDeBUS = new ChuDeBUS();
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", loaiChuDe = 0, ten = "Mặc định 1" });//1
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "ly@gmail.com", loaiChuDe = 0, ten = "Thể thao" });//2
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Học tập" });//3
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "thanh@gmail.com", loaiChuDe = 0, ten = "Esport" });//4
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", loaiChuDe = 0, ten = "Nấu ăn" });//5
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "long@gmail.com", loaiChuDe = 0, ten = "Du lịch" });//6
+
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Thể thao" });//7
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Du lịch" });//8
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Săn bắt" });//9
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Hóng chuyện" });//10
+            chuDeBUS.Insert(new DAO.Model.ChuDe { Email = "khoa@gmail.com", loaiChuDe = 0, ten = "Giải trí" });//11
+
+            CongViecBUS congViecBUS = new CongViecBUS();
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Mặc định 1", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Mặc định 2", IDChuDe = 1, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Cưới ai", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Ăn cưới ", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Ăn cưới ai ", IDChuDe = 2, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Thể thao", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "làm tí mine", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Liên quân xíu", IDChuDe = 4, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "code đê", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Học lập trình nà", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0 });
+
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-2), thoiGianKT = DateTime.Now.AddDays(3), trangThai = 0, tienDo = 0, mucDo = 2 });//10
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bóng rổ", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddDays(5), trangThai = 0, tienDo = 0, mucDo = 1 });//11
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Cầu lông", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = DateTime.Now.AddDays(3), trangThai = 0, tienDo = 0, mucDo = 3 });//12
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bóng chuyển", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = DateTime.Now.AddDays(2), trangThai = 0, tienDo = 0, mucDo = 0 });//13
+
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-40), thoiGianKT = DateTime.Now.AddDays(-20), trangThai = 0, tienDo = 0, mucDo = 2 });//14
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Alaska", IDChuDe = 8, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0, mucDo = 0 });//15
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Vũng Tàu", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(50), thoiGianKT = DateTime.Now.AddDays(60), trangThai = 0, tienDo = 0, mucDo = 1 });//16
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Vịnh Hạ Long", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(30), thoiGianKT = DateTime.Now.AddDays(50), trangThai = 0, tienDo = 0, mucDo = 4 });//17
+
+
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Chơi game", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-25), thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });//18
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Xem tivi", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-30), thoiGianKT = DateTime.Now.AddDays(-5), trangThai = 0, tienDo = 0, mucDo = 0 });//19
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đọc truyện", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-20), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0, mucDo = 0 });//20
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đọc truyện tập 2", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-10), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0 });//21
+
+            // chi tiet cong viec
+            ChiTietCVBUS chiTietCVBUS = new ChiTietCVBUS();
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Học ", iDCongviec = 1, trangThai = 0, mucDo = 0 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Chơi ", iDCongviec = 1, trangThai = 0, mucDo = 4, iDChiTietCV = 1 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "chuẩn bị", iDCongviec = 2, trangThai = 0, mucDo = 1 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Tiền", iDCongviec = 3, trangThai = 0, mucDo = 4 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Cưới", iDCongviec = 3, trangThai = 0, mucDo = 3 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "100 kim cương ", iDCongviec = 7, trangThai = 0, mucDo = 1 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "1000 sắt ", iDCongviec = 7, trangThai = 0, mucDo = 2, iDChiTietCV = 6 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Thách đâu thoaiii", iDCongviec = 8, trangThai = 0, mucDo = 1 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Bơm bóng", iDCongviec = 10, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua bóng cũ ", iDCongviec = 10, trangThai = 0, mucDo = 1, iDChiTietCV = 9 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ đá bóng ", iDCongviec = 10, trangThai = 0, mucDo = 3, iDChiTietCV = 9 });
+
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang đầu", iDCongviec = 21, trangThai = 0, mucDo = 1 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang giữa", iDCongviec = 21, trangThai = 0, mucDo = 0, iDChiTietCV = 12 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Đọc 10 trang cuối", iDCongviec = 21, trangThai = 0, mucDo = 0, iDChiTietCV = 12 });
+
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ dùng cá nhân", iDCongviec = 17, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Chuẩn bị quần áo", iDCongviec = 17, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Xếp đồ vào vali", iDCongviec = 17, trangThai = 0, mucDo = 2 });
+
+            //Ghi chu nhanh
+            GhiChuNhanhBUS ghiChuNhanhBUS = new GhiChuNhanhBUS();
+            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 1", NoiDung = "Đây là nội dung của ghi chú nhanh 1", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
+            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 2", NoiDung = "Đây là nội dung của ghi chú nhanh 2", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
+            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 3", NoiDung = "Đây là nội dung của ghi chú nhanh 3", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
+            ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 4", NoiDung = "Đây là nội dung của ghi chú nhanh 4", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
         }
         #endregion
     }

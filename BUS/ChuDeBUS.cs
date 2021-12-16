@@ -9,6 +9,7 @@ namespace BUS
 
     public class ChuDeBUS
     {
+        #region 1911205 - Nguyễn Hữu Đức Thanh
         ChuDeRepository chuDeRepository;
         public ChuDeBUS() {
             chuDeRepository = new ChuDeRepository();
@@ -41,7 +42,9 @@ namespace BUS
             chuDeRepository.Delete(id);
             chuDeRepository.Commit();
         }
+        #endregion
 
+        #region 1911158- Nguyễn Hoàng Đăng Khoa
         public void GetChuDe(ref TreeView treeView, NguoiDung nd)
         {
             treeView.Nodes.Clear();
@@ -83,5 +86,6 @@ namespace BUS
         {
             return chuDeRepository.GetMulti(x => x.Email == nd.email && x.loaiChuDe == 0);
         }
+        #endregion
     }
 }

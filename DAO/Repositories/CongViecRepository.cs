@@ -39,7 +39,7 @@ namespace DAO.Repositories
         {
             dbSet = DbContext.Set<CongViec>();
         }
-
+        #region 1911205 - Nguyễn hữu Đức Thanh
         public IEnumerable<CongViec> GetCongViecByLoc(NguoiDung nd, List<int> _trangthai, List<int> _mucdo, List<DateTime> _time)
         {
             int i = 0, j = 0;
@@ -51,7 +51,7 @@ namespace DAO.Repositories
             sqlParameters.Add(sqlParameter);
             if (_time.Count != 0)
             {
-                Squery = Squery + " AND c.thoigianBD > @StartDay AND C.thoiGianKT < @EndDay ";
+                Squery = Squery + " AND c.thoiGianBD > @StartDay AND C.thoiGianBD < @EndDay ";
                 sqlParameter = new SqlParameter("@StartDay", _time[0]);
                 sqlParameters.Add(sqlParameter);
                 sqlParameter = new SqlParameter("@EndDay", _time[1]);
@@ -98,6 +98,28 @@ namespace DAO.Repositories
             return dataContext.congViec.SqlQuery(Squery, sqlParameters.ToArray());
         }
 
+        public IEnumerable<CongViec> GetCongViecsComingSoon(DateTime now, string email)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                         on s.IDChuDe equals r.iD
+                        where r.Email == email && s.thoiGianBD > now && s.trangThai == 0
+                        select s;
+            return query;
+        }
+
+        public IEnumerable<CongViec> GetCongViecsAlmostOver(DateTime now, string email)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                         on s.IDChuDe equals r.iD
+                        where r.Email == email && s.thoiGianKT >= now && s.trangThai == 1
+                        select s;
+            return query;
+        }
+        #endregion
+
+        #region 1911158- Nguyễn Hoàng Đăng Khoa
         public IEnumerable<CongViec> GetCongViecByDayRound(DateTime BatDau, DateTime KetThuc, string email)
         {
             var query = from s in DbContext.congViec
@@ -128,26 +150,6 @@ namespace DAO.Repositories
             return query;
         }
 
-        public IEnumerable<CongViec> GetCongViecsComingSoon(DateTime now, string email)
-        {
-            var query = from s in DbContext.congViec
-                        join r in DbContext.chuDe
-                         on s.IDChuDe equals r.iD
-                        where r.Email == email && s.thoiGianBD > now && s.trangThai == 0
-                        select s;
-            return query;
-        }
-
-        public IEnumerable<CongViec> GetCongViecsAlmostOver(DateTime now, string email)
-        {
-            var query = from s in DbContext.congViec
-                        join r in DbContext.chuDe
-                         on s.IDChuDe equals r.iD
-                        where r.Email == email && s.thoiGianKT >= now && s.trangThai == 1
-                        select s;
-            return query;
-        }
-
         public IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, string email)
         {
             var query = from s in DbContext.congViec
@@ -157,7 +159,6 @@ namespace DAO.Repositories
                         select s;
             return query;
         }
-
 
         public IEnumerable<CongViec> GetCongViecByChuDe(int idChuDe, string email)
         {
@@ -188,5 +189,8 @@ namespace DAO.Repositories
                         select s;
             return query;
         }
+
+        #endregion
+
     }
 }

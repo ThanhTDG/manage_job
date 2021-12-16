@@ -8,6 +8,7 @@ namespace BUS.Define
 {
     public static class DefineTrangThai 
     {
+        #region Chung
         private static string[] ListTrangThai =
         {
                 "Sắp diễn ra",
@@ -37,5 +38,6 @@ namespace BUS.Define
                 return ListTrangThai[number];
             return null;
         }
+        #endregion
     }
 }

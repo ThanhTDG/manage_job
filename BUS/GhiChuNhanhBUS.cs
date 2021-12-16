@@ -10,6 +10,7 @@ namespace BUS
 {
     public class GhiChuNhanhBUS
     {
+        #region 1911205 - Nguyễn Hữu Đức Thanh
         GhiChuNhanhRepository ghiChuNhanhRepository;
         public GhiChuNhanhBUS()
         {
@@ -20,12 +21,14 @@ namespace BUS
         {
             return ghiChuNhanhRepository.GetAll();
         }
+
         public int Insert(GhiChuNhanh ghiChuNhanh)
         {
             ghiChuNhanh = ghiChuNhanhRepository.Add(ghiChuNhanh);
             ghiChuNhanhRepository.Commit();
             return ghiChuNhanh.id;
         }
+
         public void Update(GhiChuNhanh ghiChuNhanh)
         {
             ghiChuNhanhRepository.Update(ghiChuNhanh);
@@ -36,14 +39,17 @@ namespace BUS
         {
             ghiChuNhanhRepository.Delete(ghiChuNhanh);
             ghiChuNhanhRepository.Commit();
-        }  
+        }
 
         public void DeleteByID(int id)
         {
             ghiChuNhanhRepository.Delete(id);
             ghiChuNhanhRepository.Commit();
         }
-        
+
+        #endregion
+
+        #region 1911158 - Nguyễn Hoàng Đăng Khoa
         public IEnumerable<GhiChuNhanh> GetGhiChuByNguoiDung(NguoiDung nd)
         {
             return ghiChuNhanhRepository.GetMulti(x => x.Email == nd.email).ToList().OrderByDescending(x => x.ThoiGianBD);
@@ -62,7 +68,6 @@ namespace BUS
             else
                 return query.Where(f => f.TieuDe.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
         }  
-
 
         public List<GhiChuNhanh> SortGhiChu(List<GhiChuNhanh> gcs, sort sortGC)
         {
@@ -84,5 +89,7 @@ namespace BUS
 
             return gcs;
         }
+
+        #endregion
     }
 }

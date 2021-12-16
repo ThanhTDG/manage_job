@@ -5,6 +5,7 @@ namespace BUS.Define
 
     public static class MyColor
     {
+        #region
         public static Color ColorLevel(int mucDo)
         {
             //return Color.FromArgb(255 - mucDo * 51, 50, 0 + mucDo * 51);
@@ -32,7 +33,7 @@ namespace BUS.Define
             }
             return r;
         }
-
+        #endregion
         //public static Color Color
     }
 }

@@ -73,6 +73,7 @@ namespace ctk43_Nhom1_Manage_Job
         }
         private void frmTimKiem_Load(object sender, EventArgs e)
         {
+           
            loadData();
             rdAllMucDo.Checked = true;
             rdAllTrangThai.Checked = true;
@@ -84,6 +85,11 @@ namespace ctk43_Nhom1_Manage_Job
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
+            if (dtpStart.Value.Date > dtpEnd.Value.Date)
+            {
+                ThongBao.SoSanh("Ngày bắt đầu không được lớn hơn ngày kết thúc");
+                return;
+            }
             getData();
             DialogResult = DialogResult.OK;
             this.Close();

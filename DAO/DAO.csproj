@@ -55,11 +55,8 @@
     <Compile Include="Infastructure\IRepository.cs" />
     <Compile Include="Infastructure\RepositoryBase.cs" />
     <Compile Include="Model\ChiTietCV.cs" />
-    <Compile Include="Model\ChiTietCVModel.cs" />
     <Compile Include="Model\ChuDe.cs" />
     <Compile Include="Model\CongViec.cs" />
-    <Compile Include="Model\CongViecModel.cs" />
-    <Compile Include="Model\DieuKienModel.cs" />
     <Compile Include="Model\GhiChuNhanh.cs" />
     <Compile Include="Model\ManageJobContext.cs" />
     <Compile Include="Model\NguoiDung.cs" />

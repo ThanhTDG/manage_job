@@ -9,6 +9,7 @@ namespace BUS
 {
     public static class Extension
     {
+        #region 1911158- Nguyễn Hoàng Đăng Khoa
         public static NguoiDung LoadSetting(string email, string emailDefault = null)
         {
             NguoiDungBUS nguoidungBus = new NguoiDungBUS();
@@ -29,6 +30,9 @@ namespace BUS
             }
             return _nd;
         }
+        #endregion
+
+        #region chung
         public static int TimeToMinute(int day, int hour, int minute)
         {
             return (((day * 24) + hour) * 60) + minute;
@@ -125,6 +129,7 @@ namespace BUS
             congViec.trangThai = cv.trangThai;
             return congViec;
         }
+
         public static CongViec Update(CongViec congViec, CongViecBUS congViecBUS)
         {
             congViec.trangThai = typeStatusOfTheJob(congViec.thoiGianBD,congViec.thoiGianKT);
@@ -137,5 +142,6 @@ namespace BUS
             int diff = (7 + (dt.DayOfWeek - startOfWeek)) % 7;
             return dt.AddDays(-1 * diff).Date;
         }
+        #endregion
     }
 }

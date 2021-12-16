@@ -12,6 +12,7 @@ namespace BUS
 {
     public class CongViecBUS
     {
+        #region 1911205 - Nguyễn Hữu Đức Thanh
         CongViecRepository congViecRepository;
         public ChiTietCVBUS chiTietCVBus;
 
@@ -51,6 +52,23 @@ namespace BUS
             congViecRepository.Commit();
         }
 
+        public IEnumerable<CongViec> GetByLoc(NguoiDung nd)
+        {
+            return congViecRepository.GetCongViecByLoc(nd, DataCheck.Instance.trangthai, DataCheck.Instance.mucdo, DataCheck.Instance.time).Distinct();
+        }
+
+        public List<CongViec> GetCongViecsAlmostOver(string email)
+        {
+            return (congViecRepository.GetCongViecsAlmostOver(DateTime.Now, email)).OrderBy(x => x.thoiGianKT).ToList();
+        }
+        public List<CongViec> GetCongViecsCommingSoon(string email)
+        {
+            return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderBy(x => x.thoiGianBD).ToList();
+        }
+
+        #endregion
+
+        #region 1911164 Võ Đình Hoàng Long
         public void GetCongViec(ref TreeView treeView, List<CongViec> dsCongViec)
         {
             chiTietCVBus = new ChiTietCVBUS();
@@ -82,15 +100,13 @@ namespace BUS
             treeView.ExpandAll();
         }
 
+        #endregion
+
+        #region 1911158- Nguyễn Hoàng Đăng Khoa
         public List<CongViec> GetCongViecByChuDe(ChuDe chuDe)
         {
             return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD).ToList();
         }
-
-        //public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
-        //{
-        //    return congViecRepository.GetCongViecByNguoiDung(nd.email);
-        //}
 
         public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
         {                   
@@ -100,11 +116,6 @@ namespace BUS
             List<CongViec> temp3 = GetCongViecByLoai(3, nd).ToList();
             List<CongViec> temp4 = GetCongViecByLoai(4, nd).ToList();
             return temp.Concat(temp1).Concat(temp2).Concat(temp3).Concat(temp4);
-        }
-
-        public IEnumerable<CongViec> GetByLoc(NguoiDung nd)
-        {
-            return congViecRepository.GetCongViecByLoc(nd, DataCheck.Instance.trangthai, DataCheck.Instance.mucdo, DataCheck.Instance.time).Distinct();
         }
 
         public IEnumerable<CongViec> GetCongViecByTenCV(string keyword, List<CongViec> cvs)
@@ -129,14 +140,6 @@ namespace BUS
             IEnumerable<CongViec> cv;
             cv = GetCongViecByNguoiDung(nd);
             return cv.Where(x => (x.mucDo <= 2 && x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT.Date));
-        }
-        public List<CongViec> GetCongViecsAlmostOver(string email)
-        {
-            return (congViecRepository.GetCongViecsAlmostOver(DateTime.Now, email)).OrderBy(x => x.thoiGianKT).ToList();
-        }
-        public List<CongViec> GetCongViecsCommingSoon(string email)
-        {
-            return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderBy(x => x.thoiGianBD).ToList();
         }
 
         public IEnumerable<CongViec> GetCongViecByChuDe(int ChuDe, NguoiDung nd)
@@ -223,5 +226,7 @@ namespace BUS
                     break;
             }
         }
+
+        #endregion
     }
 }

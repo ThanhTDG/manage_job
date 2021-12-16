@@ -33,7 +33,7 @@ namespace ctk43_Nhom1_Manage_Job
             Control.CheckForIllegalCrossThreadCalls = false;
         }
 
-        public string convertMinuteToTime(int min=-1)
+        public string convertMinuteToTime(int min = -1)
         {
             if (min == -1) return "";
             int[] x = Extension.MinuteToTime(min);
@@ -45,13 +45,13 @@ namespace ctk43_Nhom1_Manage_Job
             lvDSChiTiet.Items.Clear();
             ChiTietCVBUS chiTietCVBUS = new ChiTietCVBUS();
             List<ChiTietCV> cv1 = chiTietCVBUS.GetChiTietByCongViec(_congViec).ToList().OrderBy(x => x.mucDo).ToList();
-            List<ChiTietCV> cv2 = cv1.Where(x=>x.trangThai==1).OrderBy(x => x.trangThai).ToList();
-            List<ChiTietCV> cv3 = cv1.Where(x=>x.trangThai!=1).OrderBy(x => x.trangThai).ToList();
+            List<ChiTietCV> cv2 = cv1.Where(x => x.trangThai == 1).OrderBy(x => x.trangThai).ToList();
+            List<ChiTietCV> cv3 = cv1.Where(x => x.trangThai != 1).OrderBy(x => x.trangThai).ToList();
             foreach (ChiTietCV ct in cv3.Concat(cv2))
             {
                 ListViewItem item = new ListViewItem(ct.ten);
-                item.SubItems.Add(convertMinuteToTime(ct.ThoiGianDukien==null?-1:Convert.ToInt32(ct.ThoiGianDukien)));
-                item.SubItems.Add(convertMinuteToTime(ct.ThoiGianThucTe == null?-1 : Convert.ToInt32(ct.ThoiGianThucTe)));
+                item.SubItems.Add(convertMinuteToTime(ct.ThoiGianDukien == null ? -1 : Convert.ToInt32(ct.ThoiGianDukien)));
+                item.SubItems.Add(convertMinuteToTime(ct.ThoiGianThucTe == null ? -1 : Convert.ToInt32(ct.ThoiGianThucTe)));
                 item.Tag = ct;
                 if (ct.trangThai == 1) item.Checked = true;
                 lvDSChiTiet.Items.Add(item);
@@ -139,7 +139,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void frmDSChiTiet_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (check==false)
+            if (check == false)
             {
                 if (ThongBao.CauHoi("thoat va dung bo dem ko?") == DialogResult.Yes)
                 {
@@ -151,7 +151,7 @@ namespace ctk43_Nhom1_Manage_Job
                     e.Cancel = true;
                 }
             }
-           
+
         }
 
         private void lvDSChiTiet_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,7 +188,7 @@ namespace ctk43_Nhom1_Manage_Job
         private void btnStop_Click(object sender, EventArgs e)
         {
             t.Stop();
-            h = 0;m = 0;s = 0;
+            h = 0; m = 0; s = 0;
             lbCountUp.Text = $"{h}:{m}:{s}";
             lvDSChiTiet.Enabled = true;
             btnAdd.Enabled = true;

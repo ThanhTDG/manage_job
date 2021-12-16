@@ -8,6 +8,7 @@ namespace BUS.Define
 {
     public static class DefineLoaiChuDe
     {
+        #region Chung
         private static string[] ListLoaiChuDe =
              {
                  "Hàng ngày",
@@ -39,5 +40,6 @@ namespace BUS.Define
             return null;
 
         }
+        #endregion
     }
 }

@@ -8,6 +8,7 @@ namespace BUS.Define
 {
     public class DataCheck
     {
+        #region 1911205 - Nguyễn hữu Đức Thanh
         private static DataCheck instance;
         public List<int> mucdo;
         public List<int> trangthai;
@@ -29,6 +30,6 @@ namespace BUS.Define
             trangthai = new List<int>();
             time = new List<DateTime>();
         }
-       
+        #endregion
     }
 }

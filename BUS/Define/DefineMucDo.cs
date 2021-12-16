@@ -8,6 +8,7 @@ namespace BUS.Define
 {
     public static class DefineMucDo
     {
+        #region Chung
         private static string[] ListMucDo =
              {
                 "Cực kỳ quan trọng",
@@ -38,5 +39,6 @@ namespace BUS.Define
             return null;
 
         }
+        #endregion
     }
 }
