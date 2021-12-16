@@ -1,0 +1,9 @@
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\bin\Debug\BUS.dll
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\bin\Debug\BUS.pdb
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\bin\Debug\DAO.dll
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\bin\Debug\EntityFramework.dll
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\bin\Debug\DAO.pdb
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\bin\Debug\EntityFramework.xml
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\obj\Debug\BUS.dll
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\BUS\obj\Debug\BUS.pdb

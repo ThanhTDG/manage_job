@@ -1,0 +1,10 @@
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\bin\Debug\DAO.dll.config
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\bin\Debug\DAO.dll
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\bin\Debug\DAO.pdb
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\bin\Debug\EntityFramework.dll
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\bin\Debug\EntityFramework.SqlServer.dll
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\bin\Debug\EntityFramework.xml
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\bin\Debug\EntityFramework.SqlServer.xml
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\obj\Debug\DAO.dll
+E:\CTK43_HocKy1_Nam03\C#\QLNVThiHocKy\Official\manage_job\DAO\obj\Debug\DAO.pdb

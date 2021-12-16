@@ -11,7 +11,8 @@ namespace DAO.Repositories
 {
     public interface ICongViecRepository : IRepository<CongViec>
     {
-        IEnumerable<CongViec> GetCongViecByNguoiDung(string email);
+        IEnumerable<CongViec> GetCongViecByLoai(string email);
+        IEnumerable<CongViec> GetCongViecByLoai(int loai, string email, DateTime dateBD, DateTime dateKT);
         IEnumerable<CongViec> GetCongViecByLoc(NguoiDung nd, List<int> _trangthai, List<int> _mucdo, List<DateTime> _time);
         IEnumerable<CongViec> GetCongViecByDayRound(DateTime BatDau, DateTime KetThuc, string email);
         IEnumerable<CongViec> GetCongViecByDayRound(DateTime date, string email, int chuDeID);
@@ -39,12 +40,22 @@ namespace DAO.Repositories
             dbSet = DbContext.Set<CongViec>();
         }
 
-        public IEnumerable<CongViec> GetCongViecByNguoiDung(string email)
+        public IEnumerable<CongViec> GetCongViecByLoai(string email)
         {
             var query = from s in DbContext.congViec
                         join r in DbContext.chuDe
                         on s.IDChuDe equals r.iD
-                        where r.Email == email
+                        where r.Email == email && r.loaiChuDe == 0
+                        select s;
+            return query;
+        }
+
+        public IEnumerable<CongViec> GetCongViecByLoai(int loai, string email, DateTime dateBD, DateTime dateKT)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                        on s.IDChuDe equals r.iD
+                        where r.Email == email && r.loaiChuDe == loai && dateBD <= s.thoiGianBD && s.thoiGianBD <= dateKT 
                         select s;
             return query;
         }
