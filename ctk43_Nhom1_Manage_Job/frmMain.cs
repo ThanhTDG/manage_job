@@ -31,7 +31,7 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-             getAll();
+            //getAll();
         }
         #region Ham Bo Tro
         private void getAll()
@@ -348,13 +348,12 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadData();
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddMinutes(1), trangThai = 1, tienDo = 0, mucDo = 1 });//10
+            //congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddMinutes(1), trangThai = 1, tienDo = 0, mucDo = 1 });//10
             Thread th = new Thread(new ThreadStart(LoadSYCN));
             th.IsBackground = true;
             th.Start();
             frmThongBao frm = new frmThongBao();
             frm.ShowDialog();
-
         }
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
@@ -651,7 +650,7 @@ namespace ctk43_Nhom1_Manage_Job
         private void btnThongBao_Click(object sender, EventArgs e)
         {
             frmThongBao frm = new frmThongBao();
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void tvwDSCongViec_AfterSelect(object sender, TreeViewEventArgs e)
@@ -684,7 +683,7 @@ namespace ctk43_Nhom1_Manage_Job
             {
                 //CheckCTCV(e.Node);
                 var x = e.Node.Tag as CongViec;
-                MessageBox.Show(x.ten);
+                //MessageBox.Show(x.ten);
             }
         }
 
