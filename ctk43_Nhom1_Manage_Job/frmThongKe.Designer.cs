@@ -96,6 +96,9 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -139,17 +142,17 @@ namespace ctk43_Nhom1_Manage_Job
             // columnHeader9
             // 
             this.columnHeader9.Text = "Tên công việc";
-            this.columnHeader9.Width = 212;
+            this.columnHeader9.Width = 200;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Trạng thái";
-            this.columnHeader10.Width = 130;
+            this.columnHeader10.Width = 120;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Thời gian bắt đầu";
-            this.columnHeader1.Width = 123;
+            this.columnHeader1.Width = 120;
             // 
             // columnHeader2
             // 
@@ -187,17 +190,17 @@ namespace ctk43_Nhom1_Manage_Job
             // columnHeader12
             // 
             this.columnHeader12.Text = "Tên công việc";
-            this.columnHeader12.Width = 225;
+            this.columnHeader12.Width = 200;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Thời gian bắt đầu";
-            this.columnHeader13.Width = 165;
+            this.columnHeader13.Width = 120;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Thời gian kết thúc";
-            this.columnHeader14.Width = 165;
+            this.columnHeader14.Width = 120;
             // 
             // tabPage2
             // 
@@ -229,12 +232,12 @@ namespace ctk43_Nhom1_Manage_Job
             // columnHeader3
             // 
             this.columnHeader3.Text = "Tên công việc";
-            this.columnHeader3.Width = 242;
+            this.columnHeader3.Width = 316;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Thời gian còn lại ";
-            this.columnHeader7.Width = 205;
+            this.columnHeader7.Width = 120;
             // 
             // tabPage3
             // 
@@ -306,22 +309,22 @@ namespace ctk43_Nhom1_Manage_Job
             // columnHeader5
             // 
             this.columnHeader5.Text = "Tên công việc";
-            this.columnHeader5.Width = 180;
+            this.columnHeader5.Width = 200;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Thời gian bắt đầu";
-            this.columnHeader8.Width = 142;
+            this.columnHeader8.Width = 120;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Thời gian kết thúc";
-            this.columnHeader11.Width = 128;
+            this.columnHeader11.Width = 120;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Thời gian hoàn thành";
-            this.columnHeader15.Width = 136;
+            this.columnHeader15.Width = 120;
             // 
             // groupBox1
             // 
@@ -638,7 +641,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 377);
+            this.ClientSize = new System.Drawing.Size(805, 377);
             this.Controls.Add(this.lbTiLeHoanThanhTre);
             this.Controls.Add(this.lbHoanThanhTre);
             this.Controls.Add(this.label11);
@@ -660,7 +663,6 @@ namespace ctk43_Nhom1_Manage_Job
             this.Controls.Add(this.lbTongCong);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thống kê";

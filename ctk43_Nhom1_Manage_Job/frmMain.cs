@@ -716,12 +716,18 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void tvwDSCongViec_DoubleClick(object sender, EventArgs e)
         {
+            chiTietCVBUS = new ChiTietCVBUS();
+            congViecBUS = new CongViecBUS();
             if (tvwDSCongViec.SelectedNode == null) return;
             if (tvwDSCongViec.SelectedNode.Level == 0)
             {
                 var cv = tvwDSCongViec.SelectedNode.Tag as CongViec;
                 frmDSChiTiet frm = new frmDSChiTiet(cv);
-                frm.ShowDialog();
+                if(frm.ShowDialog() == DialogResult.OK)
+                {
+                    CapNhatTienDo(cv.iD);
+                    LoadListCVHienTai();
+                }
             }
         }
 

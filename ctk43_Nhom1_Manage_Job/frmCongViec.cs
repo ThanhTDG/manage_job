@@ -44,6 +44,11 @@ namespace ctk43_Nhom1_Manage_Job
         public void LoadCV()
         {
             TimeSpan time;
+            int id = chuDeBUS.GetIDByNameChuDe(_congviec.ten);
+            if (id != -1)
+            {
+                cbbTypeOfTopic.SelectedIndex = chuDeBUS.GetChuDeByID(id).loaiChuDe;
+            }
             cbbTopic.SelectedValue = _congviec.IDChuDe;
             txtTitle.Text = _congviec.ten;
             dtpStart.Value = _congviec.thoiGianBD;

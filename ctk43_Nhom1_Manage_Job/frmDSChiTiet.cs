@@ -22,6 +22,8 @@ namespace ctk43_Nhom1_Manage_Job
         ListViewItem item;
         ChiTietCV chiTietCV;
         ChiTietCVBUS _chiTietCVBUS;
+        private CongViecBUS congViecBUS;
+        private ChuDeBUS chuDeBUS;
 
         public frmDSChiTiet(CongViec congViec)
         {
@@ -31,19 +33,37 @@ namespace ctk43_Nhom1_Manage_Job
             Control.CheckForIllegalCrossThreadCalls = false;
         }
 
+        public string convertMinuteToTime(int min=-1)
+        {
+            if (min == -1) return "";
+            int[] x = Extension.MinuteToTime(min);
+            return $"{x[0]} ngày {x[1]} giờ {x[2]} phút.";
+        }
+
+        private void LoadCTCV()
+        {
+            lvDSChiTiet.Items.Clear();
+            ChiTietCVBUS chiTietCVBUS = new ChiTietCVBUS();
+            List<ChiTietCV> cv1 = chiTietCVBUS.GetChiTietByCongViec(_congViec).ToList().OrderBy(x => x.mucDo).ToList();
+            List<ChiTietCV> cv2 = cv1.Where(x=>x.trangThai==1).OrderBy(x => x.trangThai).ToList();
+            List<ChiTietCV> cv3 = cv1.Where(x=>x.trangThai!=1).OrderBy(x => x.trangThai).ToList();
+            foreach (ChiTietCV ct in cv3.Concat(cv2))
+            {
+                ListViewItem item = new ListViewItem(ct.ten);
+                item.SubItems.Add(convertMinuteToTime(ct.ThoiGianDukien==null?-1:Convert.ToInt32(ct.ThoiGianDukien)));
+                item.SubItems.Add(convertMinuteToTime(ct.ThoiGianThucTe == null?-1 : Convert.ToInt32(ct.ThoiGianThucTe)));
+                item.Tag = ct;
+                if (ct.trangThai == 1) item.Checked = true;
+                lvDSChiTiet.Items.Add(item);
+            }
+        }
+
         private void frmDSChiTiet_Load(object sender, EventArgs e)
         {
             txtTenCongViec.Text = _congViec.ten;
             rtxtMoTaCongViec.Text = _congViec.MoTa;
-
-            ChiTietCVBUS chiTietCVBUS = new ChiTietCVBUS();
-            foreach (ChiTietCV ct in chiTietCVBUS.GetChiTietByCongViec(_congViec))
-            {
-                ListViewItem item = new ListViewItem(ct.ten);
-                item.SubItems.Add(ct.ThoiGianDukien.ToString());
-                item.Tag = ct;
-                lvDSChiTiet.Items.Add(item);
-            }
+            dtpEnd.Value = _congViec.thoiGianKT;
+            LoadCTCV();
             t = new System.Timers.Timer();
             t.Interval = 1;
             t.Elapsed += OnTimeEvent;
@@ -87,26 +107,34 @@ namespace ctk43_Nhom1_Manage_Job
         {
             if (btnStart.Text == "Finish")
             {
+                t.Stop();
                 chiTietCV = _chiTietCVBUS.GetChiTietCongViecByID(chiTietCV.iD);
                 chiTietCV.ThoiGianThucTe = h * 60 + m;
                 MessageBox.Show(string.Format("Hoàn thành " + StringHMS()));
                 chiTietCV.trangThai = 1;
                 _chiTietCVBUS.Update(chiTietCV);
-                t.Stop();
                 this.DialogResult = DialogResult.OK;
             }
             else if (btnStart.Text == "Start")
             {
                 t.Start();
-                item.BackColor = Color.Green;
                 chiTietCV = item.Tag as ChiTietCV;
+                lvDSChiTiet.Enabled = false;
+                btnAdd.Enabled = false;
+                btnStart.Text = "Finish";
             }
-            btnStart.Text = "Finish";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            frmChiTietCV frm = new frmChiTietCV();
+            congViecBUS = new CongViecBUS();
+            chuDeBUS = new ChuDeBUS();
+            frm.LoadCV(_congViec);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadCTCV();
+            }
         }
 
         private void frmDSChiTiet_FormClosing(object sender, FormClosingEventArgs e)
@@ -135,8 +163,9 @@ namespace ctk43_Nhom1_Manage_Job
             if (lvDSChiTiet.SelectedItems.Count >= 0)
             {
                 item = lvDSChiTiet.SelectedItems[0];
-                ChiTietCV cv = item.Tag as ChiTietCV;
-                rtbMoTa.Text = cv.moTa;
+                ChiTietCV ctcv = item.Tag as ChiTietCV;
+                rtbMoTa.Text = ctcv.moTa;
+                gbChiTiet.Text = ctcv.ten;
             }
         }
 
@@ -161,6 +190,9 @@ namespace ctk43_Nhom1_Manage_Job
             t.Stop();
             h = 0;m = 0;s = 0;
             lbCountUp.Text = $"{h}:{m}:{s}";
+            lvDSChiTiet.Enabled = true;
+            btnAdd.Enabled = true;
+            btnStart.Text = "Start";
         }
     }
 }
