@@ -19,6 +19,8 @@ namespace DAO.Repositories
         IEnumerable<CongViec> GetCongViecsComingSoon(DateTime now, string email);
         IEnumerable<CongViec> GetCongViecsAlmostOver(DateTime now, string email);
         IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, string email);
+        IEnumerable<CongViec> GetCongViecByLoai(string email);
+        IEnumerable<CongViec> GetCongViecByLoai(int loai, string email, DateTime dateBD, DateTime dateKT);
 
     }
     public class CongViecRepository : RepositoryBase<CongViec>, ICongViecRepository
@@ -146,6 +148,7 @@ namespace DAO.Repositories
                         select s;
             return query;
         }
+
         public IEnumerable<CongViec> GetCongViecsAlmostOver(DateTime now, string email)
         {
             var query = from s in DbContext.congViec
@@ -155,12 +158,44 @@ namespace DAO.Repositories
                         select s;
             return query;
         }
+
         public IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, string email)
         {
             var query = from s in DbContext.congViec
                         join r in DbContext.chuDe
                         on s.IDChuDe equals r.iD
                         where r.Email == email && r.loaiChuDe == loaiChuDe
+                        select s;
+            return query;
+        }
+
+
+        public IEnumerable<CongViec> GetCongViecByChuDe(int idChuDe, string email)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                        on s.IDChuDe equals r.iD
+                        where r.Email == email && r.iD == idChuDe
+                        select s;
+            return query;
+        }
+
+        public IEnumerable<CongViec> GetCongViecByLoai(string email)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                        on s.IDChuDe equals r.iD
+                        where r.Email == email && r.loaiChuDe == 0
+                        select s;
+            return query;
+        }
+
+        public IEnumerable<CongViec> GetCongViecByLoai(int loai, string email, DateTime dateBD, DateTime dateKT)
+        {
+            var query = from s in DbContext.congViec
+                        join r in DbContext.chuDe
+                        on s.IDChuDe equals r.iD
+                        where r.Email == email && r.loaiChuDe == loai && dateBD <= s.thoiGianBD && s.thoiGianBD <= dateKT
                         select s;
             return query;
         }

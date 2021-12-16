@@ -61,7 +61,7 @@ namespace BUS
             {
                 str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
                 var node = treeView.Nodes.Add(str);
-                node.ForeColor = ColorMN.ColorLevel(temp.mucDo);
+                node.ForeColor = MyColor.ColorLevel(temp.mucDo);
                 node.Tag = temp;
                 node.Checked = false;
                 if (temp.tienDo == 100) { node.Checked = true; }
@@ -73,7 +73,7 @@ namespace BUS
                     if (ctcv.trangThai == 1)
                     {
                         childNode.Checked = true;
-                        childNode.ForeColor = ColorMN.ColorLevel(5);
+                        childNode.ForeColor = MyColor.ColorLevel(5);
                     }
                     childNode.NodeFont = new Font("Times New Roman", 10, FontStyle.Regular);
                     childNode.Tag = ctcv;
@@ -87,9 +87,27 @@ namespace BUS
             return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD).ToList();
         }
 
+        //public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
+        //{
+        //    return congViecRepository.GetCongViecByNguoiDung(nd.email);
+        //}
+
         public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
         {
-            return congViecRepository.GetCongViecByNguoiDung(nd.email);
+            DateTime now = DateTime.Now;
+            var firstDateWeek = now.StartOfWeek(DayOfWeek.Monday);
+            var firstDateMonth = new DateTime(now.Year, now.Month, 1).Date;
+            var lastDateMonth = firstDateMonth.AddMonths(1).AddDays(-1).Date.Add(new TimeSpan(23, 59, 59));
+            var firstDateYear = new DateTime(now.Year, 1, 1).Date;
+            var lastDateYear = new DateTime(now.Year, 12, 31).Date.Add(new TimeSpan(23, 59, 59));
+
+            List<CongViec> temp = congViecRepository.GetCongViecByLoai(nd.email).ToList();
+            List<CongViec> temp1 = congViecRepository.GetCongViecByLoai(1, nd.email, DateTime.Now.Date, DateTime.Now.Date.Add(new TimeSpan(23, 59, 59))).ToList();
+            List<CongViec> temp2 = congViecRepository.GetCongViecByLoai(2, nd.email, firstDateWeek, firstDateWeek.AddDays(7).Date.Add(new TimeSpan(23, 59, 59))).ToList();
+            List<CongViec> temp3 = congViecRepository.GetCongViecByLoai(3, nd.email, firstDateMonth, lastDateMonth).ToList();
+            List<CongViec> temp4 = congViecRepository.GetCongViecByLoai(4, nd.email, firstDateYear, lastDateYear).ToList();
+
+            return temp.Concat(temp1).Concat(temp2).Concat(temp3).Concat(temp4);
         }
 
         public IEnumerable<CongViec> GetByLoc(NguoiDung nd)
@@ -142,11 +160,14 @@ namespace BUS
             return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderBy(x => x.thoiGianBD).ToList();
         }
 
-
-
         public IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, NguoiDung nd)
         {
             return congViecRepository.GetCongViecByLoaiChuDe(loaiChuDe, nd.email);
+        }
+
+        public IEnumerable<CongViec> GetCongViecByChuDe(int ChuDe, NguoiDung nd)
+        {
+            return congViecRepository.GetCongViecByChuDe(ChuDe, nd.email);
         }
 
         public List<CongViec> SortCongViec(List<CongViec> cvs, sort sortCongViec)

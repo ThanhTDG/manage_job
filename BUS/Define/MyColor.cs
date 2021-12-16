@@ -15,10 +15,10 @@ namespace BUS.Define
                     r = Color.Red;
                     break;
                 case 1:
-                    r = Color.Brown;
+                    r = Color.Purple;
                     break;
                 case 2:
-                    r = Color.Purple;
+                    r = Color.Brown;
                     break;
                 case 3:
                     r = Color.DarkGreen;

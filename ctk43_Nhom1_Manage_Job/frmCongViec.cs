@@ -51,25 +51,36 @@ namespace ctk43_Nhom1_Manage_Job
             cbbLevel.SelectedIndex = _congviec.mucDo;
             txtProcess.Text = _congviec.tienDo.ToString();
             richDescription.Text = _congviec.MoTa;
-            if (_congviec.trangThai == 2)
-            {
-                label7.Text = "Hoàn thành";
-                txtRemine.Text = $"{_congviec.ngayHoanThanh.Value.ToString("dd/MM/yy HH:mm:ss")}";
-                return;
-            }
-            if (_congviec.thoiGianBD > DateTime.Now)
+            if (_congviec.trangThai == 0)
             {
                 label7.Text = "Bắt đầu trong";
                 time = _congviec.thoiGianBD - DateTime.Now;
                 txtRemine.Text = Math.Abs(time.Days).ToString() + " ngày " + Math.Abs(time.Hours).ToString() + " giờ " + Math.Abs(time.Minutes).ToString() + " phút.";
                 return;
             }
-            else
+            else if(_congviec.trangThai == 1)
             {
+                label7.Text = "Còn lại";
                 time = _congviec.thoiGianKT - DateTime.Now;
-                if (time.Minutes < 0) label7.Text = "Đã quá hạn ";
-                else label7.Text = "Còn lại: ";
                 txtRemine.Text = Math.Abs(time.Days).ToString() + " ngày " + Math.Abs(time.Hours).ToString() + " giờ " + Math.Abs(time.Minutes).ToString() + " phút.";
+            }
+            else if (_congviec.trangThai == 2)
+            {
+                label7.Text = "Hoàn thành";
+                txtRemine.Text = $"{_congviec.ngayHoanThanh.Value.ToString("dd/MM/yy HH:mm:ss")}";
+                return;
+            }
+            else if(_congviec.trangThai == 3)
+            {
+                label7.Text = "Đã quá hạn";
+                time = _congviec.thoiGianKT - DateTime.Now;
+                txtRemine.Text = Math.Abs(time.Days).ToString() + " ngày " + Math.Abs(time.Hours).ToString() + " giờ " + Math.Abs(time.Minutes).ToString() + " phút.";
+            }
+            else if (_congviec.trangThai == 4)
+            {
+                label7.Text = "Hoàn thành Trễ";
+                txtRemine.Text = $"{_congviec.ngayHoanThanh.Value.ToString("dd/MM/yy HH:mm:ss")}";
+                return;
             }
         }
 
@@ -107,7 +118,7 @@ namespace ctk43_Nhom1_Manage_Job
                 };
                 congViecBUS.Insert(_congviec);
             }
-            else if(cbbTypeOfTopic.SelectedIndex == 0)
+            else if (cbbTypeOfTopic.SelectedIndex == 0)
             {
                 _congviec.IDChuDe = Convert.ToInt32(cbbTopic.SelectedValue);
                 _congviec.ten = txtTitle.Text;
@@ -119,11 +130,39 @@ namespace ctk43_Nhom1_Manage_Job
                 _congviec.trangThai = Extension.typeStatusOfTheJob(dtpStart.Value, dtpEnd.Value, _congviec.trangThai);
                 congViecBUS.Update(_congviec);
             }
+            else if (cbbTypeOfTopic.SelectedIndex != 0 && _congviec != null)
+            {
+                UpdateNameOfTopic();
+            }
             else
             {
                 AddJobVia(cbbTypeOfTopic.SelectedIndex);
             }
             DialogResult = DialogResult.OK;
+        }
+
+        private CongViec UpdateCVTheoLoai(CongViec cv)
+        {
+            cv.IDChuDe = chuDeBUS.GetIDByNameChuDe(txtTitle.Text);
+            cv.ten = txtTitle.Text;
+            cv.MoTa = richDescription.Text;
+            cv.thoiGianBD = dtpStart.Value;
+            cv.thoiGianKT = dtpEnd.Value;
+            cv.tienDo = chiTietCVBUS.Process(cv);
+            cv.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
+            cv.trangThai = Extension.typeStatusOfTheJob(dtpStart.Value, dtpEnd.Value, cv.trangThai);
+            return cv;
+        }
+
+        private void UpdateNameOfTopic()
+        {
+            List<CongViec> cvs = congViecBUS.GetCongViecByLoaiChuDe(cbbTypeOfTopic.SelectedIndex, _nd).ToList().FindAll(x=>x.ten==txtTitle.Text);
+            foreach (CongViec i in cvs)
+            {
+                var item = congViecBUS.GetCongViecByID(i.iD);
+                var cv =UpdateCVTheoLoai(item);
+                congViecBUS.Update(cv);
+            }
         }
 
         private void AddJobVia(int type)
@@ -141,14 +180,13 @@ namespace ctk43_Nhom1_Manage_Job
                 cv.IDChuDe = id;
                 cv.ten = txtTitle.Text;
                 cv.MoTa = richDescription.Text;
-                AddFollowDMY(ref cv, s1, type);
                 cv.tienDo = 0;
+                cv.thoiGianBD = s1.thoiGianBD;
+                cv.thoiGianKT = s1.thoiGianKT;
                 cv.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
                 cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD, cv.thoiGianKT);
                 congViecBUS.Insert(cv);
-                s1 = cv;
-                s1.thoiGianBD = cv.thoiGianBD;
-                s1.thoiGianKT = cv.thoiGianKT;
+                AddFollowDMY(ref s1, cv, type);
             }
         }
 
