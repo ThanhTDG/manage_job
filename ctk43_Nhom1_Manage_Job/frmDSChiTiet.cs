@@ -128,12 +128,6 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void lvDSChiTiet_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (lvDSChiTiet.SelectedItems.Count >= 0)
-            //{
-            //    ListViewItem item = lvDSChiTiet.SelectedItems[0];
-            //    ChiTietCV cv = item.Tag as ChiTietCV;
-            //    rtbMoTa.Text = cv.moTa;
-            //}
         }
 
         private void lvDSChiTiet_Click(object sender, EventArgs e)

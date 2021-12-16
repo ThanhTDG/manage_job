@@ -125,9 +125,6 @@ namespace ctk43_Nhom1_Manage_Job
 
         internal void LoadCV(CongViec congViec)
         {
-            //cbbJob.DataSource = congViecBUS.GetCongViecByChuDe(id,nd).ToList();
-            //cbbJob.DisplayMember = "ten";
-            //cbbJob.ValueMember = "iD";
             txtJob.Text = congViec.ten;
             idCV = congViec.iD;
         }
