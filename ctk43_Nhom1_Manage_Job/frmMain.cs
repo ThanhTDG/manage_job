@@ -446,12 +446,8 @@ namespace ctk43_Nhom1_Manage_Job
             if (lbChucNang.SelectedIndex == -1)
             {
                 cvs = (chuDeHienTai.iD == 0) ? congViecBUS.GetCongViecByNguoiDung(nd).ToList() : congViecBUS.GetCongViecByChuDe(chuDeHienTai).ToList();
-<<<<<<< HEAD
-                congViecBUS.GetCongViecByTrangThai(ref cvs, TrangThaiHT,nd);
-=======
                 if (TrangThaiHT != "Tất cả")
                     congViecBUS.GetCongViecByTrangThai(ref cvs, TrangThaiHT);
->>>>>>> 7cbd50275c7d5e5947da2c03b29a22a5f978c0dc
                 cvs = congViecBUS.SortCongViec(cvs, SortCV);
                 congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
             }
@@ -485,12 +481,8 @@ namespace ctk43_Nhom1_Manage_Job
                     cvs = congViecBUS.GetCongViecByLoai(DefineLoaiChuDe.getInt("Hàng năm"), nd).ToList();
                     break;
             }
-<<<<<<< HEAD
-            congViecBUS.GetCongViecByTrangThai(ref cvs, TrangThaiHT,nd);
-=======
             if (TrangThaiHT != "Tất cả")
                 congViecBUS.GetCongViecByTrangThai(ref cvs, TrangThaiHT);
->>>>>>> 7cbd50275c7d5e5947da2c03b29a22a5f978c0dc
             cvs = congViecBUS.SortCongViec(cvs, SortCV);
             congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
         }

@@ -44,23 +44,22 @@ namespace DAO.Repositories
         {
             int i = 0, j = 0;
             List<SqlParameter> sqlParameters = new List<SqlParameter>();
-            string Squery = ("Select C.id ,C.ten ,C.thoiGianBD, C.thoiGianKT, C.trangThai, C.tienDo, C.mucDo, C.IDChuDe, C.MoTa " +
+            string Squery = ("Select C.id ,C.ten ,C.thoiGianBD, C.thoiGianKT,C.ngayHoanThanh ,C.trangThai, C.tienDo, C.mucDo, C.IDChuDe, C.MoTa " +
                 "from  NguoiDungs A , ChuDes B, CongViecs C  " +
                 "where B.Email = @Email AND A.email = B.Email AND B.iD = C.IDChuDe ");
             SqlParameter sqlParameter = new SqlParameter("@Email", nd.email);
             sqlParameters.Add(sqlParameter);
-            if(_trangthai ==null || _mucdo == null)
-
-
-            if (_time.Count != 0 && _time!=null)
+            if (_time.Count != 0)
             {
-                Squery = Squery + " AND c.ThoigianBD > @StartDay AND C.thoiGianKT < @EndDay ";
-                sqlParameter = new SqlParameter("@StartDay", _time[0].ToShortDateString());
+                Squery = Squery + " AND c.thoigianBD > @StartDay AND C.thoiGianKT < @EndDay ";
+                sqlParameter = new SqlParameter("@StartDay", _time[0]);
                 sqlParameters.Add(sqlParameter);
-                sqlParameter = new SqlParameter("@EndDay", _time[1].ToShortDateString());
+                sqlParameter = new SqlParameter("@EndDay", _time[1]);
                 sqlParameters.Add(sqlParameter);
             }
-            if (_mucdo.Count != 0 && _mucdo !=null)
+            if (_trangthai.Count != 0 || _mucdo.Count != 0)
+                return dataContext.congViec.SqlQuery(Squery, sqlParameters.ToArray());
+            if (_mucdo.Count != 0)
             {
                 foreach (var mucdo in _mucdo)
                 {

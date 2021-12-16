@@ -106,7 +106,6 @@
             // 
             // btnCancel
             // 
-
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnCancel.Location = new System.Drawing.Point(588, 219);
@@ -222,9 +221,9 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "trạng thái";
-            //// 
-            //// trangthai4
-            //// 
+            // 
+            // trangthai4
+            // 
             this.trangthai4.AutoSize = true;
             this.trangthai4.Location = new System.Drawing.Point(560, 44);
             this.trangthai4.Name = "trangthai4";
@@ -311,6 +310,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmLoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm công việc";

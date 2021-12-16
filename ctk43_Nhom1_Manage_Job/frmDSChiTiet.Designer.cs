@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+           base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -279,6 +279,7 @@
             this.Controls.Add(this.gbC);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmDSChiTiet";
             this.Text = "Danh sách chi tiết công việc";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDSChiTiet_FormClosing);

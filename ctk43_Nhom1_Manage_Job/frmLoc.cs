@@ -84,8 +84,8 @@ namespace ctk43_Nhom1_Manage_Job
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
-            
             getData();
+            DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -108,6 +108,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             this.Close();
         }
       

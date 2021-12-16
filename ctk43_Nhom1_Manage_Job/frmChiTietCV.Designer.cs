@@ -322,6 +322,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.Controls.Add(this.txtJobDetail);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmChiTietCV";
             this.Text = "Chi tiết công việc";
             this.Load += new System.EventHandler(this.frmChiTietCV_Load);

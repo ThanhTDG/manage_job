@@ -534,6 +534,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnMacDinh);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmThietLap";
             this.Text = "SettingForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThietLap_FormClosing);

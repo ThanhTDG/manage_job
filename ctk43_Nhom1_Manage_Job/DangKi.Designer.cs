@@ -111,6 +111,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmDangKy";
             this.Text = "Đăng Ký";

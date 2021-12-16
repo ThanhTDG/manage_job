@@ -49,9 +49,10 @@ namespace ctk43_Nhom1_Manage_Job
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 0);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmThongBaoCV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "frmThongBaoCV";
+            this.Text = "Thông báo công việc";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThongBaoCV_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmThongBaoCV_FormClosed);
             this.Load += new System.EventHandler(this.frmThongBaoCV_Load);

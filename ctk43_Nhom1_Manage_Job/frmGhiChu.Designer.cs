@@ -122,7 +122,6 @@ namespace ctk43_Nhom1_Manage_Job
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-
             this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // printToolStripMenuItem
@@ -189,6 +188,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.rtxtContent);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmGhiChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ghi Chú Nhanh";

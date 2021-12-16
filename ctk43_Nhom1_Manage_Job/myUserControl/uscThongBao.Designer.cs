@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grCV = new System.Windows.Forms.GroupBox();
+            this.btnChitiet = new System.Windows.Forms.Button();
             this.grMoTa = new System.Windows.Forms.GroupBox();
             this.txtMota = new System.Windows.Forms.TextBox();
             this.lbpercent = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.lbTienDo = new System.Windows.Forms.Label();
             this.lbThongBao = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
-            this.btnChitiet = new System.Windows.Forms.Button();
             this.grCV.SuspendLayout();
             this.grMoTa.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,16 @@
             this.grCV.TabIndex = 0;
             this.grCV.TabStop = false;
             this.grCV.Text = "groupBox1";
+            // 
+            // btnChitiet
+            // 
+            this.btnChitiet.Location = new System.Drawing.Point(257, 101);
+            this.btnChitiet.Name = "btnChitiet";
+            this.btnChitiet.Size = new System.Drawing.Size(75, 23);
+            this.btnChitiet.TabIndex = 0;
+            this.btnChitiet.Text = "Xem chi tiết";
+            this.btnChitiet.UseVisualStyleBackColor = true;
+            this.btnChitiet.Click += new System.EventHandler(this.btnChitiet_Click);
             // 
             // grMoTa
             // 
@@ -127,32 +137,22 @@
             // lbThongBao
             // 
             this.lbThongBao.AutoSize = true;
-            this.lbThongBao.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.lbThongBao.Location = new System.Drawing.Point(34, 16);
+            this.lbThongBao.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThongBao.Location = new System.Drawing.Point(60, 16);
             this.lbThongBao.Name = "lbThongBao";
-            this.lbThongBao.Size = new System.Drawing.Size(105, 22);
+            this.lbThongBao.Size = new System.Drawing.Size(111, 23);
             this.lbThongBao.TabIndex = 1;
             this.lbThongBao.Text = "Thông báo";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(6, 48);
+            this.lbName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(6, 46);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(92, 16);
+            this.lbName.Size = new System.Drawing.Size(116, 21);
             this.lbName.TabIndex = 0;
             this.lbName.Text = "Tên công việc";
-            // 
-            // btnChitiet
-            // 
-            this.btnChitiet.Location = new System.Drawing.Point(257, 101);
-            this.btnChitiet.Name = "btnChitiet";
-            this.btnChitiet.Size = new System.Drawing.Size(75, 23);
-            this.btnChitiet.TabIndex = 0;
-            this.btnChitiet.Text = "Xem chi tiết";
-            this.btnChitiet.UseVisualStyleBackColor = true;
-            this.btnChitiet.Click += new System.EventHandler(this.btnChitiet_Click);
             // 
             // UscThongBao
             // 

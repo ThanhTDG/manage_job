@@ -41,6 +41,7 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
         {
             pcbTienDo.Value = congViec.tienDo;
             lbName.Text = congViec.ten;
+            lbName.ForeColor = MyColor.ColorLevel(congViec.mucDo);
             grCV.Text = "Công việc";
             switch (congViec.trangThai)
             {
@@ -65,7 +66,7 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
         private void btnChitiet_Click(object sender, EventArgs e)
         {
             frmDSChiTiet frmDSChiTiet = new frmDSChiTiet(btnChitiet.Tag as CongViec);
-            frmDSChiTiet.ShowDialog();
+            frmDSChiTiet.Show();
         }
     }
 }

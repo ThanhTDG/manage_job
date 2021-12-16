@@ -104,7 +104,7 @@ namespace BUS
 
         public IEnumerable<CongViec> GetByLoc(NguoiDung nd)
         {
-            return congViecRepository.GetCongViecByLoc(nd, DataCheck.Instance.trangthai, DataCheck.Instance.mucdo, DataCheck.Instance.time);
+            return congViecRepository.GetCongViecByLoc(nd, DataCheck.Instance.trangthai, DataCheck.Instance.mucdo, DataCheck.Instance.time).Distinct();
         }
 
         public IEnumerable<CongViec> GetCongViecByTenCV(string keyword, List<CongViec> cvs)
@@ -202,13 +202,10 @@ namespace BUS
                 return cv.OrderBy(x => x.mucDo);
         }
 
-        public void GetCongViecByTrangThai(ref List<CongViec> cvs, string trangThai, NguoiDung nd)
+        public void GetCongViecByTrangThai(ref List<CongViec> cvs, string trangThai)
         {
             switch (trangThai)
             {
-                case "Tất cả":
-                    cvs = GetCongViecByNguoiDung(nd).ToList();
-                    break;
                 case "Sắp diễn ra":
                     cvs = cvs.Where(x => x.trangThai == 0).ToList();
                     break;
