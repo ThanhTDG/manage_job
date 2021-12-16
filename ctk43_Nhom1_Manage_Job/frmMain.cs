@@ -24,24 +24,16 @@ namespace ctk43_Nhom1_Manage_Job
         ChuDe chuDeHienTai = null;
         int TabHienTai = 0;
         ChiTietCVBUS chiTietCVBUS;
-        private
+        private Thread th;
+        string TrangThaiHT = null;
+
 
         sort SortCV = sort.GiamTheoMucDo;
         sort SortGC = sort.GiamTheoTG;
-<<<<<<< HEAD
-        Thread th;
         public frmMain()
         {
             InitializeComponent();
-            
-=======
-        string TrangThaiHT = null;
-
-        public frmMain()
-        {
-            InitializeComponent();
-            // getAll();
->>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
+            //getAll();
         }
         #region Ham Bo Tro
         private void getAll()
@@ -261,7 +253,7 @@ namespace ctk43_Nhom1_Manage_Job
                 th.IsBackground = true;
                 th.Start();
             }
-            else if (th.IsAlive)
+            else if (th !=null || th.ThreadState == ThreadState.Running)
             {
                 th.Abort(); 
                 th = null;
@@ -269,10 +261,9 @@ namespace ctk43_Nhom1_Manage_Job
                 th.IsBackground = true;
                 th.Start();
             }
-<<<<<<< HEAD
            
         }
-        public static void DataTest(DateTime dateTime, DateTime end)
+/*        public static void DataTest(DateTime dateTime, DateTime end)
         {
             CongViecBUS viecBUS = new CongViecBUS();
             viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
@@ -286,10 +277,7 @@ namespace ctk43_Nhom1_Manage_Job
             viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
             viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
             viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
-        }
-=======
-        }       
->>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
+        }*/
 
         private void CapNhatHoanThanhOrNot(ref CongViec cv)
         {
@@ -327,6 +315,7 @@ namespace ctk43_Nhom1_Manage_Job
             {
                 ctcv.trangThai = s;
                 chiTietCVBUS.Update(ctcv);
+
             }
         }
 
@@ -358,6 +347,7 @@ namespace ctk43_Nhom1_Manage_Job
                 if (check)
                 {
                     congViecBUS.Update(cv);
+                    listenNotification();
                     LoadListCVHienTai();
                 }
             }
@@ -383,6 +373,7 @@ namespace ctk43_Nhom1_Manage_Job
                 if (check == true)
                 {
                     CapNhatTienDo(treeNode);
+                    listenNotification();
                     LoadListCVHienTai();
                 }
             }
@@ -400,17 +391,8 @@ namespace ctk43_Nhom1_Manage_Job
             SetUPSearchInputText();
             LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
             tvwChuDe.SelectedNode = tvwChuDe.Nodes[0];
-<<<<<<< HEAD
-            toolStripCbbCheDoSapXep.SelectedIndex = 0;
-        }
-
-        private void XoaChonChucNang(object sender, EventArgs e)
-        {
-            lbChucNang.SelectedIndex = -1;
-=======
             SetUpCbbTrangThaiCV();
             this.KeyPreview = true;       
->>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
         }
 
         private void LoadChuDe()
@@ -460,10 +442,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void LoadListCVHienTai()
         {
-<<<<<<< HEAD
-   
-            cvs = (chuDeHienTai.iD == 0) ? congViecBUS.GetCongViecByNguoiDung(nd).ToList() : congViecBUS.GetCongViecByChuDe(chuDeHienTai).ToList();
-=======
+
             if (lbChucNang.SelectedIndex == -1)
             {
                 cvs = (chuDeHienTai.iD == 0) ? congViecBUS.GetCongViecByNguoiDung(nd).ToList() : congViecBUS.GetCongViecByChuDe(chuDeHienTai).ToList();
@@ -502,7 +481,6 @@ namespace ctk43_Nhom1_Manage_Job
                     break;
             }
             congViecBUS.GetCongViecByTrangThai(ref cvs, TrangThaiHT,nd);
->>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
             cvs = congViecBUS.SortCongViec(cvs, SortCV);
             congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
         }
@@ -527,18 +505,9 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadData();
-<<<<<<< HEAD
             frmThongBao frm = new frmThongBao();
             frm.ShowDialog();
             listenNotification();
-=======
-            //congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddMinutes(1), trangThai = 1, tienDo = 0, mucDo = 1 });//10
-            ////Thread th = new Thread(new ThreadStart(LoadSYCN));
-            //th.IsBackground = true;
-            //th.Start();
-            frmThongBao frm = new frmThongBao();
-            frm.ShowDialog();
->>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
         }
 
         private void tvwChuDe_AfterSelect(object sender, TreeViewEventArgs e)
@@ -546,13 +515,8 @@ namespace ctk43_Nhom1_Manage_Job
             lbChucNang.SelectedIndex = -1;
             congViecBUS = new CongViecBUS();
             chuDeHienTai = e.Node.Tag as ChuDe;
-<<<<<<< HEAD
-            grbDSCongViec.Text = "Danh sách công việc theo " + chuDeHienTai.ten;
-            LoadListCVHienTai();
-=======
             grbDSCongViec.Text = ThongBao.SetGroupBoxName(chuDeHienTai.ten);
             LoadListCVHienTai();            
->>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
         }
 
         private void btnThemCongViec_Click(object sender, EventArgs e)
@@ -564,8 +528,8 @@ namespace ctk43_Nhom1_Manage_Job
             {
                 //chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
                 congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
+                listenNotification();
             }
-            listenNotification();
         }
 
         private void btnThemChuDe_Click(object sender, EventArgs e)
@@ -621,8 +585,8 @@ namespace ctk43_Nhom1_Manage_Job
                 frm.LoadChuDe(nd);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
+                    listenNotification();
                     chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
-                    //congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                     LoadListCVHienTai();
                 }
             }
@@ -633,8 +597,8 @@ namespace ctk43_Nhom1_Manage_Job
                 frm.LoadCV(treeNode.Parent.Tag as CongViec);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
+                    listenNotification();
                     CapNhatTienDo(treeNode);
-                    //congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
                     LoadListCVHienTai();
                 }
             }
@@ -652,11 +616,13 @@ namespace ctk43_Nhom1_Manage_Job
                     if (id != -1)
                     {
                         chuDeBUS.Delete(id);
+                        listenNotification();
                         LoadListCVHienTai();
                     }
                     else
                     {
                         congViecBUS.Delete(cv);
+                        listenNotification();
                         LoadListCVHienTai();
                     }
                 }
@@ -819,27 +785,15 @@ namespace ctk43_Nhom1_Manage_Job
                 ckbTimNgayGhiChu.Visible = false;
                 GCMenuParentToolStripMenuItem.Enabled = false;
                 CVMenuParentToolStripMenuItem.Enabled = true;
-<<<<<<< HEAD
-                lbChucNang.Enabled = true;
-                tvwChuDe.Enabled = true;
-            }
-=======
                 SetControlEnDis(true);
             }                
->>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
             else
             {
                 ckbTimNgayGhiChu.Visible = true;
                 CVMenuParentToolStripMenuItem.Enabled = false;
                 GCMenuParentToolStripMenuItem.Enabled = true;
-<<<<<<< HEAD
-                lbChucNang.Enabled = false;
-                tvwChuDe.Enabled = false;
-            }
-=======
                 SetControlEnDis(false);
             }                
->>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
 
             TabHienTai = tabControl.SelectedIndex;
         }

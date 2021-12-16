@@ -124,7 +124,7 @@ namespace DAO.Repositories
             var query = from s in DbContext.congViec
                         join r in DbContext.chuDe
                         on s.IDChuDe equals r.iD
-                        where r.Email == email && s.thoiGianBD <= date && date <= s.thoiGianKT
+                        where r.Email == email && s.thoiGianBD < date && date <= s.thoiGianKT
                         select s;
             return query;
         }
@@ -134,7 +134,7 @@ namespace DAO.Repositories
             var query = from s in DbContext.congViec
                         join r in DbContext.chuDe
                          on s.IDChuDe equals r.iD
-                        where r.Email == email && s.thoiGianBD <= now && s.trangThai == 0
+                        where r.Email == email && s.thoiGianBD > now && s.trangThai == 0
                         select s;
             return query;
         }
