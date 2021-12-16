@@ -33,29 +33,27 @@
             this.txtMota = new System.Windows.Forms.TextBox();
             this.lbpercent = new System.Windows.Forms.Label();
             this.pcbTienDo = new System.Windows.Forms.ProgressBar();
-            this.ckbFinish = new System.Windows.Forms.CheckBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.lbTime = new System.Windows.Forms.Label();
             this.lbTienDo = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbThongBao = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.btnChitiet = new System.Windows.Forms.Button();
             this.grCV.SuspendLayout();
             this.grMoTa.SuspendLayout();
             this.SuspendLayout();
             // 
             // grCV
             // 
+            this.grCV.Controls.Add(this.btnChitiet);
             this.grCV.Controls.Add(this.grMoTa);
             this.grCV.Controls.Add(this.lbpercent);
             this.grCV.Controls.Add(this.pcbTienDo);
-            this.grCV.Controls.Add(this.ckbFinish);
             this.grCV.Controls.Add(this.txtTime);
             this.grCV.Controls.Add(this.lbTime);
             this.grCV.Controls.Add(this.lbTienDo);
-            this.grCV.Controls.Add(this.txtName);
-            this.grCV.Controls.Add(this.label2);
-            this.grCV.Controls.Add(this.label1);
+            this.grCV.Controls.Add(this.lbThongBao);
+            this.grCV.Controls.Add(this.lbName);
             this.grCV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grCV.Location = new System.Drawing.Point(0, 0);
             this.grCV.Name = "grCV";
@@ -80,6 +78,7 @@
             this.txtMota.Location = new System.Drawing.Point(3, 16);
             this.txtMota.Multiline = true;
             this.txtMota.Name = "txtMota";
+            this.txtMota.ReadOnly = true;
             this.txtMota.Size = new System.Drawing.Size(326, 52);
             this.txtMota.TabIndex = 0;
             // 
@@ -99,20 +98,11 @@
             this.pcbTienDo.Size = new System.Drawing.Size(202, 20);
             this.pcbTienDo.TabIndex = 6;
             // 
-            // ckbFinish
-            // 
-            this.ckbFinish.AutoSize = true;
-            this.ckbFinish.Location = new System.Drawing.Point(256, 101);
-            this.ckbFinish.Name = "ckbFinish";
-            this.ckbFinish.Size = new System.Drawing.Size(82, 17);
-            this.ckbFinish.TabIndex = 5;
-            this.ckbFinish.Text = "Hoàn thành";
-            this.ckbFinish.UseVisualStyleBackColor = true;
-            // 
             // txtTime
             // 
             this.txtTime.Location = new System.Drawing.Point(100, 101);
             this.txtTime.Name = "txtTime";
+            this.txtTime.ReadOnly = true;
             this.txtTime.Size = new System.Drawing.Size(141, 20);
             this.txtTime.TabIndex = 4;
             // 
@@ -134,31 +124,35 @@
             this.lbTienDo.TabIndex = 3;
             this.lbTienDo.Text = "Tiến độ";
             // 
-            // txtName
+            // lbThongBao
             // 
-            this.txtName.Location = new System.Drawing.Point(100, 48);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(238, 20);
-            this.txtName.TabIndex = 2;
+            this.lbThongBao.AutoSize = true;
+            this.lbThongBao.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.lbThongBao.Location = new System.Drawing.Point(34, 16);
+            this.lbThongBao.Name = "lbThongBao";
+            this.lbThongBao.Size = new System.Drawing.Size(105, 22);
+            this.lbThongBao.TabIndex = 1;
+            this.lbThongBao.Text = "Thông báo";
             // 
-            // label2
+            // lbName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(34, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Thông báo";
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(6, 48);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(92, 16);
+            this.lbName.TabIndex = 0;
+            this.lbName.Text = "Tên công việc";
             // 
-            // label1
+            // btnChitiet
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên công việc";
+            this.btnChitiet.Location = new System.Drawing.Point(257, 101);
+            this.btnChitiet.Name = "btnChitiet";
+            this.btnChitiet.Size = new System.Drawing.Size(75, 23);
+            this.btnChitiet.TabIndex = 0;
+            this.btnChitiet.Text = "Xem chi tiết";
+            this.btnChitiet.UseVisualStyleBackColor = true;
+            this.btnChitiet.Click += new System.EventHandler(this.btnChitiet_Click);
             // 
             // UscThongBao
             // 
@@ -178,16 +172,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grCV;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbThongBao;
+        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.GroupBox grMoTa;
         private System.Windows.Forms.TextBox txtMota;
         private System.Windows.Forms.Label lbpercent;
         private System.Windows.Forms.ProgressBar pcbTienDo;
-        private System.Windows.Forms.CheckBox ckbFinish;
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label lbTienDo;
+        private System.Windows.Forms.Button btnChitiet;
     }
 }

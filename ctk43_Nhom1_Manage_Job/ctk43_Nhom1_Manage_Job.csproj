@@ -144,6 +144,7 @@
     <Compile Include="frmThongBaoCV.Designer.cs">
       <DependentUpon>frmThongBaoCV.cs</DependentUpon>
     </Compile>
+    <Compile Include="myUserControl\Music.cs" />
     <Compile Include="obj\Release\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

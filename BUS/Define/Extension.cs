@@ -29,7 +29,6 @@ namespace BUS
             }
             return _nd;
         }
-
         public static int TimeToMinute(int day, int hour, int minute)
         {
             return (((day * 24) + hour) * 60) + minute;
@@ -115,18 +114,11 @@ namespace BUS
             congViec.trangThai = cv.trangThai;
             return congViec;
         }
-        public static CongViec UpdateComing(CongViec congViec, CongViecBUS congViecBUS)
+        public static CongViec Update(CongViec congViec, CongViecBUS congViecBUS)
         {
-            congViec.trangThai = 1;
+            congViec.trangThai = typeStatusOfTheJob(congViec.thoiGianBD,congViec.thoiGianKT);
             congViecBUS.Update(congViec);
             return congViec;
         }
-        public static CongViec UpdateOver(CongViec congViec, CongViecBUS congViecBUS)
-        {
-            congViec.trangThai = 3;
-            congViecBUS.Update(congViec);
-            return congViec;
-        }
-
     }
 }

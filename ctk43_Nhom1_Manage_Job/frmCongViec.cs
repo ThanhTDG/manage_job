@@ -105,6 +105,7 @@ namespace ctk43_Nhom1_Manage_Job
                     mucDo = Convert.ToInt32(cbbLevel.SelectedIndex),
                     trangThai = Extension.typeStatusOfTheJob(dtpStart.Value, dtpEnd.Value)
                 };
+                frmMain.DataTest(dtpStart.Value, dtpEnd.Value);
                 congViecBUS.Insert(_congviec);
             }
             else if(cbbTypeOfTopic.SelectedIndex == 0)

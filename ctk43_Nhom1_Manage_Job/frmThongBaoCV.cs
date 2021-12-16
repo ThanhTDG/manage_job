@@ -23,6 +23,7 @@ namespace ctk43_Nhom1_Manage_Job
         #region Hàm bổ trợ 
         void GetListCV()
         {
+            Music.Instance.PlayMusic();
             int countCV = congViecs.Count;
             if (countCV == 0)
                 this.Close();
@@ -36,9 +37,18 @@ namespace ctk43_Nhom1_Manage_Job
                 if (flowLayoutPanel1 != null)
                 {
                     flowLayoutPanel1.Controls.Add(thongbaos[i]);
-                    this.Size = new Size((thongbaos[i].Size.Width)+20, height + this.Size.Height);
+                    if(countCV == 1)
+                    {
+                        this.Size = new Size((thongbaos[i].Size.Width)+40, height + this.Size.Height +5);
+                    }
+                    else
+                    {
+                        if (i < 2) { this.Size = new Size((thongbaos[i].Size.Width) + 40, height + this.Size.Height + 20); }
+                    }
                 }
+
             }
+            this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Height);
         }
 
         #endregion
@@ -53,6 +63,11 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmThongBaoCV_FormClosed(object sender, FormClosedEventArgs e)
         {
             DialogResult = DialogResult.OK;
+        }
+
+        private void frmThongBaoCV_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Music.Instance.stopMusic();
         }
     }
 }

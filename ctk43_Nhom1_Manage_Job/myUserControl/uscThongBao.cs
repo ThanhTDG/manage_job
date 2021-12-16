@@ -40,22 +40,32 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
         public void setdata()
         {
             pcbTienDo.Value = congViec.tienDo;
-            txtName.Text = congViec.ten;
+            lbName.Text = congViec.ten;
+            grCV.Text = "Công việc";
             switch (congViec.trangThai)
             {
                 case 1:
-                    lbTime.Text = congViec.thoiGianBD.ToString();
-                    label1.Text = "Đã bắt đầu";
+                    txtTime.Text = congViec.thoiGianBD.ToString();
+                    lbThongBao.Text = "Bắt đầu";
                     break;
                 case 3:
-                    txtTime.Text = congViec.thoiGianBD.ToString();
-                    label1.Text = "Đã hết hạn";
+                    txtTime.Text = congViec.thoiGianKT.ToString();
+                    lbThongBao.Text = "Đã hết hạn";
                     break;
             }
             title = DefineTrangThai.GetString(congViec.trangThai);
             txtMota.Text = congViec.MoTa;
             lbpercent.Text = congViec.tienDo.ToString() + "%";
+            btnChitiet.Tag = _CongViec;
         }
+
+
         #endregion
+
+        private void btnChitiet_Click(object sender, EventArgs e)
+        {
+            frmDSChiTiet frmDSChiTiet = new frmDSChiTiet(btnChitiet.Tag as CongViec);
+            frmDSChiTiet.ShowDialog();
+        }
     }
 }

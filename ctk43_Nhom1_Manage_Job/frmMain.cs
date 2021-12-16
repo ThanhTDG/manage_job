@@ -25,16 +25,14 @@ namespace ctk43_Nhom1_Manage_Job
         int TabHienTai = 0;
         ChiTietCVBUS chiTietCVBUS;
         private
-     
+
         sort SortCV = sort.GiamTheoMucDo;
         sort SortGC = sort.GiamTheoTG;
         Thread th;
         public frmMain()
         {
             InitializeComponent();
-            // getAll();
-            th = new Thread(LoadSYCN);
-            th.IsBackground = true;
+            
         }
         #region Ham Bo Tro
         private void getAll()
@@ -118,102 +116,167 @@ namespace ctk43_Nhom1_Manage_Job
             ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 4", NoiDung = "Đây là nội dung của ghi chú nhanh 4", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
         }
 
-
-        private void LoadSYCN()
-        {
-            Thread comming = new Thread(notificationComming);
-            comming.IsBackground = true;
-            Thread over = new Thread(notificationOver);
-            over.IsBackground = true;
-            over.Start(); 
-            comming.Start();
-        }
-        public void notificationOver()
+        public void nofiction()
         {
             while (true)
             {
-                CongViecBUS congViecBUS = new CongViecBUS();
+                CongViecBUS CongViecBUS = new CongViecBUS();
+                List<CongViec> congViecComingSoon;
                 List<CongViec> congViecAlmostOver;
-                congViecAlmostOver = congViecBUS.GetCongViecsAlmostOver(nd.email);
-                if (congViecAlmostOver.Count() == 0)
+
+                congViecAlmostOver = CongViecBUS.GetCongViecsAlmostOver(nd.email);
+                int i = 0, j = 0;
+                congViecComingSoon = CongViecBUS.GetCongViecsCommingSoon(nd.email);
+                if (congViecComingSoon.Count() == 0 && congViecAlmostOver.Count() == 0)
                 {
                     break;
                 }
-                if (DateTime.Now > congViecAlmostOver[0].thoiGianKT)
-                {
-                    Extension.UpdateOver(congViecAlmostOver[0], congViecBUS);
+                if (congViecAlmostOver.Count != 0)
+                    while (DateTime.Now > congViecAlmostOver[i].thoiGianKT && congViecAlmostOver.Count - 1 > i)
+                    {
+                        CongViec congViec = Extension.GetcongViec(congViecAlmostOver[i]);
+                        Extension.Update(congViec, CongViecBUS);
+                        i++;
+                    }
+                if (congViecComingSoon.Count != 0)
+                    while (DateTime.Now > congViecComingSoon[j].thoiGianBD && congViecComingSoon.Count - 1 > j)
+                    {
+                        CongViec congViec = Extension.GetcongViec(congViecComingSoon[j]);
+                        Extension.Update(congViec, CongViecBUS);
+                        j++;
+                    }
+                if (i != 0 && j != 0)
                     continue;
-                }
                 List<CongViec> temp = new List<CongViec>();
-                congViecAlmostOver = congViecAlmostOver.FindAll(x => x.thoiGianKT == congViecAlmostOver[0].thoiGianKT).ToList();
+                congViecAlmostOver = getListOver(congViecAlmostOver);
+                congViecComingSoon = getListComming(congViecComingSoon);
+                int Second;
+                if (congViecAlmostOver.Count != 0 && congViecComingSoon.Count != 0)
+                {
+                    TimeSpan Comming = congViecComingSoon[0].thoiGianBD - DateTime.Now;
+                    TimeSpan Over = congViecAlmostOver[0].thoiGianKT - DateTime.Now;
+                    if (Over > Comming)
+                    {
+                        if (Comming >= TimeSpan.Zero)
+                        {
+                            Second = Extension.TimeToSecond(Comming.Days, Comming.Hours, Comming.Minutes, Comming.Seconds);
+                            temp = congViecComingSoon;
+                        }
+                        else
+                        {
+
+                            Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
+                            temp = congViecAlmostOver;
+                        }
+                    }
+                    else if (Over < Comming)
+                    {
+                        if (Over >= TimeSpan.Zero)
+                        {
+                            Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
+                            temp = congViecAlmostOver;
+                        }
+                        else
+                        {
+                            Second = Extension.TimeToSecond(Comming.Days, Comming.Hours, Comming.Minutes, Comming.Seconds);
+                            temp = congViecComingSoon;
+                        }
+                    }
+                    else
+                    {
+                        Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
+                        temp = (List<CongViec>)temp.Concat(congViecAlmostOver).Concat(congViecComingSoon);
+                    }
+                }
+                else if (congViecAlmostOver.Count != 0)
+                {
+                    TimeSpan Over = congViecAlmostOver[0].thoiGianKT - DateTime.Now;
+                    Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
+                    temp = congViecAlmostOver;
+                }
+                else
+                {
+                    TimeSpan Comming = congViecComingSoon[0].thoiGianBD - DateTime.Now;
+                    Second = Extension.TimeToSecond(Comming.Days, Comming.Hours, Comming.Minutes, Comming.Seconds);
+                    temp = congViecComingSoon;
+                }
+                if (Second < 0)
+                    continue;
+                Thread.Sleep(Second * 1000 +1000);
+                for (i = 0; i < temp.Count; i++)
+                    temp[i] = Extension.Update(temp[i], CongViecBUS);
+                this.Invoke(new Action(() =>
+                {
+                    frmThongBaoCV frmThongBaoCV = new frmThongBaoCV(temp);
+                    frmThongBaoCV.ShowDialog();
+                }));
+            }
+        }
+        private List<CongViec> getListOver(List<CongViec> congViecAlmostOver)
+        {
+            List<CongViec> temp = new List<CongViec>();
+            congViecAlmostOver = congViecAlmostOver.FindAll(x => x.thoiGianKT == congViecAlmostOver[0].thoiGianKT).ToList();
+            if (congViecAlmostOver.Count != 0)
+            {
                 foreach (var congviec in congViecAlmostOver)
                 {
                     CongViec CVAlmostOver = new CongViec();
                     CVAlmostOver = Extension.GetcongViec(congviec);
                     temp.Add(CVAlmostOver);
                 }
-                TimeSpan Time_Over = temp[0].thoiGianKT - DateTime.Now;
-                int overSecond = Extension.TimeToSecond(Time_Over.Days, Time_Over.Hours, Time_Over.Minutes, Time_Over.Seconds);
-                if (overSecond < 0)
-                    continue;
-                Thread.Sleep(overSecond);
-                for(int i = 0; i < temp.Count; i++)
-                   temp[i] = Extension.UpdateOver(temp[i], congViecBUS);
-                frmThongBaoCV frmThongBaoCV = new frmThongBaoCV(temp);
-                frmThongBaoCV.ShowDialog();
             }
+            return temp;
         }
-        public void notificationComming()
+        private List<CongViec> getListComming(List<CongViec> congViecComingSoon)
         {
-            while (true)
+            List<CongViec> temp = new List<CongViec>();
+            congViecComingSoon = congViecComingSoon.FindAll(x => x.thoiGianBD == congViecComingSoon[0].thoiGianBD).ToList();
+            if (congViecComingSoon.Count != 0)
             {
-                CongViecBUS congViecBUS = new CongViecBUS();
-                List<CongViec> congViecComingSoon;
-                congViecComingSoon = congViecBUS.GetCongViecsCommingSoon(nd.email);
-                if (congViecComingSoon.Count() == 0)
-                {
-                    break;
-                }
-                if (DateTime.Now < congViecComingSoon[0].thoiGianBD)
-                {
-                    Extension.UpdateComing(congViecComingSoon[0], congViecBUS);
-                    continue;
-                }
-                List<CongViec> temp = new List<CongViec>();
-                congViecComingSoon = congViecComingSoon.FindAll(x => x.thoiGianKT == congViecComingSoon[0].thoiGianKT).ToList();
                 foreach (var congviec in congViecComingSoon)
                 {
-                    CongViec CVCommingsoon = new CongViec();
-                    CVCommingsoon = Extension.GetcongViec(congviec);
-                    temp.Add(CVCommingsoon);
+                    CongViec congViecComming = new CongViec();
+                    congViecComming = Extension.GetcongViec(congviec);
+                    temp.Add(congViecComming);
                 }
-                TimeSpan Time_Comming = DateTime.Now - temp[0].thoiGianBD;
-                int commingSecond = Extension.TimeToSecond(Time_Comming.Days, Time_Comming.Hours, Time_Comming.Minutes, Time_Comming.Seconds);
-                if (commingSecond < 0)
-                    continue;
-                Thread.Sleep(commingSecond);
-                for (int i = 0; i < temp.Count; i++)
-                    temp[i] = Extension.UpdateComing(temp[i], congViecBUS);
-                frmThongBaoCV frmThongBaoCV = new frmThongBaoCV(temp);
-                frmThongBaoCV.ShowDialog();
             }
+            return temp;
         }
 
 
         private void listenNotification()
         {
-            
-            if(th.ThreadState == ThreadState.Running)
-                th.Abort();
-            if (!th.IsAlive)
+            if (th == null)
             {
-                th = new Thread(LoadSYCN);
+                th = new Thread(nofiction);
+                th.IsBackground = true;
+                th.Start();
+            }
+            else if (th.IsAlive)
+            {
+                th.Abort(); 
+                th = null;
+                th = new Thread(nofiction);
                 th.IsBackground = true;
                 th.Start();
             }
            
         }
+        public static void DataTest(DateTime dateTime, DateTime end)
+        {
+            CongViecBUS viecBUS = new CongViecBUS();
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = dateTime, thoiGianKT = DateTime.Now.AddDays(1), trangThai = 0, tienDo = 0, mucDo = 2 });//14
 
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
+            viecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = end, trangThai = 1, tienDo = 0, mucDo = 2 });//14
+        }
 
         private void CapNhatHoanThanhOrNot(ref CongViec cv)
         {
@@ -376,6 +439,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void LoadListCVHienTai()
         {
+   
             cvs = (chuDeHienTai.iD == 0) ? congViecBUS.GetCongViecByNguoiDung(nd).ToList() : congViecBUS.GetCongViecByChuDe(chuDeHienTai).ToList();
             cvs = congViecBUS.SortCongViec(cvs, SortCV);
             congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
@@ -401,6 +465,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void btnThemCongViec_Click(object sender, EventArgs e)
         {
+
             frmCongViec frm = new frmCongViec();
             frm.LoadChuDe(nd);
             if (frm.ShowDialog() == DialogResult.OK)
