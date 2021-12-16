@@ -118,7 +118,7 @@ namespace ctk43_Nhom1_Manage_Job
                 };
                 congViecBUS.Insert(_congviec);
             }
-            else if (cbbTypeOfTopic.SelectedIndex == 0)
+            else if(cbbTypeOfTopic.SelectedIndex == 0)
             {
                 _congviec.IDChuDe = Convert.ToInt32(cbbTopic.SelectedValue);
                 _congviec.ten = txtTitle.Text;
@@ -156,7 +156,7 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void UpdateNameOfTopic()
         {
-            List<CongViec> cvs = congViecBUS.GetCongViecByLoaiChuDe(cbbTypeOfTopic.SelectedIndex, _nd).ToList().FindAll(x=>x.ten==txtTitle.Text);
+            List<CongViec> cvs = congViecBUS.GetCongViecByLoai(cbbTypeOfTopic.SelectedIndex, _nd).ToList().FindAll(x=>x.ten==txtTitle.Text);
             foreach (CongViec i in cvs)
             {
                 var item = congViecBUS.GetCongViecByID(i.iD);

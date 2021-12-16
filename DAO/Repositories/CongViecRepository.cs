@@ -11,18 +11,17 @@ namespace DAO.Repositories
 {
     public interface ICongViecRepository : IRepository<CongViec>
     {
-        IEnumerable<CongViec> GetCongViecByNguoiDung(string email);
+        //IEnumerable<CongViec> GetCongViecByNguoiDung(string email);
         IEnumerable<CongViec> GetCongViecByLoc(NguoiDung nd, List<int> _trangthai, List<int> _mucdo, List<DateTime> _time);
         IEnumerable<CongViec> GetCongViecByDayRound(DateTime BatDau, DateTime KetThuc, string email);
         IEnumerable<CongViec> GetCongViecByDayRound(DateTime date, string email, int chuDeID);
         IEnumerable<CongViec> GetCongViecByDayRound(DateTime date, string email);
         IEnumerable<CongViec> GetCongViecsComingSoon(DateTime now, string email);
         IEnumerable<CongViec> GetCongViecsAlmostOver(DateTime now, string email);
-        IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, string email);
         IEnumerable<CongViec> GetCongViecByLoai(string email);
         IEnumerable<CongViec> GetCongViecByLoai(int loai, string email, DateTime dateBD, DateTime dateKT);
-
     }
+
     public class CongViecRepository : RepositoryBase<CongViec>, ICongViecRepository
     {
         #region Properties
@@ -41,15 +40,6 @@ namespace DAO.Repositories
             dbSet = DbContext.Set<CongViec>();
         }
 
-        public IEnumerable<CongViec> GetCongViecByNguoiDung(string email)
-        {
-            var query = from s in DbContext.congViec
-                        join r in DbContext.chuDe
-                        on s.IDChuDe equals r.iD
-                        where r.Email == email
-                        select s;
-            return query;
-        }
         public IEnumerable<CongViec> GetCongViecByLoc(NguoiDung nd, List<int> _trangthai, List<int> _mucdo, List<DateTime> _time)
         {
             int i = 0, j = 0;

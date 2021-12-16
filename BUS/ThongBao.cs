@@ -9,7 +9,8 @@ namespace BUS
 {
     public static class ThongBao
     {
-        public static string PlaceHolderText = "Nhập tên công việc hoặc ghi chú muốn tìm!";       
+        public static string PlaceHolderText = "Nhập tên công việc hoặc ghi chú muốn tìm!";
+        public static string NameGroupBox = "Nhập tên công việc hoặc ghi chú muốn tìm!";
         public static string[] strs = { "rất khẩn cấp", "khẩn cấp", "quan trọng", "hơi quan trọng", "Không quan trọng" };
         public static string[] typeOfTopic = {"Common","Hằng ngày","Hằng tuần","Hằng tháng","Hằng năm"};
 
@@ -31,6 +32,14 @@ namespace BUS
         public static DialogResult CauHoi(string message)
         {
             return MessageBox.Show("Bạn có chắc chắn muốn " + message, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        public static string SetGroupBoxName(string chuDe, string chucNang = null)
+        {
+            if (string.IsNullOrWhiteSpace(chucNang))
+                return string.Format("Danh sách công việc theo {0}", chuDe);
+            else
+                return string.Format("Danh sách công việc theo {0} - {1}", chuDe, chucNang);
         }
     }
 }
