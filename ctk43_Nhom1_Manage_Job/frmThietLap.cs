@@ -43,11 +43,11 @@ namespace ctk43_Nhom1_Manage_Job
         }
         private void controlToProfile()
         {
-            if (chkRunWithWindown.Checked == true)
+          /*  if (chkRunWithWindown.Checked == true)
             {
                 RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Micorsoft\\Windowns\\CurrentVersion\\Run", true);
                 reg.SetValue(Properties.Settings.Default.namePoject, Application.ExecutablePath.ToString());
-            }
+            }*/
             Properties.Settings.Default.Sound = txtSound.Text;
             Properties.Settings.Default.timeStart = Extension.TimeToMinute((int)nudDayStart.Value, (int)nudHourStart.Value, (int)nudMinuteStart.Value);
             Properties.Settings.Default.timeEnd = Extension.TimeToMinute((int)nudDayEnd.Value, (int)nudHourEnd.Value, (int)nudMinuteEnd.Value);
