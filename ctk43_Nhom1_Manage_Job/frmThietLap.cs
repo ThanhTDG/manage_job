@@ -74,7 +74,7 @@ namespace ctk43_Nhom1_Manage_Job
             controlToProfile();
             Properties.Settings.Default.Save();
             ThongBao.ThanhCong("lưu thiêt lập thành công");
-            this.Close();
+            Application.Exit();
         }
 
         private void btnTestSound_Click(object sender, EventArgs e)
