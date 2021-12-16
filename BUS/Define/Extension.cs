@@ -95,12 +95,12 @@ namespace BUS
             switch (type)
             {
                 case 1:
-                    //ngay
-                    x = times * 365;
+                    //ngay (Gia hang)
+                    x = 1 * 365;
                     break;
                 case 2:
-                    //tuan 
-                    x = times * 4 * 12;
+                    //tuan (Gia hang)
+                    x = 2 * 4 * 12;
                     break;
                 case 3:
                     //thang

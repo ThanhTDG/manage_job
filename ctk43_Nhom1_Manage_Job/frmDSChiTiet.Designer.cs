@@ -35,21 +35,22 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lvDSChiTiet = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbCountUp = new System.Windows.Forms.Label();
-            this.gbC = new System.Windows.Forms.GroupBox();
+            this.gbChiTiet = new System.Windows.Forms.GroupBox();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rtbMoTa = new System.Windows.Forms.RichTextBox();
             this.btnStart = new System.Windows.Forms.Button();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.gbC.SuspendLayout();
+            this.gbChiTiet.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,10 +71,10 @@
             this.rtxtMoTaCongViec.BackColor = System.Drawing.SystemColors.Window;
             this.rtxtMoTaCongViec.Enabled = false;
             this.rtxtMoTaCongViec.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtMoTaCongViec.Location = new System.Drawing.Point(103, 92);
+            this.rtxtMoTaCongViec.Location = new System.Drawing.Point(125, 92);
             this.rtxtMoTaCongViec.Name = "rtxtMoTaCongViec";
             this.rtxtMoTaCongViec.ReadOnly = true;
-            this.rtxtMoTaCongViec.Size = new System.Drawing.Size(337, 82);
+            this.rtxtMoTaCongViec.Size = new System.Drawing.Size(315, 82);
             this.rtxtMoTaCongViec.TabIndex = 140;
             this.rtxtMoTaCongViec.Text = "";
             // 
@@ -95,19 +96,19 @@
             this.txtTenCongViec.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtTenCongViec.Enabled = false;
             this.txtTenCongViec.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenCongViec.Location = new System.Drawing.Point(103, 18);
+            this.txtTenCongViec.Location = new System.Drawing.Point(125, 18);
             this.txtTenCongViec.Name = "txtTenCongViec";
             this.txtTenCongViec.ReadOnly = true;
-            this.txtTenCongViec.Size = new System.Drawing.Size(337, 25);
+            this.txtTenCongViec.Size = new System.Drawing.Size(315, 25);
             this.txtTenCongViec.TabIndex = 148;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dtpEnd);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtTenCongViec);
             this.groupBox1.Controls.Add(this.label6);
@@ -142,19 +143,6 @@
             this.label3.TabIndex = 149;
             this.label3.Text = "Thời gian kết thúc";
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(103, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(337, 25);
-            this.textBox1.TabIndex = 150;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -174,7 +162,8 @@
             this.lvDSChiTiet.CheckBoxes = true;
             this.lvDSChiTiet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader3});
             this.lvDSChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvDSChiTiet.FullRowSelect = true;
             this.lvDSChiTiet.GridLines = true;
@@ -191,12 +180,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Tên";
-            this.columnHeader1.Width = 184;
+            this.columnHeader1.Width = 90;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Dự kiến ";
-            this.columnHeader2.Width = 253;
+            this.columnHeader2.Width = 165;
             // 
             // lbCountUp
             // 
@@ -208,19 +197,19 @@
             this.lbCountUp.TabIndex = 152;
             this.lbCountUp.Text = "00:00:00";
             // 
-            // gbC
+            // gbChiTiet
             // 
-            this.gbC.Controls.Add(this.btnPause);
-            this.gbC.Controls.Add(this.btnStop);
-            this.gbC.Controls.Add(this.groupBox3);
-            this.gbC.Controls.Add(this.btnStart);
-            this.gbC.Controls.Add(this.lbCountUp);
-            this.gbC.Location = new System.Drawing.Point(473, 12);
-            this.gbC.Name = "gbC";
-            this.gbC.Size = new System.Drawing.Size(200, 422);
-            this.gbC.TabIndex = 153;
-            this.gbC.TabStop = false;
-            this.gbC.Text = "Chi tiết công việc";
+            this.gbChiTiet.Controls.Add(this.btnPause);
+            this.gbChiTiet.Controls.Add(this.btnStop);
+            this.gbChiTiet.Controls.Add(this.groupBox3);
+            this.gbChiTiet.Controls.Add(this.btnStart);
+            this.gbChiTiet.Controls.Add(this.lbCountUp);
+            this.gbChiTiet.Location = new System.Drawing.Point(473, 12);
+            this.gbChiTiet.Name = "gbChiTiet";
+            this.gbChiTiet.Size = new System.Drawing.Size(200, 422);
+            this.gbChiTiet.TabIndex = 153;
+            this.gbChiTiet.TabStop = false;
+            this.gbChiTiet.Text = "Chi tiết công việc";
             // 
             // btnPause
             // 
@@ -250,7 +239,7 @@
             this.groupBox3.Size = new System.Drawing.Size(200, 324);
             this.groupBox3.TabIndex = 154;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Mô tả";
             // 
             // rtbMoTa
             // 
@@ -271,12 +260,28 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // dtpEnd
+            // 
+            this.dtpEnd.CustomFormat = "dd/MM/yyyy  H:mm:ss";
+            this.dtpEnd.Enabled = false;
+            this.dtpEnd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEnd.Location = new System.Drawing.Point(126, 56);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(314, 25);
+            this.dtpEnd.TabIndex = 158;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Thực tế";
+            this.columnHeader3.Width = 177;
+            // 
             // frmDSChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 449);
-            this.Controls.Add(this.gbC);
+            this.Controls.Add(this.gbChiTiet);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDSChiTiet";
@@ -286,8 +291,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.gbC.ResumeLayout(false);
-            this.gbC.PerformLayout();
+            this.gbChiTiet.ResumeLayout(false);
+            this.gbChiTiet.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -304,14 +309,15 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label lbCountUp;
-        private System.Windows.Forms.GroupBox gbC;
+        private System.Windows.Forms.GroupBox gbChiTiet;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RichTextBox rtbMoTa;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
