@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+           // base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -58,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(340, 25);
+            this.label2.Location = new System.Drawing.Point(59, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 7;
@@ -68,7 +68,7 @@
             // 
             this.dtpStart.CustomFormat = "dd/MM/yyyy";
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(457, 22);
+            this.dtpStart.Location = new System.Drawing.Point(176, 21);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(169, 20);
             this.dtpStart.TabIndex = 8;
@@ -77,7 +77,7 @@
             // 
             this.dtpEnd.CustomFormat = "dd/MM/yyyy";
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(129, 22);
+            this.dtpEnd.Location = new System.Drawing.Point(500, 20);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(169, 20);
             this.dtpEnd.TabIndex = 10;
@@ -86,7 +86,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 26);
+            this.label3.Location = new System.Drawing.Point(382, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 17);
             this.label3.TabIndex = 9;
