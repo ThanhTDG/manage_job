@@ -84,6 +84,9 @@
 				// 
 				// lvThongBaoCongViec
 				// 
+				this.lvThongBaoCongViec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 				this.lvThongBaoCongViec.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
@@ -240,9 +243,9 @@
 				this.tsTongCongViec.ImageScalingSize = new System.Drawing.Size(20, 20);
 				this.tsTongCongViec.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslTongSoCongViec});
-				this.tsTongCongViec.Location = new System.Drawing.Point(0, 485);
+				this.tsTongCongViec.Location = new System.Drawing.Point(0, 479);
 				this.tsTongCongViec.Name = "tsTongCongViec";
-				this.tsTongCongViec.Size = new System.Drawing.Size(1044, 25);
+				this.tsTongCongViec.Size = new System.Drawing.Size(1044, 31);
 				this.tsTongCongViec.TabIndex = 37;
 				this.tsTongCongViec.Text = "toolStrip1";
 				// 

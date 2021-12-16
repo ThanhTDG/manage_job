@@ -184,7 +184,6 @@ namespace ctk43_Nhom1_Manage_Job
 									 item.SubItems.Add("Còn " + days.ToString() + " ngày " + hours.ToString() + " giờ ");
 								}
 								// tô màu
-								int type = 0;
 								if (days == 0 && hours == 0 && minutes <= 60)
 								{
 									 item.ForeColor = Color.White;

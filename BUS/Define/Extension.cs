@@ -34,9 +34,20 @@ namespace BUS
         {
             return (((day * 24) + hour) * 60) + minute;
         }
+
         public static int TimeToSecond(int day, int hour, int minute,int second)
         {
             return ((((day * 24) + hour) * 60) + minute)*60 + second;
+        }
+
+        public static int TimeFinish(int start, int end)
+        {
+            return start - end;
+        }
+
+        public static int UpdateMinute()
+        {
+            return TimeToMinute(DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute);
         }
 
         /// <summary>
@@ -126,6 +137,12 @@ namespace BUS
             congViec.mucDo = 3;
             congViecBUS.Update(congViec);
             return congViec;
+        }
+
+        public static DateTime StartOfWeek(this DateTime dt, DayOfWeek startOfWeek)
+        {
+            int diff = (7 + (dt.DayOfWeek - startOfWeek)) % 7;
+            return dt.AddDays(-1 * diff).Date;
         }
     }
 }

@@ -51,6 +51,11 @@ namespace ctk43_Nhom1_Manage_Job
                 MessageBox.Show("Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc");
                 return;
 				}
+            if(rdTatCa.Checked == false && rdTuyChon.Checked == false)
+				{
+                MessageBox.Show("Hãy chọn các mức độ");
+                return;
+            }
             double tongCongViec = 0;
             double chuahoanthanh = 0, hoanthanh = 0, hethan = 0,hoanthanhtre=0;
             string trangthaiCV = "";
@@ -239,10 +244,21 @@ namespace ctk43_Nhom1_Manage_Job
             lbChuaXong.Text = chuahoanthanh.ToString();
             lbHetHan.Text = hethan.ToString();
             lbHoanThanhTre.Text = hoanthanhtre.ToString();
-            lbTiLeHoanThanh.Text = Math.Round(((hoanthanh / tongCongViec) * 100), 2).ToString() + "%";
-            lbTiLeChuaXong.Text = Math.Round(((chuahoanthanh / tongCongViec) * 100), 2).ToString() + "%";
-            lbTiLeHetHan.Text = Math.Round(((hethan / tongCongViec) * 100), 2).ToString() + "%";
-            lbTiLeHoanThanhTre.Text = Math.Round(((hoanthanhtre / tongCongViec) * 100), 2).ToString() + "%";
+            if(tongCongViec != 0)
+				{
+                lbTiLeHoanThanh.Text = Math.Round(((hoanthanh / tongCongViec) * 100), 2).ToString() + "%";
+                lbTiLeChuaXong.Text = Math.Round(((chuahoanthanh / tongCongViec) * 100), 2).ToString() + "%";
+                lbTiLeHetHan.Text = Math.Round(((hethan / tongCongViec) * 100), 2).ToString() + "%";
+                lbTiLeHoanThanhTre.Text = Math.Round(((hoanthanhtre / tongCongViec) * 100), 2).ToString() + "%";
+				}
+				else
+				{
+                lbTiLeHoanThanh.Text = "0%";
+                lbTiLeChuaXong.Text = "0%";
+                lbTiLeHetHan.Text = "0%";
+                lbTiLeHoanThanhTre.Text = "0%";
+            }
+
         }
 
         private void rdTuyChon_CheckedChanged(object sender, EventArgs e)

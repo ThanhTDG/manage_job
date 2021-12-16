@@ -16,11 +16,14 @@ namespace ctk43_Nhom1_Manage_Job
     {
         public ChiTietCV _chiTietCV;
         ChiTietCVBUS chiTietCVBUS;
+        CongViecBUS congViecBUS;
+        int idCV = 0;
 
         public frmChiTietCV(ChiTietCV chiTietCV = null)
         {
             InitializeComponent();
             chiTietCVBUS = new ChiTietCVBUS();
+            congViecBUS = new CongViecBUS();
             _chiTietCV = chiTietCV;
             cbbLevel.Items.AddRange(ThongBao.strs);
             cbbLevel.SelectedIndex = 0;
@@ -44,22 +47,21 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void LoadCTCV()
         {
-            cbbJob.SelectedValue = _chiTietCV.iD;
             txtJobDetail.Text = _chiTietCV.ten;
             int[] dhm;
             if (_chiTietCV.ThoiGianDukien != null)
             {
                 dhm = dayHourMinute(_chiTietCV.ThoiGianDukien.Value);
-                txtIntentDay.Text = dhm[0].ToString();
-                txtIntentHour.Text = dhm[1].ToString();
-                txtIntentMinute.Text = dhm[2].ToString();
+                nudIntentDay.Text = dhm[0].ToString();
+                nudIntentHour.Text = dhm[1].ToString();
+                nudIntentMinute.Text = dhm[2].ToString();
             }
             if (_chiTietCV.ThoiGianThucTe != null)
             {
                 dhm = dayHourMinute(_chiTietCV.ThoiGianThucTe.Value);
-                txtRealDay.Text = dhm[0].ToString();
-                txtRealHour.Text = dhm[1].ToString();
-                txtRealMinute.Text = dhm[2].ToString();
+                nudRealDay.Text = dhm[0].ToString();
+                nudRealHour.Text = dhm[1].ToString();
+                nudRealMinute.Text = dhm[2].ToString();
             }
             cbbLevel.SelectedIndex = _chiTietCV.mucDo;
             richDescription.Text = _chiTietCV.moTa;
@@ -79,17 +81,20 @@ namespace ctk43_Nhom1_Manage_Job
             return minute;
         }
 
-        private void SaveJobDetail(ref ChiTietCV _chiTietCV)
+        private void SaveJobDetail(ref ChiTietCV _chiTietCV, int i = -1)
         {
-            int? intentMinute = MinuteConvert(txtIntentDay.Text, txtIntentHour.Text, txtIntentMinute.Text);
-            int? realMinute = MinuteConvert(txtRealDay.Text, txtRealHour.Text, txtRealMinute.Text);
-            _chiTietCV.iDCongviec = Convert.ToInt32(cbbJob.SelectedValue);
+            int? intentMinute = MinuteConvert(nudIntentDay.Text, nudIntentHour.Text, nudIntentMinute.Text);
+            _chiTietCV.iDCongviec = idCV;
             _chiTietCV.ten = txtJobDetail.Text;
             _chiTietCV.moTa = richDescription.Text;
             _chiTietCV.ThoiGianDukien = intentMinute;
-            _chiTietCV.ThoiGianThucTe = realMinute;
             _chiTietCV.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
             _chiTietCV.trangThai = 0;
+            if (i != -1)
+            {
+                int realMinute = Extension.UpdateMinute();
+                _chiTietCV.thoiGianBatDau = realMinute;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -102,7 +107,7 @@ namespace ctk43_Nhom1_Manage_Job
             if (_chiTietCV == null)
             {
                 _chiTietCV = new ChiTietCV();
-                SaveJobDetail(ref _chiTietCV);
+                SaveJobDetail(ref _chiTietCV, 1);
                 chiTietCVBUS.Insert(_chiTietCV);
             }
             else
@@ -118,11 +123,10 @@ namespace ctk43_Nhom1_Manage_Job
             this.Close();
         }
 
-        internal void LoadCV(List<CongViec> cvs)
+        internal void LoadCV(CongViec congViec)
         {
-            cbbJob.DataSource = cvs;
-            cbbJob.DisplayMember = "ten";
-            cbbJob.ValueMember = "ID";
+            txtJob.Text = congViec.ten;
+            idCV = congViec.iD;
         }
     }
 }
