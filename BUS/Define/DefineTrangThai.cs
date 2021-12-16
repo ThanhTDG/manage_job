@@ -14,7 +14,8 @@ namespace BUS.Define
                 "Đang thực hiện",
                 "Đã hoàn thành",
                 "Đã quá hạn",
-                "Hoàn thành trễ"
+                "Hoàn thành trễ",
+                "Tất cả"
         };
         public static string[] getListTrangThai()
         {
