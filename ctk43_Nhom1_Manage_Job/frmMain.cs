@@ -809,7 +809,7 @@ namespace ctk43_Nhom1_Manage_Job
         private void btnThongBao_Click(object sender, EventArgs e)
         {
             frmThongBao frm = new frmThongBao();
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void tvwDSCongViec_AfterSelect(object sender, TreeViewEventArgs e)
