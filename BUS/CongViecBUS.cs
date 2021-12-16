@@ -90,10 +90,10 @@ namespace BUS
         public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
         {                   
             List<CongViec> temp = congViecRepository.GetCongViecByLoai(nd.email).ToList();            
-            List<CongViec> temp1 = GetCongViecByLoai(1, nd).ToList().ToList();
-            List<CongViec> temp2 = GetCongViecByLoai(2, nd).ToList().ToList();
-            List<CongViec> temp3 = GetCongViecByLoai(3, nd).ToList().ToList();
-            List<CongViec> temp4 = GetCongViecByLoai(4, nd).ToList().ToList();
+            List<CongViec> temp1 = GetCongViecByLoai(1, nd).ToList();
+            List<CongViec> temp2 = GetCongViecByLoai(2, nd).ToList();
+            List<CongViec> temp3 = GetCongViecByLoai(3, nd).ToList();
+            List<CongViec> temp4 = GetCongViecByLoai(4, nd).ToList();
 
             return temp.Concat(temp1).Concat(temp2).Concat(temp3).Concat(temp4);
         }

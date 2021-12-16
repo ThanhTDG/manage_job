@@ -105,6 +105,10 @@ namespace ctk43_Nhom1_Manage_Job
         {
             EnableMucDo(false);
         }
-      
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

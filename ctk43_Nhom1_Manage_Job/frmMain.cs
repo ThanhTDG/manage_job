@@ -174,9 +174,7 @@ namespace ctk43_Nhom1_Manage_Job
                     continue;
 
             }
-        }
-
-        
+        }       
 
         private void CapNhatHoanThanhOrNot(ref CongViec cv)
         {
@@ -603,8 +601,8 @@ namespace ctk43_Nhom1_Manage_Job
         private void btnLoc_Click(object sender, EventArgs e)
         {
             frmLoc frmLoc = new frmLoc();
-            frmLoc.ShowDialog();
-            congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetByLoc(nd).ToList());
+            if (frmLoc.ShowDialog() == DialogResult.OK)            
+                congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetByLoc(nd).ToList());
         }
 
         private void lvDSGhiChu_SelectedIndexChanged(object sender, EventArgs e)

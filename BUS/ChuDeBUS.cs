@@ -48,7 +48,7 @@ namespace BUS
             var node = treeView.Nodes.Add(chuDe.ten);            
             node.Tag = chuDe;
 
-            foreach (var temp in GetChuDeByNguoiDung(nd))
+            foreach (var temp in GetChuDeByNguoiDung(nd).Where(x => x.loaiChuDe == 0))
             {
                 node = treeView.Nodes.Add(temp.ten);
                 node.Tag = temp;
