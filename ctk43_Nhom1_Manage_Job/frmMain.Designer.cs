@@ -80,6 +80,10 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnThongBao = new System.Windows.Forms.Button();
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.ckbTimNgayGhiChu = new System.Windows.Forms.CheckBox();
+<<<<<<< HEAD
+=======
+            this.cbbTrangThaiCV = new System.Windows.Forms.ComboBox();
+>>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
             this.menuStrip1.SuspendLayout();
             this.grbDSCongViec.SuspendLayout();
             this.ctxMenuDSCongViec.SuspendLayout();
@@ -601,11 +605,30 @@ namespace ctk43_Nhom1_Manage_Job
             this.ckbTimNgayGhiChu.UseVisualStyleBackColor = true;
             this.ckbTimNgayGhiChu.Visible = false;
             // 
+<<<<<<< HEAD
+=======
+            // cbbTrangThaiCV
+            // 
+            this.cbbTrangThaiCV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTrangThaiCV.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTrangThaiCV.FormattingEnabled = true;
+            this.cbbTrangThaiCV.Location = new System.Drawing.Point(237, 94);
+            this.cbbTrangThaiCV.Name = "cbbTrangThaiCV";
+            this.cbbTrangThaiCV.Size = new System.Drawing.Size(158, 25);
+            this.cbbTrangThaiCV.TabIndex = 19;
+            this.cbbTrangThaiCV.SelectedIndexChanged += new System.EventHandler(this.cbbTrangThaiCV_SelectedIndexChanged);
+            // 
+>>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 587);
+<<<<<<< HEAD
+=======
+
+            this.Controls.Add(this.cbbTrangThaiCV);
+>>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
             this.Controls.Add(this.ckbTimNgayGhiChu);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btnLoc);
@@ -624,6 +647,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhắc việc";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grbDSCongViec.ResumeLayout(false);
@@ -681,7 +705,10 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ContextMenuStrip ctxMenuDSGhiChu;
         private System.Windows.Forms.ToolStripMenuItem XoaGhiChuToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem ReloadDSGhiChuToolStripMenuItem;
+=======
+>>>>>>> 44c2c702ced1abb65b1b239e5076b903226cb511
         private System.Windows.Forms.ToolStripMenuItem OpenGhiChuDSGhiChuToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -696,5 +723,6 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ToolStripMenuItem SortByDateGCToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripComboBox toolStripCbbCheDoSapXep;
+        private System.Windows.Forms.ComboBox cbbTrangThaiCV;
     }
 }
