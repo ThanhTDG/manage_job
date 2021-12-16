@@ -39,10 +39,12 @@ namespace ctk43_Nhom1_Manage_Job
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCanel = new System.Windows.Forms.Button();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.PrintDialog = new System.Windows.Forms.PrintDialog();
+            this.PrintDocument = new System.Drawing.Printing.PrintDocument();
+            this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,8 +105,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveAsToolStripMenuItem,
             this.toolStripSeparator1,
-            this.printToolStripMenuItem,
-            this.printPreviewToolStripMenuItem});
+            this.printToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -112,14 +113,16 @@ namespace ctk43_Nhom1_Manage_Job
             // SaveAsToolStripMenuItem
             // 
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SaveAsToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
+            this.SaveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.SaveAsToolStripMenuItem.Text = "Save &As";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // printToolStripMenuItem
             // 
@@ -127,16 +130,9 @@ namespace ctk43_Nhom1_Manage_Job
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // btnSave
             // 
@@ -163,6 +159,20 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnCanel.Text = "Cancel";
             this.btnCanel.UseVisualStyleBackColor = true;
             this.btnCanel.Click += new System.EventHandler(this.btnCanel_Click);
+            // 
+            // PrintDialog
+            // 
+            this.PrintDialog.UseEXDialog = true;
+            // 
+            // PrintPreviewDialog
+            // 
+            this.PrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.PrintPreviewDialog.Enabled = true;
+            this.PrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialog.Icon")));
+            this.PrintPreviewDialog.Name = "PrintPreviewDialog";
+            this.PrintPreviewDialog.Visible = false;
             // 
             // frmGhiChu
             // 
@@ -199,9 +209,11 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCanel;
         private System.Windows.Forms.SaveFileDialog SaveFileDialog;
+        private System.Windows.Forms.PrintDialog PrintDialog;
+        private System.Drawing.Printing.PrintDocument PrintDocument;
+        private System.Windows.Forms.PrintPreviewDialog PrintPreviewDialog;
     }
 }

@@ -141,14 +141,13 @@ namespace ctk43_Nhom1_Manage_Job
                 cv.IDChuDe = id;
                 cv.ten = txtTitle.Text;
                 cv.MoTa = richDescription.Text;
-                AddFollowDMY(ref cv, s1, type);
                 cv.tienDo = 0;
+                cv.thoiGianBD = s1.thoiGianBD;
+                cv.thoiGianKT = s1.thoiGianKT;
                 cv.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
                 cv.trangThai = Extension.typeStatusOfTheJob(cv.thoiGianBD, cv.thoiGianKT);
                 congViecBUS.Insert(cv);
-                s1 = cv;
-                s1.thoiGianBD = cv.thoiGianBD;
-                s1.thoiGianKT = cv.thoiGianKT;
+                AddFollowDMY(ref s1, cv, type);
             }
         }
 

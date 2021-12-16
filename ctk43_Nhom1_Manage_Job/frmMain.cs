@@ -287,7 +287,8 @@ namespace ctk43_Nhom1_Manage_Job
             SetUPSearchInputText();
             LoadGhiChuNhanh(ghiChuNhanhBUS.GetGhiChuByNguoiDung(nd).ToList());
             tvwChuDe.SelectedNode = tvwChuDe.Nodes[0];
-            SetUpCbbTrangThaiCV();          
+            SetUpCbbTrangThaiCV();
+            this.KeyPreview = true;       
         }
 
         private void LoadChuDe()
@@ -362,16 +363,16 @@ namespace ctk43_Nhom1_Manage_Job
                     cvs = congViecBUS.GetCongViecByImportant(DateTime.Now, nd).ToList();
                     break;
                 case 3:
-                    cvs = congViecBUS.GetCongViecByLoaiChuDe(DefineLoaiChuDe.getInt("Hàng ngày"), nd).ToList();
+                    cvs = congViecBUS.GetCongViecByLoai(DefineLoaiChuDe.getInt("Hàng ngày"), nd).ToList();
                     break;
                 case 4:
-                    cvs = congViecBUS.GetCongViecByLoaiChuDe(DefineLoaiChuDe.getInt("Hàng tuần"), nd).ToList();
+                    cvs = congViecBUS.GetCongViecByLoai(DefineLoaiChuDe.getInt("Hàng tuần"), nd).ToList();
                     break;
                 case 5:
-                    cvs = congViecBUS.GetCongViecByLoaiChuDe(DefineLoaiChuDe.getInt("Hàng tháng"), nd).ToList();
+                    cvs = congViecBUS.GetCongViecByLoai(DefineLoaiChuDe.getInt("Hàng tháng"), nd).ToList();
                     break;
                 case 6:
-                    cvs = congViecBUS.GetCongViecByLoaiChuDe(DefineLoaiChuDe.getInt("Hàng năm"), nd).ToList();
+                    cvs = congViecBUS.GetCongViecByLoai(DefineLoaiChuDe.getInt("Hàng năm"), nd).ToList();
                     break;
             }
             congViecBUS.GetCongViecByTrangThai(ref cvs, TrangThaiHT);
@@ -854,12 +855,30 @@ namespace ctk43_Nhom1_Manage_Job
                 SortGhiChuNhanh();
             }
         }
-        #endregion
 
         private void cbbTrangThaiCV_SelectedIndexChanged(object sender, EventArgs e)
         {
             TrangThaiHT = DefineTrangThai.GetString(cbbTrangThaiCV.SelectedIndex);
             LoadListCVHienTai();
         }
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true && e.Alt == true && e.KeyCode == Keys.K)
+            {
+                btnThemCongViec.PerformClick();                
+            }
+
+            if (e.Control == true && e.Alt == true && e.KeyCode == Keys.N)
+            {
+                GhiChutoolStripMenuItem.PerformClick();
+            }
+
+            if (e.Control == true && e.Alt == true && e.KeyCode == Keys.L)
+            {
+                btnThemChuDe.PerformClick();
+            }
+        }
+        #endregion
     }
 }
