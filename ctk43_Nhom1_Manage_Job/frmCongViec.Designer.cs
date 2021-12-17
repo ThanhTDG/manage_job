@@ -58,7 +58,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnCancel.Location = new System.Drawing.Point(315, 451);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 27);
-            this.btnCancel.TabIndex = 101;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -70,13 +70,13 @@ namespace ctk43_Nhom1_Manage_Job
             this.txtProcess.Name = "txtProcess";
             this.txtProcess.ReadOnly = true;
             this.txtProcess.Size = new System.Drawing.Size(266, 25);
-            this.txtProcess.TabIndex = 100;
+            this.txtProcess.TabIndex = 7;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(27, 326);
+            this.label11.Location = new System.Drawing.Point(25, 326);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 17);
             this.label11.TabIndex = 99;
@@ -89,7 +89,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnSave.Location = new System.Drawing.Point(211, 451);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 27);
-            this.btnSave.TabIndex = 102;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -101,13 +101,13 @@ namespace ctk43_Nhom1_Manage_Job
             this.txtRemine.Name = "txtRemine";
             this.txtRemine.ReadOnly = true;
             this.txtRemine.Size = new System.Drawing.Size(266, 25);
-            this.txtRemine.TabIndex = 91;
+            this.txtRemine.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 244);
+            this.label7.Location = new System.Drawing.Point(25, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 17);
             this.label7.TabIndex = 90;
@@ -121,7 +121,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.cbbLevel.Location = new System.Drawing.Point(147, 279);
             this.cbbLevel.Name = "cbbLevel";
             this.cbbLevel.Size = new System.Drawing.Size(266, 25);
-            this.cbbLevel.TabIndex = 87;
+            this.cbbLevel.TabIndex = 6;
             // 
             // cbbTopic
             // 
@@ -131,13 +131,13 @@ namespace ctk43_Nhom1_Manage_Job
             this.cbbTopic.Location = new System.Drawing.Point(148, 70);
             this.cbbTopic.Name = "cbbTopic";
             this.cbbTopic.Size = new System.Drawing.Size(266, 25);
-            this.cbbTopic.TabIndex = 86;
+            this.cbbTopic.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 367);
+            this.label6.Location = new System.Drawing.Point(25, 367);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 17);
             this.label6.TabIndex = 84;
@@ -149,14 +149,14 @@ namespace ctk43_Nhom1_Manage_Job
             this.richDescription.Location = new System.Drawing.Point(147, 364);
             this.richDescription.Name = "richDescription";
             this.richDescription.Size = new System.Drawing.Size(265, 79);
-            this.richDescription.TabIndex = 83;
+            this.richDescription.TabIndex = 8;
             this.richDescription.Text = "";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 285);
+            this.label5.Location = new System.Drawing.Point(25, 285);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 17);
             this.label5.TabIndex = 82;
@@ -170,7 +170,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.dtpEnd.Location = new System.Drawing.Point(147, 197);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(266, 25);
-            this.dtpEnd.TabIndex = 81;
+            this.dtpEnd.TabIndex = 4;
             // 
             // dtpStart
             // 
@@ -180,13 +180,13 @@ namespace ctk43_Nhom1_Manage_Job
             this.dtpStart.Location = new System.Drawing.Point(147, 156);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(266, 25);
-            this.dtpStart.TabIndex = 80;
+            this.dtpStart.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 162);
+            this.label4.Location = new System.Drawing.Point(25, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 17);
             this.label4.TabIndex = 79;
@@ -198,13 +198,13 @@ namespace ctk43_Nhom1_Manage_Job
             this.txtTitle.Location = new System.Drawing.Point(148, 119);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(266, 25);
-            this.txtTitle.TabIndex = 78;
+            this.txtTitle.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 121);
+            this.label3.Location = new System.Drawing.Point(25, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 76;
@@ -214,7 +214,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 203);
+            this.label2.Location = new System.Drawing.Point(25, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 17);
             this.label2.TabIndex = 77;
@@ -224,7 +224,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 73);
+            this.label1.Location = new System.Drawing.Point(25, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 75;
@@ -238,7 +238,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.cbbTypeOfTopic.Location = new System.Drawing.Point(147, 27);
             this.cbbTypeOfTopic.Name = "cbbTypeOfTopic";
             this.cbbTypeOfTopic.Size = new System.Drawing.Size(266, 25);
-            this.cbbTypeOfTopic.TabIndex = 104;
+            this.cbbTypeOfTopic.TabIndex = 0;
             this.cbbTypeOfTopic.SelectedIndexChanged += new System.EventHandler(this.cbbTypeOfTopic_SelectedIndexChanged);
             // 
             // label8
@@ -256,7 +256,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 512);
+            this.ClientSize = new System.Drawing.Size(432, 490);
             this.Controls.Add(this.cbbTypeOfTopic);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnCancel);

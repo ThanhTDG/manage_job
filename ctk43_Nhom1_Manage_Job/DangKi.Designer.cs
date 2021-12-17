@@ -44,7 +44,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.textBox1.Location = new System.Drawing.Point(151, 65);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(211, 26);
-            this.textBox1.TabIndex = 12;
+            this.textBox1.TabIndex = 1;
             this.textBox1.Tag = "";
             this.textBox1.Text = "example@Email.com";
             // 
@@ -55,7 +55,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.button1.Location = new System.Drawing.Point(264, 118);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 27);
-            this.button1.TabIndex = 144;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Hủy";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -76,7 +76,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.button6.Location = new System.Drawing.Point(34, 118);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(98, 27);
-            this.button6.TabIndex = 143;
+            this.button6.TabIndex = 2;
             this.button6.Text = "Lưu";
             this.button6.UseVisualStyleBackColor = true;
             // 
@@ -87,7 +87,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.textBox2.Location = new System.Drawing.Point(151, 23);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(211, 26);
-            this.textBox2.TabIndex = 13;
+            this.textBox2.TabIndex = 0;
             this.textBox2.Text = "NameUser";
             // 
             // label3

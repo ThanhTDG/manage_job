@@ -323,7 +323,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnThemCongViec.Location = new System.Drawing.Point(12, 309);
             this.btnThemCongViec.Name = "btnThemCongViec";
             this.btnThemCongViec.Size = new System.Drawing.Size(212, 27);
-            this.btnThemCongViec.TabIndex = 5;
+            this.btnThemCongViec.TabIndex = 0;
             this.btnThemCongViec.Text = "Thêm Công Việc Mới";
             this.btnThemCongViec.UseVisualStyleBackColor = true;
             this.btnThemCongViec.Click += new System.EventHandler(this.btnThemCongViec_Click);
@@ -394,7 +394,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnThemChuDe.Location = new System.Drawing.Point(12, 545);
             this.btnThemChuDe.Name = "btnThemChuDe";
             this.btnThemChuDe.Size = new System.Drawing.Size(212, 27);
-            this.btnThemChuDe.TabIndex = 13;
+            this.btnThemChuDe.TabIndex = 1;
             this.btnThemChuDe.Text = "Thêm Chủ Đề";
             this.btnThemChuDe.UseVisualStyleBackColor = true;
             this.btnThemChuDe.Click += new System.EventHandler(this.btnThemChuDe_Click);
@@ -406,7 +406,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.txtTimKiemTenCV.Location = new System.Drawing.Point(702, 100);
             this.txtTimKiemTenCV.Name = "txtTimKiemTenCV";
             this.txtTimKiemTenCV.Size = new System.Drawing.Size(299, 25);
-            this.txtTimKiemTenCV.TabIndex = 14;
+            this.txtTimKiemTenCV.TabIndex = 4;
             this.txtTimKiemTenCV.TextChanged += new System.EventHandler(this.txtTimKiemTenCV_TextChanged);
             // 
             // btnLoc
@@ -416,7 +416,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnLoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(29, 32);
-            this.btnLoc.TabIndex = 8;
+            this.btnLoc.TabIndex = 6;
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
@@ -449,7 +449,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.lbChucNang.Location = new System.Drawing.Point(12, 130);
             this.lbChucNang.Name = "lbChucNang";
             this.lbChucNang.Size = new System.Drawing.Size(208, 174);
-            this.lbChucNang.TabIndex = 16;
+            this.lbChucNang.TabIndex = 2;
             this.lbChucNang.SelectedIndexChanged += new System.EventHandler(this.lbChucNang_SelectedIndexChanged);
             // 
             // tabControl
@@ -580,7 +580,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnThongBao.Location = new System.Drawing.Point(956, 49);
             this.btnThongBao.Name = "btnThongBao";
             this.btnThongBao.Size = new System.Drawing.Size(45, 45);
-            this.btnThongBao.TabIndex = 15;
+            this.btnThongBao.TabIndex = 5;
             this.btnThongBao.UseVisualStyleBackColor = true;
             this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
@@ -608,7 +608,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.cbbTrangThaiCV.Location = new System.Drawing.Point(237, 94);
             this.cbbTrangThaiCV.Name = "cbbTrangThaiCV";
             this.cbbTrangThaiCV.Size = new System.Drawing.Size(158, 25);
-            this.cbbTrangThaiCV.TabIndex = 19;
+            this.cbbTrangThaiCV.TabIndex = 3;
             this.cbbTrangThaiCV.SelectedIndexChanged += new System.EventHandler(this.cbbTrangThaiCV_SelectedIndexChanged);
             // 
             // frmMain

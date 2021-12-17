@@ -115,7 +115,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.tabPage4.Controls.Add(this.lvThongKeTongCong);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(441, 338);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Tất cả";
@@ -135,7 +135,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.lvThongKeTongCong.Location = new System.Drawing.Point(3, 3);
             this.lvThongKeTongCong.Name = "lvThongKeTongCong";
             this.lvThongKeTongCong.Size = new System.Drawing.Size(435, 332);
-            this.lvThongKeTongCong.TabIndex = 95;
+            this.lvThongKeTongCong.TabIndex = 0;
             this.lvThongKeTongCong.UseCompatibleStateImageBehavior = false;
             this.lvThongKeTongCong.View = System.Windows.Forms.View.Details;
             // 
@@ -164,7 +164,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.tabPage1.Controls.Add(this.lvThongKeHoanThanh);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(441, 338);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hoàn thành";
@@ -207,7 +207,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.tabPage2.Controls.Add(this.lvThongKeChuaHoanThanh);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(441, 338);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Chưa hoàn thành";
@@ -244,7 +244,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.tabPage3.Controls.Add(this.lvThongKeHetHan);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(441, 338);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Hết hạn";
@@ -280,7 +280,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.tabPage5.Controls.Add(this.lvThongKeHoanThanhTre);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(441, 338);
             this.tabPage5.TabIndex = 4;
@@ -299,7 +299,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.lvThongKeHoanThanhTre.GridLines = true;
             this.lvThongKeHoanThanhTre.HideSelection = false;
             this.lvThongKeHoanThanhTre.Location = new System.Drawing.Point(0, 0);
-            this.lvThongKeHoanThanhTre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvThongKeHoanThanhTre.Margin = new System.Windows.Forms.Padding(2);
             this.lvThongKeHoanThanhTre.Name = "lvThongKeHoanThanhTre";
             this.lvThongKeHoanThanhTre.Size = new System.Drawing.Size(441, 338);
             this.lvThongKeHoanThanhTre.TabIndex = 0;
@@ -352,7 +352,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnThongKe.Location = new System.Drawing.Point(112, 175);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(98, 27);
-            this.btnThongKe.TabIndex = 146;
+            this.btnThongKe.TabIndex = 1;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
@@ -369,7 +369,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.ckbMucDo.Location = new System.Drawing.Point(159, 75);
             this.ckbMucDo.Name = "ckbMucDo";
             this.ckbMucDo.Size = new System.Drawing.Size(120, 79);
-            this.ckbMucDo.TabIndex = 113;
+            this.ckbMucDo.TabIndex = 0;
             // 
             // rdTuyChon
             // 

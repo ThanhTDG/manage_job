@@ -35,7 +35,7 @@ namespace ctk43_Nhom1_Manage_Job
             InitializeComponent();
             //getAll();
         }
-      
+
         #region 1911205 - Nguyễn hữu Đức Thanh
         /// <summary>
         /// frmLoc
@@ -343,8 +343,7 @@ namespace ctk43_Nhom1_Manage_Job
                 frm.LoadChuDe(nd);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    listenNotification();
-                    chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
+                    listenNotification();                    
                     LoadListCVHienTai();
                 }
             }
@@ -956,21 +955,26 @@ namespace ctk43_Nhom1_Manage_Job
             congViecBUS.Insert(new DAO.Model.CongViec() { ten = "code đê", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });
             congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Học lập trình nà", IDChuDe = 5, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0 });
 
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-2), thoiGianKT = DateTime.Now.AddDays(3), trangThai = 0, tienDo = 0, mucDo = 2 });//10
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bóng rổ", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddDays(5), trangThai = 0, tienDo = 0, mucDo = 1 });//11
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Cầu lông", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = DateTime.Now.AddDays(3), trangThai = 0, tienDo = 0, mucDo = 3 });//12
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bóng chuyển", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = DateTime.Now.AddDays(2), trangThai = 0, tienDo = 0, mucDo = 0 });//13
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-2), thoiGianKT = DateTime.Now.AddDays(3), trangThai = 1, tienDo = 0, mucDo = 2 });//11
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bóng rổ", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddDays(5), trangThai = 1, tienDo = 0, mucDo = 1 });//12
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Cầu lông", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = DateTime.Now.AddDays(3), trangThai = 1, tienDo = 0, mucDo = 3 });//13
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bóng chuyển", IDChuDe = 7, thoiGianBD = DateTime.Now.AddDays(-1), thoiGianKT = DateTime.Now.AddDays(2), trangThai = 1, tienDo = 0, mucDo = 0 });//14
 
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-40), thoiGianKT = DateTime.Now.AddDays(-20), trangThai = 0, tienDo = 0, mucDo = 2 });//14
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Alaska", IDChuDe = 8, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0, mucDo = 0 });//15
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Vũng Tàu", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(50), thoiGianKT = DateTime.Now.AddDays(60), trangThai = 0, tienDo = 0, mucDo = 1 });//16
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Vịnh Hạ Long", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(30), thoiGianKT = DateTime.Now.AddDays(50), trangThai = 0, tienDo = 0, mucDo = 4 });//17
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Sapa", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(-40), thoiGianKT = DateTime.Now.AddDays(-20), trangThai = 3, tienDo = 0, mucDo = 2 });//15
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Alaska", IDChuDe = 8, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 1, mucDo = 0 });//16
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Vũng Tàu", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(50), thoiGianKT = DateTime.Now.AddDays(60), trangThai = 0, tienDo = 0, mucDo = 1 });//17
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đi Vịnh Hạ Long", IDChuDe = 8, thoiGianBD = DateTime.Now.AddDays(30), thoiGianKT = DateTime.Now.AddDays(50), trangThai = 0, tienDo = 0, mucDo = 4 });//18
 
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Chơi game", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-25), thoiGianKT = DateTime.Now, trangThai = 3, tienDo = 0, mucDo = 0 });//19
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Xem tivi", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-30), thoiGianKT = DateTime.Now.AddDays(-5), trangThai = 3, tienDo = 0, mucDo = 0 });//20
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đọc truyện", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-20), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 1, tienDo = 0, mucDo = 0 });//21
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đọc truyện tập 2", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-10), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 1, tienDo = 0 });//22
 
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Chơi game", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-25), thoiGianKT = DateTime.Now, trangThai = 0, tienDo = 0, mucDo = 0 });//18
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Xem tivi", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-30), thoiGianKT = DateTime.Now.AddDays(-5), trangThai = 0, tienDo = 0, mucDo = 0 });//19
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đọc truyện", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-20), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0, mucDo = 0 });//20
-            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đọc truyện tập 2", IDChuDe = 11, thoiGianBD = DateTime.Now.AddDays(-10), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0 });//21
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Làm bài tập lab 1 csdl", IDChuDe = 3, thoiGianBD = DateTime.Now.AddDays(-20), thoiGianKT = DateTime.Now.AddDays(-10), trangThai = 3, tienDo = 0, mucDo = 2 });//23
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Tạo một trang web bán hàng", IDChuDe = 3, thoiGianBD = DateTime.Now.AddDays(-10), thoiGianKT = DateTime.Now.AddDays(5), trangThai = 1, tienDo = 0, mucDo = 3 });//24
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Bài tập nhóm thi học kỳ csdl", IDChuDe = 3, thoiGianBD = DateTime.Now.AddDays(-7), thoiGianKT = DateTime.Now.AddDays(2), trangThai = 1, tienDo = 0, mucDo = 0 });//25
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Thi học kỳ môn công nghệ phần mềm", IDChuDe = 3, thoiGianBD = DateTime.Now.AddDays(7), thoiGianKT = DateTime.Now.AddDays(10), trangThai = 0, tienDo = 0, mucDo = 1 });//26
+            congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Nghiên cứu công nghệ mới", IDChuDe = 3, thoiGianBD = DateTime.Now.AddDays(10), thoiGianKT = DateTime.Now.AddDays(20), trangThai = 0, tienDo = 0, mucDo = 4 });//27
 
             // chi tiet cong viec
             ChiTietCVBUS chiTietCVBUS = new ChiTietCVBUS();
@@ -993,6 +997,12 @@ namespace ctk43_Nhom1_Manage_Job
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Mua đồ dùng cá nhân", iDCongviec = 17, trangThai = 0, mucDo = 2 });
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Chuẩn bị quần áo", iDCongviec = 17, trangThai = 0, mucDo = 2 });
             chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Xếp đồ vào vali", iDCongviec = 17, trangThai = 0, mucDo = 2 });
+
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Tìm hiểu công nghệ MERN", iDCongviec = 27, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Tìm hiểu về ReactJS", iDCongviec = 27, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Tìm hiểu về phát triển ứng dụng web", iDCongviec = 27, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Tìm hiểu về phát triển ứng dụng di động", iDCongviec = 27, trangThai = 0, mucDo = 2 });
+            chiTietCVBUS.Insert(new DAO.Model.ChiTietCV() { ten = "Tìm hiểu về các thuật toán mới", iDCongviec = 27, trangThai = 0, mucDo = 2 });
 
             //Ghi chu nhanh
             GhiChuNhanhBUS ghiChuNhanhBUS = new GhiChuNhanhBUS();

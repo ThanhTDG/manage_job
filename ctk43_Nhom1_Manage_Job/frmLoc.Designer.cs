@@ -71,7 +71,7 @@
             this.dtpStart.Location = new System.Drawing.Point(176, 21);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(169, 20);
-            this.dtpStart.TabIndex = 8;
+            this.dtpStart.TabIndex = 0;
             // 
             // dtpEnd
             // 
@@ -80,7 +80,7 @@
             this.dtpEnd.Location = new System.Drawing.Point(500, 20);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(169, 20);
-            this.dtpEnd.TabIndex = 10;
+            this.dtpEnd.TabIndex = 1;
             // 
             // label3
             // 
@@ -99,7 +99,7 @@
             this.btnFind.Location = new System.Drawing.Point(484, 219);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(82, 33);
-            this.btnFind.TabIndex = 15;
+            this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Tìm kiếm";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -111,7 +111,7 @@
             this.btnCancel.Location = new System.Drawing.Point(588, 219);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 33);
-            this.btnCancel.TabIndex = 16;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Thoát";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -138,7 +138,7 @@
             this.mucdo4.Location = new System.Drawing.Point(558, 48);
             this.mucdo4.Name = "mucdo4";
             this.mucdo4.Size = new System.Drawing.Size(80, 17);
-            this.mucdo4.TabIndex = 1;
+            this.mucdo4.TabIndex = 4;
             this.mucdo4.Text = "checkBox1";
             this.mucdo4.UseVisualStyleBackColor = true;
             // 
@@ -148,7 +148,7 @@
             this.mucdo3.Location = new System.Drawing.Point(426, 47);
             this.mucdo3.Name = "mucdo3";
             this.mucdo3.Size = new System.Drawing.Size(80, 17);
-            this.mucdo3.TabIndex = 1;
+            this.mucdo3.TabIndex = 3;
             this.mucdo3.Text = "checkBox1";
             this.mucdo3.UseVisualStyleBackColor = true;
             // 
@@ -158,7 +158,7 @@
             this.mucdo2.Location = new System.Drawing.Point(294, 47);
             this.mucdo2.Name = "mucdo2";
             this.mucdo2.Size = new System.Drawing.Size(80, 17);
-            this.mucdo2.TabIndex = 1;
+            this.mucdo2.TabIndex = 2;
             this.mucdo2.Text = "checkBox1";
             this.mucdo2.UseVisualStyleBackColor = true;
             // 
@@ -178,7 +178,7 @@
             this.mucdo0.Location = new System.Drawing.Point(30, 48);
             this.mucdo0.Name = "mucdo0";
             this.mucdo0.Size = new System.Drawing.Size(80, 17);
-            this.mucdo0.TabIndex = 1;
+            this.mucdo0.TabIndex = 0;
             this.mucdo0.Text = "checkBox1";
             this.mucdo0.UseVisualStyleBackColor = true;
             // 
@@ -228,7 +228,7 @@
             this.trangthai4.Location = new System.Drawing.Point(560, 44);
             this.trangthai4.Name = "trangthai4";
             this.trangthai4.Size = new System.Drawing.Size(80, 17);
-            this.trangthai4.TabIndex = 3;
+            this.trangthai4.TabIndex = 0;
             this.trangthai4.Text = "checkBox1";
             this.trangthai4.UseVisualStyleBackColor = true;
             // 
@@ -238,7 +238,7 @@
             this.trangthai3.Location = new System.Drawing.Point(429, 44);
             this.trangthai3.Name = "trangthai3";
             this.trangthai3.Size = new System.Drawing.Size(80, 17);
-            this.trangthai3.TabIndex = 3;
+            this.trangthai3.TabIndex = 1;
             this.trangthai3.Text = "checkBox1";
             this.trangthai3.UseVisualStyleBackColor = true;
             // 
@@ -248,7 +248,7 @@
             this.trangthai2.Location = new System.Drawing.Point(298, 44);
             this.trangthai2.Name = "trangthai2";
             this.trangthai2.Size = new System.Drawing.Size(80, 17);
-            this.trangthai2.TabIndex = 4;
+            this.trangthai2.TabIndex = 2;
             this.trangthai2.Text = "checkBox1";
             this.trangthai2.UseVisualStyleBackColor = true;
             // 
@@ -258,7 +258,7 @@
             this.trangthai1.Location = new System.Drawing.Point(167, 45);
             this.trangthai1.Name = "trangthai1";
             this.trangthai1.Size = new System.Drawing.Size(80, 17);
-            this.trangthai1.TabIndex = 5;
+            this.trangthai1.TabIndex = 3;
             this.trangthai1.Text = "checkBox1";
             this.trangthai1.UseVisualStyleBackColor = true;
             // 
@@ -268,7 +268,7 @@
             this.trangthai0.Location = new System.Drawing.Point(36, 45);
             this.trangthai0.Name = "trangthai0";
             this.trangthai0.Size = new System.Drawing.Size(80, 17);
-            this.trangthai0.TabIndex = 6;
+            this.trangthai0.TabIndex = 4;
             this.trangthai0.Text = "checkBox1";
             this.trangthai0.UseVisualStyleBackColor = true;
             // 

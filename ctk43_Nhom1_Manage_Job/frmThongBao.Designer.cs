@@ -80,7 +80,7 @@
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(20, 50);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(7);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 5;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
@@ -97,7 +97,7 @@
             this.lvThongBaoCongViec.GridLines = true;
             this.lvThongBaoCongViec.HideSelection = false;
             this.lvThongBaoCongViec.Location = new System.Drawing.Point(256, 52);
-            this.lvThongBaoCongViec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvThongBaoCongViec.Margin = new System.Windows.Forms.Padding(2);
             this.lvThongBaoCongViec.Name = "lvThongBaoCongViec";
             this.lvThongBaoCongViec.Size = new System.Drawing.Size(516, 329);
             this.lvThongBaoCongViec.TabIndex = 6;
@@ -107,7 +107,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Công việc";
-            this.columnHeader1.Width = 359;
+            this.columnHeader1.Width = 354;
             // 
             // columnHeader2
             // 
@@ -129,7 +129,7 @@
             this.textBox6.BackColor = System.Drawing.Color.LightSkyBlue;
             this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(20, 361);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(76, 20);
             this.textBox6.TabIndex = 33;
@@ -189,7 +189,7 @@
             this.textBox5.BackColor = System.Drawing.Color.Blue;
             this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(20, 338);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(76, 20);
             this.textBox5.TabIndex = 27;
@@ -199,7 +199,7 @@
             this.textBox4.BackColor = System.Drawing.Color.Green;
             this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(20, 315);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(76, 20);
             this.textBox4.TabIndex = 26;
@@ -209,7 +209,7 @@
             this.textBox3.BackColor = System.Drawing.Color.Yellow;
             this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(20, 292);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(76, 20);
             this.textBox3.TabIndex = 25;
@@ -219,7 +219,7 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(20, 270);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(76, 20);
             this.textBox2.TabIndex = 24;
@@ -229,7 +229,7 @@
             this.textBox1.BackColor = System.Drawing.Color.Red;
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(20, 247);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 23;
@@ -239,7 +239,7 @@
             this.textBox7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(20, 224);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(76, 20);
             this.textBox7.TabIndex = 35;
@@ -297,7 +297,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmThongBao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông báo công việc";
