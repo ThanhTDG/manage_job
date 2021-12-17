@@ -128,13 +128,15 @@ namespace ctk43_Nhom1_Manage_Job
                 }
                 if (Second < 0)
                     continue;
+                if (Second > 24 * 60 * 60 * 7)
+                    break;
                 Thread.Sleep(Second * 1000 + 1000);
                 for (i = 0; i < temp.Count; i++)
                     temp[i] = Extension.Update(temp[i], CongViecBUS);
                 this.Invoke(new Action(() =>
                 {
                     frmThongBaoCV frmThongBaoCV = new frmThongBaoCV(temp);
-                    frmThongBaoCV.ShowDialog();
+                    frmThongBaoCV.Show();
                 }));
             }
         }
