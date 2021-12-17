@@ -99,7 +99,7 @@
             this.btnSave.Location = new System.Drawing.Point(325, 233);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 30);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Lưu thiết lập";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -139,14 +139,15 @@
             this.nudVolume.Location = new System.Drawing.Point(306, 58);
             this.nudVolume.Name = "nudVolume";
             this.nudVolume.Size = new System.Drawing.Size(42, 26);
-            this.nudVolume.TabIndex = 9;
+            this.nudVolume.TabIndex = 3;
             // 
             // txtSound
             // 
             this.txtSound.Location = new System.Drawing.Point(139, 17);
             this.txtSound.Name = "txtSound";
+            this.txtSound.ReadOnly = true;
             this.txtSound.Size = new System.Drawing.Size(161, 26);
-            this.txtSound.TabIndex = 8;
+            this.txtSound.TabIndex = 0;
             // 
             // label7
             // 
@@ -162,7 +163,7 @@
             this.prbVolum.Name = "prbVolum";
             this.prbVolum.Size = new System.Drawing.Size(161, 23);
             this.prbVolum.Step = 100;
-            this.prbVolum.TabIndex = 4;
+            this.prbVolum.TabIndex = 1;
             // 
             // label6
             // 
@@ -180,7 +181,7 @@
             this.btnTestSound.Location = new System.Drawing.Point(154, 92);
             this.btnTestSound.Name = "btnTestSound";
             this.btnTestSound.Size = new System.Drawing.Size(128, 30);
-            this.btnTestSound.TabIndex = 2;
+            this.btnTestSound.TabIndex = 4;
             this.btnTestSound.Text = "Nghe thử";
             this.btnTestSound.UseVisualStyleBackColor = true;
             this.btnTestSound.Click += new System.EventHandler(this.btnTestSound_Click);

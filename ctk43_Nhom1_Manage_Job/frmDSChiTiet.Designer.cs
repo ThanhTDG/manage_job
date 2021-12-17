@@ -75,7 +75,7 @@
             this.rtxtMoTaCongViec.Name = "rtxtMoTaCongViec";
             this.rtxtMoTaCongViec.ReadOnly = true;
             this.rtxtMoTaCongViec.Size = new System.Drawing.Size(315, 82);
-            this.rtxtMoTaCongViec.TabIndex = 140;
+            this.rtxtMoTaCongViec.TabIndex = 2;
             this.rtxtMoTaCongViec.Text = "";
             // 
             // label1
@@ -100,7 +100,7 @@
             this.txtTenCongViec.Name = "txtTenCongViec";
             this.txtTenCongViec.ReadOnly = true;
             this.txtTenCongViec.Size = new System.Drawing.Size(315, 25);
-            this.txtTenCongViec.TabIndex = 148;
+            this.txtTenCongViec.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -131,7 +131,7 @@
             this.dtpEnd.Location = new System.Drawing.Point(125, 50);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(314, 25);
-            this.dtpEnd.TabIndex = 158;
+            this.dtpEnd.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -232,7 +232,7 @@
             this.btnPause.Location = new System.Drawing.Point(81, 63);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(48, 23);
-            this.btnPause.TabIndex = 156;
+            this.btnPause.TabIndex = 1;
             this.btnPause.Text = "pause";
             this.btnPause.UseVisualStyleBackColor = true;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
@@ -242,7 +242,7 @@
             this.btnStop.Location = new System.Drawing.Point(146, 63);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(48, 23);
-            this.btnStop.TabIndex = 155;
+            this.btnStop.TabIndex = 2;
             this.btnStop.Text = "stop";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
@@ -264,7 +264,7 @@
             this.rtbMoTa.Location = new System.Drawing.Point(3, 16);
             this.rtbMoTa.Name = "rtbMoTa";
             this.rtbMoTa.Size = new System.Drawing.Size(194, 305);
-            this.rtbMoTa.TabIndex = 155;
+            this.rtbMoTa.TabIndex = 0;
             this.rtbMoTa.Text = "";
             // 
             // btnStart
@@ -272,7 +272,7 @@
             this.btnStart.Location = new System.Drawing.Point(6, 63);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(48, 23);
-            this.btnStart.TabIndex = 153;
+            this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);

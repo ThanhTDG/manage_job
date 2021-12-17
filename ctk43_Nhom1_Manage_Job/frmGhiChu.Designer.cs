@@ -142,7 +142,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnSave.Location = new System.Drawing.Point(12, 334);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 34);
-            this.btnSave.TabIndex = 103;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -155,7 +155,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.btnCanel.Location = new System.Drawing.Point(300, 334);
             this.btnCanel.Name = "btnCanel";
             this.btnCanel.Size = new System.Drawing.Size(98, 34);
-            this.btnCanel.TabIndex = 104;
+            this.btnCanel.TabIndex = 3;
             this.btnCanel.Text = "Cancel";
             this.btnCanel.UseVisualStyleBackColor = true;
             this.btnCanel.Click += new System.EventHandler(this.btnCanel_Click);
