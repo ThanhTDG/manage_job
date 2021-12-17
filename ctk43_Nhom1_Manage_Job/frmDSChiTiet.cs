@@ -60,14 +60,16 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void frmDSChiTiet_Load(object sender, EventArgs e)
         {
+            btnStop.Enabled = false;
+            btnPause.Enabled = false;
             txtTenCongViec.Text = _congViec.ten;
             rtxtMoTaCongViec.Text = _congViec.MoTa;
             dtpEnd.Value = _congViec.thoiGianKT;
             LoadCTCV();
             t = new System.Timers.Timer();
-            t.Interval = 1;
+            t.Interval = 1000;
             t.Elapsed += OnTimeEvent;
-            check = false;
+            check = true;
         }
 
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
@@ -105,14 +107,20 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (lvDSChiTiet.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Phải chọn chi tiết công việc?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (btnStart.Text == "Finish")
             {
                 t.Stop();
                 chiTietCV = _chiTietCVBUS.GetChiTietCongViecByID(chiTietCV.iD);
                 chiTietCV.ThoiGianThucTe = h * 60 + m;
-                MessageBox.Show(string.Format("Hoàn thành " + StringHMS()));
+                MessageBox.Show("Hoàn thành " + StringHMS(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 chiTietCV.trangThai = 1;
                 _chiTietCVBUS.Update(chiTietCV);
+                check = true;
                 this.DialogResult = DialogResult.OK;
             }
             else if (btnStart.Text == "Start")
@@ -121,7 +129,10 @@ namespace ctk43_Nhom1_Manage_Job
                 chiTietCV = item.Tag as ChiTietCV;
                 lvDSChiTiet.Enabled = false;
                 btnAdd.Enabled = false;
+                btnStop.Enabled = true;
+                btnPause.Enabled = true;
                 btnStart.Text = "Finish";
+                check = false;
             }
         }
 
@@ -141,7 +152,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             if (check == false)
             {
-                if (ThongBao.CauHoi("thoat va dung bo dem ko?") == DialogResult.Yes)
+                if (ThongBao.CauHoi("thoát và dừng bộ đếm không?") == DialogResult.Yes)
                 {
                     t.Stop();
                     Application.DoEvents();
@@ -151,7 +162,11 @@ namespace ctk43_Nhom1_Manage_Job
                     e.Cancel = true;
                 }
             }
-
+            else
+            {
+                t.Stop();
+                Application.DoEvents();
+            }
         }
 
         private void lvDSChiTiet_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,17 +186,17 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void btnPause_Click(object sender, EventArgs e)
         {
-            if (check == false)
+            if (btnPause.Text == "pause")
             {
                 t.Stop();
-                check = true;
-                btnPause.Text = "Continue";
+                check = false;
+                btnPause.Text = "continue";
             }
-            else
+            else if (btnPause.Text == "continue")
             {
                 t.Start();
                 check = false;
-                btnPause.Text = "Pause";
+                btnPause.Text = "pause";
             }
         }
 
@@ -189,10 +204,13 @@ namespace ctk43_Nhom1_Manage_Job
         {
             t.Stop();
             h = 0; m = 0; s = 0;
-            lbCountUp.Text = $"{h}:{m}:{s}";
+            lbCountUp.Text = $"00:00:00";
             lvDSChiTiet.Enabled = true;
             btnAdd.Enabled = true;
             btnStart.Text = "Start";
+            btnPause.Text = "pause";
+            btnStop.Enabled = false;
+            btnPause.Enabled = false;
         }
     }
 }

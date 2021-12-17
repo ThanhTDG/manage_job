@@ -100,6 +100,10 @@ namespace BUS
             treeView.ExpandAll();
         }
 
+        public IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, NguoiDung nd)
+        {
+            return congViecRepository.GetCongViecByLoaiChuDe(loaiChuDe, nd.email);
+        }
         #endregion
 
         #region 1911158- Nguyễn Hoàng Đăng Khoa

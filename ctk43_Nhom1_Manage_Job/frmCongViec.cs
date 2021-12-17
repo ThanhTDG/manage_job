@@ -36,7 +36,7 @@ namespace ctk43_Nhom1_Manage_Job
         public void LoadChuDe(NguoiDung nd)
         {
             _nd = nd;
-            cbbTopic.DataSource = chuDeBUS.GetChuDeByNguoiDung(nd).ToList();
+            cbbTopic.DataSource = chuDeBUS.GetChuDeByLoai0(nd).ToList();
             cbbTopic.DisplayMember = "Ten";
             cbbTopic.ValueMember = "iD";
         }
@@ -49,6 +49,7 @@ namespace ctk43_Nhom1_Manage_Job
             {
                 cbbTypeOfTopic.SelectedIndex = chuDeBUS.GetChuDeByID(id).loaiChuDe;
             }
+            cbbTypeOfTopic.Enabled = false;
             cbbTopic.SelectedValue = _congviec.IDChuDe;
             txtTitle.Text = _congviec.ten;
             dtpStart.Value = _congviec.thoiGianBD;
@@ -92,7 +93,7 @@ namespace ctk43_Nhom1_Manage_Job
         public bool CheckValid()
         {
             bool kq = true;
-            if (string.IsNullOrWhiteSpace(cbbTopic.Text))
+            if (string.IsNullOrWhiteSpace(cbbTopic.Text) && cbbTypeOfTopic.SelectedIndex==0)
                 kq = false;
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
                 kq = false;
@@ -149,11 +150,9 @@ namespace ctk43_Nhom1_Manage_Job
 
         private CongViec UpdateCVTheoLoai(CongViec cv)
         {
-            cv.IDChuDe = chuDeBUS.GetIDByNameChuDe(txtTitle.Text);
+            cv.IDChuDe = cv.IDChuDe;
             cv.ten = txtTitle.Text;
             cv.MoTa = richDescription.Text;
-            cv.thoiGianBD = dtpStart.Value;
-            cv.thoiGianKT = dtpEnd.Value;
             cv.tienDo = chiTietCVBUS.Process(cv);
             cv.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
             cv.trangThai = Extension.typeStatusOfTheJob(dtpStart.Value, dtpEnd.Value, cv.trangThai);
@@ -162,12 +161,21 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void UpdateNameOfTopic()
         {
-            List<CongViec> cvs = congViecBUS.GetCongViecByLoai(cbbTypeOfTopic.SelectedIndex, _nd).ToList().FindAll(x=>x.ten==txtTitle.Text);
+            int type = cbbTypeOfTopic.SelectedIndex;
+            List<CongViec> cvs = congViecBUS.GetCongViecByLoaiChuDe(type, _nd).Where(x=>x.ten==_congviec.ten).ToList();
+            UpdateChuDe();
+            int size = Extension.DayWeekMonthYear(type);
+            var s1 = new CongViec();
+            s1.thoiGianBD = dtpStart.Value;
+            s1.thoiGianKT = dtpEnd.Value;
             foreach (CongViec i in cvs)
             {
                 var item = congViecBUS.GetCongViecByID(i.iD);
                 var cv =UpdateCVTheoLoai(item);
+                cv.thoiGianBD = s1.thoiGianBD;
+                cv.thoiGianKT = s1.thoiGianKT;
                 congViecBUS.Update(cv);
+                AddFollowDMY(ref s1, cv, type);
             }
         }
 
@@ -232,6 +240,14 @@ namespace ctk43_Nhom1_Manage_Job
             return kq;
         }
 
+        private void UpdateChuDe()
+        {
+            ChuDe chuDe = chuDeBUS.GetChuDeByID(_congviec.IDChuDe);
+            chuDe.ten = txtTitle.Text;
+            chuDeBUS.Update(chuDe);
+        }
+
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -257,6 +273,7 @@ namespace ctk43_Nhom1_Manage_Job
             if (cbbTypeOfTopic.SelectedIndex == 1 || cbbTypeOfTopic.SelectedIndex == 2)//dayly, weekly
             {
                 cbbTopic.Enabled = false;
+                cbbTopic.SelectedValue = "";
                 dtpStart.CustomFormat = "H: mm: ss";
                 dtpEnd.CustomFormat = "H: mm: ss";
                 label4.Text = "Giờ bắt đầu";
@@ -265,6 +282,7 @@ namespace ctk43_Nhom1_Manage_Job
             else if (cbbTypeOfTopic.SelectedIndex == 3)//monthly
             {
                 cbbTopic.Enabled = false;
+                cbbTopic.SelectedValue = "";
                 dtpStart.CustomFormat = "dd H:mm:ss";
                 dtpEnd.CustomFormat = "dd H:mm:ss";
                 label4.Text = "Ngày bắt đầu";
@@ -273,6 +291,7 @@ namespace ctk43_Nhom1_Manage_Job
             else if (cbbTypeOfTopic.SelectedIndex == 4)//Yearly
             {
                 cbbTopic.Enabled = false;
+                cbbTopic.SelectedValue = "";
                 dtpStart.CustomFormat = "dd/MM H:mm:ss";
                 dtpEnd.CustomFormat = "dd/MM H:mm:ss";
                 label4.Text = "Thời gian bắt đầu";

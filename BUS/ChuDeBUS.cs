@@ -44,6 +44,13 @@ namespace BUS
         }
         #endregion
 
+        #region 1911164 - Võ Đình Hoàng Long
+        public IEnumerable<ChuDe> GetChuDeByLoai0(NguoiDung nd)
+        {
+            return chuDeRepository.GetMulti(x => x.Email == nd.email && x.loaiChuDe == 0);
+        }
+        #endregion
+
         #region 1911158- Nguyễn Hoàng Đăng Khoa
         public void GetChuDe(ref TreeView treeView, NguoiDung nd)
         {

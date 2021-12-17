@@ -65,6 +65,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtProcess
             // 
+            this.txtProcess.Enabled = false;
             this.txtProcess.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProcess.Location = new System.Drawing.Point(147, 321);
             this.txtProcess.Name = "txtProcess";
@@ -96,6 +97,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtRemine
             // 
+            this.txtRemine.Enabled = false;
             this.txtRemine.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRemine.Location = new System.Drawing.Point(147, 239);
             this.txtRemine.Name = "txtRemine";

@@ -280,7 +280,8 @@ namespace ctk43_Nhom1_Manage_Job
             this.toolStripSeparator1,
             this.markToolStripMenuItem});
             this.ctxMenuDSCongViec.Name = "ctxtMenuListView";
-            this.ctxMenuDSCongViec.Size = new System.Drawing.Size(190, 98);
+            this.ctxMenuDSCongViec.Size = new System.Drawing.Size(190, 120);
+            this.ctxMenuDSCongViec.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuDSCongViec_Opening);
             // 
             // addToolStripMenuItem
             // 

@@ -260,6 +260,7 @@
             // rtbMoTa
             // 
             this.rtbMoTa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbMoTa.Enabled = false;
             this.rtbMoTa.Location = new System.Drawing.Point(3, 16);
             this.rtbMoTa.Name = "rtbMoTa";
             this.rtbMoTa.Size = new System.Drawing.Size(194, 305);
