@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDangKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangKi.Designer.cs">
+      <DependentUpon>frmDangKi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,12 +95,6 @@
     </Compile>
     <Compile Include="frmChiTietCV.Designer.cs">
       <DependentUpon>frmChiTietCV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DangKi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DangKi.Designer.cs">
-      <DependentUpon>DangKi.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCongViec.cs">
       <SubType>Form</SubType>
@@ -165,14 +165,14 @@
     <Compile Include="myUserControl\uscThongBao.Designer.cs">
       <DependentUpon>uscThongBao.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmDangKi.resx">
+      <DependentUpon>frmDangKi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDSChiTiet.resx">
       <DependentUpon>frmDSChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietCV.resx">
       <DependentUpon>frmChiTietCV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DangKi.resx">
-      <DependentUpon>DangKi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCongViec.resx">
       <DependentUpon>frmCongViec.cs</DependentUpon>

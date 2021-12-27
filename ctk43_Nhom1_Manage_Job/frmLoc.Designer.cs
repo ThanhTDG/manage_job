@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-           // base.Dispose(disposing);
+            base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grMucDo = new System.Windows.Forms.GroupBox();
             this.mucdo4 = new System.Windows.Forms.CheckBox();
             this.mucdo3 = new System.Windows.Forms.CheckBox();
             this.mucdo2 = new System.Windows.Forms.CheckBox();
@@ -42,7 +42,7 @@
             this.mucdo0 = new System.Windows.Forms.CheckBox();
             this.rdMucDo = new System.Windows.Forms.RadioButton();
             this.rdAllMucDo = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grTrangThai = new System.Windows.Forms.GroupBox();
             this.trangthai4 = new System.Windows.Forms.CheckBox();
             this.trangthai3 = new System.Windows.Forms.CheckBox();
             this.trangthai2 = new System.Windows.Forms.CheckBox();
@@ -50,8 +50,8 @@
             this.trangthai0 = new System.Windows.Forms.CheckBox();
             this.rdTrangThaiChitiet = new System.Windows.Forms.RadioButton();
             this.rdAllTrangThai = new System.Windows.Forms.RadioButton();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grMucDo.SuspendLayout();
+            this.grTrangThai.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -116,26 +116,26 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // groupBox1
+            // grMucDo
             // 
-            this.groupBox1.Controls.Add(this.mucdo4);
-            this.groupBox1.Controls.Add(this.mucdo3);
-            this.groupBox1.Controls.Add(this.mucdo2);
-            this.groupBox1.Controls.Add(this.mucdo1);
-            this.groupBox1.Controls.Add(this.mucdo0);
-            this.groupBox1.Controls.Add(this.rdMucDo);
-            this.groupBox1.Controls.Add(this.rdAllMucDo);
-            this.groupBox1.Location = new System.Drawing.Point(14, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(656, 77);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Mức độ";
+            this.grMucDo.Controls.Add(this.mucdo4);
+            this.grMucDo.Controls.Add(this.mucdo3);
+            this.grMucDo.Controls.Add(this.mucdo2);
+            this.grMucDo.Controls.Add(this.mucdo1);
+            this.grMucDo.Controls.Add(this.mucdo0);
+            this.grMucDo.Controls.Add(this.rdMucDo);
+            this.grMucDo.Controls.Add(this.rdAllMucDo);
+            this.grMucDo.Location = new System.Drawing.Point(14, 53);
+            this.grMucDo.Name = "grMucDo";
+            this.grMucDo.Size = new System.Drawing.Size(656, 77);
+            this.grMucDo.TabIndex = 17;
+            this.grMucDo.TabStop = false;
+            this.grMucDo.Text = "Mức độ";
             // 
             // mucdo4
             // 
             this.mucdo4.AutoSize = true;
-            this.mucdo4.Location = new System.Drawing.Point(558, 48);
+            this.mucdo4.Location = new System.Drawing.Point(542, 48);
             this.mucdo4.Name = "mucdo4";
             this.mucdo4.Size = new System.Drawing.Size(80, 17);
             this.mucdo4.TabIndex = 4;
@@ -145,7 +145,7 @@
             // mucdo3
             // 
             this.mucdo3.AutoSize = true;
-            this.mucdo3.Location = new System.Drawing.Point(426, 47);
+            this.mucdo3.Location = new System.Drawing.Point(410, 47);
             this.mucdo3.Name = "mucdo3";
             this.mucdo3.Size = new System.Drawing.Size(80, 17);
             this.mucdo3.TabIndex = 3;
@@ -155,7 +155,7 @@
             // mucdo2
             // 
             this.mucdo2.AutoSize = true;
-            this.mucdo2.Location = new System.Drawing.Point(294, 47);
+            this.mucdo2.Location = new System.Drawing.Point(278, 47);
             this.mucdo2.Name = "mucdo2";
             this.mucdo2.Size = new System.Drawing.Size(80, 17);
             this.mucdo2.TabIndex = 2;
@@ -165,7 +165,7 @@
             // mucdo1
             // 
             this.mucdo1.AutoSize = true;
-            this.mucdo1.Location = new System.Drawing.Point(162, 48);
+            this.mucdo1.Location = new System.Drawing.Point(146, 48);
             this.mucdo1.Name = "mucdo1";
             this.mucdo1.Size = new System.Drawing.Size(80, 17);
             this.mucdo1.TabIndex = 1;
@@ -175,7 +175,7 @@
             // mucdo0
             // 
             this.mucdo0.AutoSize = true;
-            this.mucdo0.Location = new System.Drawing.Point(30, 48);
+            this.mucdo0.Location = new System.Drawing.Point(14, 48);
             this.mucdo0.Name = "mucdo0";
             this.mucdo0.Size = new System.Drawing.Size(80, 17);
             this.mucdo0.TabIndex = 0;
@@ -206,26 +206,26 @@
             this.rdAllMucDo.UseVisualStyleBackColor = true;
             this.rdAllMucDo.CheckedChanged += new System.EventHandler(this.rdAllMucDo_CheckedChanged);
             // 
-            // groupBox2
+            // grTrangThai
             // 
-            this.groupBox2.Controls.Add(this.trangthai4);
-            this.groupBox2.Controls.Add(this.trangthai3);
-            this.groupBox2.Controls.Add(this.trangthai2);
-            this.groupBox2.Controls.Add(this.trangthai1);
-            this.groupBox2.Controls.Add(this.trangthai0);
-            this.groupBox2.Controls.Add(this.rdTrangThaiChitiet);
-            this.groupBox2.Controls.Add(this.rdAllTrangThai);
-            this.groupBox2.Location = new System.Drawing.Point(14, 136);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(656, 77);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "trạng thái";
+            this.grTrangThai.Controls.Add(this.trangthai4);
+            this.grTrangThai.Controls.Add(this.trangthai3);
+            this.grTrangThai.Controls.Add(this.trangthai2);
+            this.grTrangThai.Controls.Add(this.trangthai1);
+            this.grTrangThai.Controls.Add(this.trangthai0);
+            this.grTrangThai.Controls.Add(this.rdTrangThaiChitiet);
+            this.grTrangThai.Controls.Add(this.rdAllTrangThai);
+            this.grTrangThai.Location = new System.Drawing.Point(14, 136);
+            this.grTrangThai.Name = "grTrangThai";
+            this.grTrangThai.Size = new System.Drawing.Size(656, 77);
+            this.grTrangThai.TabIndex = 17;
+            this.grTrangThai.TabStop = false;
+            this.grTrangThai.Text = "Trạng thái";
             // 
             // trangthai4
             // 
             this.trangthai4.AutoSize = true;
-            this.trangthai4.Location = new System.Drawing.Point(560, 44);
+            this.trangthai4.Location = new System.Drawing.Point(541, 44);
             this.trangthai4.Name = "trangthai4";
             this.trangthai4.Size = new System.Drawing.Size(80, 17);
             this.trangthai4.TabIndex = 0;
@@ -235,7 +235,7 @@
             // trangthai3
             // 
             this.trangthai3.AutoSize = true;
-            this.trangthai3.Location = new System.Drawing.Point(429, 44);
+            this.trangthai3.Location = new System.Drawing.Point(410, 44);
             this.trangthai3.Name = "trangthai3";
             this.trangthai3.Size = new System.Drawing.Size(80, 17);
             this.trangthai3.TabIndex = 1;
@@ -245,7 +245,7 @@
             // trangthai2
             // 
             this.trangthai2.AutoSize = true;
-            this.trangthai2.Location = new System.Drawing.Point(298, 44);
+            this.trangthai2.Location = new System.Drawing.Point(279, 44);
             this.trangthai2.Name = "trangthai2";
             this.trangthai2.Size = new System.Drawing.Size(80, 17);
             this.trangthai2.TabIndex = 2;
@@ -255,7 +255,7 @@
             // trangthai1
             // 
             this.trangthai1.AutoSize = true;
-            this.trangthai1.Location = new System.Drawing.Point(167, 45);
+            this.trangthai1.Location = new System.Drawing.Point(148, 45);
             this.trangthai1.Name = "trangthai1";
             this.trangthai1.Size = new System.Drawing.Size(80, 17);
             this.trangthai1.TabIndex = 3;
@@ -265,7 +265,7 @@
             // trangthai0
             // 
             this.trangthai0.AutoSize = true;
-            this.trangthai0.Location = new System.Drawing.Point(36, 45);
+            this.trangthai0.Location = new System.Drawing.Point(17, 45);
             this.trangthai0.Name = "trangthai0";
             this.trangthai0.Size = new System.Drawing.Size(80, 17);
             this.trangthai0.TabIndex = 4;
@@ -302,8 +302,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 268);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grTrangThai);
+            this.Controls.Add(this.grMucDo);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.dtpEnd);
@@ -315,10 +315,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm công việc";
             this.Load += new System.EventHandler(this.frmTimKiem_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grMucDo.ResumeLayout(false);
+            this.grMucDo.PerformLayout();
+            this.grTrangThai.ResumeLayout(false);
+            this.grTrangThai.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,9 +331,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grMucDo;
         private System.Windows.Forms.RadioButton rdAllMucDo;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grTrangThai;
         private System.Windows.Forms.RadioButton rdTrangThaiChitiet;
         private System.Windows.Forms.RadioButton rdAllTrangThai;
         private System.Windows.Forms.RadioButton rdMucDo;

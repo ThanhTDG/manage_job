@@ -57,7 +57,7 @@ namespace DAO.Repositories
                 sqlParameter = new SqlParameter("@EndDay", _time[1]);
                 sqlParameters.Add(sqlParameter);
             }
-            if (_trangthai.Count != 0 || _mucdo.Count != 0)
+            if (_trangthai.Count != 0 && _mucdo.Count != 0)
                 return dataContext.congViec.SqlQuery(Squery, sqlParameters.ToArray());
             if (_mucdo.Count != 0)
             {
@@ -65,13 +65,13 @@ namespace DAO.Repositories
                 {
                     if (j == 0)
                     {
-                        Squery = Squery + " AND C.tienDo = @tienDo" + j;
+                        Squery = Squery + " AND C.mucDo = @mucDo" + j;
                     }
                     else
                     {
-                        Squery = Squery + " OR C.tienDo = @tienDo" + j;
+                        Squery = Squery + " OR C.mucDo = @mucDo" + j;
                     }
-                    sqlParameter = new SqlParameter("@tienDo" + j, mucdo);
+                    sqlParameter = new SqlParameter("@mucDo" + j, mucdo);
                     sqlParameters.Add(sqlParameter);
                     j++;
                 }

@@ -18,6 +18,7 @@ namespace ctk43_Nhom1_Manage_Job
         {
             InitializeComponent();
         }
+
         private void loadData()
         {
             mucdo0.Text = DefineMucDo.GetString(0);
@@ -38,6 +39,8 @@ namespace ctk43_Nhom1_Manage_Job
             trangthai2.Enabled = enable;
             trangthai3.Enabled = enable;
             trangthai4.Enabled = enable;
+            if (!enable)
+                unckeckTrangThai();
         }
         void EnableMucDo(bool enable)
         {
@@ -46,20 +49,36 @@ namespace ctk43_Nhom1_Manage_Job
             mucdo2.Enabled = enable;
             mucdo3.Enabled = enable;
             mucdo4.Enabled = enable;
+            if (!enable)
+                unckeckMucDo();
         }
+        void unckeckMucDo()
+        {
+            mucdo0.Checked = false;
+            mucdo1.Checked = false;
+            mucdo2.Checked = false;
+            mucdo3.Checked = false;
+            mucdo4.Checked = false;
+        }
+        void unckeckTrangThai()
+        {
+            trangthai0.Checked = false;
+            trangthai1.Checked = false;
+            trangthai2.Checked = false;
+            trangthai3.Checked = false;
+            trangthai4.Checked = false;
+        }
+
         private void getData()
         {
             DataCheck.Instance.resetData();
-            DataCheck.Instance.time.Add(dtpStart.Value.Date);
-            DataCheck.Instance.time.Add(dtpEnd.Value.Date.AddDays(1));
-            if (trangthai0.Checked)
-                DataCheck.Instance.trangthai.Add(0);
-            if (trangthai1.Checked)
-                DataCheck.Instance.trangthai.Add(1);
-            if (trangthai2.Checked)
-                DataCheck.Instance.trangthai.Add(2);
-            if (trangthai3.Checked)
-                DataCheck.Instance.trangthai.Add(3);
+            getTime();
+            getCheckTrangThai();
+            getCheckMucDo();
+        }
+
+        private void getCheckMucDo()
+        {
             if (mucdo0.Checked)
                 DataCheck.Instance.mucdo.Add(0);
             if (mucdo1.Checked)
@@ -71,18 +90,39 @@ namespace ctk43_Nhom1_Manage_Job
             if (mucdo4.Checked)
                 DataCheck.Instance.mucdo.Add(4);
         }
-        private void frmTimKiem_Load(object sender, EventArgs e)
+
+        private void getTime()
         {
-           
-           loadData();
-            rdAllMucDo.Checked = true;
-            rdAllTrangThai.Checked = true;
+            DataCheck.Instance.time.Add(dtpStart.Value.Date);
+            DataCheck.Instance.time.Add(dtpEnd.Value.Date.AddDays(1));
         }
+
+        private void getCheckTrangThai()
+        {
+            if (trangthai0.Checked)
+                DataCheck.Instance.trangthai.Add(0);
+            if (trangthai1.Checked)
+                DataCheck.Instance.trangthai.Add(1);
+            if (trangthai2.Checked)
+                DataCheck.Instance.trangthai.Add(2);
+            if (trangthai3.Checked)
+                DataCheck.Instance.trangthai.Add(3);
+        }
+
         private void CheckTime()
         {
             if (dtpStart.Value > dtpStart.Value)
                 return;
         }
+
+        private void frmTimKiem_Load(object sender, EventArgs e)
+        {
+
+            loadData();
+            rdAllMucDo.Checked = true;
+            rdAllTrangThai.Checked = true;
+        }
+
         private void btnFind_Click(object sender, EventArgs e)
         {
             if (dtpStart.Value.Date > dtpEnd.Value.Date)
@@ -98,18 +138,23 @@ namespace ctk43_Nhom1_Manage_Job
         private void rdTrangThaiChitiet_CheckedChanged(object sender, EventArgs e)
         {
             EnabelTrangThai(true);
+            rdAllMucDo.PerformClick();
         }
+
         private void rdAllTrangThai_CheckedChanged(object sender, EventArgs e)
         {
             EnabelTrangThai(false);
+
         }
         private void rdMucDo_CheckedChanged(object sender, EventArgs e)
         {
             EnableMucDo(true);
+
         }
         private void rdAllMucDo_CheckedChanged(object sender, EventArgs e)
         {
             EnableMucDo(false);
+            rdAllTrangThai.PerformClick();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -117,6 +162,6 @@ namespace ctk43_Nhom1_Manage_Job
             DialogResult = DialogResult.Cancel;
             this.Close();
         }
-      
+
     }
 }

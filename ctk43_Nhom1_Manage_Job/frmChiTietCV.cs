@@ -93,7 +93,7 @@ namespace ctk43_Nhom1_Manage_Job
             if (i != -1)
             {
                 int realMinute = Extension.UpdateMinute();
-                _chiTietCV.thoiGianBatDau = realMinute;
+                _chiTietCV.ThoiGianThucTe = realMinute;
             }
         }
 

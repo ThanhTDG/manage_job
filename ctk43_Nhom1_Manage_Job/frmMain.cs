@@ -202,13 +202,19 @@ namespace ctk43_Nhom1_Manage_Job
 
         private void btnThemCongViec_Click(object sender, EventArgs e)
         {
-
             frmCongViec frm = new frmCongViec();
             frm.LoadChuDe(nd);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                //chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
-                congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
+                if (frm._congviec == null)
+                {
+                    LoadListCVHienTai();
+                }
+                else
+                {
+                    chuDeHienTai = chuDeBUS.GetChuDeByID(frm._congviec.IDChuDe);
+                    congViecBUS.GetCongViec(ref tvwDSCongViec, congViecBUS.GetCongViecByChuDe(chuDeHienTai));
+                }
                 listenNotification();
             }
         }
@@ -312,7 +318,8 @@ namespace ctk43_Nhom1_Manage_Job
                 if (treeNode.Checked)
                 {
                     x.trangThai = 1;
-                    x.ThoiGianThucTe = Extension.UpdateMinute() - x.thoiGianBatDau;
+                    if (x.ThoiGianThucTe == null)
+                        x.ThoiGianThucTe = 0;
                     chiTietCVBUS.Update(x);
                     check = true;
                 }
