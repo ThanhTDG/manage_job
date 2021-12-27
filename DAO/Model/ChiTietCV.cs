@@ -18,7 +18,6 @@ namespace DAO.Model
         public int trangThai { get; set; }
         public int? ThoiGianDukien { get; set; }
         public int? ThoiGianThucTe { get; set; }
-        public int? thoiGianBatDau { get; set; }
         public int mucDo { get; set; }
         public int iDChiTietCV { get; set; }
         public string moTa { get; set; }

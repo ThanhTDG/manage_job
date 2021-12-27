@@ -33,7 +33,7 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-            //getAll();
+            getAll();
         }
 
         #region 1911205 - Nguyễn hữu Đức Thanh
@@ -317,7 +317,7 @@ namespace ctk43_Nhom1_Manage_Job
                 if (treeNode.Checked)
                 {
                     x.trangThai = 1;
-                    x.ThoiGianThucTe = Extension.UpdateMinute() - x.thoiGianBatDau;
+                    x.ThoiGianThucTe = 0;
                     chiTietCVBUS.Update(x);
                     check = true;
                 }
