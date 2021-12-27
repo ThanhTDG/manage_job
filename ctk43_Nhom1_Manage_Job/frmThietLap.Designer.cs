@@ -229,7 +229,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(447, 173);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Cấu hình hệ thống";
+            this.tabPage3.Text = "Thời gian thông báo";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // nudMinuteEnd
@@ -537,7 +537,7 @@
             this.Controls.Add(this.btnMacDinh);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmThietLap";
-            this.Text = "SettingForm";
+            this.Text = "Thiết lập hệ thống";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThietLap_FormClosing);
             this.Load += new System.EventHandler(this.frmThietLap_Load);
             this.tabControl1.ResumeLayout(false);
