@@ -83,8 +83,7 @@ namespace ctk43_Nhom1_Manage_Job
                 return;
         }
         private void btnFind_Click(object sender, EventArgs e)
-        {
-            
+        {  
             getData();
             this.Close();
         }

@@ -398,10 +398,22 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadData();
-            //congViecBUS.Insert(new DAO.Model.CongViec() { ten = "Đá bóng", IDChuDe = 7, thoiGianBD = DateTime.Now, thoiGianKT = DateTime.Now.AddMinutes(1), trangThai = 1, tienDo = 0, mucDo = 1 });//10
-            ////Thread th = new Thread(new ThreadStart(LoadSYCN));
-            //th.IsBackground = true;
-            //th.Start();
+            if(Properties.Settings.Default.kichhoat == false)
+				{
+                tsmiThongKe.Enabled = false;
+                SapXeptoolStripMenuItem.Enabled = false;
+                ctmSetting.Enabled = false;
+                btnLoc.Enabled = false;
+                tsmiKichHoat.Enabled = true;
+				}
+				else
+				{
+                tsmiThongKe.Enabled = true;
+                SapXeptoolStripMenuItem.Enabled = true;
+                ctmSetting.Enabled = true;
+                btnLoc.Enabled = true;
+                tsmiKichHoat.Enabled = false;
+            }
             frmThongBao frm = new frmThongBao();
             frm.ShowDialog();
         }
@@ -893,6 +905,13 @@ namespace ctk43_Nhom1_Manage_Job
                 btnThemChuDe.PerformClick();
             }
         }
-        #endregion
-    }
+
+		  #endregion
+
+		  private void tsmiKichHoat_Click(object sender, EventArgs e)
+		  {
+            frmDangKy frm = new frmDangKy();
+            frm.ShowDialog();
+		  }
+	 }
 }

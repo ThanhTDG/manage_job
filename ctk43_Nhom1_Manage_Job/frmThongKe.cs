@@ -27,6 +27,8 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmThongKe_Load(object sender, EventArgs e)
         {
             ckbMucDo.Enabled = false;
+            
+
         }
         private List<int> ListCheckBoxMucDo()
 		  {
@@ -38,8 +40,105 @@ namespace ctk43_Nhom1_Manage_Job
 				}
             return list;
 		  }
-		  private void btnThongKe_Click(object sender, EventArgs e)
+        private string TrangThaiCongViec(int trangthai)
 		  {
+            string trangthaiCV="";
+				switch (trangthai)
+				{
+                case 0:
+                    trangthaiCV = "Chưa bắt đầu";
+                    break;
+                case 1:
+                    trangthaiCV = "Chưa hoàn thành";
+                    break;
+                case 2:
+                    trangthaiCV = "Hoàn thành";
+                    break;
+                case 3:
+                    trangthaiCV = "Quá hạn";
+                    break;
+                case 4:
+                    trangthaiCV = "Hoàn thành trễ";
+                    break;
+            }
+            return trangthaiCV;
+		  }
+
+        private void AddCongViecHoanThanh(CongViec cv)
+		  {
+            ListViewItem itemHoanThanh = new ListViewItem(cv.ten);
+            itemHoanThanh.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
+            itemHoanThanh.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
+            itemHoanThanh.ForeColor = MyColor.ColorLevel(cv.mucDo);
+            lvThongKeHoanThanh.Items.Add(itemHoanThanh);
+        }
+        private void AddCongViecHetHan(CongViec cv)
+		  {
+            ListViewItem item = new ListViewItem(cv.ten);
+            TimeSpan time = DateTime.Now - cv.thoiGianKT;
+            if(time.Days == 0)
+				{
+                item.SubItems.Add(time.Hours.ToString() + " giờ " + time.Minutes.ToString() + " phút ");
+            }
+				else
+				{
+                item.SubItems.Add(time.Days.ToString() + " ngày " + time.Hours.ToString() + " giờ ");
+            }
+            item.ForeColor = MyColor.ColorLevel(cv.mucDo);
+            lvThongKeHetHan.Items.Add(item);
+        }
+        private void AddCongViecChuaHoanThanh(CongViec cv)
+		  {
+            ListViewItem itemChuaHoanThanh = new ListViewItem(cv.ten);
+            TimeSpan time = cv.thoiGianKT - DateTime.Now;
+            if (time.Days == 0)
+            {
+                itemChuaHoanThanh.SubItems.Add(time.Hours.ToString() + " giờ " + time.Minutes.ToString() + " giờ ");
+            }
+            else
+            {
+                itemChuaHoanThanh.SubItems.Add(time.Days.ToString() + " ngày " + time.Hours.ToString() + " giờ ");
+            }
+            itemChuaHoanThanh.ForeColor = MyColor.ColorLevel(cv.mucDo);
+            lvThongKeChuaHoanThanh.Items.Add(itemChuaHoanThanh);
+        }
+        private void AddCongViecHoanThanhTre(CongViec cv)
+		  {
+            ListViewItem item = new ListViewItem(cv.ten);
+            item.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
+            item.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
+            item.SubItems.Add(cv.ngayHoanThanh.Value.ToShortDateString());
+            item.ForeColor = MyColor.ColorLevel(cv.mucDo);
+            lvThongKeHoanThanhTre.Items.Add(item);
+        }
+        private void AddCongViecTatCa(CongViec cv)
+		  {
+            ListViewItem item = new ListViewItem(cv.ten);
+            string trangthai = TrangThaiCongViec(cv.trangThai);
+            item.SubItems.Add(trangthai);
+            item.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
+            item.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
+            item.ForeColor = MyColor.ColorLevel(cv.mucDo);
+            lvThongKeTongCong.Items.Add(item);
+        }
+        private void ListCongViecQuaHanHomNay()
+        {
+            foreach (CongViec congviec in congViecBUS.GetCongViecByNguoiDung(nd).OrderBy(x => x.thoiGianKT))
+            {
+                var cv = congViecBUS.GetCongViecByID(congviec.iD);
+                if (cv.thoiGianKT < DateTime.Now && cv.trangThai == 1)
+                {
+                    cv.trangThai = 3;
+                    congViecBUS.Update(cv);
+                }
+            }
+        }
+        private void btnThongKe_Click(object sender, EventArgs e)
+		  {
+            ListCongViecQuaHanHomNay();
+            dtpTu.Value = Convert.ToDateTime(dtpTu.Value.ToShortDateString() + " 00:00:00");
+            dtpDen.Value = Convert.ToDateTime(dtpDen.Value.ToShortDateString() + " 23:59:59");
+
             lvThongKeTongCong.Items.Clear();
             lvThongKeHoanThanh.Items.Clear();
             lvThongKeChuaHoanThanh.Items.Clear();
@@ -58,89 +157,36 @@ namespace ctk43_Nhom1_Manage_Job
             }
             double tongCongViec = 0;
             double chuahoanthanh = 0, hoanthanh = 0, hethan = 0,hoanthanhtre=0;
-            string trangthaiCV = "";
             if (rdTatCa.Checked == true)
             {
                 foreach (CongViec cv in congViecBUS.GetCongViecByNguoiDung(nd))
                 {
                     if (cv.thoiGianKT < dtpTu.Value && cv.trangThai == 3)
                     {
-                        ListViewItem item = new ListViewItem(cv.ten);
-                        TimeSpan time = dtpTu.Value - cv.thoiGianKT;
-                        item.SubItems.Add(time.Days.ToString() + " ngày " + time.Hours.ToString() + " giờ ");
-                        trangthaiCV = "Quá hạn";
-                        item.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                        lvThongKeHetHan.Items.Add(item);
-
-                        ListViewItem itemHetHan = new ListViewItem(cv.ten);
-                        itemHetHan.SubItems.Add(trangthaiCV);
-                        itemHetHan.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                        itemHetHan.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                        itemHetHan.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                        lvThongKeTongCong.Items.Add(itemHetHan);
-
-                        //tongCongViec++;
-                        //hethan++;
+                        AddCongViecHetHan(cv);
+                        AddCongViecTatCa(cv);
                     }
                     else if(cv.thoiGianKT < dtpTu.Value && cv.trangThai == 4)
 						  {
-                        ListViewItem item = new ListViewItem(cv.ten);
-                        item.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                        item.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                        item.SubItems.Add(cv.ngayHoanThanh.Value.ToShortDateString());
-                        item.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                        lvThongKeHoanThanhTre.Items.Add(item);
-
-                        trangthaiCV = "Hoàn thành trễ";
-                        ListViewItem itemHoanThanhTre = new ListViewItem(cv.ten);
-                        itemHoanThanhTre.SubItems.Add(trangthaiCV);
-                        itemHoanThanhTre.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                        itemHoanThanhTre.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                        itemHoanThanhTre.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                        lvThongKeTongCong.Items.Add(itemHoanThanhTre);
+                        AddCongViecHoanThanhTre(cv);
+                        AddCongViecTatCa(cv);
                     }
                     else
                     {
-                        if (cv.thoiGianBD <= dtpTu.Value && dtpDen.Value <= cv.thoiGianKT)
+                        if ((cv.thoiGianBD <= dtpTu.Value && dtpTu.Value <= cv.thoiGianKT) || 
+                            (cv.thoiGianBD <= dtpDen.Value && dtpDen.Value <= cv.thoiGianKT) ||
+                            (dtpTu.Value <= cv.thoiGianBD && cv.thoiGianKT <= dtpDen.Value) ||
+                            (cv.thoiGianBD <= dtpTu.Value && dtpDen.Value <= cv.thoiGianKT))
                         {
-                            ListViewItem item = new ListViewItem(cv.ten);
                             if (cv.trangThai == 2)
-                                trangthaiCV = "Hoàn thành";
+                                AddCongViecHoanThanh(cv);
                             else if (cv.trangThai == 1)
-                                trangthaiCV = "Chưa hoàn thành";
-
-                            if (trangthaiCV == "Hoàn thành")
-                            {
-                                //hoanthanh++;
-                                ListViewItem itemHoanThanh = new ListViewItem(cv.ten);
-                                itemHoanThanh.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                                itemHoanThanh.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                                itemHoanThanh.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                                lvThongKeHoanThanh.Items.Add(itemHoanThanh);
-                            }
-                            else
-                            {
-                                //chuahoanthanh++;
-                                ListViewItem itemChuaHoanThanh = new ListViewItem(cv.ten);
-                                TimeSpan time = cv.thoiGianKT - DateTime.Now;
-                                if (time.Days == 0)
-                                {
-                                    itemChuaHoanThanh.SubItems.Add(time.Hours.ToString() + " giờ " + time.Minutes.ToString() + " giờ ");
-                                }
-                                else
-                                {
-                                    itemChuaHoanThanh.SubItems.Add(time.Days.ToString() + " ngày " + time.Hours.ToString() + " giờ ");
-                                }
-                                itemChuaHoanThanh.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                                lvThongKeChuaHoanThanh.Items.Add(itemChuaHoanThanh);
-                            }
-                            item.SubItems.Add(trangthaiCV);
-                            item.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                            item.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                            item.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                            lvThongKeTongCong.Items.Add(item);
-
-                            //tongCongViec++;
+                                AddCongViecChuaHoanThanh(cv);
+                            else if (cv.trangThai == 3)
+                                AddCongViecHetHan(cv);
+                            else if (cv.trangThai == 4)
+                                AddCongViecHoanThanhTre(cv);
+                            AddCongViecTatCa(cv);
                         }
                     }
                 }
@@ -153,87 +199,35 @@ namespace ctk43_Nhom1_Manage_Job
                     {
                         if (cv.thoiGianKT < dtpTu.Value && cv.trangThai == 3 && cv.mucDo == mucdo)
                         {
-                            ListViewItem item = new ListViewItem(cv.ten);
-                            TimeSpan time = dtpTu.Value - cv.thoiGianKT;
-                            item.SubItems.Add(time.Days.ToString() + " ngày " + time.Hours.ToString() + " giờ ");
-                            trangthaiCV = "Quá hạn";
-                            item.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                            lvThongKeHetHan.Items.Add(item);
-
-                            ListViewItem itemHetHan = new ListViewItem(cv.ten);
-                            itemHetHan.SubItems.Add(trangthaiCV);
-                            itemHetHan.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                            itemHetHan.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                            itemHetHan.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                            lvThongKeTongCong.Items.Add(itemHetHan);
-
-                            //tongCongViec++;
-                            //hethan++;
+                            AddCongViecHetHan(cv);
+                            AddCongViecTatCa(cv);
                         }
                         else if (cv.thoiGianKT < dtpTu.Value && cv.trangThai == 4 && cv.mucDo == mucdo)
                         {
-                            ListViewItem item = new ListViewItem(cv.ten);
-                            item.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                            item.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                            item.SubItems.Add(cv.ngayHoanThanh.Value.ToShortDateString());
-                            item.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                            lvThongKeHoanThanhTre.Items.Add(item);
-
-                            trangthaiCV = "Hoàn thành trễ";
-                            ListViewItem itemHoanThanhTre = new ListViewItem(cv.ten);
-                            itemHoanThanhTre.SubItems.Add(trangthaiCV);
-                            itemHoanThanhTre.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                            itemHoanThanhTre.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                            itemHoanThanhTre.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                            lvThongKeTongCong.Items.Add(itemHoanThanhTre);
+                            AddCongViecHoanThanhTre(cv);
+                            AddCongViecTatCa(cv);
                         }
-                        else
+                        else if(cv.mucDo == mucdo)
                         {
-                            if (cv.thoiGianBD <= dtpTu.Value && dtpDen.Value <= cv.thoiGianKT && cv.mucDo == mucdo)
+                            if ((cv.thoiGianBD <= dtpTu.Value && dtpTu.Value <= cv.thoiGianKT) ||
+                                (cv.thoiGianBD <= dtpDen.Value && dtpDen.Value <= cv.thoiGianKT) ||
+                                (dtpTu.Value <= cv.thoiGianBD && cv.thoiGianKT <= dtpDen.Value) ||
+                                (cv.thoiGianBD <= dtpTu.Value && dtpDen.Value <= cv.thoiGianKT))
                             {
-                                ListViewItem item = new ListViewItem(cv.ten);
                                 if (cv.trangThai == 2)
-                                    trangthaiCV = "Hoàn thành";
+                                    AddCongViecHoanThanh(cv);
                                 else if (cv.trangThai == 1)
-                                    trangthaiCV = "Chưa hoàn thành";
-
-                                if (trangthaiCV == "Hoàn thành")
-                                {
-                                    //hoanthanh++;
-                                    ListViewItem itemHoanThanh = new ListViewItem(cv.ten);
-                                    itemHoanThanh.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                                    itemHoanThanh.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                                    itemHoanThanh.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                                    lvThongKeHoanThanh.Items.Add(itemHoanThanh);
-                                }
-                                else
-                                {
-                                    //chuahoanthanh++;
-                                    ListViewItem itemChuaHoanThanh = new ListViewItem(cv.ten);
-                                    TimeSpan time = cv.thoiGianKT - DateTime.Now;
-                                    if (time.Days == 0)
-                                    {
-                                        itemChuaHoanThanh.SubItems.Add(time.Hours.ToString() + " giờ " + time.Minutes.ToString() + " giờ ");
-                                    }
-                                    else
-                                    {
-                                        itemChuaHoanThanh.SubItems.Add(time.Days.ToString() + " ngày " + time.Hours.ToString() + " giờ ");
-                                    }
-                                    itemChuaHoanThanh.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                                    lvThongKeChuaHoanThanh.Items.Add(itemChuaHoanThanh);
-                                }
-                                item.SubItems.Add(trangthaiCV);
-                                item.SubItems.Add(cv.thoiGianBD.ToString("dd/MM/yyyy"));
-                                item.SubItems.Add(cv.thoiGianKT.ToString("dd/MM/yyyy"));
-                                item.ForeColor = MyColor.ColorLevel(cv.mucDo);
-                                lvThongKeTongCong.Items.Add(item);
-
-                                //tongCongViec++;
+                                    AddCongViecChuaHoanThanh(cv);
+                                else if (cv.trangThai == 3)
+                                    AddCongViecHetHan(cv);
+                                else if (cv.trangThai == 4)
+                                    AddCongViecHoanThanhTre(cv);
+                                AddCongViecTatCa(cv);
                             }
                         }
                     }
                 }
-				}
+            }
             hoanthanh = lvThongKeHoanThanh.Items.Count;
             chuahoanthanh = lvThongKeChuaHoanThanh.Items.Count;
             hethan = lvThongKeHetHan.Items.Count;
@@ -260,7 +254,6 @@ namespace ctk43_Nhom1_Manage_Job
             }
 
         }
-
         private void rdTuyChon_CheckedChanged(object sender, EventArgs e)
 		  {
             if (rdTuyChon.Checked == true)

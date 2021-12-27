@@ -49,6 +49,12 @@ namespace ctk43_Nhom1_Manage_Job
 				this.lvThongKeHetHan = new System.Windows.Forms.ListView();
 				this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 				this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+				this.tabPage5 = new System.Windows.Forms.TabPage();
+				this.lvThongKeHoanThanhTre = new System.Windows.Forms.ListView();
+				this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+				this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+				this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+				this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 				this.groupBox1 = new System.Windows.Forms.GroupBox();
 				this.btnThongKe = new System.Windows.Forms.Button();
 				this.ckbMucDo = new System.Windows.Forms.CheckedListBox();
@@ -76,12 +82,6 @@ namespace ctk43_Nhom1_Manage_Job
 				this.label7 = new System.Windows.Forms.Label();
 				this.label9 = new System.Windows.Forms.Label();
 				this.label10 = new System.Windows.Forms.Label();
-				this.tabPage5 = new System.Windows.Forms.TabPage();
-				this.lvThongKeHoanThanhTre = new System.Windows.Forms.ListView();
-				this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-				this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-				this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-				this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 				this.label11 = new System.Windows.Forms.Label();
 				this.lbTiLeHoanThanhTre = new System.Windows.Forms.Label();
 				this.lbHoanThanhTre = new System.Windows.Forms.Label();
@@ -90,8 +90,8 @@ namespace ctk43_Nhom1_Manage_Job
 				this.tabPage1.SuspendLayout();
 				this.tabPage2.SuspendLayout();
 				this.tabPage3.SuspendLayout();
-				this.groupBox1.SuspendLayout();
 				this.tabPage5.SuspendLayout();
+				this.groupBox1.SuspendLayout();
 				this.SuspendLayout();
 				// 
 				// tabControl1
@@ -146,7 +146,7 @@ namespace ctk43_Nhom1_Manage_Job
 				// 
 				// columnHeader10
 				// 
-				this.columnHeader10.Text = "Trạng thái";
+				this.columnHeader10.Text = "Trạng thái hiện tại";
 				this.columnHeader10.Width = 130;
 				// 
 				// columnHeader1
@@ -281,6 +281,54 @@ namespace ctk43_Nhom1_Manage_Job
 				// 
 				this.columnHeader6.Text = "Thời gian quá hạn";
 				this.columnHeader6.Width = 130;
+				// 
+				// tabPage5
+				// 
+				this.tabPage5.Controls.Add(this.lvThongKeHoanThanhTre);
+				this.tabPage5.Location = new System.Drawing.Point(4, 25);
+				this.tabPage5.Name = "tabPage5";
+				this.tabPage5.Size = new System.Drawing.Size(591, 419);
+				this.tabPage5.TabIndex = 4;
+				this.tabPage5.Text = "Hoàn thành trễ";
+				this.tabPage5.UseVisualStyleBackColor = true;
+				// 
+				// lvThongKeHoanThanhTre
+				// 
+				this.lvThongKeHoanThanhTre.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader8,
+            this.columnHeader11,
+            this.columnHeader15});
+				this.lvThongKeHoanThanhTre.Dock = System.Windows.Forms.DockStyle.Fill;
+				this.lvThongKeHoanThanhTre.FullRowSelect = true;
+				this.lvThongKeHoanThanhTre.GridLines = true;
+				this.lvThongKeHoanThanhTre.HideSelection = false;
+				this.lvThongKeHoanThanhTre.Location = new System.Drawing.Point(0, 0);
+				this.lvThongKeHoanThanhTre.Name = "lvThongKeHoanThanhTre";
+				this.lvThongKeHoanThanhTre.Size = new System.Drawing.Size(591, 419);
+				this.lvThongKeHoanThanhTre.TabIndex = 0;
+				this.lvThongKeHoanThanhTre.UseCompatibleStateImageBehavior = false;
+				this.lvThongKeHoanThanhTre.View = System.Windows.Forms.View.Details;
+				// 
+				// columnHeader5
+				// 
+				this.columnHeader5.Text = "Tên công việc";
+				this.columnHeader5.Width = 180;
+				// 
+				// columnHeader8
+				// 
+				this.columnHeader8.Text = "Thời gian bắt đầu";
+				this.columnHeader8.Width = 142;
+				// 
+				// columnHeader11
+				// 
+				this.columnHeader11.Text = "Thời gian kết thúc";
+				this.columnHeader11.Width = 128;
+				// 
+				// columnHeader15
+				// 
+				this.columnHeader15.Text = "Thời gian hoàn thành";
+				this.columnHeader15.Width = 136;
 				// 
 				// groupBox1
 				// 
@@ -582,54 +630,6 @@ namespace ctk43_Nhom1_Manage_Job
 				this.label10.TabIndex = 145;
 				this.label10.Text = "Hết hạn";
 				// 
-				// tabPage5
-				// 
-				this.tabPage5.Controls.Add(this.lvThongKeHoanThanhTre);
-				this.tabPage5.Location = new System.Drawing.Point(4, 25);
-				this.tabPage5.Name = "tabPage5";
-				this.tabPage5.Size = new System.Drawing.Size(591, 419);
-				this.tabPage5.TabIndex = 4;
-				this.tabPage5.Text = "Hoàn thành trễ";
-				this.tabPage5.UseVisualStyleBackColor = true;
-				// 
-				// lvThongKeHoanThanhTre
-				// 
-				this.lvThongKeHoanThanhTre.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader8,
-            this.columnHeader11,
-            this.columnHeader15});
-				this.lvThongKeHoanThanhTre.Dock = System.Windows.Forms.DockStyle.Fill;
-				this.lvThongKeHoanThanhTre.FullRowSelect = true;
-				this.lvThongKeHoanThanhTre.GridLines = true;
-				this.lvThongKeHoanThanhTre.HideSelection = false;
-				this.lvThongKeHoanThanhTre.Location = new System.Drawing.Point(0, 0);
-				this.lvThongKeHoanThanhTre.Name = "lvThongKeHoanThanhTre";
-				this.lvThongKeHoanThanhTre.Size = new System.Drawing.Size(591, 419);
-				this.lvThongKeHoanThanhTre.TabIndex = 0;
-				this.lvThongKeHoanThanhTre.UseCompatibleStateImageBehavior = false;
-				this.lvThongKeHoanThanhTre.View = System.Windows.Forms.View.Details;
-				// 
-				// columnHeader5
-				// 
-				this.columnHeader5.Text = "Tên công việc";
-				this.columnHeader5.Width = 180;
-				// 
-				// columnHeader8
-				// 
-				this.columnHeader8.Text = "Thời gian bắt đầu";
-				this.columnHeader8.Width = 142;
-				// 
-				// columnHeader11
-				// 
-				this.columnHeader11.Text = "Thời gian kết thúc";
-				this.columnHeader11.Width = 128;
-				// 
-				// columnHeader15
-				// 
-				this.columnHeader15.Text = "Thời gian hoàn thành";
-				this.columnHeader15.Width = 136;
-				// 
 				// label11
 				// 
 				this.label11.AutoSize = true;
@@ -698,9 +698,9 @@ namespace ctk43_Nhom1_Manage_Job
 				this.tabPage1.ResumeLayout(false);
 				this.tabPage2.ResumeLayout(false);
 				this.tabPage3.ResumeLayout(false);
+				this.tabPage5.ResumeLayout(false);
 				this.groupBox1.ResumeLayout(false);
 				this.groupBox1.PerformLayout();
-				this.tabPage5.ResumeLayout(false);
 				this.ResumeLayout(false);
 				this.PerformLayout();
 
