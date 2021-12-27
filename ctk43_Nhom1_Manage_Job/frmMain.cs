@@ -33,7 +33,7 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-            getAll();
+            //getAll();
         }
 
         #region 1911205 - Nguyễn hữu Đức Thanh
@@ -76,11 +76,14 @@ namespace ctk43_Nhom1_Manage_Job
                 List<CongViec> temp = new List<CongViec>();
                 congViecAlmostOver = getListOver(congViecAlmostOver);
                 congViecComingSoon = getListComming(congViecComingSoon);
-                int Second;
+                int Second ;
+              
                 if (congViecAlmostOver.Count != 0 && congViecComingSoon.Count != 0)
                 {
                     TimeSpan Comming = congViecComingSoon[0].thoiGianBD - DateTime.Now;
                     TimeSpan Over = congViecAlmostOver[0].thoiGianKT - DateTime.Now;
+                    if (Comming.Days > 7 && Over.Days > 7)
+                        break;
                     if (Over > Comming)
                     {
                         if (Comming >= TimeSpan.Zero)
@@ -114,22 +117,27 @@ namespace ctk43_Nhom1_Manage_Job
                         temp = (List<CongViec>)temp.Concat(congViecAlmostOver).Concat(congViecComingSoon);
                     }
                 }
-                else if (congViecAlmostOver.Count != 0)
-                {
-                    TimeSpan Over = congViecAlmostOver[0].thoiGianKT - DateTime.Now;
-                    Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
-                    temp = congViecAlmostOver;
-                }
                 else
                 {
-                    TimeSpan Comming = congViecComingSoon[0].thoiGianBD - DateTime.Now;
-                    Second = Extension.TimeToSecond(Comming.Days, Comming.Hours, Comming.Minutes, Comming.Seconds);
-                    temp = congViecComingSoon;
+                    if (congViecAlmostOver.Count != 0)
+                    {
+                        TimeSpan Over = congViecAlmostOver[0].thoiGianKT - DateTime.Now;
+                        if (Over.Days > 7)
+                            break;
+                        Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
+                        temp = congViecAlmostOver;
+                    }
+                    else
+                    {
+                        TimeSpan Comming = congViecComingSoon[0].thoiGianBD - DateTime.Now;
+                        if (Comming.Days > 7)
+                            break;
+                        Second = Extension.TimeToSecond(Comming.Days, Comming.Hours, Comming.Minutes, Comming.Seconds);
+                        temp = congViecComingSoon;
+                    }
                 }
                 if (Second < 0)
                     continue;
-                if (Second > 24 * 60 * 60 * 7)
-                    break;
                 Thread.Sleep(Second * 1000 + 1000);
                 for (i = 0; i < temp.Count; i++)
                     temp[i] = Extension.Update(temp[i], CongViecBUS);
@@ -189,6 +197,25 @@ namespace ctk43_Nhom1_Manage_Job
             }
 
         }
+
+        private void listenNotification()
+        {
+            if (th == null)
+            {
+                th = new Thread(nofiction);
+                th.IsBackground = true;
+                th.Start();
+            }
+            else if (th != null || th.ThreadState == ThreadState.Running)
+            {
+                th.Abort();
+                th = null;
+                th = new Thread(nofiction);
+                th.IsBackground = true;
+                th.Start();
+            }
+
+        }
         #endregion
 
         #region 1911164 Võ Đình Hoàng Long
@@ -219,24 +246,7 @@ namespace ctk43_Nhom1_Manage_Job
             }
         }
 
-        private void listenNotification()
-        {
-            if (th == null)
-            {
-                th = new Thread(nofiction);
-                th.IsBackground = true;
-                th.Start();
-            }
-            else if (th !=null || th.ThreadState == ThreadState.Running)
-            {
-                th.Abort(); 
-                th = null;
-                th = new Thread(nofiction);
-                th.IsBackground = true;
-                th.Start();
-            }
-           
-        }
+
 
         private void CapNhatHoanThanhOrNot(ref CongViec cv)
         {
