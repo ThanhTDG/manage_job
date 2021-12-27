@@ -8,6 +8,7 @@ namespace BUS
 {
     public class ChiTietCVBUS
     {
+        #region 1911205 - Nguyễn Hữu Đức Thanh
         ChiTietCVRepository ChiTietCVRepository;
         public ChiTietCVBUS()
         {
@@ -18,12 +19,14 @@ namespace BUS
         {
             return ChiTietCVRepository.GetAll();
         }
+
         public int Insert(ChiTietCV chiTietCV)
         {
             chiTietCV = ChiTietCVRepository.Add(chiTietCV);
             ChiTietCVRepository.Commit();
             return chiTietCV.iD;
         }
+
         public void Update(ChiTietCV ChiTietCV)
         {
             ChiTietCVRepository.Update(ChiTietCV);
@@ -35,13 +38,9 @@ namespace BUS
             ChiTietCVRepository.Delete(ChiTietCV);
             ChiTietCVRepository.Commit();
         }
+        #endregion
 
-        public void Delete(int iD)
-        {
-            ChiTietCVRepository.Delete(iD);
-            ChiTietCVRepository.Commit();
-        }
-
+        #region 1911164 Võ Đình Hoàng Long
         public ChiTietCV GetChiTietCongViecByID(int iD)
         {
             return ChiTietCVRepository.GetSingleById(iD);
@@ -58,5 +57,12 @@ namespace BUS
             double complete = GetChiTietByCongViec(cv).Where(x => x.trangThai == 1).Count();
             return total == 0 ? 0 : Convert.ToInt32(complete * 100 / total);
         }
+
+        public void Delete(int idCtcv)
+        {
+            ChiTietCVRepository.Delete(idCtcv);
+            ChiTietCVRepository.Commit();
+        }
+        #endregion
     }
 }

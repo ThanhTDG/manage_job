@@ -6,21 +6,16 @@ namespace DAO.Infastructure
 {
     public interface IRepository<T> where T : class
     {
-        // Marks an entity as new
         T Add(T entity);
 
-        // Marks an entity as modified
         void Update(T entity);
 
-        // Marks an entity to be removed
         T Delete(T entity);
 
         T Delete(int id);
 
-        //Delete multi records
         void DeleteMulti(Expression<Func<T, bool>> where);
 
-        // Get an entity by int id
         T GetSingleById(int id);
 
         T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null);

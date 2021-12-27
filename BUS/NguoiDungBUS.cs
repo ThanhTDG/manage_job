@@ -10,6 +10,7 @@ namespace BUS
 {
     public class NguoiDungBUS
     {
+        #region 1911205 - Nguyễn Hữu Đức Thanh
         NguoiDungRepository nguoiDungRepository;
         public NguoiDungBUS()
         {
@@ -41,6 +42,7 @@ namespace BUS
         {
             return nguoiDungRepository.GetSingleById(email);
         }
+        #endregion
     }
 }
 

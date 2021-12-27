@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="email" Type="System.String" Scope="User">
-      <Value Profile="(Default)">thanh@gmail.com</Value>
+      <Value Profile="(Default)">khoa@gmail.com</Value>
     </Setting>
     <Setting Name="name" Type="System.String" Scope="User">
       <Value Profile="(Default)">default</Value>
     </Setting>
     <Setting Name="emailDefault" Type="System.String" Scope="User">
-      <Value Profile="(Default)">default@gmail.com</Value>
+      <Value Profile="(Default)">default_gmail.com</Value>
     </Setting>
     <Setting Name="namePoject" Type="System.String" Scope="User">
       <Value Profile="(Default)">Ứng dụng quản lý nhắc việc</Value>

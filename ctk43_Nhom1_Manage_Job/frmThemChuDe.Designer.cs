@@ -50,7 +50,7 @@
             this.txtTenChuDe.Location = new System.Drawing.Point(143, 25);
             this.txtTenChuDe.Name = "txtTenChuDe";
             this.txtTenChuDe.Size = new System.Drawing.Size(241, 25);
-            this.txtTenChuDe.TabIndex = 1;
+            this.txtTenChuDe.TabIndex = 0;
             // 
             // btnConfirm
             // 
@@ -59,7 +59,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(143, 66);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 28);
-            this.btnConfirm.TabIndex = 2;
+            this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -71,7 +71,7 @@
             this.btnExit.Location = new System.Drawing.Point(309, 66);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 28);
-            this.btnExit.TabIndex = 3;
+            this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -87,6 +87,7 @@
             this.Controls.Add(this.txtTenChuDe);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmThemChuDe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tùy chọn chủ đề";

@@ -5,11 +5,14 @@ using System.Windows.Forms;
 using System;
 using System.Linq;
 using System.Drawing;
+using System.Data.SqlClient;
+using BUS.Define;
 
 namespace BUS
 {
     public class CongViecBUS
     {
+        #region 1911205 - Nguyễn Hữu Đức Thanh
         CongViecRepository congViecRepository;
         public ChiTietCVBUS chiTietCVBus;
 
@@ -22,12 +25,14 @@ namespace BUS
         {
             return congViecRepository.GetAll();
         }
+
         public int Insert(CongViec _CongViec)
         {
             _CongViec = congViecRepository.Add(_CongViec);
             congViecRepository.Commit();
             return _CongViec.iD;
         }
+
         public void Update(CongViec congViec)
         {
             congViecRepository.Update(congViec);
@@ -47,20 +52,37 @@ namespace BUS
             congViecRepository.Commit();
         }
 
+        public IEnumerable<CongViec> GetByLoc(NguoiDung nd)
+        {
+            return congViecRepository.GetCongViecByLoc(nd, DataCheck.Instance.trangthai, DataCheck.Instance.mucdo, DataCheck.Instance.time).Distinct();
+        }
+
+        public List<CongViec> GetCongViecsAlmostOver(string email)
+        {
+            return (congViecRepository.GetCongViecsAlmostOver(DateTime.Now, email)).OrderBy(x => x.thoiGianKT).ToList();
+        }
+        public List<CongViec> GetCongViecsCommingSoon(string email)
+        {
+            return (congViecRepository.GetCongViecsComingSoon(DateTime.Now, email)).OrderBy(x => x.thoiGianBD).ToList();
+        }
+
+        #endregion
+
+        #region 1911164 Võ Đình Hoàng Long
         public void GetCongViec(ref TreeView treeView, List<CongViec> dsCongViec)
         {
             chiTietCVBus = new ChiTietCVBUS();
             var str = "";
             treeView.Nodes.Clear();
             treeView.Font = new Font("Times New Roman", 13, FontStyle.Regular);
-            foreach (var temp in dsCongViec.OrderBy(x => x.mucDo))
+            foreach (var temp in dsCongViec)
             {
-                str = string.Format("{0}           ({1} - {2})         {3}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
+                str = string.Format("{0,-35}({1,10} - {2,-10}){3,10}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
                 var node = treeView.Nodes.Add(str);
-                node.ForeColor = Color.FromArgb(255 - temp.mucDo * 51, 50, 0 + temp.mucDo * 51);
+                node.ForeColor = MyColor.ColorLevel(temp.mucDo);
                 node.Tag = temp;
                 node.Checked = false;
-                if (temp.trangThai == 1) { node.Checked = true;}
+                if (temp.tienDo == 100) { node.Checked = true; }
                 foreach (var ctcv in chiTietCVBus.GetChiTietByCongViec(temp).OrderBy(x => x.mucDo))
                 {
                     str = string.Format("{0}", ctcv.ten);
@@ -69,7 +91,7 @@ namespace BUS
                     if (ctcv.trangThai == 1)
                     {
                         childNode.Checked = true;
-                        childNode.ForeColor = Color.Green;
+                        childNode.ForeColor = MyColor.ColorLevel(5);
                     }
                     childNode.NodeFont = new Font("Times New Roman", 10, FontStyle.Regular);
                     childNode.Tag = ctcv;
@@ -78,51 +100,137 @@ namespace BUS
             treeView.ExpandAll();
         }
 
+        public IEnumerable<CongViec> GetCongViecByLoaiChuDe(int loaiChuDe, NguoiDung nd)
+        {
+            return congViecRepository.GetCongViecByLoaiChuDe(loaiChuDe, nd.email);
+        }
+        #endregion
+
+        #region 1911158- Nguyễn Hoàng Đăng Khoa
         public List<CongViec> GetCongViecByChuDe(ChuDe chuDe)
         {
             return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD).ToList();
         }
 
         public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
-        {
-            return congViecRepository.GetCongViecByNguoiDung(nd.email);
+        {                   
+            List<CongViec> temp = congViecRepository.GetCongViecByLoai(nd.email).ToList();            
+            List<CongViec> temp1 = GetCongViecByLoai(1, nd).ToList();
+            List<CongViec> temp2 = GetCongViecByLoai(2, nd).ToList();
+            List<CongViec> temp3 = GetCongViecByLoai(3, nd).ToList();
+            List<CongViec> temp4 = GetCongViecByLoai(4, nd).ToList();
+            return temp.Concat(temp1).Concat(temp2).Concat(temp3).Concat(temp4);
         }
 
-        public IEnumerable<CongViec> GetCongViecByTenCV(string keyword, ChuDe chuDe, NguoiDung nd)
+        public IEnumerable<CongViec> GetCongViecByTenCV(string keyword, List<CongViec> cvs)
         {
-            IEnumerable<CongViec> query;
-            IEnumerable<CongViec> cv = GetCongViecByNguoiDung(nd);
-
-            if (chuDe == null || chuDe.iD == 0)
+            IEnumerable<CongViec> query = cvs;
+            if (cvs != null)
             {
-                query = cv;
+                return query.Where(f => f.ten.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
             }
-            else
-            {
-                query = GetCongViecByChuDe(chuDe);
-            }
-
-            return query.Where(f => f.ten.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
+            return null;      
         }
 
-        public IEnumerable<CongViec> GetCongViecByDay(DateTime date, ChuDe chuDe, NguoiDung nd)
+        public IEnumerable<CongViec> GetCongViecByDay(DateTime date, NguoiDung nd)
         {
             IEnumerable<CongViec> cv;
-            if (chuDe == null || chuDe.iD == 0)
-                cv = GetCongViecByNguoiDung(nd);
-            else
-                cv = GetCongViecByChuDe(chuDe);
-            return cv.Where(x => x.thoiGianBD <= date && date <= x.thoiGianKT);
+            cv = GetCongViecByNguoiDung(nd);
+            return cv.Where(x => x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT.Date);
         }
 
-        public IEnumerable<CongViec> GetCongViecByImportant(DateTime date, ChuDe chuDe, NguoiDung nd)
+        public IEnumerable<CongViec> GetCongViecByImportant(DateTime date, NguoiDung nd)
         {
             IEnumerable<CongViec> cv;
-            if (chuDe == null || chuDe.iD == 0)
-                cv = GetCongViecByNguoiDung(nd);
-            else
-                cv = GetCongViecByChuDe(chuDe);
-            return cv.Where(x => (x.mucDo <= 2 && x.thoiGianBD <= date && date <= x.thoiGianKT));
+            cv = GetCongViecByNguoiDung(nd);
+            return cv.Where(x => (x.mucDo <= 2 && x.thoiGianBD.Date <= date.Date && date.Date <= x.thoiGianKT.Date));
         }
+
+        public IEnumerable<CongViec> GetCongViecByChuDe(int ChuDe, NguoiDung nd)
+        {
+            return congViecRepository.GetCongViecByChuDe(ChuDe, nd.email);
+        }
+
+        public IEnumerable<CongViec> GetCongViecByLoai(int loaiChuDe, NguoiDung nd)
+        {
+            IEnumerable<CongViec> cvs = null;
+
+            DateTime now = DateTime.Now;
+            var firstDateWeek = now.StartOfWeek(DayOfWeek.Monday);
+            var firstDateMonth = new DateTime(now.Year, now.Month, 1).Date;
+            var lastDateMonth = firstDateMonth.AddMonths(1).AddDays(-1).Date.Add(new TimeSpan(23, 59, 59));
+            var firstDateYear = new DateTime(now.Year, 1, 1).Date;
+            var lastDateYear = new DateTime(now.Year, 12, 31).Date.Add(new TimeSpan(23, 59, 59));
+
+            switch (loaiChuDe)
+            {
+                case 1:
+                    cvs = congViecRepository.GetCongViecByLoai(loaiChuDe, nd.email, now.Date, now.Date.Add(new TimeSpan(23, 59, 59)));
+                    break;
+                case 2:
+                    cvs = congViecRepository.GetCongViecByLoai(loaiChuDe, nd.email, firstDateWeek, firstDateWeek.AddDays(7).Date.Add(new TimeSpan(23, 59, 59))).ToList();
+                    break;
+                case 3:
+                    cvs = congViecRepository.GetCongViecByLoai(loaiChuDe, nd.email, firstDateMonth, lastDateMonth).ToList();
+                    break;
+                case 4:
+                    cvs = congViecRepository.GetCongViecByLoai(loaiChuDe, nd.email, firstDateYear, lastDateYear).ToList();
+                    break;
+            }
+            return cvs;
+        }
+
+        public List<CongViec> SortCongViec(List<CongViec> cvs, sort sortCongViec)
+        {
+            switch (sortCongViec)
+            {
+                case sort.TangTheoTG:
+                    cvs = cvs.OrderBy(x => x.thoiGianBD).ToList();
+                    break;
+                case sort.GiamTheoTG:
+                    cvs = cvs.OrderByDescending(x => x.thoiGianBD).ToList();
+                    break;
+                case sort.TangTheoMucDo:
+                    cvs = cvs.OrderByDescending(x => x.mucDo).ToList();
+                    break;
+                case sort.GiamTheoMucDo:
+                    cvs = cvs.OrderBy(x => x.mucDo).ToList();
+                    break;
+            }
+            return cvs;
+        }
+
+        public IEnumerable<CongViec> SortCongViecByMucDo(ChuDe chuDe, NguoiDung nd, bool cheDo)
+        {
+            IEnumerable<CongViec> cv = (chuDe.iD == 0) ? GetCongViecByNguoiDung(nd) : GetCongViecByChuDe(chuDe);
+            if (cheDo)
+                return cv.OrderByDescending(x => x.mucDo);
+            else
+                return cv.OrderBy(x => x.mucDo);
+        }
+
+        public void GetCongViecByTrangThai(ref List<CongViec> cvs, string trangThai)
+        {
+            switch (trangThai)
+            {
+                case "Sắp diễn ra":
+                    cvs = cvs.Where(x => x.trangThai == 0).ToList();
+                    break;
+                case "Đang thực hiện":
+                    cvs = cvs.Where(x => x.trangThai == 1).ToList();
+                    break;
+                case "Đã hoàn thành":
+                    cvs = cvs.Where(x => x.trangThai == 2).ToList();
+                    break;
+                case "Đã quá hạn":
+                    cvs = cvs.Where(x => x.trangThai == 3).ToList();
+                    break;
+                case "Hoàn thành trễ":
+                    cvs = cvs.Where(x => x.trangThai == 4).ToList();
+                    break;
+            }
+        }
+
+        #endregion
     }
 }
