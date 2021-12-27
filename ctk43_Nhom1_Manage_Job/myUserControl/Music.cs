@@ -8,7 +8,6 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
 {
     public class Music
     {
-
         private static Music instance;
         private WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
         private bool isPlaying = false;

@@ -15,10 +15,8 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
 {
     public partial class UscThongBao : UserControl
     {
-        Binding binding;
         public UscThongBao()
         {
-            binding = new Binding("txt", lbTienDo, "Value", false, DataSourceUpdateMode.Never);
             InitializeComponent();
         }
         #region Properties
@@ -55,9 +53,6 @@ namespace ctk43_Nhom1_Manage_Job.myUserControl
                     txtTime.Text = congViec.thoiGianKT.ToString();
                     lbThongBao.Text = "Đã hết hạn";
                     break;
-            //    case 1:
-
-                        
             }
             title = DefineTrangThai.GetString(congViec.trangThai);
             txtMota.Text = congViec.MoTa;

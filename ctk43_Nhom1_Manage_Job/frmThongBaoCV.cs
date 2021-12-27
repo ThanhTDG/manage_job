@@ -37,9 +37,9 @@ namespace ctk43_Nhom1_Manage_Job
                 if (flowLayoutPanel1 != null)
                 {
                     flowLayoutPanel1.Controls.Add(thongbaos[i]);
-                    if (countCV == 1)
+                    if(countCV == 1)
                     {
-                        this.Size = new Size((thongbaos[i].Size.Width) + 40, height + this.Size.Height + 5);
+                        this.Size = new Size((thongbaos[i].Size.Width)+40, height + this.Size.Height +5);
                     }
                     else
                     {

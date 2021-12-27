@@ -38,6 +38,7 @@ namespace BUS
         public static void SoSanh(string message)
         {
             MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         public static string SetGroupBoxName(string chuDe, string chucNang = null)

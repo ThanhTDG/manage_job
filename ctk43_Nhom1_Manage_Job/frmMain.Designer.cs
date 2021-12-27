@@ -42,7 +42,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripCbbCheDoSapXep = new System.Windows.Forms.ToolStripComboBox();
             this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kíchHoạtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiKichHoat = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ctmSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.grbDSCongViec = new System.Windows.Forms.GroupBox();
@@ -95,7 +95,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkCyan;
@@ -217,23 +217,24 @@ namespace ctk43_Nhom1_Manage_Job
             // hỗTrợToolStripMenuItem
             // 
             this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kíchHoạtToolStripMenuItem,
+            this.tsmiKichHoat,
             this.thôngTinToolStripMenuItem});
             this.hỗTrợToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
             this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.hỗTrợToolStripMenuItem.Text = "Hỗ trợ";
             // 
-            // kíchHoạtToolStripMenuItem
+            // tsmiKichHoat
             // 
-            this.kíchHoạtToolStripMenuItem.Name = "kíchHoạtToolStripMenuItem";
-            this.kíchHoạtToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.kíchHoạtToolStripMenuItem.Text = "Kích hoạt";
+            this.tsmiKichHoat.Name = "tsmiKichHoat";
+            this.tsmiKichHoat.Size = new System.Drawing.Size(180, 22);
+            this.tsmiKichHoat.Text = "Kích hoạt";
+            this.tsmiKichHoat.Click += new System.EventHandler(this.tsmiKichHoat_Click);
             // 
             // thôngTinToolStripMenuItem
             // 
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.thôngTinToolStripMenuItem.Text = "Thông tin";
             // 
             // ctmSetting
@@ -280,7 +281,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.toolStripSeparator1,
             this.markToolStripMenuItem});
             this.ctxMenuDSCongViec.Name = "ctxtMenuListView";
-            this.ctxMenuDSCongViec.Size = new System.Drawing.Size(190, 120);
+            this.ctxMenuDSCongViec.Size = new System.Drawing.Size(190, 98);
             this.ctxMenuDSCongViec.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuDSCongViec_Opening);
             // 
             // addToolStripMenuItem
@@ -433,7 +434,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // lbChucNang
             // 
-            this.lbChucNang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.lbChucNang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbChucNang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChucNang.ForeColor = System.Drawing.Color.Green;
@@ -455,8 +456,8 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // tabControl
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
@@ -505,8 +506,8 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // rtxtNoiDungGhiChu
             // 
-            this.rtxtNoiDungGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.rtxtNoiDungGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtNoiDungGhiChu.Location = new System.Drawing.Point(323, 32);
             this.rtxtNoiDungGhiChu.Name = "rtxtNoiDungGhiChu";
@@ -517,7 +518,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // lvDSGhiChu
             // 
-            this.lvDSGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.lvDSGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lvDSGhiChu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -672,7 +673,7 @@ namespace ctk43_Nhom1_Manage_Job
         private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiThongKe;
-        private System.Windows.Forms.ToolStripMenuItem kíchHoạtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiKichHoat;
         private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ContextMenuStrip ctxMenuTreeView;

@@ -66,10 +66,10 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.Location = new System.Drawing.Point(302, 336);
+            this.btnCancel.Location = new System.Drawing.Point(302, 316);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 27);
-            this.btnCancel.TabIndex = 119;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -87,10 +87,10 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnSave.Location = new System.Drawing.Point(198, 336);
+            this.btnSave.Location = new System.Drawing.Point(198, 316);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 27);
-            this.btnSave.TabIndex = 120;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -101,14 +101,14 @@ namespace ctk43_Nhom1_Manage_Job
             this.cbbLevel.FormattingEnabled = true;
             this.cbbLevel.Location = new System.Drawing.Point(134, 179);
             this.cbbLevel.Name = "cbbLevel";
-            this.cbbLevel.Size = new System.Drawing.Size(266, 21);
-            this.cbbLevel.TabIndex = 114;
+            this.cbbLevel.Size = new System.Drawing.Size(265, 21);
+            this.cbbLevel.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 219);
+            this.label6.Location = new System.Drawing.Point(15, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 17);
             this.label6.TabIndex = 112;
@@ -116,17 +116,17 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // richDescription
             // 
-            this.richDescription.Location = new System.Drawing.Point(134, 242);
+            this.richDescription.Location = new System.Drawing.Point(133, 221);
             this.richDescription.Name = "richDescription";
-            this.richDescription.Size = new System.Drawing.Size(265, 79);
-            this.richDescription.TabIndex = 111;
+            this.richDescription.Size = new System.Drawing.Size(266, 79);
+            this.richDescription.TabIndex = 9;
             this.richDescription.Text = "";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 180);
+            this.label5.Location = new System.Drawing.Point(15, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 17);
             this.label5.TabIndex = 110;
@@ -136,7 +136,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 113);
+            this.label4.Location = new System.Drawing.Point(15, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 17);
             this.label4.TabIndex = 107;
@@ -144,16 +144,16 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             // txtJobDetail
             // 
-            this.txtJobDetail.Location = new System.Drawing.Point(134, 72);
+            this.txtJobDetail.Location = new System.Drawing.Point(134, 69);
             this.txtJobDetail.Name = "txtJobDetail";
             this.txtJobDetail.Size = new System.Drawing.Size(266, 20);
-            this.txtJobDetail.TabIndex = 106;
+            this.txtJobDetail.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 72);
+            this.label3.Location = new System.Drawing.Point(15, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 17);
             this.label3.TabIndex = 104;
@@ -163,7 +163,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Location = new System.Drawing.Point(15, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 17);
             this.label1.TabIndex = 103;
@@ -183,7 +183,7 @@ namespace ctk43_Nhom1_Manage_Job
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 144);
+            this.label7.Location = new System.Drawing.Point(15, 144);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 17);
             this.label7.TabIndex = 125;
@@ -214,21 +214,21 @@ namespace ctk43_Nhom1_Manage_Job
             this.nudIntentMinute.Location = new System.Drawing.Point(320, 112);
             this.nudIntentMinute.Name = "nudIntentMinute";
             this.nudIntentMinute.Size = new System.Drawing.Size(34, 20);
-            this.nudIntentMinute.TabIndex = 136;
+            this.nudIntentMinute.TabIndex = 4;
             // 
             // nudIntentHour
             // 
             this.nudIntentHour.Location = new System.Drawing.Point(241, 111);
             this.nudIntentHour.Name = "nudIntentHour";
             this.nudIntentHour.Size = new System.Drawing.Size(34, 20);
-            this.nudIntentHour.TabIndex = 137;
+            this.nudIntentHour.TabIndex = 3;
             // 
             // nudIntentDay
             // 
             this.nudIntentDay.Location = new System.Drawing.Point(134, 111);
             this.nudIntentDay.Name = "nudIntentDay";
             this.nudIntentDay.Size = new System.Drawing.Size(57, 20);
-            this.nudIntentDay.TabIndex = 138;
+            this.nudIntentDay.TabIndex = 2;
             // 
             // nudRealDay
             // 
@@ -236,7 +236,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.nudRealDay.Location = new System.Drawing.Point(134, 142);
             this.nudRealDay.Name = "nudRealDay";
             this.nudRealDay.Size = new System.Drawing.Size(57, 20);
-            this.nudRealDay.TabIndex = 144;
+            this.nudRealDay.TabIndex = 5;
             // 
             // nudRealHour
             // 
@@ -244,7 +244,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.nudRealHour.Location = new System.Drawing.Point(241, 142);
             this.nudRealHour.Name = "nudRealHour";
             this.nudRealHour.Size = new System.Drawing.Size(34, 20);
-            this.nudRealHour.TabIndex = 143;
+            this.nudRealHour.TabIndex = 6;
             // 
             // nudRealMinute
             // 
@@ -252,7 +252,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.nudRealMinute.Location = new System.Drawing.Point(320, 143);
             this.nudRealMinute.Name = "nudRealMinute";
             this.nudRealMinute.Size = new System.Drawing.Size(34, 20);
-            this.nudRealMinute.TabIndex = 142;
+            this.nudRealMinute.TabIndex = 7;
             // 
             // label10
             // 
@@ -289,14 +289,14 @@ namespace ctk43_Nhom1_Manage_Job
             this.txtJob.Enabled = false;
             this.txtJob.Location = new System.Drawing.Point(133, 30);
             this.txtJob.Name = "txtJob";
-            this.txtJob.Size = new System.Drawing.Size(266, 20);
-            this.txtJob.TabIndex = 145;
+            this.txtJob.Size = new System.Drawing.Size(267, 20);
+            this.txtJob.TabIndex = 0;
             // 
             // frmChiTietCV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 385);
+            this.ClientSize = new System.Drawing.Size(423, 358);
             this.Controls.Add(this.txtJob);
             this.Controls.Add(this.nudRealDay);
             this.Controls.Add(this.nudRealHour);
@@ -322,6 +322,7 @@ namespace ctk43_Nhom1_Manage_Job
             this.Controls.Add(this.txtJobDetail);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmChiTietCV";
             this.Text = "Chi tiết công việc";
             this.Load += new System.EventHandler(this.frmChiTietCV_Load);

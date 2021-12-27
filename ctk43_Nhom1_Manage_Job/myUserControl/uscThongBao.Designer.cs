@@ -34,7 +34,6 @@
             this.txtMota = new System.Windows.Forms.TextBox();
             this.lbpercent = new System.Windows.Forms.Label();
             this.pcbTienDo = new System.Windows.Forms.ProgressBar();
-            this.ckbFinish = new System.Windows.Forms.CheckBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.lbTime = new System.Windows.Forms.Label();
             this.lbTienDo = new System.Windows.Forms.Label();
@@ -50,7 +49,6 @@
             this.grCV.Controls.Add(this.grMoTa);
             this.grCV.Controls.Add(this.lbpercent);
             this.grCV.Controls.Add(this.pcbTienDo);
-            this.grCV.Controls.Add(this.ckbFinish);
             this.grCV.Controls.Add(this.txtTime);
             this.grCV.Controls.Add(this.lbTime);
             this.grCV.Controls.Add(this.lbTienDo);
@@ -109,16 +107,6 @@
             this.pcbTienDo.Name = "pcbTienDo";
             this.pcbTienDo.Size = new System.Drawing.Size(202, 20);
             this.pcbTienDo.TabIndex = 6;
-            // 
-            // ckbFinish
-            // 
-            this.ckbFinish.AutoSize = true;
-            this.ckbFinish.Location = new System.Drawing.Point(256, 101);
-            this.ckbFinish.Name = "ckbFinish";
-            this.ckbFinish.Size = new System.Drawing.Size(82, 17);
-            this.ckbFinish.TabIndex = 5;
-            this.ckbFinish.Text = "Hoàn thành";
-            this.ckbFinish.UseVisualStyleBackColor = true;
             // 
             // txtTime
             // 
@@ -190,7 +178,6 @@
         private System.Windows.Forms.TextBox txtMota;
         private System.Windows.Forms.Label lbpercent;
         private System.Windows.Forms.ProgressBar pcbTienDo;
-        private System.Windows.Forms.CheckBox ckbFinish;
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label lbTienDo;

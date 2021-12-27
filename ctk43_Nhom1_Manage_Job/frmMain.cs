@@ -77,10 +77,13 @@ namespace ctk43_Nhom1_Manage_Job
                 congViecAlmostOver = getListOver(congViecAlmostOver);
                 congViecComingSoon = getListComming(congViecComingSoon);
                 int Second;
+
                 if (congViecAlmostOver.Count != 0 && congViecComingSoon.Count != 0)
                 {
                     TimeSpan Comming = congViecComingSoon[0].thoiGianBD - DateTime.Now;
                     TimeSpan Over = congViecAlmostOver[0].thoiGianKT - DateTime.Now;
+                    if (Comming.Days > 7 && Over.Days > 7)
+                        break;
                     if (Over > Comming)
                     {
                         if (Comming >= TimeSpan.Zero)
@@ -90,6 +93,7 @@ namespace ctk43_Nhom1_Manage_Job
                         }
                         else
                         {
+
                             Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
                             temp = congViecAlmostOver;
                         }
@@ -113,22 +117,27 @@ namespace ctk43_Nhom1_Manage_Job
                         temp = (List<CongViec>)temp.Concat(congViecAlmostOver).Concat(congViecComingSoon);
                     }
                 }
-                else if (congViecAlmostOver.Count != 0)
-                {
-                    TimeSpan Over = congViecAlmostOver[0].thoiGianKT - DateTime.Now;
-                    Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
-                    temp = congViecAlmostOver;
-                }
                 else
                 {
-                    TimeSpan Comming = congViecComingSoon[0].thoiGianBD - DateTime.Now;
-                    Second = Extension.TimeToSecond(Comming.Days, Comming.Hours, Comming.Minutes, Comming.Seconds);
-                    temp = congViecComingSoon;
+                    if (congViecAlmostOver.Count != 0)
+                    {
+                        TimeSpan Over = congViecAlmostOver[0].thoiGianKT - DateTime.Now;
+                        if (Over.Days > 7)
+                            break;
+                        Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
+                        temp = congViecAlmostOver;
+                    }
+                    else
+                    {
+                        TimeSpan Comming = congViecComingSoon[0].thoiGianBD - DateTime.Now;
+                        if (Comming.Days > 7)
+                            break;
+                        Second = Extension.TimeToSecond(Comming.Days, Comming.Hours, Comming.Minutes, Comming.Seconds);
+                        temp = congViecComingSoon;
+                    }
                 }
                 if (Second < 0)
                     continue;
-                if (Second > 24 * 60 * 60 * 7)
-                    break;
                 Thread.Sleep(Second * 1000 + 1000);
                 for (i = 0; i < temp.Count; i++)
                     temp[i] = Extension.Update(temp[i], CongViecBUS);
@@ -188,6 +197,25 @@ namespace ctk43_Nhom1_Manage_Job
             }
 
         }
+
+        private void listenNotification()
+        {
+            if (th == null)
+            {
+                th = new Thread(nofiction);
+                th.IsBackground = true;
+                th.Start();
+            }
+            else if (th != null || th.ThreadState == ThreadState.Running)
+            {
+                th.Abort();
+                th = null;
+                th = new Thread(nofiction);
+                th.IsBackground = true;
+                th.Start();
+            }
+
+        }
         #endregion
 
         #region 1911164 Võ Đình Hoàng Long
@@ -216,25 +244,6 @@ namespace ctk43_Nhom1_Manage_Job
                 }
                 listenNotification();
             }
-        }
-
-        private void listenNotification()
-        {
-            if (th == null)
-            {
-                th = new Thread(nofiction);
-                th.IsBackground = true;
-                th.Start();
-            }
-            else if (th !=null || th.ThreadState == ThreadState.Running)
-            {
-                th.Abort(); 
-                th = null;
-                th = new Thread(nofiction);
-                th.IsBackground = true;
-                th.Start();
-            }
-           
         }
 
         private void CapNhatHoanThanhOrNot(ref CongViec cv)
@@ -316,7 +325,8 @@ namespace ctk43_Nhom1_Manage_Job
                 if (treeNode.Checked)
                 {
                     x.trangThai = 1;
-                    x.ThoiGianThucTe = 0;
+                    if(x.ThoiGianThucTe==null)
+                        x.ThoiGianThucTe = 0;
                     chiTietCVBUS.Update(x);
                     check = true;
                 }
@@ -512,7 +522,7 @@ namespace ctk43_Nhom1_Manage_Job
         private void RemovePlaceHolder(object sender, EventArgs e)
         {
             if (txtTimKiemTenCV.Text == ThongBao.PlaceHolderText)
-                txtTimKiemTenCV.Text = "";            
+                txtTimKiemTenCV.Text = "";
         }
 
         private void LoadGhiChuNhanh(List<GhiChuNhanh> dsGhiChu)
@@ -546,14 +556,14 @@ namespace ctk43_Nhom1_Manage_Job
                 congViecBUS.GetCongViec(ref tvwDSCongViec, cvs);
             }
             else
-                SetChucNang(lbChucNang.SelectedIndex);                       
+                SetChucNang(lbChucNang.SelectedIndex);
         }
 
         private void SetChucNang(int ChucNang)
         {
             switch (ChucNang)
             {
-                case 0:                     
+                case 0:
                     cvs = congViecBUS.GetCongViecByDay(DateTime.Now, nd).ToList();
                     break;
                 case 1:
@@ -927,6 +937,12 @@ namespace ctk43_Nhom1_Manage_Job
             frm.ShowDialog();
         }
 
+        private void tsmiKichHoat_Click(object sender, EventArgs e)
+        {
+            frmDangKy frm = new frmDangKy();
+            frm.ShowDialog();
+        }
+
         #endregion
 
         #region Chung
@@ -949,9 +965,22 @@ namespace ctk43_Nhom1_Manage_Job
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadData();
+            if (Properties.Settings.Default.kichhoat == false)
+            {
+                tsmiThongKe.Enabled = false;
+                SapXeptoolStripMenuItem.Enabled = false;
+                ctmSetting.Enabled = false;
+                tsmiKichHoat.Enabled = true;
+            }
+            else
+            {
+                tsmiThongKe.Enabled = true;
+                SapXeptoolStripMenuItem.Enabled = true;
+                ctmSetting.Enabled = true;
+                tsmiKichHoat.Enabled = false;
+            }
             frmThongBao frm = new frmThongBao();
             frm.ShowDialog();
-            listenNotification();
         }
 
         private void getAll()
@@ -1046,5 +1075,7 @@ namespace ctk43_Nhom1_Manage_Job
             ghiChuNhanhBUS.Insert(new DAO.Model.GhiChuNhanh() { TieuDe = "Ghi chú nhanh 4", NoiDung = "Đây là nội dung của ghi chú nhanh 4", ThoiGianBD = DateTime.Now, Email = "khoa@gmail.com" });
         }
         #endregion
+
+        
     }
 }

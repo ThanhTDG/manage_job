@@ -112,11 +112,6 @@ namespace BUS
             return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD).ToList();
         }
 
-        //public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
-        //{
-        //    return congViecRepository.GetCongViecByNguoiDung(nd.email);
-        //}
-
         public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
         {                   
             List<CongViec> temp = congViecRepository.GetCongViecByLoai(nd.email).ToList();            

@@ -180,87 +180,83 @@ namespace ctk43_Nhom1_Manage_Job
             this.columnHeader12,
             this.columnHeader13,
             this.columnHeader14});
-				this.lvThongKeHoanThanh.Dock = System.Windows.Forms.DockStyle.Fill;
-				this.lvThongKeHoanThanh.FullRowSelect = true;
-				this.lvThongKeHoanThanh.GridLines = true;
-				this.lvThongKeHoanThanh.HideSelection = false;
-				this.lvThongKeHoanThanh.Location = new System.Drawing.Point(4, 4);
-				this.lvThongKeHoanThanh.Margin = new System.Windows.Forms.Padding(4);
-				this.lvThongKeHoanThanh.Name = "lvThongKeHoanThanh";
-				this.lvThongKeHoanThanh.Size = new System.Drawing.Size(583, 411);
-				this.lvThongKeHoanThanh.TabIndex = 93;
-				this.lvThongKeHoanThanh.UseCompatibleStateImageBehavior = false;
-				this.lvThongKeHoanThanh.View = System.Windows.Forms.View.Details;
-				// 
-				// columnHeader12
-				// 
-				this.columnHeader12.Text = "Tên công việc";
-				this.columnHeader12.Width = 225;
-				// 
-				// columnHeader13
-				// 
-				this.columnHeader13.Text = "Thời gian bắt đầu";
-				this.columnHeader13.Width = 165;
-				// 
-				// columnHeader14
-				// 
-				this.columnHeader14.Text = "Thời gian kết thúc";
-				this.columnHeader14.Width = 165;
-				// 
-				// tabPage2
-				// 
-				this.tabPage2.Controls.Add(this.lvThongKeChuaHoanThanh);
-				this.tabPage2.Location = new System.Drawing.Point(4, 25);
-				this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
-				this.tabPage2.Name = "tabPage2";
-				this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-				this.tabPage2.Size = new System.Drawing.Size(591, 419);
-				this.tabPage2.TabIndex = 1;
-				this.tabPage2.Text = "Chưa hoàn thành";
-				this.tabPage2.UseVisualStyleBackColor = true;
-				// 
-				// lvThongKeChuaHoanThanh
-				// 
-				this.lvThongKeChuaHoanThanh.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvThongKeHoanThanh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvThongKeHoanThanh.FullRowSelect = true;
+            this.lvThongKeHoanThanh.GridLines = true;
+            this.lvThongKeHoanThanh.HideSelection = false;
+            this.lvThongKeHoanThanh.Location = new System.Drawing.Point(3, 3);
+            this.lvThongKeHoanThanh.Name = "lvThongKeHoanThanh";
+            this.lvThongKeHoanThanh.Size = new System.Drawing.Size(435, 332);
+            this.lvThongKeHoanThanh.TabIndex = 93;
+            this.lvThongKeHoanThanh.UseCompatibleStateImageBehavior = false;
+            this.lvThongKeHoanThanh.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Tên công việc";
+            this.columnHeader12.Width = 200;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Thời gian bắt đầu";
+            this.columnHeader13.Width = 120;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Thời gian kết thúc";
+            this.columnHeader14.Width = 120;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.lvThongKeChuaHoanThanh);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(441, 338);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Chưa hoàn thành";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lvThongKeChuaHoanThanh
+            // 
+            this.lvThongKeChuaHoanThanh.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader7});
-				this.lvThongKeChuaHoanThanh.Dock = System.Windows.Forms.DockStyle.Fill;
-				this.lvThongKeChuaHoanThanh.FullRowSelect = true;
-				this.lvThongKeChuaHoanThanh.GridLines = true;
-				this.lvThongKeChuaHoanThanh.HideSelection = false;
-				this.lvThongKeChuaHoanThanh.Location = new System.Drawing.Point(4, 4);
-				this.lvThongKeChuaHoanThanh.Margin = new System.Windows.Forms.Padding(4);
-				this.lvThongKeChuaHoanThanh.Name = "lvThongKeChuaHoanThanh";
-				this.lvThongKeChuaHoanThanh.Size = new System.Drawing.Size(583, 411);
-				this.lvThongKeChuaHoanThanh.TabIndex = 94;
-				this.lvThongKeChuaHoanThanh.UseCompatibleStateImageBehavior = false;
-				this.lvThongKeChuaHoanThanh.View = System.Windows.Forms.View.Details;
-				// 
-				// columnHeader3
-				// 
-				this.columnHeader3.Text = "Tên công việc";
-				this.columnHeader3.Width = 242;
-				// 
-				// columnHeader7
-				// 
-				this.columnHeader7.Text = "Thời gian còn lại ";
-				this.columnHeader7.Width = 205;
-				// 
-				// tabPage3
-				// 
-				this.tabPage3.Controls.Add(this.lvThongKeHetHan);
-				this.tabPage3.Location = new System.Drawing.Point(4, 25);
-				this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
-				this.tabPage3.Name = "tabPage3";
-				this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-				this.tabPage3.Size = new System.Drawing.Size(591, 419);
-				this.tabPage3.TabIndex = 2;
-				this.tabPage3.Text = "Hết hạn";
-				this.tabPage3.UseVisualStyleBackColor = true;
-				// 
-				// lvThongKeHetHan
-				// 
-				this.lvThongKeHetHan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvThongKeChuaHoanThanh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvThongKeChuaHoanThanh.FullRowSelect = true;
+            this.lvThongKeChuaHoanThanh.GridLines = true;
+            this.lvThongKeChuaHoanThanh.HideSelection = false;
+            this.lvThongKeChuaHoanThanh.Location = new System.Drawing.Point(3, 3);
+            this.lvThongKeChuaHoanThanh.Name = "lvThongKeChuaHoanThanh";
+            this.lvThongKeChuaHoanThanh.Size = new System.Drawing.Size(435, 332);
+            this.lvThongKeChuaHoanThanh.TabIndex = 94;
+            this.lvThongKeChuaHoanThanh.UseCompatibleStateImageBehavior = false;
+            this.lvThongKeChuaHoanThanh.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Tên công việc";
+            this.columnHeader3.Width = 316;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Thời gian còn lại ";
+            this.columnHeader7.Width = 120;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.lvThongKeHetHan);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(441, 338);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Hết hạn";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lvThongKeHetHan
+            // 
+            this.lvThongKeHetHan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader6});
 				this.lvThongKeHetHan.Dock = System.Windows.Forms.DockStyle.Fill;
