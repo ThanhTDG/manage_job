@@ -122,6 +122,7 @@ namespace ctk43_Nhom1_Manage_Job
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+
             this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // printToolStripMenuItem

@@ -33,7 +33,7 @@ namespace ctk43_Nhom1_Manage_Job
         public frmMain()
         {
             InitializeComponent();
-            getAll();
+            //getAll();
         }
 
         #region 1911205 - Nguyễn hữu Đức Thanh
@@ -90,7 +90,6 @@ namespace ctk43_Nhom1_Manage_Job
                         }
                         else
                         {
-
                             Second = Extension.TimeToSecond(Over.Days, Over.Hours, Over.Minutes, Over.Seconds);
                             temp = congViecAlmostOver;
                         }
@@ -409,7 +408,10 @@ namespace ctk43_Nhom1_Manage_Job
         {
             if (tvwDSCongViec.SelectedNode == null) return;
             if (tvwDSCongViec.SelectedNode.Checked == true)
+            {
+                if (ThongBao.CauHoi(" hủy đánh dấu không?") != DialogResult.Yes) return;
                 tvwDSCongViec.SelectedNode.Checked = false;
+            }
             else
                 tvwDSCongViec.SelectedNode.Checked = true;
             var select = tvwDSCongViec.SelectedNode;

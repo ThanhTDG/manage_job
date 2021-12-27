@@ -50,5 +50,11 @@
     <Setting Name="version" Type="System.String" Scope="User">
       <Value Profile="(Default)">Beta-1.0</Value>
     </Setting>
+    <Setting Name="key" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123456789</Value>
+    </Setting>
+    <Setting Name="kichhoat" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

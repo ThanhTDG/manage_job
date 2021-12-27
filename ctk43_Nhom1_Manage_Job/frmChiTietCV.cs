@@ -90,6 +90,10 @@ namespace ctk43_Nhom1_Manage_Job
             _chiTietCV.ThoiGianDukien = intentMinute;
             _chiTietCV.mucDo = Convert.ToInt32(cbbLevel.SelectedIndex);
             _chiTietCV.trangThai = 0;
+            if (i != -1)
+            {
+                int realMinute = Extension.UpdateMinute();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

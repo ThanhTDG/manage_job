@@ -76,7 +76,7 @@ namespace DAO.Repositories
                     j++;
                 }
             }
-            if (_trangthai.Count != 0 && _trangthai !=null)
+            if (_trangthai.Count != 0 && _trangthai != null)
             {
                 foreach (var trangthai in _trangthai)
                 {
@@ -125,7 +125,7 @@ namespace DAO.Repositories
             var query = from s in DbContext.congViec
                         join r in DbContext.chuDe
                         on s.IDChuDe equals r.iD
-                        where r.Email == email && BatDau < s.thoiGianBD && s.thoiGianKT < KetThuc 
+                        where r.Email == email && BatDau < s.thoiGianBD && s.thoiGianKT < KetThuc
                         select s;
             return query;
         }

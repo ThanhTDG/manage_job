@@ -108,7 +108,7 @@ namespace ctk43_Nhom1_Manage_Job
 									 item.ForeColor = Color.White;
 									 item.BackColor = Color.FromArgb(253, 208, 35);
 								}
-								else if (5 <= hours && days < 2)
+								else if (days < 2)
 								{
 									 item.ForeColor = Color.White;
 									 item.BackColor = Color.Green;
@@ -199,7 +199,7 @@ namespace ctk43_Nhom1_Manage_Job
 									 item.ForeColor = Color.White;
 									 item.BackColor = Color.FromArgb(253, 208, 35);
 								}
-								else if (5 <= hours && days < 2)
+								else if (days < 2)
 								{
 									 item.ForeColor = Color.White;
 									 item.BackColor = Color.Green;

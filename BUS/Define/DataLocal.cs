@@ -18,5 +18,4 @@ namespace BUS.Define
         TangTheoTen,
         GiamTheoTen
     }
-   
 }

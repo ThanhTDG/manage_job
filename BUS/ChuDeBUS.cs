@@ -94,5 +94,6 @@ namespace BUS
             return chuDeRepository.GetMulti(x => x.Email == nd.email && x.loaiChuDe == 0);
         }
         #endregion
+
     }
 }

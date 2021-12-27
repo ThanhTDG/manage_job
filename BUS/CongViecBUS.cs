@@ -77,7 +77,7 @@ namespace BUS
             treeView.Font = new Font("Times New Roman", 13, FontStyle.Regular);
             foreach (var temp in dsCongViec)
             {
-                str = string.Format("{0,-35}({1,10} - {2,-10}){3,10}%", temp.ten, temp.thoiGianBD.ToShortDateString(), temp.thoiGianKT.ToShortDateString(), temp.tienDo);
+                str = string.Format("{0,-35}({1,10} - {2,-10}){3,10}%", temp.ten, temp.thoiGianBD.ToString("dd/MM/yyyy"), temp.thoiGianKT.ToString("dd/MM/yyyy"), temp.tienDo);
                 var node = treeView.Nodes.Add(str);
                 node.ForeColor = MyColor.ColorLevel(temp.mucDo);
                 node.Tag = temp;
@@ -111,6 +111,11 @@ namespace BUS
         {
             return congViecRepository.GetMulti(x => x.IDChuDe == chuDe.iD).ToList();
         }
+
+        //public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
+        //{
+        //    return congViecRepository.GetCongViecByNguoiDung(nd.email);
+        //}
 
         public IEnumerable<CongViec> GetCongViecByNguoiDung(NguoiDung nd)
         {                   

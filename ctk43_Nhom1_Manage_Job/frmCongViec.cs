@@ -64,7 +64,7 @@ namespace ctk43_Nhom1_Manage_Job
                 txtRemine.Text = Math.Abs(time.Days).ToString() + " ngày " + Math.Abs(time.Hours).ToString() + " giờ " + Math.Abs(time.Minutes).ToString() + " phút.";
                 return;
             }
-            else if(_congviec.trangThai == 1)
+            else if (_congviec.trangThai == 1)
             {
                 label7.Text = "Còn lại";
                 time = _congviec.thoiGianKT - DateTime.Now;
@@ -76,7 +76,7 @@ namespace ctk43_Nhom1_Manage_Job
                 txtRemine.Text = $"{_congviec.ngayHoanThanh.Value.ToString("dd/MM/yy HH:mm:ss")}";
                 return;
             }
-            else if(_congviec.trangThai == 3)
+            else if (_congviec.trangThai == 3)
             {
                 label7.Text = "Đã quá hạn";
                 time = _congviec.thoiGianKT - DateTime.Now;
@@ -93,7 +93,7 @@ namespace ctk43_Nhom1_Manage_Job
         public bool CheckValid()
         {
             bool kq = true;
-            if (string.IsNullOrWhiteSpace(cbbTopic.Text) && cbbTypeOfTopic.SelectedIndex==0)
+            if (string.IsNullOrWhiteSpace(cbbTopic.Text) && cbbTypeOfTopic.SelectedIndex == 0)
                 kq = false;
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
                 kq = false;
@@ -124,7 +124,7 @@ namespace ctk43_Nhom1_Manage_Job
                 };
                 congViecBUS.Insert(_congviec);
             }
-            else if(cbbTypeOfTopic.SelectedIndex == 0)
+            else if (cbbTypeOfTopic.SelectedIndex == 0)
             {
                 _congviec.IDChuDe = Convert.ToInt32(cbbTopic.SelectedValue);
                 _congviec.ten = txtTitle.Text;
@@ -161,7 +161,7 @@ namespace ctk43_Nhom1_Manage_Job
         private void UpdateFollowTypeOfTopic()
         {
             int type = cbbTypeOfTopic.SelectedIndex;
-            List<CongViec> cvs = congViecBUS.GetCongViecByLoaiChuDe(type, _nd).Where(x=>x.ten==_congviec.ten).ToList();
+            List<CongViec> cvs = congViecBUS.GetCongViecByLoaiChuDe(type, _nd).Where(x => x.ten == _congviec.ten).ToList();
             UpdateChuDe();
             int size = Extension.DayWeekMonthYear(type);
             var s1 = new CongViec();
@@ -170,7 +170,7 @@ namespace ctk43_Nhom1_Manage_Job
             foreach (CongViec i in cvs)
             {
                 var item = congViecBUS.GetCongViecByID(i.iD);
-                var cv =UpdateCVTheoLoai(item);
+                var cv = UpdateCVTheoLoai(item);
                 cv.thoiGianBD = s1.thoiGianBD;
                 cv.thoiGianKT = s1.thoiGianKT;
                 congViecBUS.Update(cv);

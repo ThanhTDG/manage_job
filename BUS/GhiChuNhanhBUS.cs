@@ -58,8 +58,8 @@ namespace BUS
         public GhiChuNhanh GetGhiChuByID(int id)
         {
             return ghiChuNhanhRepository.GetSingleById(id);
-        }       
-        
+        }
+
         public IEnumerable<GhiChuNhanh> GetGhiChuNhanhByTen(string keyword, NguoiDung nd, bool searhDate)
         {
             IEnumerable<GhiChuNhanh> query = GetGhiChuByNguoiDung(nd);
@@ -67,7 +67,7 @@ namespace BUS
                 return query.Where(f => f.TieuDe.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0 || f.ThoiGianBD.ToShortDateString().IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
             else
                 return query.Where(f => f.TieuDe.IndexOf(keyword, StringComparison.InvariantCultureIgnoreCase) >= 0);
-        }  
+        }
 
         public List<GhiChuNhanh> SortGhiChu(List<GhiChuNhanh> gcs, sort sortGC)
         {

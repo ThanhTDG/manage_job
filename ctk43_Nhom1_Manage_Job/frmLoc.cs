@@ -84,7 +84,7 @@ namespace ctk43_Nhom1_Manage_Job
                 return;
         }
         private void btnFind_Click(object sender, EventArgs e)
-        {
+        {  
             if (dtpStart.Value.Date > dtpEnd.Value.Date)
             {
                 ThongBao.SoSanh("Ngày bắt đầu không được lớn hơn ngày kết thúc");
